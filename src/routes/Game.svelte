@@ -76,7 +76,6 @@
 	}
 
     let confettiWrap: HTMLDivElement;
-
 </script>
 
 <div class="counter-holder">
@@ -84,9 +83,12 @@
     <Counter count={score} text="Skóre" />
 </div>
 
-<div>
-    <div on:click={playRound}>
-        <TreasureChest />
+<div class="chest-postions">
+    <div class="chest-wrap">
+        <TreasureChest on:openTopEvent={playRound}  />
+    </div>
+    <div class="chest-wrap">
+        <TreasureChest on:openTopEvent={playRound} />
     </div>
 </div>
 
@@ -100,6 +102,18 @@
 </div>
 
 <style>
+    .chest-postions {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        padding: 6rem;  
+        align-items: center;
+    }
+    .chest-wrap {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
     .counter-holder {
         display: flex;
         justify-content: space-between;

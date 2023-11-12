@@ -1,6 +1,8 @@
 <script>
     import Cuboid from "./Cuboid.svelte";
 
+    import { createEventDispatcher } from 'svelte';
+
     const brownToDarkGradient = `repeating-linear-gradient(
   to top,
   #f6ba52,
@@ -9,11 +11,12 @@
   #ffd180 20px
 );`
 
+export let openTop = false;
+
   
 </script>
 
-<div class="treasure-chest">
-        <Cuboid 
+        <Cuboid bind:openTop={openTop} on:openTopEvent
         xLength={120}
         zLength={100}
         yLength={120}
@@ -24,19 +27,6 @@
         sideDColor="#cd8606"
         topColor={brownToDarkGradient}
         topColorB="#dbaa54"
+        xRotation={293}
+        yRotation={17}
         />
-</div>
-
-<style>
-    .treasure-chest {
-        position: relative;
-        margin: 0 auto;
-        transform-style: preserve-3d;
-        transform: rotateX(293deg) rotateY(17deg)
-    }
-
-
-    .bottom {
-        transform-style: preserve-3d;
-    }
-</style>

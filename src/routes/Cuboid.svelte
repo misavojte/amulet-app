@@ -10,11 +10,23 @@
     export let topColor: string = '#f0f';
     export let topColorB: string = '#0ff';
 
-    $: cssVarStyles = `--xLength:${xLength}px;--zLength:${zLength}px;--yLength:${yLength}px;--bottomColor:${bottomColor};--sideAColor:${sideAColor};--sideBColor:${sideBColor};--sideCColor:${sideCColor};--sideDColor:${sideDColor};--topColor:${topColor};--topColorB:${topColorB};`;
+    export let xRotation: number = 0;
+    export let yRotation: number = 0;
 
-    let openTop = false;
+    let xRotationCompensation = -1 * xRotation;
+    let yRotationCompensation = -1 * yRotation;
+
+    import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
+
+    let cssVarStyles = `--xLength:${xLength}px;--zLength:${zLength}px;--yLength:${yLength}px;--bottomColor:${bottomColor};--sideAColor:${sideAColor};--sideBColor:${sideBColor};--sideCColor:${sideCColor};--sideDColor:${sideDColor};--topColor:${topColor};--topColorB:${topColorB};`;
+    cssVarStyles += `transform:rotateX(${xRotation}deg) rotateY(${yRotation}deg);`;
+
+    export let openTop = false;
 
     const triggerOpenTop = () => {
+        if (!openTop) dispatch('openTopEvent');
         openTop = !openTop;
     }
 
@@ -28,14 +40,16 @@
     <div class="side-c"></div>
     <div class="side-d"></div>
     <div class="top" class:open={openTop}></div>
+    <div class="content" style="transform:translateZ({zLength / -2}px) rotateY({yRotationCompensation}deg) rotateX({xRotationCompensation}deg)">
+        <slot></slot>
+        "A"
+    </div>
 </div>
 
 
 <style>
     .box {
         position: relative;
-        width: var(--xLength);
-        height: var(--yLength);
         margin: 0 auto;
         transform-style: preserve-3d;
     }
@@ -108,5 +122,20 @@
         height: 100%;
         background: var(--topColorB);
         transform: translateZ(-1px); /* Slight adjustment to create 3D effect */
+    }
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateZ(-50px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0 0 10px black;
     }
 </style>
