@@ -2,12 +2,15 @@
 
     import { writable } from 'svelte/store';
     import type { GameState } from '$lib';
-	import TreasureChest from './TreasureChest.svelte';
 	import Counter from './Counter.svelte';
 	import { ConfettiCannon } from 'svelte-canvas-confetti';
 	import {tick} from 'svelte';
+    import Cuboid from './Cuboid.svelte';
+	import Amulet from './Amulet.svelte';
 
     export let gameState: GameState;
+
+    let hasAmulet = false;
 
     let numberOfRounds = 5;
 
@@ -32,32 +35,33 @@
     };
 
     const playRound = (): void => {
-        hasCurrentlyWon.set(play(gameState, true));
+        hasCurrentlyWon.set(play(gameState, hasAmulet));
         numberOfRounds--;
     };
 
-    let score = 0;
+    let score = 30;
 
     const SCORE_ON_WIN = 30;
 
     let triggerLeftConfetti = false;
     let triggerRightConfetti = false;
 
-    if ($hasCurrentlyWon) {
-        alert("ahoj")
-    }
 
     $: {
+
         if ($hasCurrentlyWon) {
             score += SCORE_ON_WIN;
             makeLeftConfetti();
-            setTimeout(makeRightConfetti, 1000); 
-        }
+            setTimeout(makeRightConfetti, 1000);
+            setTimeout( () => {
+                hasCurrentlyWon.set(false);
+            }, 500);
+        } 
     }
 
     $ : {
         if (numberOfRounds === 0) {
-            //alert(`Konec hry! Skóre: ${score}`);
+
             numberOfRounds = 5;
             score = 0;
         }
@@ -76,6 +80,14 @@
 	}
 
     let confettiWrap: HTMLDivElement;
+
+    const buyAmulet = () => {
+        if (score >= 30) {
+            score -= 30;
+            hasAmulet = true;
+        }
+    }
+
 </script>
 
 <div class="counter-holder">
@@ -83,13 +95,61 @@
     <Counter count={score} text="Skóre" />
 </div>
 
-<div class="chest-postions">
-    <div class="chest-wrap">
-        <TreasureChest on:openTopEvent={playRound}  />
-    </div>
-    <div class="chest-wrap">
-        <TreasureChest on:openTopEvent={playRound} />
-    </div>
+<div class="central-holder">
+    <div class="perspective">
+        <div class="chest-postions">
+            <Cuboid on:openTopEvent={playRound}
+            xLength={250}
+            zLength={220}
+            yLength={250}
+            bottomColor="#b27500"
+            sideAColor="#f4b84f"
+            sideBColor="#a96f00"
+            sideCColor="#c07d00"
+            sideDColor="#cd8606"
+            topColor="repeating-linear-gradient(to top,#f6ba52,#f6ba52 10px,#ffd180 10px,#ffd180 20px);"
+            topColorB="#dbaa54"
+            xRotaionOfParent = {30}
+            zRotation={15}
+            hasCurrentlyWon={hasCurrentlyWon}
+            />
+
+                <Amulet 
+            length={200}
+            hasAmulet={hasAmulet}
+            />
+    
+            <Cuboid on:openTopEvent={playRound}
+            xLength={250}
+            zLength={230}
+            yLength={250}
+            bottomColor="#e19400"
+            sideAColor="#f4b84f"
+            sideBColor="#cd8606"
+            sideCColor="#d58b00"
+            sideDColor="#b97a00"
+            topColor="repeating-linear-gradient(to top,#f6ba52,#f6ba52 10px,#ffd180 10px,#ffd180 20px);"
+            topColorB="#edad3c"
+            xRotaionOfParent = {30}
+            zRotation={-10}
+            hasCurrentlyWon={hasCurrentlyWon}
+            />
+        </div>
+        <div class="amulet-info-holder" on:click={buyAmulet}>
+            {#if hasAmulet}
+                Amulet je aktivní.
+            {:else}
+                <div>
+                    Amulet není zakoupen.
+                </div>
+                <div>
+                    Kliknutím jej můžeš koupit za 30 bodů.
+                </div>
+            {/if}
+        </div>
+        <div class="pattern"></div>
+    
+</div>
 </div>
 
 <div class="confetti-wrap" bind:this={confettiWrap}>
@@ -102,17 +162,32 @@
 </div>
 
 <style>
-    .chest-postions {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 2rem;
-        padding: 6rem;  
-        align-items: center;
-    }
-    .chest-wrap {
+    @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+    .central-holder {
         display: flex;
         justify-content: center;
-        margin-bottom: 2rem;
+        align-items: center;
+        height: 1px;
+        flex-grow: 1;
+        width: 100%;
+        position: relative;
+    }
+    .perspective {
+        transform: perspective(800px) rotateX(30deg);
+        transform-style: preserve-3d;
+        font-family: 'Parisienne', cursive;
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        }
+    
+    .chest-postions {
+        display: flex;
+        justify-content: space-around;
+        padding: 6rem;  
+        align-items: center;
+        transform-style: preserve-3d;
     }
     .counter-holder {
         display: flex;
@@ -130,4 +205,29 @@
         user-select: none;
         pointer-events: none;
     }
+    .pattern{
+        background: linear-gradient(90deg, #deb887 9.80%, #8b6914 9.80%, #8b6914 10%, #cdaa7d 10%, #cdaa7d 19.80%, #8b6914 19.80%, #8b6914 20%, #deb887 20%, #deb887 29.80%, #8b6914 29.80%, #8b6914 30%, #deb887 30%, #deb887 39.80%, #8b6914 39.80%, #8b6914 40%, #cdaa7d 40%, #cdaa7d 49.80%, #8b6914 49.80%, #8b6914 50%, #deb887 50%, #deb887 59.80%, #8b6914 59.80%, #8b6914 60%, #cdaa7d 60%, #cdaa7d 69.80%, #8b6914 69.80%, #8b6914 70%, #deb887 70%, #deb887 79.80%, #8b6914 79.80%, #8b6914 80%, #deb887 80%, #deb887 89.80%, #8b6914 89.80%, #8b6914 90%, #cdaa7d 90%, #cdaa7d 99.80%, #8b6914 99.80%, #8b6914 100%);
+background-size: 700.00px 700.00px;
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        bottom: 0;
+        left: -50%;
+        opacity: 0.4;
+        pointer-events: none;
+        user-select: none;
+    }
+    .amulet-info-holder {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 60px;
+        user-select: none;
+    }
+    .amulet-info-holder div:nth-child(2) {
+        font-size: 30px;
+    }
+
+
 </style>

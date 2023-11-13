@@ -10,40 +10,77 @@
     export let topColor: string = '#f0f';
     export let topColorB: string = '#0ff';
 
-    export let xRotation: number = 0;
-    export let yRotation: number = 0;
+    export let zRotation: number = 0;
 
-    let xRotationCompensation = -1 * xRotation;
-    let yRotationCompensation = -1 * yRotation;
+    export let xRotaionOfParent: number = 0;
+    export let zRotaionOfParent: number = 0;
 
+    export let hasCurrentlyWon = writable(false);
+
+    let xRotationCompensation = -1 * xRotaionOfParent;
+    let zRotationCompensation = -1 * zRotaionOfParent - zRotation;
     import { createEventDispatcher } from 'svelte';
+	import { writable } from 'svelte/store';
+    import { tick } from 'svelte';
+	import Coin from './Coin.svelte';
 
 	const dispatch = createEventDispatcher();
 
     let cssVarStyles = `--xLength:${xLength}px;--zLength:${zLength}px;--yLength:${yLength}px;--bottomColor:${bottomColor};--sideAColor:${sideAColor};--sideBColor:${sideBColor};--sideCColor:${sideCColor};--sideDColor:${sideDColor};--topColor:${topColor};--topColorB:${topColorB};`;
-    cssVarStyles += `transform:rotateX(${xRotation}deg) rotateY(${yRotation}deg);`;
+    cssVarStyles += `transform:rotateZ(${zRotation}deg);`;
 
     export let openTop = false;
 
-    const triggerOpenTop = () => {
-        if (!openTop) dispatch('openTopEvent');
-        openTop = !openTop;
+    let showContent = false;
+    let blockInteraction = false;
+    let isReadyToOpen = true;
+
+
+    const triggerOpenTop = async () => {
+        if (blockInteraction) {
+            return;
+        }
+        blockInteraction = true;
+        if (!openTop) {
+            dispatch('openTopEvent');
+            openTop = !openTop;
+            isReadyToOpen = false;
+            await tick();
+            if ($hasCurrentlyWon.valueOf()) {
+                showContent = true;
+            }
+            const onTransitionEnd = () => {
+                blockInteraction = false;
+                topElement.removeEventListener('transitionend', onTransitionEnd);
+            };
+            topElement.addEventListener('transitionend', onTransitionEnd);
+        } else {
+            blockInteraction = true;
+            openTop = !openTop;
+            const onTransitionEnd = () => {
+                showContent = false;
+                blockInteraction = false;
+                isReadyToOpen = true;
+                topElement.removeEventListener('transitionend', onTransitionEnd);
+            };
+            topElement.addEventListener('transitionend', onTransitionEnd);
+        }
     }
+    let topElement: HTMLDivElement;
 
 </script>
 
-
-<div class="box" style={cssVarStyles} on:click={triggerOpenTop}>
+<div class="box" style={cssVarStyles} on:click={triggerOpenTop}> 
     <div class="bottom"></div>
     <div class="side-a"></div>
     <div class="side-b"></div>
     <div class="side-c"></div>
     <div class="side-d"></div>
-    <div class="top" class:open={openTop}></div>
-    <div class="content" style="transform:translateZ({zLength / -2}px) rotateY({yRotationCompensation}deg) rotateX({xRotationCompensation}deg)">
-        <slot></slot>
-        "A"
+    <div class="top" class:open={openTop} class:ready={isReadyToOpen} bind:this={topElement}></div>
+    <div class="content" class:show={showContent} style="transform:translateZ({zLength / 2}px) rotateZ({zRotationCompensation}deg) rotateX({xRotationCompensation}deg)">
+        <Coin />
     </div>
+    <div class="shadow"></div>
 </div>
 
 
@@ -52,29 +89,32 @@
         position: relative;
         margin: 0 auto;
         transform-style: preserve-3d;
+        width: var(--xLength);
+        height: var(--yLength);
+        cursor: pointer;
     }
     .bottom, .top {
-        position: absolute;
-        width: var(--xLength);
-        height: var(--zLength);
-    }
-
-    .bottom {
-        transform: rotateX(-90deg);
-        transform-origin: top;
-        top: var(--yLength);
-        background: var(--bottomColor); 
-    }
-
-    .side-a, .side-c {
         position: absolute;
         width: var(--xLength);
         height: var(--yLength);
     }
 
+    .bottom {
+        background: var(--bottomColor);
+        transform: translateZ(1px); 
+    }
+
+    .side-a, .side-c {
+        position: absolute;
+        width: var(--xLength);
+        height: var(--zLength);
+    }
+
     .side-a {   
         background: var(--sideAColor);
-
+        transform-origin: bottom;
+        transform: rotateX(-90deg);
+        bottom: 0;
     }
 
     .side-b, .side-d {
@@ -85,33 +125,41 @@
 
     .side-b {
         background: var(--sideBColor);
-        transform: rotateY(-90deg);
         transform-origin: right;
+        transform: rotateY(90deg);
         right: 0;
     }
 
     .side-c {
         background: var(--sideCColor);
-        transform: translateZ(calc( -1 * var(--zLength) ) );
+        transform-origin: top;
+        transform: rotateX(90deg);
+        top: 0;
     }
+
     .side-d {
         background: var(--sideDColor);
-        transform: rotateY(90deg);
         transform-origin: left;
+        transform: rotateY(-90deg);
+        left: 0;
     }
+
     .top {
-        transform: translateZ(-100px) rotateX(90deg);
-        transform-origin: top;
+        transform: translateZ( var(--zLength));
         background: var(--topColor);
         transition: transform 1s;
         position: relative;
         transform-style: preserve-3d;
+        transform-origin: top;
+    }
+
+    .box:hover .top.ready {
+        transform: translateZ( var(--zLength)) rotateX(2deg);
     }
 
     .top.open {
-        transform: translateZ(-100px) rotateX(220deg);
+        transform: translateZ( var(--zLength)) rotateX(155deg) !important;
     }
-
 
     .top::before {
         content: '';
@@ -123,14 +171,15 @@
         background: var(--topColorB);
         transform: translateZ(-1px); /* Slight adjustment to create 3D effect */
     }
+
     .content {
         position: absolute;
+        display: none;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        transform: translateZ(-50px);
-        display: flex;
+        /* transformation in style tag */
         justify-content: center;
         align-items: center;
         font-size: 2rem;
@@ -138,4 +187,18 @@
         color: white;
         text-shadow: 0 0 10px black;
     }
+
+    .show {
+        display: flex;
+    }
+
+    .shadow {
+        position: absolute;
+        width: var(--xLength);
+        height: var(--yLength);
+        background: rgba(0,0,0,0.5);
+        filter: blur(10px);
+        top: 0;
+    }
+
 </style>
