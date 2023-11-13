@@ -37,6 +37,18 @@
     const playRound = (): void => {
         hasCurrentlyWon.set(play(gameState, hasAmulet));
         numberOfRounds--;
+        setTimeout(() => {
+            animateInRight = 'Out';
+        }, 2000);
+        setTimeout(() => {
+            animateInLeft = 'Out';
+        }, 2100);
+        setTimeout(() => {
+            animateInLeft = 'In';
+        }, 4000);
+        setTimeout(() => {
+            animateInRight = 'In';
+        }, 4100);
     };
 
     let score = 30;
@@ -88,15 +100,25 @@
         }
     }
 
-</script>
+    let animateInLeft: 'In' | 'Out' | 'None' = 'None';
+    let animateInRight: 'In' | 'Out' | 'None' = 'None';
 
-<div class="counter-holder">
-    <Counter count={numberOfRounds} text="Zbývající kola" />
-    <Counter count={score} text="Skóre" />
-</div>
+    setTimeout(() => {
+        animateInLeft = 'In';
+    }, 100);
+
+    setTimeout(() => {
+        animateInRight = 'In';
+    }, 400);
+
+</script>
 
 <div class="central-holder">
     <div class="perspective">
+        <div class="counter">
+            <Counter count={numberOfRounds} text="Zbývající kola" />
+            <Counter count={score} text="Skóre" />
+        </div>
         <div class="chest-postions">
             <Cuboid on:openTopEvent={playRound}
             xLength={250}
@@ -112,6 +134,7 @@
             xRotaionOfParent = {30}
             zRotation={15}
             hasCurrentlyWon={hasCurrentlyWon}
+            animateIn={animateInLeft}
             />
 
                 <Amulet 
@@ -133,17 +156,18 @@
             xRotaionOfParent = {30}
             zRotation={-10}
             hasCurrentlyWon={hasCurrentlyWon}
+            animateIn={animateInRight}
             />
         </div>
         <div class="amulet-info-holder" on:click={buyAmulet}>
             {#if hasAmulet}
-                Amulet je aktivní.
+                Amulet je aktivní
             {:else}
                 <div>
-                    Amulet není zakoupen.
+                    Amulet není zakoupen
                 </div>
                 <div>
-                    Kliknutím jej můžeš koupit za 30 bodů.
+                    Kliknutím jej můžeš koupit za 30 bodů
                 </div>
             {/if}
         </div>
@@ -175,8 +199,9 @@
     .perspective {
         transform: perspective(800px) rotateX(30deg);
         transform-style: preserve-3d;
-        font-family: 'Parisienne', cursive;
-        bottom: 0;
+        /* font-family: 'Parisienne', sans-serif; */
+        color: #483d41 !important;
+        bottom: 30px;
         position: absolute;
         width: 100%;
         height: 100%;
@@ -213,7 +238,8 @@ background-size: 700.00px 700.00px;
         height: 200%;
         bottom: 0;
         left: -50%;
-        opacity: 0.4;
+        opacity: 0.1;
+        z-index: -1;
         pointer-events: none;
         user-select: none;
     }
@@ -222,12 +248,21 @@ background-size: 700.00px 700.00px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 60px;
+        font-size: 40px;
         user-select: none;
     }
     .amulet-info-holder div:nth-child(2) {
-        font-size: 30px;
+        font-size: 20px;
     }
-
+    .counter {
+        margin-top: 50px;
+        text-align: center;
+        margin-left: auto;
+        justify-content: center;
+        display:flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
 
 </style>

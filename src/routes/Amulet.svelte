@@ -164,10 +164,11 @@
 
     path {
         transition: all 0.05s;
+        transition-delay: 0.15s;
     }
 
     g.outer path {
-        transition-delay: 0.1s;
+        transition-delay: 0.3s;
     }
 
     .main {
@@ -176,7 +177,7 @@
         cursor: pointer;
     }
 
-    .main:hover svg path {
+    .main:hover svg path, .moving-part.hover svg path {
         filter: drop-shadow(0 0 10px #e7eef3);
         fill: #e7eef3;
     }

@@ -18,32 +18,30 @@
     <div>{text}: </div>
 	<div class="counter-viewport">
 		<div class="counter-digits" style="transform: translate(0, {100 * offset}%)">
-			<strong class="hidden" aria-hidden="true">{Math.floor($displayed_count + 1)}</strong>
-			<strong>{Math.floor($displayed_count)}</strong>
+			<span class="hidden" aria-hidden="true">{Math.floor($displayed_count + 1)}</span>
+			<span>{Math.floor($displayed_count)}</span>
 		</div>
 	</div>
 </div>
 
 <style>
 	.counter {
+		font-size: 30px;
 		display: flex;
         align-items: center;
 		margin: 0;
-        text-transform: uppercase;
-        color: gray;
-        font-weight: bold;
+        color: #483d41;
 	}
 
 	.counter-viewport {
-		width: 3rem;
-		height: 1.25rem;
-        font-size: 1rem;
+		width: 60px;
+		height: 40px;
 		overflow: hidden;
 		text-align: center;
 		position: relative;
 	}
 
-	.counter-viewport strong {
+	.counter-viewport span {
 		position: absolute;
 		display: flex;
 		width: 100%;

@@ -17,6 +17,8 @@
 
     export let hasCurrentlyWon = writable(false);
 
+    export let animateIn : 'In' | 'Out' | 'None' = 'None';
+
     let xRotationCompensation = -1 * xRotaionOfParent;
     let zRotationCompensation = -1 * zRotaionOfParent - zRotation;
     import { createEventDispatcher } from 'svelte';
@@ -28,6 +30,7 @@
 
     let cssVarStyles = `--xLength:${xLength}px;--zLength:${zLength}px;--yLength:${yLength}px;--bottomColor:${bottomColor};--sideAColor:${sideAColor};--sideBColor:${sideBColor};--sideCColor:${sideCColor};--sideDColor:${sideDColor};--topColor:${topColor};--topColorB:${topColorB};`;
     cssVarStyles += `transform:rotateZ(${zRotation}deg);`;
+    cssVarStyles += `--xRotationCompensation:${xRotationCompensation}deg;--zRotationCompensation:${zRotationCompensation}deg;`;
 
     export let openTop = false;
 
@@ -70,14 +73,14 @@
 
 </script>
 
-<div class="box" style={cssVarStyles} on:click={triggerOpenTop}> 
+<div class="box" style={cssVarStyles} class:hide={animateIn !== 'In'}  on:click={triggerOpenTop}> 
     <div class="bottom"></div>
     <div class="side-a"></div>
     <div class="side-b"></div>
     <div class="side-c"></div>
     <div class="side-d"></div>
     <div class="top" class:open={openTop} class:ready={isReadyToOpen} bind:this={topElement}></div>
-    <div class="content" class:show={showContent} style="transform:translateZ({zLength / 2}px) rotateZ({zRotationCompensation}deg) rotateX({xRotationCompensation}deg)">
+    <div class="content" class:show={showContent}>
         <Coin />
     </div>
     <div class="shadow"></div>
@@ -85,6 +88,10 @@
 
 
 <style>
+    .box.hide {
+        transform: translateY(-1000px) !important;
+    }
+
     .box {
         position: relative;
         margin: 0 auto;
@@ -92,6 +99,7 @@
         width: var(--xLength);
         height: var(--yLength);
         cursor: pointer;
+        transition: transform 1s;
     }
     .bottom, .top {
         position: absolute;
@@ -199,6 +207,24 @@
         background: rgba(0,0,0,0.5);
         filter: blur(10px);
         top: 0;
+    }
+
+    .content {
+        transform: translateZ( calc(var(--zLength) / 2)) rotateZ(var(--zRotationCompensation)) rotateX(var(--xRotationCompensation));
+        animation: animateCoin 2s ease-out forwards;
+        animation-delay: 1s;
+    }
+
+    @keyframes animateCoin {
+        0% {
+            transform: translateZ( calc(var(--zLength) / 2)) rotateZ(var(--zRotationCompensation)) rotateX(var(--xRotationCompensation));
+        }
+        30% {
+            transform: translateZ( 300px) translateY( 10px) rotateZ(var(--zRotationCompensation)) rotateX(var(--xRotationCompensation));
+        }
+        100% {
+            transform: translateZ( 500px) translateY( 500px) rotateZ(var(--zRotationCompensation)) rotateX(var(--xRotationCompensation));
+        }
     }
 
 </style>

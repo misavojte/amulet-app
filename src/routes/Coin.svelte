@@ -1,5 +1,5 @@
 <div>
-    <img src="coin.png" width="70" height="70" alt="coin" class="rotate" />
+    <img src="coin.png" width="120" height="120" alt="coin" class="rotate" />
 </div>
 
 <style>
