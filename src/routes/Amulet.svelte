@@ -1,4 +1,5 @@
 <script lang="ts">
+
     export let length: number = 50;  
     export let bottomColor: string = '#896c89';
     export let sideAColor: string = '#b572b5';
@@ -15,12 +16,15 @@
     let zLength = length/10;
     let yLength = length;
 
+    //maybe UseAnimationIterationCount for animation
+
     let cssVarStyles = `--xLength:${xLength}px;--zLength:${zLength}px;--yLength:${yLength}px;--bottomColor:${bottomColor};--sideAColor:${sideAColor};--sideBColor:${sideBColor};--sideCColor:${sideCColor};--sideDColor:${sideDColor};--topColor:${topColor};`;
 
 </script>
 
-<div class="main" style={cssVarStyles}>
+<div class="main" style={cssVarStyles} on:click>
     <div class="moving-part" class:hover={hasAmulet}>
+    <div class="animating-part" class:animate={hasAmulet}>
         <div class="box">
             <div class="bottom"></div>
             <div class="side-a"></div>
@@ -62,6 +66,7 @@
                   </g>
               </svg>
         </div>
+    </div>
     </div>
     <div class="shadow">
         <div></div>
@@ -177,20 +182,33 @@
         cursor: pointer;
     }
 
-    .main:hover svg path, .moving-part.hover svg path {
+    svg {
+        pointer-events: none;
+    }
+
+    .moving-part.hover svg path, .moving-part:hover svg path {
         filter: drop-shadow(0 0 10px #e7eef3);
         fill: #e7eef3;
     }
 
     .moving-part {
         transition: 1s ease-in-out all;
+        transform: translateZ(0);
     }
 
-    .main:hover .moving-part, .moving-part.hover {
+    .moving-part.hover {
         transform: translateZ(35px);
-        animation: moving 1s ease-in-out infinite alternate;
-        animation-delay: 1s;
     }
+
+    .animating-part.animate {
+        animation: moving 2s ease-in-out;
+        animation-iteration-count: 0;
+    }
+
+    .animating-part.animate {
+        animation-iteration-count: infinite;
+    }
+
 
     .shadow {
         position: absolute;
@@ -203,10 +221,13 @@
 
     @keyframes moving {
         0% {
-            transform: translateZ(35px);
+            transform: translateZ(0px);
+        }
+        50% {
+            transform: translateZ(10px);
         }
         100% {
-            transform: translateZ(25px);
+            transform: translateZ(0px);
         }
     }
 </style>

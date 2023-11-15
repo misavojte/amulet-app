@@ -7,6 +7,7 @@
 	import {tick} from 'svelte';
     import Cuboid from './Cuboid.svelte';
 	import Amulet from './Amulet.svelte';
+    import AmuletInfoHolder from './AmuletInfoHolder.svelte';
 
     export let gameState: GameState;
 
@@ -37,12 +38,13 @@
     const playRound = (): void => {
         hasCurrentlyWon.set(play(gameState, hasAmulet));
         numberOfRounds--;
+        hasAmulet = false;
         setTimeout(() => {
             animateInRight = 'Out';
-        }, 2000);
+        }, 2200);
         setTimeout(() => {
             animateInLeft = 'Out';
-        }, 2100);
+        }, 2300);
         setTimeout(() => {
             animateInLeft = 'In';
         }, 4000);
@@ -93,9 +95,11 @@
 
     let confettiWrap: HTMLDivElement;
 
+    const AMULET_PRICE = 20;
+
     const buyAmulet = () => {
-        if (score >= 30) {
-            score -= 30;
+        if (score >= AMULET_PRICE) {
+            score -= AMULET_PRICE;
             hasAmulet = true;
         }
     }
@@ -137,7 +141,7 @@
             animateIn={animateInLeft}
             />
 
-                <Amulet 
+            <Amulet on:click={buyAmulet}
             length={200}
             hasAmulet={hasAmulet}
             />
@@ -159,18 +163,7 @@
             animateIn={animateInRight}
             />
         </div>
-        <div class="amulet-info-holder" on:click={buyAmulet}>
-            {#if hasAmulet}
-                Amulet je aktivní
-            {:else}
-                <div>
-                    Amulet není zakoupen
-                </div>
-                <div>
-                    Kliknutím jej můžeš koupit za 30 bodů
-                </div>
-            {/if}
-        </div>
+        <AmuletInfoHolder hasAmulet={hasAmulet} amuletPrice={AMULET_PRICE} score={score} />
         <div class="pattern"></div>
     
 </div>
@@ -242,17 +235,6 @@ background-size: 700.00px 700.00px;
         z-index: -1;
         pointer-events: none;
         user-select: none;
-    }
-    .amulet-info-holder {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-size: 40px;
-        user-select: none;
-    }
-    .amulet-info-holder div:nth-child(2) {
-        font-size: 20px;
     }
     .counter {
         margin-top: 50px;
