@@ -12,11 +12,23 @@
 
     export let hasAmulet: boolean = false;
 
+    let hoverExtra: boolean = false;
+
+    $ : hoverExtra = hasAmulet;
+
     let xLength = length;
     let zLength = length/10;
     let yLength = length;
 
-    //maybe UseAnimationIterationCount for animation
+    const evaluateTransition = (e: TransitionEvent) => {
+        if (e.target === e.currentTarget) {
+            if (hasAmulet) {
+                hoverExtra = !hoverExtra;
+                return;
+            }
+            hoverExtra = false;
+        }
+    }
 
     let cssVarStyles = `--xLength:${xLength}px;--zLength:${zLength}px;--yLength:${yLength}px;--bottomColor:${bottomColor};--sideAColor:${sideAColor};--sideBColor:${sideBColor};--sideCColor:${sideCColor};--sideDColor:${sideDColor};--topColor:${topColor};`;
 
@@ -24,7 +36,7 @@
 
 <div class="main" style={cssVarStyles} on:click>
     <div class="moving-part" class:hover={hasAmulet}>
-    <div class="animating-part" class:animate={hasAmulet}>
+    <div class="animating-part" class:animate={hoverExtra} on:transitionend={evaluateTransition}>
         <div class="box">
             <div class="bottom"></div>
             <div class="side-a"></div>
@@ -200,13 +212,12 @@
         transform: translateZ(35px);
     }
 
-    .animating-part.animate {
-        animation: moving 2s ease-in-out;
-        animation-iteration-count: 0;
+    .animating-part {
+        transition: transform 1s ease-in-out;
     }
 
     .animating-part.animate {
-        animation-iteration-count: infinite;
+        transform: translateZ(10px);
     }
 
 

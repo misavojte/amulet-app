@@ -17,6 +17,15 @@
 
     const hasCurrentlyWon = writable(false);
 
+    const gameObject = {
+        hasAmulet: false,
+        numberOfRounds: 5,
+        hasCurrentlyWon: false,
+        blockInteraction: false,
+        scenario: gameState,
+        gameStage: 'Game'
+    };
+
     const playWithAmulet = (state: GameState): (() => boolean) => {
         switch (state) {
             case 'AlwaysWin':
@@ -36,6 +45,11 @@
     };
 
     const playRound = (): void => {
+        if (numberOfRounds === 1) {
+            playLastRound();
+            return;
+        }
+        gameObject.blockInteraction = true;
         hasCurrentlyWon.set(play(gameState, hasAmulet));
         numberOfRounds--;
         hasAmulet = false;
@@ -50,8 +64,17 @@
         }, 4000);
         setTimeout(() => {
             animateInRight = 'In';
+            gameObject.blockInteraction = false;
         }, 4100);
     };
+
+    const playLastRound = () => {
+        gameObject.blockInteraction = true;
+        hasCurrentlyWon.set(play(gameState, hasAmulet));
+        setTimeout(() => {
+            alert(`Konec hry. Tvoje skóre je ${score}.`)
+        }, 800);
+    }
 
     let score = 30;
 
@@ -71,14 +94,6 @@
                 hasCurrentlyWon.set(false);
             }, 500);
         } 
-    }
-
-    $ : {
-        if (numberOfRounds === 0) {
-
-            numberOfRounds = 5;
-            score = 0;
-        }
     }
 
     const makeLeftConfetti = async () => {
@@ -139,6 +154,7 @@
             zRotation={15}
             hasCurrentlyWon={hasCurrentlyWon}
             animateIn={animateInLeft}
+            blockInteraction={gameObject.blockInteraction}
             />
 
             <Amulet on:click={buyAmulet}
@@ -161,6 +177,7 @@
             zRotation={-10}
             hasCurrentlyWon={hasCurrentlyWon}
             animateIn={animateInRight}
+            blockInteraction={gameObject.blockInteraction}
             />
         </div>
         <AmuletInfoHolder hasAmulet={hasAmulet} amuletPrice={AMULET_PRICE} score={score} />

@@ -36,13 +36,14 @@
 
 
 <style>
-        .amulet-info-holder {
+    .amulet-info-holder {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         font-size: 40px;
         user-select: none;
+        text-align: center;
     }
     .amulet-info-holder > div > div:nth-child(2) {
         font-size: 20px;

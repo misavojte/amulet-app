@@ -33,56 +33,44 @@
     cssVarStyles += `--xRotationCompensation:${xRotationCompensation}deg;--zRotationCompensation:${zRotationCompensation}deg;`;
 
     export let openTop = false;
+    export let blockInteraction = false;
 
     let showContent = false;
-    let blockInteraction = false;
-    let isReadyToOpen = true;
 
+    const OPEN_TOP_TRANSITION_DURATION = 800;
+
+    $ : if (animateIn === 'Out') openTop = false;
+    $ : if (animateIn === 'In') showContent = false;
 
     const triggerOpenTop = async () => {
         if (blockInteraction) {
             return;
         }
-        blockInteraction = true;
-        if (!openTop) {
-            dispatch('openTopEvent');
-            openTop = !openTop;
-            isReadyToOpen = false;
-            await tick();
-            if ($hasCurrentlyWon.valueOf()) {
-                showContent = true;
-            }
-            const onTransitionEnd = () => {
-                blockInteraction = false;
-                topElement.removeEventListener('transitionend', onTransitionEnd);
-            };
-            topElement.addEventListener('transitionend', onTransitionEnd);
-        } else {
-            blockInteraction = true;
-            openTop = !openTop;
-            const onTransitionEnd = () => {
-                showContent = false;
-                blockInteraction = false;
-                isReadyToOpen = true;
-                topElement.removeEventListener('transitionend', onTransitionEnd);
-            };
-            topElement.addEventListener('transitionend', onTransitionEnd);
+        if (openTop) {
+            return;
+        }
+        dispatch('openTopEvent'); // will block interaction until next round
+        openTop = !openTop;
+        await tick();
+        if ($hasCurrentlyWon.valueOf()) {
+            showContent = true;
         }
     }
-    let topElement: HTMLDivElement;
 
 </script>
 
-<div class="box" style={cssVarStyles} class:hide={animateIn !== 'In'}  on:click={triggerOpenTop}> 
+<div class="box" style={cssVarStyles} class:hide={animateIn !== 'In'} class:block={blockInteraction}  on:click={triggerOpenTop}> 
     <div class="bottom"></div>
     <div class="side-a"></div>
     <div class="side-b"></div>
     <div class="side-c"></div>
     <div class="side-d"></div>
-    <div class="top" class:open={openTop} class:ready={isReadyToOpen} bind:this={topElement}></div>
-    <div class="content" class:show={showContent}>
+    <div class="top" class:open={openTop} style:transition="transform ease-out {OPEN_TOP_TRANSITION_DURATION}ms"></div>
+    {#if showContent}
+    <div class="content">
         <Coin />
     </div>
+    {/if}
     <div class="shadow"></div>
 </div>
 
@@ -101,6 +89,11 @@
         cursor: pointer;
         transition: transform 1s;
     }
+
+    .box.block {
+        cursor: default;
+    }
+
     .bottom, .top {
         position: absolute;
         width: var(--xLength);
@@ -155,13 +148,12 @@
     .top {
         transform: translateZ( var(--zLength));
         background: var(--topColor);
-        transition: transform 1s;
         position: relative;
         transform-style: preserve-3d;
         transform-origin: top;
     }
 
-    .box:hover .top.ready {
+    .box:not(.block):hover .top {
         transform: translateZ( var(--zLength)) rotateX(2deg);
     }
 
@@ -182,7 +174,7 @@
 
     .content {
         position: absolute;
-        display: none;
+        display: flex;
         top: 0;
         left: 0;
         width: 100%;
@@ -196,10 +188,6 @@
         text-shadow: 0 0 10px black;
     }
 
-    .show {
-        display: flex;
-    }
-
     .shadow {
         position: absolute;
         width: var(--xLength);
@@ -210,14 +198,14 @@
     }
 
     .content {
-        transform: translateZ( calc(var(--zLength) / 2)) rotateZ(var(--zRotationCompensation)) rotateX(var(--xRotationCompensation));
+        transform: translateZ( calc(var(--zLength) * 0.75)) rotateZ(var(--zRotationCompensation)) rotateX(var(--xRotationCompensation));
         animation: animateCoin 2s ease-out forwards;
         animation-delay: 1s;
     }
 
     @keyframes animateCoin {
         0% {
-            transform: translateZ( calc(var(--zLength) / 2)) rotateZ(var(--zRotationCompensation)) rotateX(var(--xRotationCompensation));
+            transform: translateZ( calc(var(--zLength) * 0.75)) rotateZ(var(--zRotationCompensation)) rotateX(var(--xRotationCompensation));
         }
         30% {
             transform: translateZ( 300px) translateY( 10px) rotateZ(var(--zRotationCompensation)) rotateX(var(--xRotationCompensation));
