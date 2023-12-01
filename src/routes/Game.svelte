@@ -93,16 +93,6 @@
             }, 500);
         }
         
-        if (currentGameState.gameStage === 'Game' && animateInLeft === 'In') {
-            animateInLeft = 'None';
-            animateInRight = 'None';
-            setTimeout(() => {
-                animateInLeft = 'In';
-            }, 1000);
-            setTimeout(() => {
-                animateInRight = 'In';
-            }, 1200);
-        }
     }
 
     const makeLeftConfetti = async () => {
