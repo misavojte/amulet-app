@@ -1,17 +1,36 @@
 <script lang="ts">
 	import Game from "./Game.svelte";
-  
-    type GameState = 'AlwaysWin' | 'AlwaysLose' | 'Random';
+    import { resetGameState, gameState } from "./stores/GameState";
+    import type { GameState } from "./stores/GameState";
+    import { gameConfigStore } from "./stores/GameConfigStore";
 
-    const getGameState = (forcedState: GameState | null = null): GameState => {
-        if (forcedState) return forcedState;
-        // todo: get from server
-        return 'Random';
-    }
+    const gameConfig = {
+        numberOfRounds: 2,
+        startScore: 30,
+        scenario: 'Random',
+        priceOfAmulet: 20,
+    };
 
-    
+    let currentGameState : GameState | null;
+    gameState.subscribe(value => {
+        currentGameState = value;
+    });
+
+    const load = async () => {
+        gameConfigStore.set(gameConfig);
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        resetGameState();
+    };
+
+    load();
 
 </script>
 
-<Game gameState={getGameState()} />
+{#if currentGameState === null}
+    <div>
+        Loading...
+    </div>
+{:else}
+<Game />
+{/if}
 

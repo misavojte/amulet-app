@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { gameState } from './stores/GameState';
+
     export let xLength: number = 200;
     export let zLength: number = 100;
     export let yLength: number = 50;  
@@ -15,14 +17,11 @@
     export let xRotaionOfParent: number = 0;
     export let zRotaionOfParent: number = 0;
 
-    export let hasCurrentlyWon = writable(false);
-
     export let animateIn : 'In' | 'Out' | 'None' = 'None';
 
     let xRotationCompensation = -1 * xRotaionOfParent;
     let zRotationCompensation = -1 * zRotaionOfParent - zRotation;
     import { createEventDispatcher } from 'svelte';
-	import { writable } from 'svelte/store';
     import { tick } from 'svelte';
 	import Coin from './Coin.svelte';
 
@@ -33,9 +32,17 @@
     cssVarStyles += `--xRotationCompensation:${xRotationCompensation}deg;--zRotationCompensation:${zRotationCompensation}deg;`;
 
     export let openTop = false;
-    export let blockInteraction = false;
+
+    let blockInteraction = false;
+    let hasCurrentlyWon = false;
 
     let showContent = false;
+
+    gameState.subscribe(value => {
+        if (!value) throw new Error('Game state is not set');
+        blockInteraction = value.blockInteraction;
+        hasCurrentlyWon = value.hasCurrentlyWon;
+    });
 
     const OPEN_TOP_TRANSITION_DURATION = 800;
 
@@ -52,7 +59,7 @@
         dispatch('openTopEvent'); // will block interaction until next round
         openTop = !openTop;
         await tick();
-        if ($hasCurrentlyWon.valueOf()) {
+        if (hasCurrentlyWon) {
             showContent = true;
         }
     }

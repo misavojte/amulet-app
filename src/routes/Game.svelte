@@ -1,57 +1,56 @@
 <script lang="ts">
 
-    import { writable } from 'svelte/store';
-    import type { GameState } from '$lib';
 	import Counter from './Counter.svelte';
 	import { ConfettiCannon } from 'svelte-canvas-confetti';
 	import {tick} from 'svelte';
     import Cuboid from './Cuboid.svelte';
 	import Amulet from './Amulet.svelte';
     import AmuletInfoHolder from './AmuletInfoHolder.svelte';
+    import Start from './Start.svelte';
+    import End from './End.svelte';
 
-    export let gameState: GameState;
+    import type { GameState } from './stores/GameState';
+    import { gameState, updateGameState } from './stores/GameState';
 
     let hasAmulet = false;
+    let currentGameState : GameState;
 
-    let numberOfRounds = 5;
+    gameState.subscribe(value => {
+        if (!value) throw new Error('Game state is not set');
+        currentGameState = value;
+    });
 
-    const hasCurrentlyWon = writable(false);
 
-    const gameObject = {
-        hasAmulet: false,
-        numberOfRounds: 5,
-        hasCurrentlyWon: false,
-        blockInteraction: false,
-        scenario: gameState,
-        gameStage: 'Game'
-    };
-
-    const playWithAmulet = (state: GameState): (() => boolean) => {
+    const playWithAmulet = (state: string): (() => boolean) => {
         switch (state) {
             case 'AlwaysWin':
                 return () => true;
             case 'AlwaysLose':
                 return () => false;
-            case 'Random':
+            default:
                 return () => Math.random() < 0.5;
         }
     };
 
     const playWithoutAmulet = () => Math.random() < 0.5;
 
-    const play = (state: GameState, hasAmulet: boolean): boolean => {
+    const play = (state: string, hasAmulet: boolean): boolean => {
         if (hasAmulet) return playWithAmulet(state)();
         return playWithoutAmulet();
     };
 
     const playRound = (): void => {
-        if (numberOfRounds === 1) {
+        if (currentGameState.numberOfRounds === 1) {
             playLastRound();
             return;
         }
-        gameObject.blockInteraction = true;
-        hasCurrentlyWon.set(play(gameState, hasAmulet));
-        numberOfRounds--;
+        const hasWon = play(currentGameState.scenario, hasAmulet);
+        updateGameState({ 
+            hasCurrentlyWon: hasWon,
+            blockInteraction: true,
+            score: currentGameState.score + (hasWon ? SCORE_ON_WIN : 0),
+            numberOfRounds: currentGameState.numberOfRounds - 1 
+        });
         hasAmulet = false;
         setTimeout(() => {
             animateInRight = 'Out';
@@ -64,19 +63,19 @@
         }, 4000);
         setTimeout(() => {
             animateInRight = 'In';
-            gameObject.blockInteraction = false;
+            updateGameState({ blockInteraction: false });
         }, 4100);
     };
 
     const playLastRound = () => {
-        gameObject.blockInteraction = true;
-        hasCurrentlyWon.set(play(gameState, hasAmulet));
-        setTimeout(() => {
-            alert(`Konec hry. Tvoje skóre je ${score}.`)
-        }, 800);
+        const hasWon = play(currentGameState.scenario, hasAmulet);
+        updateGameState({ 
+            hasCurrentlyWon: hasWon,
+            blockInteraction: true,
+            score: currentGameState.score + (hasWon ? SCORE_ON_WIN : 0),
+            gameStage: 'End'
+        });
     }
-
-    let score = 30;
 
     const SCORE_ON_WIN = 30;
 
@@ -86,14 +85,24 @@
 
     $: {
 
-        if ($hasCurrentlyWon) {
-            score += SCORE_ON_WIN;
+        if (currentGameState.hasCurrentlyWon) {
             makeLeftConfetti();
             setTimeout(makeRightConfetti, 1000);
             setTimeout( () => {
-                hasCurrentlyWon.set(false);
+                updateGameState({ hasCurrentlyWon: false });
             }, 500);
-        } 
+        }
+        
+        if (currentGameState.gameStage === 'Game' && animateInLeft === 'In') {
+            animateInLeft = 'None';
+            animateInRight = 'None';
+            setTimeout(() => {
+                animateInLeft = 'In';
+            }, 1000);
+            setTimeout(() => {
+                animateInRight = 'In';
+            }, 1200);
+        }
     }
 
     const makeLeftConfetti = async () => {
@@ -113,8 +122,8 @@
     const AMULET_PRICE = 20;
 
     const buyAmulet = () => {
-        if (score >= AMULET_PRICE) {
-            score -= AMULET_PRICE;
+        if (currentGameState.score >= AMULET_PRICE) {
+            currentGameState.score -= AMULET_PRICE;
             hasAmulet = true;
         }
     }
@@ -133,10 +142,17 @@
 </script>
 
 <div class="central-holder">
+    {#if currentGameState.gameStage === 'Start'}
+        <Start />
+    {/if}
+    {#if currentGameState.gameStage === 'End'}
+        <End />
+    {/if}
+
     <div class="perspective">
         <div class="counter">
-            <Counter count={numberOfRounds} text="Zbývající kola" />
-            <Counter count={score} text="Skóre" />
+            <Counter count={currentGameState.numberOfRounds} text="Zbývající kola" />
+            <Counter count={currentGameState.score} text="Skóre" />
         </div>
         <div class="chest-postions">
             <Cuboid on:openTopEvent={playRound}
@@ -152,9 +168,7 @@
             topColorB="#dbaa54"
             xRotaionOfParent = {30}
             zRotation={15}
-            hasCurrentlyWon={hasCurrentlyWon}
             animateIn={animateInLeft}
-            blockInteraction={gameObject.blockInteraction}
             />
 
             <Amulet on:click={buyAmulet}
@@ -175,12 +189,10 @@
             topColorB="#edad3c"
             xRotaionOfParent = {30}
             zRotation={-10}
-            hasCurrentlyWon={hasCurrentlyWon}
             animateIn={animateInRight}
-            blockInteraction={gameObject.blockInteraction}
             />
         </div>
-        <AmuletInfoHolder hasAmulet={hasAmulet} amuletPrice={AMULET_PRICE} score={score} />
+        <AmuletInfoHolder hasAmulet={hasAmulet} amuletPrice={AMULET_PRICE} score={currentGameState.score} />
         <div class="pattern"></div>
     
 </div>
@@ -194,6 +206,10 @@
         <ConfettiCannon origin={[confettiWrap.clientWidth, confettiWrap.clientHeight]} force={30} particleCount={100} />
     {/if}
 </div>
+
+
+
+
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
@@ -223,12 +239,6 @@
         padding: 6rem;  
         align-items: center;
         transform-style: preserve-3d;
-    }
-    .counter-holder {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 2rem;
-        padding: 2rem;
     }
     .confetti-wrap {
         position: absolute;
