@@ -1,5 +1,5 @@
 <script lang="ts">
-
+    import { gameState } from './stores/GameState';
     export let length: number = 50;  
     export let bottomColor: string = '#896c89';
     export let sideAColor: string = '#b572b5';
@@ -10,11 +10,15 @@
     export let xRotation: number = 30;
     export let zRotation: number = 0;
 
-    export let hasAmulet: boolean = false;
-
+    let hasAmulet: boolean;
     let hoverExtra: boolean = false;
 
     $ : hoverExtra = hasAmulet;
+
+    gameState.subscribe(value => {
+        if (!value) throw new Error('Game state is not set');
+        hasAmulet = value.hasAmulet;
+    });
 
     let xLength = length;
     let zLength = length/10;

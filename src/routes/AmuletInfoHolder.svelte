@@ -1,9 +1,15 @@
 <script lang="ts">
     import { fade } from 'svelte/transition';
+    import { gameState } from './stores/GameState';
 
-    export let hasAmulet = false;
+    let hasAmulet: boolean;
     export let score = 0;
     export let amuletPrice = 0;
+
+    gameState.subscribe(value => {
+        if (!value) throw new Error('Game state is not set');
+        hasAmulet = value.hasAmulet;
+    });
 
     let canBuyAmulet = false;
 

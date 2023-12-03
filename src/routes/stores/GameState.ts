@@ -10,8 +10,11 @@ export interface GameState {
     scenario: string;
     gameStage: string;
     score: number;
-
+    numberOfRepeats: number;
+    userName?: string;
 }
+
+let numberOfRepeats = -1;
 
 export const gameState = writable<GameState|null>(null);
 
@@ -20,6 +23,7 @@ export const resetGameState = () => {
     if (config === null) {
         throw new Error('Game config not loaded');
     }
+    numberOfRepeats++;
     gameState.set({
         hasAmulet: false,
         numberOfRounds: config.numberOfRounds,
@@ -28,12 +32,12 @@ export const resetGameState = () => {
         scenario: config.scenario,
         gameStage: 'Start',
         score: config.startScore,
+        numberOfRepeats: numberOfRepeats,
     });
 }
 
 export const repeatGameState = () => {
     const state = get(gameState);
-    console.log(state);
     if (state === null) {
         throw new Error('Game state not loaded');
     }
@@ -41,16 +45,18 @@ export const repeatGameState = () => {
     if (config === null) {
         throw new Error('Game config not loaded');
     }
+    numberOfRepeats++;
     gameState.set({
         hasAmulet: false,
         numberOfRounds: config.numberOfRounds,
         hasCurrentlyWon: false,
-        blockInteraction: false,
+        blockInteraction: true,
         scenario: config.scenario,
         gameStage: 'Intermezzo',
         score: config.startScore,
+        numberOfRepeats: numberOfRepeats,
+        userName: state.userName,
     });
-    console.log(state);
 }
 
 export const updateGameState = (updates: Partial<GameState>) => {

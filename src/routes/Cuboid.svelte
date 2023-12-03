@@ -11,13 +11,14 @@
     export let sideDColor: string = '#0ff';
     export let topColor: string = '#f0f';
     export let topColorB: string = '#0ff';
+    export let inDelay: number = 0;
+    export let id: number = 0;
+    let delay = inDelay;
 
     export let zRotation: number = 0;
 
     export let xRotaionOfParent: number = 0;
     export let zRotaionOfParent: number = 0;
-
-    export let animateIn : 'In' | 'Out' | 'None' = 'None';
 
     let xRotationCompensation = -1 * xRotaionOfParent;
     let zRotationCompensation = -1 * zRotaionOfParent - zRotation;
@@ -27,9 +28,19 @@
 
 	const dispatch = createEventDispatcher();
 
+    $ : if (gameStage === 'Intermezzo') {
+        openTop = false;
+        delay = 0;
+    }
+    $ : if (gameStage === 'Game') {
+        showContent = false;
+        delay = inDelay
+    }
+
     let cssVarStyles = `--xLength:${xLength}px;--zLength:${zLength}px;--yLength:${yLength}px;--bottomColor:${bottomColor};--sideAColor:${sideAColor};--sideBColor:${sideBColor};--sideCColor:${sideCColor};--sideDColor:${sideDColor};--topColor:${topColor};--topColorB:${topColorB};`;
     cssVarStyles += `transform:rotateZ(${zRotation}deg);`;
     cssVarStyles += `--xRotationCompensation:${xRotationCompensation}deg;--zRotationCompensation:${zRotationCompensation}deg;`;
+    cssVarStyles += `transition-delay:${delay}ms;`;
 
     export let openTop = false;
 
@@ -38,16 +49,17 @@
 
     let showContent = false;
 
+    let gameStage: string;
+
+
     gameState.subscribe(value => {
         if (!value) throw new Error('Game state is not set');
         blockInteraction = value.blockInteraction;
         hasCurrentlyWon = value.hasCurrentlyWon;
+        gameStage = value.gameStage;
     });
 
     const OPEN_TOP_TRANSITION_DURATION = 800;
-
-    $ : if (animateIn === 'Out') openTop = false;
-    $ : if (animateIn === 'In') showContent = false;
 
     const triggerOpenTop = async () => {
         if (blockInteraction) {
@@ -56,7 +68,7 @@
         if (openTop) {
             return;
         }
-        dispatch('openTopEvent'); // will block interaction until next round
+        dispatch('openTopEvent', { id } ); // will block interaction until next round
         openTop = !openTop;
         await tick();
         if (hasCurrentlyWon) {
@@ -66,7 +78,7 @@
 
 </script>
 
-<div class="box" style={cssVarStyles} class:hide={animateIn !== 'In'} class:block={blockInteraction}  on:click={triggerOpenTop}> 
+<div class="box" style="{cssVarStyles};transition-delay:{delay}ms" class:hide={gameStage === 'Intermezzo'} class:block={blockInteraction}  on:click={triggerOpenTop}> 
     <div class="bottom"></div>
     <div class="side-a"></div>
     <div class="side-b"></div>
@@ -116,6 +128,7 @@
         position: absolute;
         width: var(--xLength);
         height: var(--zLength);
+        z-index: 1;
     }
 
     .side-a {   
@@ -129,6 +142,7 @@
         position: absolute;
         width: var(--zLength);
         height: var(--yLength);
+        z-index: 1;
     }
 
     .side-b {

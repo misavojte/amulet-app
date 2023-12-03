@@ -44,6 +44,7 @@
         border-radius: 25px;
         width: 480px;
         height: 480px;
+        gap: 20px;
     }
 
     .rounded.dark {

@@ -2,23 +2,67 @@
 
 	import Counter from './Counter.svelte';
 	import { ConfettiCannon } from 'svelte-canvas-confetti';
-	import {tick} from 'svelte';
+	import { tick } from 'svelte';
     import Cuboid from './Cuboid.svelte';
 	import Amulet from './Amulet.svelte';
     import AmuletInfoHolder from './AmuletInfoHolder.svelte';
     import Start from './Start.svelte';
     import End from './End.svelte';
+    import { get } from 'svelte/store';
+
+    import type { DbData } from '$lib';
 
     import type { GameState } from './stores/GameState';
     import { gameState, updateGameState } from './stores/GameState';
+	import { gameConfigStore } from './stores/GameConfigStore';
+	import { writeRoundData } from '../firebase';
 
-    let hasAmulet = false;
+    export let userId: string;
     let currentGameState : GameState;
 
     gameState.subscribe(value => {
         if (!value) throw new Error('Game state is not set');
         currentGameState = value;
     });
+
+    const gameConfig = get(gameConfigStore);
+    if (!gameConfig) throw new Error('Game state is not set');
+
+    let time = 0;
+
+    $: {
+        if (currentGameState.gameStage === 'Intermezzo') {
+            console.log('intermezzo');
+            setTimeout(() => {
+                updateGameState({
+                    gameStage: 'Game',
+                    blockInteraction: false
+                });
+            }, 1100);
+        }
+        if (currentGameState.gameStage === 'Game') {
+            time = Date.now();
+        }
+    }
+
+    const saveRoundToDb = (hasWon: boolean, newScore: number, boxId: number, boxClickTime: number, roundStartTime: number) => {
+        const timeDiff = roundStartTime - boxClickTime;
+        const round = gameConfig.numberOfRounds - currentGameState.numberOfRounds;
+        const repeat = currentGameState.numberOfRepeats;
+        const dbData: DbData = {
+            userId: userId,
+            timestamp: boxClickTime,
+            timediff: timeDiff,
+            round: round,
+            repeat: repeat,
+            scenario: currentGameState.scenario,
+            score: newScore,
+            isAmulet: currentGameState.hasAmulet,
+            isWin: hasWon,
+            boxId: boxId
+        };
+        writeRoundData(dbData);
+    }
 
 
     const playWithAmulet = (state: string): (() => boolean) => {
@@ -39,45 +83,32 @@
         return playWithoutAmulet();
     };
 
-    const playRound = (): void => {
+    const playRound = (e: CustomEvent): void => {
+        const hasWon = play(currentGameState.scenario, currentGameState.hasAmulet);
+        const newScore = currentGameState.score + (hasWon ? gameConfig.scoreOnWin : 0);
+        saveRoundToDb(hasWon, newScore, e.detail.id, Date.now(), time);
         if (currentGameState.numberOfRounds === 1) {
-            playLastRound();
+            updateGameState({ 
+                hasCurrentlyWon: hasWon,
+                blockInteraction: true,
+                score: newScore,
+                gameStage: 'End',
+                hasAmulet: false
+            });
             return;
         }
-        const hasWon = play(currentGameState.scenario, hasAmulet);
         updateGameState({ 
             hasCurrentlyWon: hasWon,
             blockInteraction: true,
-            score: currentGameState.score + (hasWon ? SCORE_ON_WIN : 0),
-            numberOfRounds: currentGameState.numberOfRounds - 1 
+            score: newScore,
+            numberOfRounds: currentGameState.numberOfRounds - 1,
+            hasAmulet: false
         });
-        hasAmulet = false;
+        const timer = hasWon ? 2200 : 1200;
         setTimeout(() => {
-            animateInRight = 'Out';
-        }, 2200);
-        setTimeout(() => {
-            animateInLeft = 'Out';
-        }, 2300);
-        setTimeout(() => {
-            animateInLeft = 'In';
-        }, 4000);
-        setTimeout(() => {
-            animateInRight = 'In';
-            updateGameState({ blockInteraction: false });
-        }, 4100);
-    };
-
-    const playLastRound = () => {
-        const hasWon = play(currentGameState.scenario, hasAmulet);
-        updateGameState({ 
-            hasCurrentlyWon: hasWon,
-            blockInteraction: true,
-            score: currentGameState.score + (hasWon ? SCORE_ON_WIN : 0),
-            gameStage: 'End'
-        });
+            updateGameState({ gameStage: 'Intermezzo' });
+        }, timer);
     }
-
-    const SCORE_ON_WIN = 30;
 
     let triggerLeftConfetti = false;
     let triggerRightConfetti = false;
@@ -112,22 +143,12 @@
     const AMULET_PRICE = 20;
 
     const buyAmulet = () => {
+        if (currentGameState.hasAmulet) return;
         if (currentGameState.score >= AMULET_PRICE) {
             currentGameState.score -= AMULET_PRICE;
-            hasAmulet = true;
+            updateGameState({ hasAmulet: true });
         }
     }
-
-    let animateInLeft: 'In' | 'Out' | 'None' = 'None';
-    let animateInRight: 'In' | 'Out' | 'None' = 'None';
-
-    setTimeout(() => {
-        animateInLeft = 'In';
-    }, 100);
-
-    setTimeout(() => {
-        animateInRight = 'In';
-    }, 400);
 
 </script>
 
@@ -136,7 +157,7 @@
         <Start />
     {/if}
     {#if currentGameState.gameStage === 'End'}
-        <End />
+        <End userId={userId} userName={currentGameState.userName} score={currentGameState.score} />
     {/if}
 
     <div class="perspective">
@@ -158,12 +179,11 @@
             topColorB="#dbaa54"
             xRotaionOfParent = {30}
             zRotation={15}
-            animateIn={animateInLeft}
+            id={1}
             />
 
             <Amulet on:click={buyAmulet}
             length={200}
-            hasAmulet={hasAmulet}
             />
     
             <Cuboid on:openTopEvent={playRound}
@@ -179,10 +199,11 @@
             topColorB="#edad3c"
             xRotaionOfParent = {30}
             zRotation={-10}
-            animateIn={animateInRight}
+            inDelay={100}
+            id={2}
             />
         </div>
-        <AmuletInfoHolder hasAmulet={hasAmulet} amuletPrice={AMULET_PRICE} score={currentGameState.score} />
+        <AmuletInfoHolder amuletPrice={AMULET_PRICE} score={currentGameState.score} />
         <div class="pattern"></div>
     
 </div>

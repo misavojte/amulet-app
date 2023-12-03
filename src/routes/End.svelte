@@ -1,10 +1,11 @@
 <script lang="ts">
     import RoundedWrapper from './RoundedWrapper.svelte';
-    import { gameState, repeatGameState } from './stores/GameState';
-    import { get } from 'svelte/store';
-    const gameStateValue = get(gameState);
-    if (!gameStateValue) throw new Error('Game state is not set');
-    const finalScore = gameStateValue.score;
+    import { repeatGameState } from './stores/GameState';
+    import Leaderboard from './Leaderboard.svelte';
+    
+    export let userName: string | undefined;
+    export let score: number;
+    export let userId: string;
 </script>
 
 <RoundedWrapper>
@@ -12,12 +13,9 @@
         Konec hry
     </h1>
     <div class="inner">
-        <p>
-            Vaše skóre je: {finalScore}
-        </p>
-        <div class="score-comparison-table">
-
-        </div>
+        {#if userName}
+        <Leaderboard userName={userName} score={score} userId={userId} />
+        {/if}
         <button on:click={() => repeatGameState()}>
             Znovu hrát
         </button>
@@ -25,6 +23,10 @@
 </RoundedWrapper>
 
 <style>
+    h1 {
+        margin-bottom: 0;
+        font-size:25px;
+    }
     .inner {
         display: flex;
         flex-direction: column;
@@ -32,5 +34,21 @@
         align-items: center;
         gap: 12px;
         height: 100%;
+        width: 100%;
+    }
+    p {
+        margin-top: 0;
+    }
+    button {
+        background: #efeeed;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        border: 1px solid;
+        cursor: pointer;
+        margin-bottom: 15px;
+    }
+    button:hover {
+        background: #d0cecd;
     }
 </style>

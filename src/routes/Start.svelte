@@ -4,8 +4,13 @@
 
     let screenTab = 0;
 
+    let name = '';
+
     const startGame = () => {
-        updateGameState({ gameStage: 'Game' });
+        updateGameState({ 
+            gameStage: 'Game',
+            userName: name
+        });
     }
 </script>
 
@@ -31,7 +36,7 @@
                 Hra má 5 kol.
             </li>
             <li>
-                Pro každé kolo lze zakooupit amulet, který může zvýšit vaše šance na výhru.
+                Pro každé kolo lze zakoupit amulet, který může zvýšit vaše šance na výhru.
             </li>
             <li>
                 Amulet stojí 20 bodů.
@@ -48,7 +53,7 @@
         <form class="inner" on:submit|preventDefault={startGame}>
             <label>
                 Zadejte své jméno:
-                <input type="text" name="name" required />
+                <input type="text" name="name" required bind:value={name} />
             </label>
             <input type="submit" value="Začít hru" />
         </form>
@@ -60,16 +65,20 @@
 </RoundedWrapper>
 
 <style>
+    h1 {
+        margin-bottom: 0;
+        font-size:25px;
+    }
     .tabIndicator {
         display: flex;
         justify-content: center;
+        gap: 4px;
     }
     .tabIndicatorItem {
         width: 10px;
         height: 10px;
         border-radius: 50%;
         background: none;
-        margin: 10px;
         border: 1px solid #000;
     }
     .tabIndicatorItem.active {
@@ -81,12 +90,30 @@
         justify-content: space-between;
         align-items: center;
         gap: 12px;
+        height: 100%;
     }
     label {
         display: flex;
         flex-direction: column;
         gap: 6px;
         text-align: center;
+    }
+    button, input[type="submit"] {
+        background: #efeeed;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        border: 1px solid;
+        cursor: pointer;
+    }
+    button:hover, input[type="submit"]:hover {
+        background: #d0cecd;
+    }
+    ul {
+        line-height: 1.25;
+    }
+    li {
+        margin-bottom: 6px;
     }
 
 </style>
