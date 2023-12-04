@@ -1,7 +1,8 @@
 <script lang="ts">
     import RoundedWrapper from './RoundedWrapper.svelte';
-    import { repeatGameState } from './stores/GameState';
+    import { repeatGameState } from '../stores/GameState';
     import Leaderboard from './Leaderboard.svelte';
+    import { _ } from 'svelte-i18n';
     
     export let userName: string | undefined;
     export let score: number;
@@ -10,14 +11,14 @@
 
 <RoundedWrapper>
     <h1>
-        Konec hry
+        {$_('end.title')}
     </h1>
     <div class="inner">
         {#if userName}
         <Leaderboard userName={userName} score={score} userId={userId} />
         {/if}
         <button on:click={() => repeatGameState()}>
-            Znovu hrát
+            {$_('end.repeat')}
         </button>
     </div>
 </RoundedWrapper>
@@ -35,9 +36,6 @@
         gap: 12px;
         height: 100%;
         width: 100%;
-    }
-    p {
-        margin-top: 0;
     }
     button {
         background: #efeeed;

@@ -1,10 +1,16 @@
 <script>
     import RoundedWrapper from "./RoundedWrapper.svelte";
-    import { updateGameState } from "./stores/GameState";
+    import { updateGameState } from "../stores/GameState";
+    import { _ } from 'svelte-i18n';
+    import { get } from "svelte/store";
+    import { gameConfigStore } from "../stores/GameConfigStore";
 
     let screenTab = 0;
 
     let name = '';
+
+    const config = get(gameConfigStore);
+    if (!config) throw new Error('Game state is not set');
 
     const startGame = () => {
         updateGameState({ 
@@ -12,50 +18,52 @@
             userName: name
         });
     }
+
 </script>
 
 <RoundedWrapper>
     <h1>
-        <span>
-            Hra
-        </span>
-        <span>
-            Amulet
-        </span>
+        {$_('app.title')}
     </h1>
     {#if screenTab === 0}
     <div class="inner">
         <ul>
             <li>
-                Cílem hry je získat co největší skóre.
+                {$_('rules.1')}
             </li>
             <li>
-                V každém kole můžete získát 30 bodů tím, že uhodnete, v které ze dvou krabic je poklad.
+                {$_({
+                    id: 'rules.2',
+                    values: { score: config.scoreOnWin }
+                })}
             </li>
             <li>
-                Hra má 5 kol.
+                {$_({
+                    id: 'rules.3',
+                    values: { rounds: config.numberOfRounds }
+                })}
             </li>
             <li>
-                Pro každé kolo lze zakoupit amulet, který může zvýšit vaše šance na výhru.
+                {$_('rules.4')}
             </li>
             <li>
-                Amulet stojí 20 bodů.
-            </li>
-            <li>
-                Hra končí po 5 kolech nebo vyčerpáním bodů.
+                {$_({
+                    id: 'rules.5',
+                    values: { price: config.priceOfAmulet }
+                })}
             </li>
         </ul>
         <button on:click={() => screenTab = 1}>
-            Pokračovat
+            {$_('start.continue')}
         </button>
     </div>
     {:else}
         <form class="inner" on:submit|preventDefault={startGame}>
             <label>
-                Zadejte své jméno:
+                {$_('start.nameInput')}
                 <input type="text" name="name" required bind:value={name} />
             </label>
-            <input type="submit" value="Začít hru" />
+            <input type="submit" value="{$_('start.start')}" />
         </form>
     {/if}
     <div class="tabIndicator">

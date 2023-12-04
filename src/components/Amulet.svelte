@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { gameState } from './stores/GameState';
+    import { gameState } from '../stores/GameState';
     export let length: number = 50;  
     export let bottomColor: string = '#896c89';
     export let sideAColor: string = '#b572b5';

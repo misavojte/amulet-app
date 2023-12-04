@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { gameState } from './stores/GameState';
+    import { gameState } from '../stores/GameState';
 
     export let xLength: number = 200;
     export let zLength: number = 100;

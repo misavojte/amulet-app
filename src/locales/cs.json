@@ -1,0 +1,39 @@
+{
+    "app" : {
+        "title" : "Hra Amulet",
+        "description" : "Hra Amulet",
+        "load" : "Načítání hry"
+    },
+    "rules": {
+        "1" : "Cílem hry je získat co nejvíce bodů.",
+        "2" : "V každém kole můžete získát {score} bodů tím, že uhodnete, v které ze dvou krabic je poklad.",
+        "3" : "Hra má {rounds} kol, poté skončí.",
+        "4" : "Pro každé kolo lze zakoupit amulet, který může zvýšit vaše šance na výhru.",
+        "5" : "Amulet lze zakoupit za {price} bodů."
+    },
+    "start" : {
+        "continue" : "Pokračovat",
+        "nameInput" : "Zadejte své jméno:",
+        "start" : "Začít hru"
+    },
+    "counter" : {
+        "rounds" : "Zbývá kol",
+        "score" : "Skóre"
+    },
+    "amulet": {
+        "isActive" : "Amulet je aktivní",
+        "isNotActive" : "Amulet není zakoupen",
+        "canBuy" : "Kliknutím zakoupíš amulet za {price} bodů",
+        "cannotBuy" : "Nemáš dostatek bodů pro zakoupení amuletu"
+    },
+    "end": {
+        "title" : "Konec hry",
+        "repeat" : "Hrát znovu",
+        "leaderboard" : {
+            "loading" : "Načítání žebříčku",
+            "rank" : "Pořadí",
+            "name" : "Jméno",
+            "score" : "Skóre"
+        }
+    }
+}

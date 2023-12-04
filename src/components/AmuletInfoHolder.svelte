@@ -1,15 +1,22 @@
 <script lang="ts">
     import { fade } from 'svelte/transition';
-    import { gameState } from './stores/GameState';
+    import { gameState } from '../stores/GameState';
+    import { gameConfigStore } from '../stores/GameConfigStore';
+    import { get } from 'svelte/store';
+    import { _ } from 'svelte-i18n';
 
     let hasAmulet: boolean;
-    export let score = 0;
-    export let amuletPrice = 0;
+    let score: number;
 
     gameState.subscribe(value => {
         if (!value) throw new Error('Game state is not set');
         hasAmulet = value.hasAmulet;
+        score = value.score;
     });
+
+    const gameConfig = get(gameConfigStore);
+    if (!gameConfig) throw new Error('Game config is not set');
+    const amuletPrice = gameConfig.priceOfAmulet;
 
     let canBuyAmulet = false;
 
@@ -20,20 +27,23 @@
 <div class="amulet-info-holder">
     {#if hasAmulet}
         <div in:fade={{ duration: 799, delay: 800 }} out:fade={{ duration: 799, delay: 800 }}>
-            Amulet je aktivní
+            {$_('amulet.isActive')}
         </div>
     {:else}
         <div in:fade={{ duration: 799, delay: 1600 }} out:fade={{ duration: 799 }}>
             <div>
-                Amulet není zakoupen
+                {$_('amulet.isNotActive')}
             </div>
             {#if !canBuyAmulet}
             <div>
-                Nemáš dostatek bodů pro jeho koupi
+                {$_('amulet.cannotBuy')}
             </div>
             {:else}
             <div>
-                Kliknutím jej můžeš koupit za {amuletPrice} bodů
+                {$_({
+                    id: 'amulet.canBuy',
+                    values: { price: amuletPrice }
+                })}
             </div>
             {/if}
         </div>

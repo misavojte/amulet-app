@@ -2,6 +2,7 @@
     import type { LeaderboardEntryBase, LeaderboardEntry } from '$lib';
     import { Circle3 } from 'svelte-loading-spinners';
     import { getLeaderboard, writeLeaderboardEntry } from '../firebase';
+    import { _ } from 'svelte-i18n';
 
     export let userName: string;
     export let score: number;
@@ -42,7 +43,7 @@
     <div class="center">
         <Circle3 />
         <p>
-            Načítám výsledky
+            {$_('end.leaderboard.load')}
         </p>
     </div>
 {:else}
@@ -51,13 +52,13 @@
             <thead>
                 <tr>
                     <th>
-                        Pořadí
+                        {$_('end.leaderboard.rank')}
                     </th>
                     <th>
-                        Jméno
+                        {$_('end.leaderboard.name')}
                     </th>
                     <th>
-                        Skóre
+                        {$_('end.leaderboard.score')}
                     </th>
                 </tr>
             </thead>

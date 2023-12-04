@@ -9,12 +9,13 @@
     import Start from './Start.svelte';
     import End from './End.svelte';
     import { get } from 'svelte/store';
+    import { _ } from 'svelte-i18n';
 
     import type { DbData } from '$lib';
 
-    import type { GameState } from './stores/GameState';
-    import { gameState, updateGameState } from './stores/GameState';
-	import { gameConfigStore } from './stores/GameConfigStore';
+    import type { GameState } from '../stores/GameState';
+    import { gameState, updateGameState } from '../stores/GameState';
+	import { gameConfigStore } from '../stores/GameConfigStore';
 	import { writeRoundData } from '../firebase';
 
     export let userId: string;
@@ -29,6 +30,7 @@
     if (!gameConfig) throw new Error('Game state is not set');
 
     let time = 0;
+    let hasWonPreviousRound = false;
 
     $: {
         if (currentGameState.gameStage === 'Intermezzo') {
@@ -71,6 +73,14 @@
                 return () => true;
             case 'AlwaysLose':
                 return () => false;
+            case 'ZigZag': {
+                const round = gameConfig.numberOfRounds - currentGameState.numberOfRounds;
+                let hasWon = Math.random() < 0.5;
+                if (round !== 0) {
+                    hasWon = !hasWonPreviousRound;
+                }
+                return () => hasWon;
+            }
             default:
                 return () => Math.random() < 0.5;
         }
@@ -85,6 +95,7 @@
 
     const playRound = (e: CustomEvent): void => {
         const hasWon = play(currentGameState.scenario, currentGameState.hasAmulet);
+        hasWonPreviousRound = hasWon;
         const newScore = currentGameState.score + (hasWon ? gameConfig.scoreOnWin : 0);
         saveRoundToDb(hasWon, newScore, e.detail.id, Date.now(), time);
         if (currentGameState.numberOfRounds === 1) {
@@ -162,8 +173,8 @@
 
     <div class="perspective">
         <div class="counter">
-            <Counter count={currentGameState.numberOfRounds} text="Zbývající kola" />
-            <Counter count={currentGameState.score} text="Skóre" />
+            <Counter count={currentGameState.numberOfRounds} text="{$_('counter.rounds')}" />
+            <Counter count={currentGameState.score} text="{$_('counter.score')}" />
         </div>
         <div class="chest-postions">
             <Cuboid on:openTopEvent={playRound}
@@ -203,7 +214,7 @@
             id={2}
             />
         </div>
-        <AmuletInfoHolder amuletPrice={AMULET_PRICE} score={currentGameState.score} />
+        <AmuletInfoHolder />
         <div class="pattern"></div>
     
 </div>
