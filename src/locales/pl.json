@@ -1,12 +1,12 @@
 {
     "app" : {
-        "title" : "Gra Amulet",
+        "title" : "Amulet",
         "description" : "Gra Amulet",
         "load" : "Ładowanie gry"
     },
     "rules": {
         "1": "Celem gry jest zdobycie jak największej liczby punktów.",
-         "2": "W każdej rundzie możesz zdobyć {score} punktów, zgadując, które z dwóch pudeł zawiera skarb.",
+         "2": "W każdej rundzie możesz zdobyć {score} punktów, zgadując, które z dwóch pudelek zawiera skarb.",
          "3": "Gra składa się z {rounds} rund, po czym się kończy.",
          "4": "W każdej rundzie można kupić amulet, który może zwiększyć Twoje szanse na wygraną.",
          "5": "Amulet można kupić za {price} punktów."
