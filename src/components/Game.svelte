@@ -151,7 +151,7 @@
 
     let confettiWrap: HTMLDivElement;
 
-    const AMULET_PRICE = 20;
+    const AMULET_PRICE = gameConfig.priceOfAmulet;
 
     const buyAmulet = () => {
         if (currentGameState.hasAmulet) return;
