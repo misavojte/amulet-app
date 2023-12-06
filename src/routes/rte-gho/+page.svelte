@@ -3,9 +3,9 @@
 
     const gameConfig = {
         numberOfRounds: 5,
-        startScore: 30,
+        startScore: 50,
         scenario: 'AlwaysWin',
-        priceOfAmulet: 20,
+        priceOfAmulet: 10,
         scoreOnWin: 30,
     };
 
