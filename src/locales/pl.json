@@ -17,23 +17,23 @@
         "start" : "Rozpocznij grę"
     },
     "counter" : {
-        "rounds" : "Zbývá kol",
-        "score" : "Skóre"
+        "rounds" : "Pozostałe rundy",
+        "score" : "Wynik"
     },
     "amulet": {
-        "isActive" : "Amulet je aktivní",
-        "isNotActive" : "Amulet není zakoupen",
-        "canBuy" : "Kliknutím zakoupíš amulet za {price} bodů",
-        "cannotBuy" : "Nemáš dostatek bodů pro zakoupení amuletu"
+        "isActive" : "Amulet jest aktywny",
+        "isNotActive" : "Amulet nie jest zakupiony",
+        "canBuy" : "Kliknij, aby kupić amulet za {price} punktów",
+        "cannotBuy" : "Nie masz wystarczającej ilości punktów, aby zakupić amulet"
     },
     "end": {
-        "title" : "Konec hry",
-        "repeat" : "Hrát znovu",
+        "title" : "Koniec gry",
+        "repeat" : "Zagraj ponownie",
         "leaderboard" : {
-            "loading" : "Načítání žebříčku",
-            "rank" : "Pořadí",
-            "name" : "Jméno",
-            "score" : "Skóre"
+            "loading" : "Ładowanie rankingu",
+            "rank" : "Miejsce",
+            "name" : "Imię",
+            "score" : "Wynik"
         }
     }
 }

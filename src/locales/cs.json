@@ -6,7 +6,7 @@
     },
     "rules": {
         "1" : "Cílem hry je získat co nejvíce bodů.",
-        "2" : "V každém kole můžete získát {score} bodů tím, že uhodnete, v které ze dvou krabic je poklad.",
+        "2" : "V každém kole můžete získat {score} bodů tím, že uhodnete, v které ze dvou krabic je poklad.",
         "3" : "Hra má {rounds} kol, poté skončí.",
         "4" : "Pro každé kolo lze zakoupit amulet, který může zvýšit vaše šance na výhru.",
         "5" : "Amulet lze zakoupit za {price} bodů."
