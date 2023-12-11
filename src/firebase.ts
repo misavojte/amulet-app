@@ -67,6 +67,8 @@ export const writeRoundData = (data: DbData) => {
  * In FireBase, saved in: db/timestamps/{url}/{userId}/{userName}
  */
 export const writeTimestamp = (data: TimestampEntryObject, urlObject: TimestampEntryUrl) => {
+  // replace all dots with underscores in urlObject.url
+  urlObject.url = urlObject.url.replaceAll('.', '_');
   const timestampRef = ref(db, 'timestamps/' + urlObject.url + '/' + urlObject.userId + '/' + urlObject.userName + '/');
   const newTimestampRef = push(timestampRef);
   set(newTimestampRef, data)
