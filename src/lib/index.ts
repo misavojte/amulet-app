@@ -46,6 +46,22 @@ export interface DbData {
     boxId: number;
 }
 
+export interface TimestampEntryObject {
+    timestamp: number;
+    type: 'round' | 'buyAmulet' | 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss';
+    round: number;
+    repeat: number;
+}
+
+/**
+ * In FireBase, saved in: /timestamps/{url}/{userId}/{userName}
+ */
+export interface TimestampEntryUrl {
+    userId: string;
+    userName: string;
+    url: string;
+}
+
 export interface LeaderboardEntryBase {
     userName: string;
     score: number;

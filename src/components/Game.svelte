@@ -11,29 +11,49 @@
     import { get } from 'svelte/store';
     import { _ } from 'svelte-i18n';
 
-    import type { DbData } from '$lib';
+    import type { TimestampEntryObject, TimestampEntryUrl } from '$lib';
 
     import type { GameState } from '../stores/GameState';
     import { gameState, updateGameState } from '../stores/GameState';
 	import { gameConfigStore } from '../stores/GameConfigStore';
-	import { writeRoundData } from '../firebase';
+	import { writeTimestamp } from '../firebase';
 
     export let userId: string;
     let currentGameState : GameState;
+    let currentGameStage: string;
 
     gameState.subscribe(value => {
         if (!value) throw new Error('Game state is not set');
         currentGameState = value;
+        currentGameStage = value.gameStage;
     });
 
     const gameConfig = get(gameConfigStore);
     if (!gameConfig) throw new Error('Game state is not set');
 
-    let time = 0;
     let hasWonPreviousRound = false;
 
+    const createTimestampEntry = (type: 'round' | 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss' | 'buyAmulet'): TimestampEntryObject => {
+        const userName = currentGameState.userName ? currentGameState.userName : 'ANONYMOUS_ERR';
+        // url without http(s)://
+        const url = window.location.href.replace(/(^\w+:|^)\/\//, '');
+        const timestampEntry: TimestampEntryObject = {
+            timestamp: Date.now(),
+            type,
+            round: gameConfig.numberOfRounds - currentGameState.numberOfRounds + 1,
+            repeat: currentGameState.numberOfRepeats,
+        }
+        const timestampEntryUrl: TimestampEntryUrl = {
+            userId,
+            userName,
+            url
+        }
+        writeTimestamp(timestampEntry, timestampEntryUrl);
+        return timestampEntry;
+    }
+
     $: {
-        if (currentGameState.gameStage === 'Intermezzo') {
+        if (currentGameStage === 'Intermezzo') {
             console.log('intermezzo');
             setTimeout(() => {
                 updateGameState({
@@ -42,30 +62,11 @@
                 });
             }, 1100);
         }
-        if (currentGameState.gameStage === 'Game') {
-            time = Date.now();
+        if (currentGameStage === 'Game') {
+            console.log("game_stage");
+            createTimestampEntry('round');
         }
     }
-
-    const saveRoundToDb = (hasWon: boolean, newScore: number, boxId: number, boxClickTime: number, roundStartTime: number) => {
-        const timeDiff = roundStartTime - boxClickTime;
-        const round = gameConfig.numberOfRounds - currentGameState.numberOfRounds;
-        const repeat = currentGameState.numberOfRepeats;
-        const dbData: DbData = {
-            userId: userId,
-            timestamp: boxClickTime,
-            timediff: timeDiff,
-            round: round,
-            repeat: repeat,
-            scenario: currentGameState.scenario,
-            score: newScore,
-            isAmulet: currentGameState.hasAmulet,
-            isWin: hasWon,
-            boxId: boxId
-        };
-        writeRoundData(dbData);
-    }
-
 
     const playWithAmulet = (state: string): (() => boolean) => {
         switch (state) {
@@ -97,7 +98,9 @@
         const hasWon = play(currentGameState.scenario, currentGameState.hasAmulet);
         hasWonPreviousRound = hasWon;
         const newScore = currentGameState.score + (hasWon ? gameConfig.scoreOnWin : 0);
-        saveRoundToDb(hasWon, newScore, e.detail.id, Date.now(), time);
+        const typeOfBox: 'leftBox' | 'rightBox' = e.detail.id === 1 ? 'leftBox' : 'rightBox';
+        const type: 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss' = hasWon ? `${typeOfBox}Win` : `${typeOfBox}Loss`;
+        createTimestampEntry(type);
         if (currentGameState.numberOfRounds === 1) {
             updateGameState({ 
                 hasCurrentlyWon: hasWon,
@@ -158,6 +161,7 @@
         if (currentGameState.score >= AMULET_PRICE) {
             currentGameState.score -= AMULET_PRICE;
             updateGameState({ hasAmulet: true });
+            createTimestampEntry('buyAmulet');
         }
     }
 
