@@ -2,8 +2,8 @@
     import App from "../../components/App.svelte";
 
     const gameConfig = {
-        numberOfRounds: 5,
-        startScore: 50,
+        numberOfRounds: 11,
+        startScore: 110,
         scenario: 'Random',
         priceOfAmulet: 10,
         scoreOnWin: 30,
