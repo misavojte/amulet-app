@@ -1,8 +1,5 @@
 <script lang="ts">
 	import Game from "./Game.svelte";
-    import { resetGameState, gameState } from "../stores/GameState";
-    import type { GameState } from "../stores/GameState";
-    import { gameConfigStore } from "../stores/GameConfigStore";
     import { getAuthAnonymousUser } from "../firebase";
     import { Circle3 } from "svelte-loading-spinners";
 
@@ -10,12 +7,17 @@
     import cs from '../locales/cs.json';
     import pl from '../locales/pl.json';
 	import type { GameConfig } from "$lib";
+	import { setContext } from "svelte";
+    import { createGameState } from "../stores/GameState";
 
     export let locale: 'cs' | 'pl' = 'pl';
     export let gameConfig: GameConfig;
 
     addMessages('cs', cs);
     addMessages('pl', pl);
+
+    const gameState = createGameState(gameConfig);
+    setContext('gameState', gameState);
 
     init({
         fallbackLocale: 'cs',
@@ -24,15 +26,11 @@
 
     let userId: string = "";
 
-    let currentGameState : GameState | null = null;
-    gameState.subscribe(value => {
-        currentGameState = value;
-    });
+    let isReady = false;
 
     const load = async () => {
-        gameConfigStore.set(gameConfig);
         userId = await getAuthAnonymousUser();
-        resetGameState();
+        isReady = true;
     };
 
     load();
@@ -43,7 +41,7 @@
   <title>{$_('app.title')}</title>
 </svelte:head>
 
-{#if !currentGameState}
+{#if !isReady}
     <div class="center">
         <Circle3 />
         <p>

@@ -1,19 +1,16 @@
-<script>
+<script lang="ts">
     import RoundedWrapper from "./RoundedWrapper.svelte";
-    import { updateGameState } from "../stores/GameState";
     import { _ } from 'svelte-i18n';
-    import { get } from "svelte/store";
-    import { gameConfigStore } from "../stores/GameConfigStore";
+    import type { GameStateStore } from '../stores/GameState';
+    import { getContext } from 'svelte';
+    const gameState: GameStateStore = getContext('gameState');
 
     let screenTab = 0;
 
-    let name = '';
-
-    const config = get(gameConfigStore);
-    if (!config) throw new Error('Game state is not set');
+    let name = '';    
 
     const startGame = () => {
-        updateGameState({ 
+        gameState.updateState({
             gameStage: 'Game',
             userName: name
         });
@@ -34,13 +31,13 @@
             <li>
                 {$_({
                     id: 'rules.2',
-                    values: { score: config.scoreOnWin }
+                    values: { score: gameState.config.scoreOnWin }
                 })}
             </li>
             <li>
                 {$_({
                     id: 'rules.3',
-                    values: { rounds: config.numberOfRounds }
+                    values: { rounds: gameState.config.numberOfRounds }
                 })}
             </li>
             <li>
@@ -49,7 +46,7 @@
             <li>
                 {$_({
                     id: 'rules.5',
-                    values: { price: config.priceOfAmulet }
+                    values: { price: gameState.config.priceOfAmulet }
                 })}
             </li>
         </ul>

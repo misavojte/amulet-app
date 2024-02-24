@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { gameState } from '../stores/GameState';
+
     export let length: number = 50;  
     export let bottomColor: string = '#896c89';
     export let sideAColor: string = '#b572b5';
@@ -9,6 +9,9 @@
     export let topColor: string = '#d995d9';
     export let xRotation: number = 30;
     export let zRotation: number = 0;
+    import type { GameStateStore } from '../stores/GameState';
+    import { getContext } from 'svelte';
+    const gameState: GameStateStore = getContext('gameState');
 
     let hasAmulet: boolean;
     let hoverExtra: boolean = false;

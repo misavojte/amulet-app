@@ -1,6 +1,4 @@
 <script lang="ts">
-    import { gameState } from '../stores/GameState';
-
     export let xLength: number = 200;
     export let zLength: number = 100;
     export let yLength: number = 50;  
@@ -13,6 +11,9 @@
     export let topColorB: string = '#0ff';
     export let inDelay: number = 0;
     export let id: number = 0;
+    import type { GameStateStore } from '../stores/GameState';
+    import { getContext } from 'svelte';
+    const gameState: GameStateStore = getContext('gameState');
     let delay = inDelay;
 
     export let zRotation: number = 0;

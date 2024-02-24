@@ -1,31 +1,20 @@
 <script lang="ts">
     import { fade } from 'svelte/transition';
-    import { gameState } from '../stores/GameState';
-    import { gameConfigStore } from '../stores/GameConfigStore';
-    import { get } from 'svelte/store';
     import { _ } from 'svelte-i18n';
+    import type { GameStateStore } from '../stores/GameState';
+    import { getContext } from 'svelte';
+    const gameState: GameStateStore = getContext('gameState');
 
-    let hasAmulet: boolean;
-    let score: number;
-
-    gameState.subscribe(value => {
-        if (!value) throw new Error('Game state is not set');
-        hasAmulet = value.hasAmulet;
-        score = value.score;
-    });
-
-    const gameConfig = get(gameConfigStore);
-    if (!gameConfig) throw new Error('Game config is not set');
-    const amuletPrice = gameConfig.priceOfAmulet;
+    const amuletPrice = gameState.config.priceOfAmulet;
 
     let canBuyAmulet = false;
 
-    $: canBuyAmulet = score >= amuletPrice;
+    $: canBuyAmulet = $gameState.score >= amuletPrice;
 
 </script>
 
 <div class="amulet-info-holder">
-    {#if hasAmulet}
+    {#if $gameState.hasAmulet}
         <div in:fade={{ duration: 799, delay: 800 }} out:fade={{ duration: 799, delay: 800 }}>
             {$_('amulet.isActive')}
         </div>

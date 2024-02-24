@@ -6,20 +6,17 @@
     import AmuletInfoHolder from './AmuletInfoHolder.svelte';
     import Start from './Start.svelte';
     import End from './End.svelte';
-    import { get } from 'svelte/store';
     import { _ } from 'svelte-i18n';
 
     import type { TimestampEntryObject, TimestampEntryUrl } from '$lib';
 
-    import { gameState, updateGameState } from '../stores/GameState';
-	import { gameConfigStore } from '../stores/GameConfigStore';
 	import { writeTimestamp } from '../firebase';
 	import ConfettiWrapper from './ConfettiWrapper.svelte';
+	import type { GameStateStore } from '../stores/GameState';
+    import { getContext } from 'svelte';
+    const gameState: GameStateStore = getContext('gameState');
 
     export let userId: string;
-
-    const gameConfig = get(gameConfigStore);
-    if (!gameConfig) throw new Error('Game state is not set');
 
     let hasWonPreviousRound = false;
 
@@ -31,7 +28,7 @@
         const timestampEntry: TimestampEntryObject = {
             timestamp: Date.now(),
             type,
-            round: gameConfig.numberOfRounds - $gameState.numberOfRounds + 1,
+            round: gameState.config.numberOfRounds - $gameState.numberOfRounds + 1,
             repeat: $gameState.numberOfRepeats,
         }
         const timestampEntryUrl: TimestampEntryUrl = {
@@ -47,7 +44,7 @@
         if ($gameState?.gameStage === 'Intermezzo') {
             console.log('intermezzo');
             setTimeout(() => {
-                updateGameState({
+                gameState.updateState({
                     gameStage: 'Game',
                     blockInteraction: false
                 });
@@ -67,7 +64,7 @@
             case 'AlwaysLose':
                 return () => false;
             case 'ZigZag': {
-                const round = gameConfig.numberOfRounds - $gameState.numberOfRounds;
+                const round = gameState.config.numberOfRounds - $gameState.numberOfRounds;
                 let hasWon = Math.random() < 0.5;
                 if (round !== 0) {
                     hasWon = !hasWonPreviousRound;
@@ -90,12 +87,12 @@
         if (!$gameState) throw new Error('Game state is not set');
         const hasWon = play($gameState.scenario, $gameState.hasAmulet);
         hasWonPreviousRound = hasWon;
-        const newScore = $gameState.score + (hasWon ? gameConfig.scoreOnWin : 0);
+        const newScore = $gameState.score + (hasWon ? gameState.config.scoreOnWin : 0);
         const typeOfBox: 'leftBox' | 'rightBox' = e.detail.id === 1 ? 'leftBox' : 'rightBox';
         const type: 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss' = hasWon ? `${typeOfBox}Win` : `${typeOfBox}Loss`;
         createTimestampEntry(type);
         if ($gameState.numberOfRounds === 1) {
-            updateGameState({ 
+            gameState.updateState({ 
                 hasCurrentlyWon: hasWon,
                 blockInteraction: true,
                 score: newScore,
@@ -104,7 +101,7 @@
             });
             return;
         }
-        updateGameState({ 
+        gameState.updateState({ 
             hasCurrentlyWon: hasWon,
             blockInteraction: true,
             score: newScore,
@@ -113,7 +110,7 @@
         });
         const timer = hasWon ? 2200 : 1200;
         setTimeout(() => {
-            updateGameState({ gameStage: 'Intermezzo' });
+            gameState.updateState({ gameStage: 'Intermezzo' });
         }, timer);
     }
 
@@ -122,20 +119,20 @@
 
         if ($gameState?.hasCurrentlyWon) {
             setTimeout( () => {
-                updateGameState({ hasCurrentlyWon: false });
+                gameState.updateState({ hasCurrentlyWon: false });
             }, 500);
         }
         
     }
 
-    const AMULET_PRICE = gameConfig.priceOfAmulet;
+    const AMULET_PRICE = gameState.config.priceOfAmulet;
 
     const buyAmulet = () => {
         if (!$gameState) throw new Error('Game state is not set');
         if ($gameState.hasAmulet) return;
         if ($gameState.score >= AMULET_PRICE) {
             $gameState.score -= AMULET_PRICE;
-            updateGameState({ hasAmulet: true });
+            gameState.updateState({ hasAmulet: true });
             createTimestampEntry('buyAmulet');
         }
     }

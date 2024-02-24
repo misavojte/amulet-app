@@ -1,8 +1,10 @@
 <script lang="ts">
     import RoundedWrapper from './RoundedWrapper.svelte';
-    import { repeatGameState } from '../stores/GameState';
     import Leaderboard from './Leaderboard.svelte';
     import { _ } from 'svelte-i18n';
+    import type { GameStateStore } from '../stores/GameState';
+    import { getContext } from 'svelte';
+    const gameState: GameStateStore = getContext('gameState');
     
     export let userName: string | undefined;
     export let score: number;
@@ -17,7 +19,7 @@
         {#if userName}
         <Leaderboard userName={userName} score={score} userId={userId} />
         {/if}
-        <button on:click={() => repeatGameState()}>
+        <button on:click={() => gameState.repeat()}>
             {$_('end.repeat')}
         </button>
     </div>
