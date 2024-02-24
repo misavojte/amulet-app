@@ -8,38 +8,24 @@
     import End from './End.svelte';
     import { _ } from 'svelte-i18n';
 
-    import type { TimestampEntryObject, TimestampEntryUrl } from '$lib';
+    import type { TimestampType } from '$lib';
 
-	import { writeTimestamp } from '../firebase';
 	import ConfettiWrapper from './ConfettiWrapper.svelte';
 	import type { GameStateStore } from '../stores/GameState';
     import { getContext } from 'svelte';
+	import { TimestampService } from '$lib/services/TimestampService';
     const gameState: GameStateStore = getContext('gameState');
 
     export let userId: string;
 
     let hasWonPreviousRound = false;
 
-    const createTimestampEntry = (type: 'round' | 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss' | 'buyAmulet'): TimestampEntryObject => {
-        if (!$gameState) throw new Error('Game state is not set');
-        const userName = $gameState.userName ? $gameState.userName : 'ANONYMOUS_ERR';
-        // url without http(s)://
-        const url = window.location.href.replace(/(^\w+:|^)\/\//, '');
-        const timestampEntry: TimestampEntryObject = {
-            timestamp: Date.now(),
-            type,
-            round: gameState.config.numberOfRounds - $gameState.numberOfRounds + 1,
-            repeat: $gameState.numberOfRepeats,
-        }
-        const timestampEntryUrl: TimestampEntryUrl = {
-            userId,
-            userName,
-            url
-        }
-        writeTimestamp(timestampEntry, timestampEntryUrl);
-        return timestampEntry;
+    const timestampService = new TimestampService();
+    const createTimestampEntry = (type: TimestampType) => {
+        void timestampService.saveTimestamp(type);
     }
 
+    /**
     $: {
         if ($gameState?.gameStage === 'Intermezzo') {
             console.log('intermezzo');
@@ -55,6 +41,7 @@
             createTimestampEntry('round');
         }
     }
+    */
 
     const playWithAmulet = (state: string): (() => boolean) => {
         if (!$gameState) throw new Error('Game state is not set');
@@ -64,7 +51,7 @@
             case 'AlwaysLose':
                 return () => false;
             case 'ZigZag': {
-                const round = gameState.config.numberOfRounds - $gameState.numberOfRounds;
+                const round = $gameState.config.numberOfRounds - $gameState.numberOfRounds;
                 let hasWon = Math.random() < 0.5;
                 if (round !== 0) {
                     hasWon = !hasWonPreviousRound;
@@ -87,54 +74,11 @@
         if (!$gameState) throw new Error('Game state is not set');
         const hasWon = play($gameState.scenario, $gameState.hasAmulet);
         hasWonPreviousRound = hasWon;
-        const newScore = $gameState.score + (hasWon ? gameState.config.scoreOnWin : 0);
         const typeOfBox: 'leftBox' | 'rightBox' = e.detail.id === 1 ? 'leftBox' : 'rightBox';
         const type: 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss' = hasWon ? `${typeOfBox}Win` : `${typeOfBox}Loss`;
         createTimestampEntry(type);
-        if ($gameState.numberOfRounds === 1) {
-            gameState.updateState({ 
-                hasCurrentlyWon: hasWon,
-                blockInteraction: true,
-                score: newScore,
-                gameStage: 'End',
-                hasAmulet: false
-            });
-            return;
-        }
-        gameState.updateState({ 
-            hasCurrentlyWon: hasWon,
-            blockInteraction: true,
-            score: newScore,
-            numberOfRounds: $gameState.numberOfRounds - 1,
-            hasAmulet: false
-        });
-        const timer = hasWon ? 2200 : 1200;
-        setTimeout(() => {
-            gameState.updateState({ gameStage: 'Intermezzo' });
-        }, timer);
-    }
+        gameState.progressFromBoxDecision(hasWon);
 
-
-    $: {
-
-        if ($gameState?.hasCurrentlyWon) {
-            setTimeout( () => {
-                gameState.updateState({ hasCurrentlyWon: false });
-            }, 500);
-        }
-        
-    }
-
-    const AMULET_PRICE = gameState.config.priceOfAmulet;
-
-    const buyAmulet = () => {
-        if (!$gameState) throw new Error('Game state is not set');
-        if ($gameState.hasAmulet) return;
-        if ($gameState.score >= AMULET_PRICE) {
-            $gameState.score -= AMULET_PRICE;
-            gameState.updateState({ hasAmulet: true });
-            createTimestampEntry('buyAmulet');
-        }
     }
 
 </script>
@@ -144,7 +88,7 @@
         <Start />
     {/if}
     {#if $gameState?.gameStage === 'End'}
-        <End userId={userId} userName={$gameState?.userName} score={$gameState?.score} />
+        <End />
     {/if}
 
     <div class="perspective">
@@ -169,9 +113,7 @@
             id={1}
             />
 
-            <Amulet on:click={buyAmulet}
-            length={200}
-            />
+            <Amulet length={200} />
     
             <Cuboid on:openTopEvent={playRound}
             xLength={250}

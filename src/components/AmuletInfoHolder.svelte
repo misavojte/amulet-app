@@ -5,7 +5,7 @@
     import { getContext } from 'svelte';
     const gameState: GameStateStore = getContext('gameState');
 
-    const amuletPrice = gameState.config.priceOfAmulet;
+    const amuletPrice = $gameState.config.priceOfAmulet;
 
     let canBuyAmulet = false;
 

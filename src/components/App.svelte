@@ -9,6 +9,7 @@
 	import type { GameConfig } from "$lib";
 	import { setContext } from "svelte";
     import { createGameState } from "../stores/GameState";
+	import { createUserState } from "../stores/UserState";
 
     export let locale: 'cs' | 'pl' = 'pl';
     export let gameConfig: GameConfig;
@@ -18,6 +19,9 @@
 
     const gameState = createGameState(gameConfig);
     setContext('gameState', gameState);
+
+    const userState = createUserState();
+    setContext('userState', userState);
 
     init({
         fallbackLocale: 'cs',
@@ -30,6 +34,7 @@
 
     const load = async () => {
         userId = await getAuthAnonymousUser();
+        userState.updateState({ id : userId });
         isReady = true;
     };
 

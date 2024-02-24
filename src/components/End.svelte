@@ -4,11 +4,9 @@
     import { _ } from 'svelte-i18n';
     import type { GameStateStore } from '../stores/GameState';
     import { getContext } from 'svelte';
+	import type { UserStateStore } from '../stores/UserState';
     const gameState: GameStateStore = getContext('gameState');
-    
-    export let userName: string | undefined;
-    export let score: number;
-    export let userId: string;
+    const userState: UserStateStore = getContext('userState');
 </script>
 
 <RoundedWrapper>
@@ -16,8 +14,8 @@
         {$_('end.title')}
     </h1>
     <div class="inner">
-        {#if userName}
-        <Leaderboard userName={userName} score={score} userId={userId} />
+        {#if $userState.id && $userState.name && $gameState.score}
+        <Leaderboard userName={$userState.name} score={$gameState.score} userId={$userState.id} />
         {/if}
         <button on:click={() => gameState.repeat()}>
             {$_('end.repeat')}

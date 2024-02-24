@@ -1,26 +1,14 @@
 import { get, writable } from 'svelte/store';
 import type { Writable } from 'svelte/store';
-import type { GameConfig } from '$lib';
-
-
-export interface GameState {
-    hasAmulet: boolean;
-    numberOfRounds: number;
-    hasCurrentlyWon: boolean;
-    blockInteraction: boolean;
-    scenario: string;
-    gameStage: string;
-    score: number;
-    numberOfRepeats: number;
-    userName?: string;
-}
+import type { GameConfig, GameState } from '$lib';
+import { updateState } from '$lib/utils/storeUtils';
 
 export interface GameStateStore extends Writable<GameState> {
     reset: () => void;
     updateState: (updates: Partial<GameState>) => void;
     purchaseAmulet: (price: number) => boolean;
     repeat: () => void;
-    config: GameConfig;
+    progressFromBoxDecision: (win: boolean) => void;
 }
 
 /**
@@ -47,14 +35,14 @@ export const createGameState = (config: GameConfig) => {
     const store = writable<GameState>(createInitialGameState(config));
     const { subscribe, set, update } = store;
     return {
-        config,
         subscribe,
         update,
         set,
         reset: () => set(createInitialGameState(config)),
-        updateState: (updates: Partial<GameState>) => update(state => ({ ...state, ...updates })),
+        updateState: (updates: Partial<GameState>) => updateState(store, updates),
         purchaseAmulet: (price: number) => purchaseAmulet(store, price),
         repeat: () => repeatGameState(store, config),
+        progressFromBoxDecision: (win: boolean) => progressFromBoxDecision(store, win),
     };
 }
 
@@ -67,6 +55,7 @@ const createInitialGameState = (config: GameConfig): GameState => ({
     gameStage: 'Start',
     score: config.startScore,
     numberOfRepeats: 0,
+    config,
 });
 
 export const repeatGameState = (state: Writable<GameState>, config: GameConfig) => {
@@ -78,9 +67,29 @@ export const repeatGameState = (state: Writable<GameState>, config: GameConfig) 
             hasCurrentlyWon: false,
             blockInteraction: true,
             scenario: config.scenario,
-            gameStage: 'Intermezzo',
+            gameStage: 'AmuletDecision',
             score: config.startScore,
             numberOfRepeats: state.numberOfRepeats + 1,
         };
     });
 };
+
+export const progressFromBoxDecision = (state: Writable<GameState>, win: boolean) => {
+    // Choose next game stage based on number of rounds left
+    const nextGameStage = get(state).numberOfRounds > 1 ? 'BoxDecision' : 'End';
+    const delayOfNextStage = win ? 2000 : 1000;
+
+    updateState(state, {
+        hasCurrentlyWon: win,
+        blockInteraction: true,
+        score: win ? get(state).score + get(state).config.scoreOnWin : get(state).score,
+    });
+
+    setTimeout(() => {
+        updateState(state, {
+            gameStage: nextGameStage,
+            blockInteraction: false,
+            numberOfRounds: get(state).numberOfRounds - 1,
+        });
+    }, delayOfNextStage);
+}

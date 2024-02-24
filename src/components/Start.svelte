@@ -3,7 +3,9 @@
     import { _ } from 'svelte-i18n';
     import type { GameStateStore } from '../stores/GameState';
     import { getContext } from 'svelte';
+	import type { UserStateStore } from "../stores/UserState";
     const gameState: GameStateStore = getContext('gameState');
+    const userState: UserStateStore = getContext('userState');
 
     let screenTab = 0;
 
@@ -11,8 +13,10 @@
 
     const startGame = () => {
         gameState.updateState({
-            gameStage: 'Game',
-            userName: name
+            gameStage: 'BoxDecision'
+        });
+        userState.updateState({
+            name
         });
     }
 
@@ -31,13 +35,13 @@
             <li>
                 {$_({
                     id: 'rules.2',
-                    values: { score: gameState.config.scoreOnWin }
+                    values: { score: $gameState.config.scoreOnWin }
                 })}
             </li>
             <li>
                 {$_({
                     id: 'rules.3',
-                    values: { rounds: gameState.config.numberOfRounds }
+                    values: { rounds: $gameState.config.numberOfRounds }
                 })}
             </li>
             <li>
@@ -46,7 +50,7 @@
             <li>
                 {$_({
                     id: 'rules.5',
-                    values: { price: gameState.config.priceOfAmulet }
+                    values: { price: $gameState.config.priceOfAmulet }
                 })}
             </li>
         </ul>

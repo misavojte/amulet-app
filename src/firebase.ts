@@ -66,18 +66,22 @@ export const writeRoundData = (data: DbData) => {
 /**
  * In FireBase, saved in: db/timestamps/{url}/{userId}/{userName}
  */
-export const writeTimestamp = (data: TimestampEntryObject, urlObject: TimestampEntryUrl) => {
+export const writeTimestamp = (data: TimestampEntryObject, urlObject: TimestampEntryUrl): Promise<void> => {
   // replace all dots with underscores in urlObject.url
   urlObject.url = urlObject.url.replaceAll('.', '_');
   const timestampRef = ref(db, 'timestamps/' + urlObject.url + '/' + urlObject.userId + '/' + urlObject.userName + '/');
   const newTimestampRef = push(timestampRef);
-  set(newTimestampRef, data)
-    .then(() => {
-      console.log('Timestamp saved successfully!');
-    })
-    .catch((error) => {
-      console.error('Error saving timestamp: ', error);
-    });
+  return new Promise((resolve, reject) => {
+    set(newTimestampRef, data)
+      .then(() => {
+        console.log('Timestamp saved successfully!');
+        resolve();
+      })
+      .catch((error) => {
+        console.error('Error saving timestamp: ', error);
+        reject(error);
+      });
+  });
 }
 
 
