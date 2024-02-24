@@ -1,4 +1,7 @@
 <script lang="ts">
+    import type { GameStateStore } from '../stores/GameState';
+    import { getContext } from 'svelte';
+    import { createEventDispatcher } from 'svelte';
 
     export let length: number = 50;  
     export let bottomColor: string = '#896c89';
@@ -9,19 +12,13 @@
     export let topColor: string = '#d995d9';
     export let xRotation: number = 30;
     export let zRotation: number = 0;
-    import type { GameStateStore } from '../stores/GameState';
-    import { getContext } from 'svelte';
+    
     const gameState: GameStateStore = getContext('gameState');
 
-    let hasAmulet: boolean;
     let hoverExtra: boolean = false;
 
-    $ : hoverExtra = hasAmulet;
+    $ : hoverExtra = $gameState.hasAmulet;
 
-    gameState.subscribe(value => {
-        if (!value) throw new Error('Game state is not set');
-        hasAmulet = value.hasAmulet;
-    });
 
     let xLength = length;
     let zLength = length/10;
@@ -29,7 +26,7 @@
 
     const evaluateTransition = (e: TransitionEvent) => {
         if (e.target === e.currentTarget) {
-            if (hasAmulet) {
+            if ($gameState.hasAmulet) {
                 hoverExtra = !hoverExtra;
                 return;
             }
@@ -37,12 +34,20 @@
         }
     }
 
+    const dispatch = createEventDispatcher();
+
+    const evaluateClick = () => {
+        if (!$gameState.hasAmulet && !$gameState.blockInteraction && $gameState.gameStage === 'AmuletDecision') {
+            dispatch('buyAmulet');
+        }
+    }
+
     let cssVarStyles = `--xLength:${xLength}px;--zLength:${zLength}px;--yLength:${yLength}px;--bottomColor:${bottomColor};--sideAColor:${sideAColor};--sideBColor:${sideBColor};--sideCColor:${sideCColor};--sideDColor:${sideDColor};--topColor:${topColor};`;
 
 </script>
 
-<div class="main" style={cssVarStyles} on:click>
-    <div class="moving-part" class:hover={hasAmulet}>
+<div class="main" style={cssVarStyles} on:click={evaluateClick}>
+    <div class="moving-part" class:hover={$gameState.hasAmulet}>
     <div class="animating-part" class:animate={hoverExtra} on:transitionend={evaluateTransition}>
         <div class="box">
             <div class="bottom"></div>

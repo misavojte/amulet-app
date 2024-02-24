@@ -78,7 +78,6 @@
         const type: 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss' = hasWon ? `${typeOfBox}Win` : `${typeOfBox}Loss`;
         createTimestampEntry(type);
         gameState.progressFromBoxDecision(hasWon);
-
     }
 
 </script>
@@ -90,51 +89,53 @@
     {#if $gameState?.gameStage === 'End'}
         <End />
     {/if}
+    {#if $gameState?.gameStage === 'BoxDecision' || $gameState?.gameStage === 'AmuletDecision'}
+    <!-- Note that position and therefore visibility of boxes and amulet are controlled by the gameState -->
+        <div class="perspective">
+            <div class="counter">
+                <Counter count={$gameState?.numberOfRounds} text="{$_('counter.rounds')}" />
+                <Counter count={$gameState?.score} text="{$_('counter.score')}" />
+            </div>
+            <div class="chest-postions">
+                <Cuboid on:openTopEvent={playRound}
+                xLength={250}
+                zLength={220}
+                yLength={250}
+                bottomColor="#b27500"
+                sideAColor="#f4b84f"
+                sideBColor="#a96f00"
+                sideCColor="#c07d00"
+                sideDColor="#cd8606"
+                topColor="repeating-linear-gradient(to top,#f6ba52,#f6ba52 10px,#ffd180 10px,#ffd180 20px);"
+                topColorB="#dbaa54"
+                xRotaionOfParent = {30}
+                zRotation={15}
+                id={1}
+                />
 
-    <div class="perspective">
-        <div class="counter">
-            <Counter count={$gameState?.numberOfRounds} text="{$_('counter.rounds')}" />
-            <Counter count={$gameState?.score} text="{$_('counter.score')}" />
+                <Amulet length={200} on:buyAmulet={() => gameState.purchaseAmulet()} />
+        
+                <Cuboid on:openTopEvent={playRound}
+                xLength={250}
+                zLength={230}
+                yLength={250}
+                bottomColor="#e19400"
+                sideAColor="#f4b84f"
+                sideBColor="#cd8606"
+                sideCColor="#d58b00"
+                sideDColor="#b97a00"
+                topColor="repeating-linear-gradient(to top,#f6ba52,#f6ba52 10px,#ffd180 10px,#ffd180 20px);"
+                topColorB="#edad3c"
+                xRotaionOfParent = {30}
+                zRotation={-10}
+                inDelay={100}
+                id={2}
+                />
+            </div>
+            <AmuletInfoHolder />
+            <div class="pattern"></div>
         </div>
-        <div class="chest-postions">
-            <Cuboid on:openTopEvent={playRound}
-            xLength={250}
-            zLength={220}
-            yLength={250}
-            bottomColor="#b27500"
-            sideAColor="#f4b84f"
-            sideBColor="#a96f00"
-            sideCColor="#c07d00"
-            sideDColor="#cd8606"
-            topColor="repeating-linear-gradient(to top,#f6ba52,#f6ba52 10px,#ffd180 10px,#ffd180 20px);"
-            topColorB="#dbaa54"
-            xRotaionOfParent = {30}
-            zRotation={15}
-            id={1}
-            />
-
-            <Amulet length={200} />
-    
-            <Cuboid on:openTopEvent={playRound}
-            xLength={250}
-            zLength={230}
-            yLength={250}
-            bottomColor="#e19400"
-            sideAColor="#f4b84f"
-            sideBColor="#cd8606"
-            sideCColor="#d58b00"
-            sideDColor="#b97a00"
-            topColor="repeating-linear-gradient(to top,#f6ba52,#f6ba52 10px,#ffd180 10px,#ffd180 20px);"
-            topColorB="#edad3c"
-            xRotaionOfParent = {30}
-            zRotation={-10}
-            inDelay={100}
-            id={2}
-            />
-        </div>
-        <AmuletInfoHolder />
-        <div class="pattern"></div>
-    </div>
+    {/if}
 </div>
 <ConfettiWrapper />
 
