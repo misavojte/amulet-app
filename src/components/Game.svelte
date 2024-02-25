@@ -23,24 +23,12 @@
     const createTimestampEntry = (type: TimestampType) => {
         void timestampService.saveTimestamp(type);
     }
-
-    /**
+    
     $: {
-        if ($gameState?.gameStage === 'Intermezzo') {
-            console.log('intermezzo');
-            setTimeout(() => {
-                gameState.updateState({
-                    gameStage: 'Game',
-                    blockInteraction: false
-                });
-            }, 1100);
-        }
-        if ($gameState?.gameStage === 'Game') {
-            console.log("game_stage");
+        if ($gameState?.gameStage === 'BoxDecision') {
             createTimestampEntry('round');
         }
     }
-    */
 
     const playWithAmulet = (state: string): (() => boolean) => {
         if (!$gameState) throw new Error('Game state is not set');
