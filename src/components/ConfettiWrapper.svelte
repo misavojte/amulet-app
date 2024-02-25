@@ -20,7 +20,6 @@
         console.log('fireBothConfettiInRandomOrderAndDelay');
         const delay = 800
         await tick();
-        gameState.updateState({ hasCurrentlyWon: false });    // Reset the hasCurrentlyWon flag
         const triggerFirst = Math.random() > 0.5 ? 'left' : 'right';
         triggerConfetti(triggerFirst);
         await new Promise(resolve => setTimeout(resolve, delay));
@@ -29,10 +28,9 @@
     };
 
     const triggerConfetti = (side: 'left' | 'right') => {
-        if (side === 'left') {
-            confettiActivation[0] = {id: currentId++, type: 'left'};
-        } else {
-            confettiActivation[1] = {id: currentId++, type: 'right'};
+        confettiActivation = [...confettiActivation, {id: currentId++, type: side}];
+        if (confettiActivation.length > 2) {
+            confettiActivation.shift();
         }
     }
 </script>

@@ -1,6 +1,4 @@
 <script lang="ts">
-
-	import Counter from './Counter.svelte';
     import Cuboid from './Cuboid.svelte';
 	import Amulet from './Amulet.svelte';
     import AmuletInfoHolder from './AmuletInfoHolder.svelte';
@@ -14,6 +12,7 @@
 	import type { GameStateStore } from '../stores/GameState';
     import { getContext } from 'svelte';
 	import { TimestampService } from '$lib/services/TimestampService';
+	import CounterHolder from './CounterHolder.svelte';
     const gameState: GameStateStore = getContext('gameState');
 
     export let userId: string;
@@ -89,13 +88,9 @@
     {#if $gameState?.gameStage === 'End'}
         <End />
     {/if}
-    {#if $gameState?.gameStage === 'BoxDecision' || $gameState?.gameStage === 'AmuletDecision'}
     <!-- Note that position and therefore visibility of boxes and amulet are controlled by the gameState -->
         <div class="perspective">
-            <div class="counter">
-                <Counter count={$gameState?.numberOfRounds} text="{$_('counter.rounds')}" />
-                <Counter count={$gameState?.score} text="{$_('counter.score')}" />
-            </div>
+            <CounterHolder  />
             <div class="chest-postions">
                 <Cuboid on:openTopEvent={playRound}
                 xLength={250}
@@ -110,10 +105,11 @@
                 topColorB="#dbaa54"
                 xRotaionOfParent = {30}
                 zRotation={15}
+                inDelay={1400}
                 id={1}
                 />
 
-                <Amulet length={200} on:buyAmulet={() => gameState.purchaseAmulet()} />
+                <Amulet length={200} on:buyAmulet={() => gameState.purchaseAmulet(true)} />
         
                 <Cuboid on:openTopEvent={playRound}
                 xLength={250}
@@ -128,14 +124,13 @@
                 topColorB="#edad3c"
                 xRotaionOfParent = {30}
                 zRotation={-10}
-                inDelay={100}
+                inDelay={1600}
                 id={2}
                 />
             </div>
-            <AmuletInfoHolder />
+            <AmuletInfoHolder on:refuseAmulet={() => gameState.purchaseAmulet(false)} />
             <div class="pattern"></div>
         </div>
-    {/if}
 </div>
 <ConfettiWrapper />
 
@@ -155,11 +150,11 @@
         position: relative;
     }
     .perspective {
-        transform: perspective(800px) rotateX(30deg);
+        transform: perspective(800px) rotateX(25deg);
         transform-style: preserve-3d;
         /* font-family: 'Parisienne', sans-serif; */
         color: #483d41 !important;
-        bottom: 30px;
+        top: 30px;
         position: absolute;
         width: 100%;
         height: 100%;
@@ -171,6 +166,8 @@
         padding: 6rem;  
         align-items: center;
         transform-style: preserve-3d;
+        width: 1200px;
+        margin: auto;
     }
     .pattern{
         background: linear-gradient(90deg, #deb887 9.80%, #8b6914 9.80%, #8b6914 10%, #cdaa7d 10%, #cdaa7d 19.80%, #8b6914 19.80%, #8b6914 20%, #deb887 20%, #deb887 29.80%, #8b6914 29.80%, #8b6914 30%, #deb887 30%, #deb887 39.80%, #8b6914 39.80%, #8b6914 40%, #cdaa7d 40%, #cdaa7d 49.80%, #8b6914 49.80%, #8b6914 50%, #deb887 50%, #deb887 59.80%, #8b6914 59.80%, #8b6914 60%, #cdaa7d 60%, #cdaa7d 69.80%, #8b6914 69.80%, #8b6914 70%, #deb887 70%, #deb887 79.80%, #8b6914 79.80%, #8b6914 80%, #deb887 80%, #deb887 89.80%, #8b6914 89.80%, #8b6914 90%, #cdaa7d 90%, #cdaa7d 99.80%, #8b6914 99.80%, #8b6914 100%);
@@ -185,15 +182,4 @@ background-size: 700.00px 700.00px;
         pointer-events: none;
         user-select: none;
     }
-    .counter {
-        margin-top: 50px;
-        text-align: center;
-        margin-left: auto;
-        justify-content: center;
-        display:flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
-
 </style>

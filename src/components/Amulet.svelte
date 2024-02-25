@@ -44,9 +44,19 @@
 
     let cssVarStyles = `--xLength:${xLength}px;--zLength:${zLength}px;--yLength:${yLength}px;--bottomColor:${bottomColor};--sideAColor:${sideAColor};--sideBColor:${sideBColor};--sideCColor:${sideCColor};--sideDColor:${sideDColor};--topColor:${topColor};`;
 
+    // True if in last BoxDecision round hasAmulet was set to true
+    let wasAmuletActiveInThisRound: boolean = false;
+    $: if ($gameState.gameStage === 'BoxDecision') {
+        wasAmuletActiveInThisRound = $gameState.hasAmulet;
+    }
+
+    $: if ($gameState.gameStage === 'AmuletDecision') {
+        wasAmuletActiveInThisRound = false;
+    }
+
 </script>
 
-<div class="main" style={cssVarStyles} on:click={evaluateClick}>
+<div class="main" style={cssVarStyles} on:click={evaluateClick} class:hidden={!$gameState.hasAmulet && !wasAmuletActiveInThisRound && $gameState.gameStage !== 'AmuletDecision'}>
     <div class="moving-part" class:hover={$gameState.hasAmulet}>
     <div class="animating-part" class:animate={hoverExtra} on:transitionend={evaluateTransition}>
         <div class="box">
@@ -76,6 +86,12 @@
 </div>
 
 <style>
+    .hidden {
+        transform: translateY(-1000px) !important;
+    }
+    .main {
+        transition: transform 1.5s;
+    }
     div {
         transform-style: preserve-3d;
     }

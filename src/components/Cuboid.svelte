@@ -29,11 +29,11 @@
 
 	const dispatch = createEventDispatcher();
 
-    $ : if (gameStage === 'Intermezzo') {
+    $ : if ($gameState.gameStage === 'AmuletDecision') {
         openTop = false;
         delay = 0;
     }
-    $ : if (gameStage === 'Game') {
+    $ : if ($gameState.gameStage === 'BoxDecision') {
         showContent = false;
         delay = inDelay
     }
@@ -45,25 +45,12 @@
 
     export let openTop = false;
 
-    let blockInteraction = false;
-    let hasCurrentlyWon = false;
-
     let showContent = false;
-
-    let gameStage: string;
-
-
-    gameState.subscribe(value => {
-        if (!value) throw new Error('Game state is not set');
-        blockInteraction = value.blockInteraction;
-        hasCurrentlyWon = value.hasCurrentlyWon;
-        gameStage = value.gameStage;
-    });
 
     const OPEN_TOP_TRANSITION_DURATION = 800;
 
     const triggerOpenTop = async () => {
-        if (blockInteraction) {
+        if ($gameState.blockInteraction) {
             return;
         }
         if (openTop) {
@@ -72,14 +59,14 @@
         dispatch('openTopEvent', { id } ); // will block interaction until next round
         openTop = !openTop;
         await tick();
-        if (hasCurrentlyWon) {
+        if ($gameState.hasCurrentlyWon) {
             showContent = true;
         }
     }
 
 </script>
 
-<div class="box" style="{cssVarStyles};transition-delay:{delay}ms" class:hide={gameStage === 'Intermezzo'} class:block={blockInteraction}  on:click={triggerOpenTop}> 
+<div class="box" style="{cssVarStyles};transition-delay:{delay}ms" class:hide={$gameState.gameStage === 'AmuletDecision'} class:block={$gameState.blockInteraction}  on:click={triggerOpenTop}> 
     <div class="bottom"></div>
     <div class="side-a"></div>
     <div class="side-b"></div>
@@ -107,7 +94,7 @@
         width: var(--xLength);
         height: var(--yLength);
         cursor: pointer;
-        transition: transform 1s;
+        transition: transform 1.5s;
     }
 
     .box.block {

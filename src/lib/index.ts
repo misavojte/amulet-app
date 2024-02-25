@@ -23,7 +23,7 @@ export interface UserState {
     name: string | null;
 }
 
-export type GameStageType = 'Start' | 'AmuletDecision' | 'BoxDecision' | 'End';
+export type GameStageType = 'Start' | 'AmuletDecision' | 'BoxDecision' | 'AfterBoxDecision' | 'End';
 
 export interface DbData {
     userId: string;
