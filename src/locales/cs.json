@@ -24,7 +24,8 @@
         "isActive" : "Amulet je aktivní",
         "isNotActive" : "Amulet není zakoupen",
         "canBuy" : "Kliknutím zakoupíš amulet za {price} bodů",
-        "cannotBuy" : "Nemáš dostatek bodů pro zakoupení amuletu"
+        "cannotBuy" : "Nemáš dostatek bodů pro zakoupení amuletu",
+        "refuse" : "Nechci koupit amulet" 
     },
     "end": {
         "title" : "Konec hry",
@@ -35,5 +36,10 @@
             "name" : "Jméno",
             "score" : "Skóre"
         }
+    },
+    "box": {
+        "whichBox" : "Která krabice má poklad?",
+        "won" : "Vyhrál jsi {score} bodů!",
+        "lost" : "Nenašel jsi poklad"
     }
 }

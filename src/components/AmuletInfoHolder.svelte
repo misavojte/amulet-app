@@ -53,7 +53,10 @@
         <div in:fade={{ duration: 799, delay: 800 }} out:fade={{ duration: 600 }}>
             <div>
                 {#if $gameState.hasCurrentlyWon}
-                    {$_('box.won')}
+                    {$_({
+                        id: 'box.won',
+                        values: { score: $gameState.config.scoreOnWin }
+                    })}
                 {:else}
                     {$_('box.lost')}
                 {/if}
