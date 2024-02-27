@@ -1,8 +1,3 @@
-// place files you want to import through the `$lib` alias in this folder.
-import { writable } from 'svelte/store';
-import type { Writable } from 'svelte/store';
-
-
 export interface GameConfig {
     numberOfRounds: number;
     startScore: number;
@@ -17,21 +12,18 @@ export interface GameState {
     hasCurrentlyWon: boolean;
     blockInteraction: boolean;
     scenario: string;
-    gameStage: string;
+    gameStage: GameStageType;
     score: number;
+    numberOfRepeats: number;
+    config: GameConfig;
 }
 
-export const resetGameState = (config: GameConfig): Writable<GameState> => {
-    return writable({
-        hasAmulet: false,
-        numberOfRounds: config.numberOfRounds,
-        hasCurrentlyWon: false,
-        blockInteraction: false,
-        scenario: config.scenario,
-        gameStage: 'Start',
-        score: config.startScore,
-    });
+export interface UserState {
+    id: string | null;
+    name: string | null;
 }
+
+export type GameStageType = 'Start' | 'AmuletDecision' | 'BoxDecision' | 'AfterBoxDecision' | 'End';
 
 export interface DbData {
     userId: string;
@@ -44,6 +36,24 @@ export interface DbData {
     isAmulet: boolean;
     isWin: boolean;
     boxId: number;
+}
+
+export type TimestampType = 'round' | 'amuletDecisionStart' | 'amuletDecisionClick' | 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss';
+
+export interface TimestampEntryObject {
+    timestamp: number;
+    type: TimestampType;
+    round: number;
+    repeat: number;
+}
+
+/**
+ * In FireBase, saved in: /timestamps/{url}/{userId}/{userName}
+ */
+export interface TimestampEntryUrl {
+    userId: string;
+    userName: string;
+    url: string;
 }
 
 export interface LeaderboardEntryBase {

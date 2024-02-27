@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push, set, get } from "firebase/database";
 import { getAuth, signInAnonymously } from "firebase/auth";
-import type { DbData, LeaderboardEntry, LeaderboardEntryBase } from '$lib';
+import type { DbData, LeaderboardEntry, LeaderboardEntryBase, TimestampEntryObject, TimestampEntryUrl } from '$lib';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -62,6 +62,29 @@ export const writeRoundData = (data: DbData) => {
       console.error('Error saving round data: ', error);
     });
 }
+
+/**
+ * In FireBase, saved in: db/timestamps/{url}/{userId}/{userName}
+ */
+export const writeTimestamp = (data: TimestampEntryObject, urlObject: TimestampEntryUrl): Promise<void> => {
+  // replace all dots with underscores in urlObject.url
+  urlObject.url = urlObject.url.replaceAll('.', '_');
+  const timestampRef = ref(db, 'timestamps/' + urlObject.url + '/' + urlObject.userId + '/' + urlObject.userName + '/');
+  const newTimestampRef = push(timestampRef);
+  return new Promise((resolve, reject) => {
+    set(newTimestampRef, data)
+      .then(() => {
+        console.log('Timestamp saved successfully!');
+        resolve();
+      })
+      .catch((error) => {
+        console.error('Error saving timestamp: ', error);
+        reject(error);
+      });
+  });
+}
+
+
 
 const auth = getAuth();
 
