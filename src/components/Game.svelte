@@ -17,6 +17,8 @@
 
     export let userId: string;
 
+    let savedRound = -1;
+
     let hasWonPreviousRound = false;
 
     const timestampService = new TimestampService();
@@ -25,11 +27,9 @@
     }
     
     $: {
-        if ($gameState?.gameStage === 'BoxDecision') {
+        if ($gameState.numberOfRounds !== savedRound) {
+            savedRound = $gameState.numberOfRounds;
             createTimestampEntry('round');
-        }
-        if ($gameState?.gameStage === 'AmuletDecision') {
-            createTimestampEntry('amuletStart');
         }
     }
 
