@@ -17,7 +17,7 @@
 
     export let userId: string;
 
-    let savedRound = -1;
+    let shouldSaveNewRoundTimestamp = true;
 
     let hasWonPreviousRound = false;
 
@@ -27,9 +27,9 @@
     }
     
     $: {
-        if ($gameState.numberOfRounds !== savedRound) {
-            savedRound = $gameState.numberOfRounds;
+        if (($gameState.gameStage === 'BoxDecision' || $gameState.gameStage === 'AmuletDecision' ) && shouldSaveNewRoundTimestamp) {
             createTimestampEntry('round');
+            shouldSaveNewRoundTimestamp = false;
         }
     }
 
@@ -68,6 +68,7 @@
         const type: 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss' = hasWon ? `${typeOfBox}Win` : `${typeOfBox}Loss`;
         createTimestampEntry(type);
         gameState.progressFromBoxDecision(hasWon);
+        shouldSaveNewRoundTimestamp = true;
     }
 
     const handleBuyAmulet = () => {
