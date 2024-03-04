@@ -28,6 +28,9 @@
         if ($gameState?.gameStage === 'BoxDecision') {
             createTimestampEntry('round');
         }
+        if ($gameState?.gameStage === 'AmuletDecision') {
+            createTimestampEntry('amuletStart');
+        }
     }
 
     const playWithAmulet = (state: string): (() => boolean) => {
@@ -67,6 +70,16 @@
         gameState.progressFromBoxDecision(hasWon);
     }
 
+    const handleBuyAmulet = () => {
+        createTimestampEntry('amuletBuy');
+        gameState.purchaseAmulet(true)
+    }
+
+    const handleRejectAmulet = () => {
+        createTimestampEntry('amuletReject');
+        gameState.purchaseAmulet(false)
+    }
+
 </script>
 
 <div class="central-holder">
@@ -97,7 +110,7 @@
                 id={1}
                 />
 
-                <Amulet length={200} on:buyAmulet={() => gameState.purchaseAmulet(true)} />
+                <Amulet length={200} on:buyAmulet={handleBuyAmulet} />
         
                 <Cuboid on:openTopEvent={playRound}
                 xLength={250}
@@ -116,7 +129,7 @@
                 id={2}
                 />
             </div>
-            <AmuletInfoHolder on:refuseAmulet={() => gameState.purchaseAmulet(false)} />
+            <AmuletInfoHolder on:refuseAmulet={handleRejectAmulet} />
             <div class="pattern"></div>
         </div>
 </div>
