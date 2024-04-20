@@ -3,13 +3,7 @@
     import { _ } from 'svelte-i18n';
     import type { GameStateStore } from '../stores/GameState';
     import { getContext } from 'svelte';
-    import { createEventDispatcher } from 'svelte';
     const gameState: GameStateStore = getContext('gameState');
-    const dispatch = createEventDispatcher();
-
-    const handleRefuseAmulet = () => {
-        dispatch('refuseAmulet');
-    }
 
     const amuletPrice = $gameState.config.priceOfAmulet;
 
@@ -38,9 +32,6 @@
                     values: { price: amuletPrice }
                 })}
             </div>
-            <button on:click={handleRefuseAmulet}>
-                {$_('amulet.refuse')}
-            </button>
             {/if}
         </div>
     {:else if $gameState.gameStage === 'BoxDecision'}
@@ -78,22 +69,5 @@
     }
     .amulet-info-holder > div > div:nth-child(2) {
         font-size: 20px;
-    }
-    button {
-        background: none;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 4px;
-        border: 2px solid;
-        cursor: pointer;
-        color: #c23b22;
-        margin-bottom: 15px;
-        transition: all 0.3s;
-        font-size: 1rem;
-        &&:hover {
-            background-color: #c23b22;
-            border: 2px solid #c23b22;
-            color: #fff;
-        }
     }
 </style>
