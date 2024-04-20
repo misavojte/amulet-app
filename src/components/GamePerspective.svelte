@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Cuboid from './Cuboid.svelte';
-	import AmuletInfoHolder from './AmuletInfoHolder.svelte';
 	import CounterHolder from './CounterHolder.svelte';
 	import GameAmulet from './GameAmulet.svelte';
+	import GameInstruction from './GameInstruction.svelte';
 </script>
 
 <div class="perspective">
@@ -46,13 +46,13 @@
 			id={2}
 		/>
 	</div>
-	<AmuletInfoHolder />
+	<GameInstruction />
 	<div class="pattern" />
 </div>
 
 <style>
 	.perspective {
-		transform: perspective(800px) rotateX(25deg);
+		transform: perspective(100vh) rotateX(25deg) translateY(-5%);
 		transform-style: preserve-3d;
 		/* font-family: 'Parisienne', sans-serif; */
 		color: #483d41 !important;
@@ -62,6 +62,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 	}
 
 	.chest-postions {
