@@ -109,6 +109,8 @@
 		height: 1px;
 		flex-grow: 1;
 		width: 100%;
+		min-width: 1200px;
+		overflow: hidden;
 		position: relative;
 	}
 </style>

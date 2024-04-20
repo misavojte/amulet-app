@@ -63,6 +63,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		min-width: 1200px;
 	}
 
 	.chest-postions {
@@ -126,5 +127,17 @@
 		z-index: -1;
 		pointer-events: none;
 		user-select: none;
+	}
+	@media (max-height: 719px) {
+		.perspective {
+			transform: scale(0.8) perspective(calc(100vh * 1.2)) rotateX(25deg) translateY(-5%);
+			height: calc(100vh * 1.2);
+		}
+	}
+	@media (min-height: 1240px) {
+		.perspective {
+			transform: scale(1.5) perspective(calc(100vh * 0.666)) rotateX(25deg) translateY(-5%);
+			height: calc(100vh * 0.666);
+		}
 	}
 </style>
