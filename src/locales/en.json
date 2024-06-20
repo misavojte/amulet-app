@@ -1,7 +1,7 @@
 {
     "app" : {
         "title" : "Hra Amulet",
-        "description" : "Hra Amulet",
+        "description" : "Amulet Game",
         "load" : "Načítání hry"
     },
     "rules": {

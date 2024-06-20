@@ -41,5 +41,8 @@
         "whichBox" : "Která krabice má poklad?",
         "won" : "Vyhrál jsi {score} bodů!",
         "lost" : "Nenašel jsi poklad"
+    },
+    "footer": {
+        "text" : "Aplikace je součástí disertačního výzkumu Mgr. Markéty Muczkové na Univerzitě Palackého v Olomouci. Pokud máte jakékoliv dotazy, neváhejte nás kontaktovat na:"
     }
 }
