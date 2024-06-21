@@ -17,6 +17,8 @@
 
     export let userId: string;
 
+    let shouldSaveNewRoundTimestamp = true;
+
     let hasWonPreviousRound = false;
 
     const timestampService = new TimestampService();
@@ -25,8 +27,9 @@
     }
     
     $: {
-        if ($gameState?.gameStage === 'BoxDecision') {
+        if (($gameState.gameStage === 'BoxDecision' || $gameState.gameStage === 'AmuletDecision' ) && shouldSaveNewRoundTimestamp) {
             createTimestampEntry('round');
+            shouldSaveNewRoundTimestamp = false;
         }
     }
 
@@ -65,6 +68,17 @@
         const type: 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss' = hasWon ? `${typeOfBox}Win` : `${typeOfBox}Loss`;
         createTimestampEntry(type);
         gameState.progressFromBoxDecision(hasWon);
+        shouldSaveNewRoundTimestamp = true;
+    }
+
+    const handleBuyAmulet = () => {
+        createTimestampEntry('amuletBuy');
+        gameState.purchaseAmulet(true)
+    }
+
+    const handleRejectAmulet = () => {
+        createTimestampEntry('amuletReject');
+        gameState.purchaseAmulet(false)
     }
 
 </script>
@@ -97,7 +111,7 @@
                 id={1}
                 />
 
-                <Amulet length={200} on:buyAmulet={() => gameState.purchaseAmulet(true)} />
+                <Amulet length={200} on:buyAmulet={handleBuyAmulet} />
         
                 <Cuboid on:openTopEvent={playRound}
                 xLength={250}
@@ -116,7 +130,7 @@
                 id={2}
                 />
             </div>
-            <AmuletInfoHolder on:refuseAmulet={() => gameState.purchaseAmulet(false)} />
+            <AmuletInfoHolder on:refuseAmulet={handleRejectAmulet} />
             <div class="pattern"></div>
         </div>
 </div>

@@ -38,7 +38,7 @@ export interface DbData {
     boxId: number;
 }
 
-export type TimestampType = 'round' | 'amuletDecisionStart' | 'amuletDecisionClick' | 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss';
+export type TimestampType = 'round' | 'amuletStart' | 'amuletBuy' | 'amuletReject' | 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss';
 
 export interface TimestampEntryObject {
     timestamp: number;
