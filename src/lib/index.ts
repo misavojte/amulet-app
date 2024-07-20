@@ -38,11 +38,11 @@ export interface DbData {
     boxId: number;
 }
 
-export type TimestampType = 'round' | 'amuletStart' | 'amuletBuy' | 'amuletReject' | 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss';
+export type TimestampGameType = 'round' | 'amuletStart' | 'amuletBuy' | 'amuletReject' | 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss';
 
-export interface TimestampEntryObject {
+export interface TimestampGameEntryObject {
     timestamp: number;
-    type: TimestampType;
+    type: TimestampGameType;
     round: number;
     repeat: number;
 }
@@ -50,7 +50,7 @@ export interface TimestampEntryObject {
 /**
  * In FireBase, saved in: /timestamps/{url}/{userId}/{userName}
  */
-export interface TimestampEntryUrl {
+export interface TimestampGameEntryUrl {
     userId: string;
     userName: string;
     url: string;

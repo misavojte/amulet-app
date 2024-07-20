@@ -3,33 +3,33 @@
 	import End from './End.svelte';
 	import { _ } from 'svelte-i18n';
 
-	import type { TimestampType } from '$lib';
+	import type { TimestampGameType } from '$lib';
 
 	import ConfettiWrapper from './ConfettiWrapper.svelte';
 	import type { GameStateStore } from '../stores/GameState';
 	import { getContext } from 'svelte';
-	import { TimestampService } from '$lib/services/TimestampService';
+	import { TimestampGameService } from '$lib/services/TimestampGameService';
 	import GamePerspective from './GamePerspective.svelte';
 	const gameState: GameStateStore = getContext('gameState');
 
 	export let userId: string;
 
-	let shouldSaveNewRoundTimestamp = true;
+	let shouldSaveNewRoundTimestampGame = true;
 
 	let hasWonPreviousRound = false;
 
-	const timestampService = new TimestampService();
-	const createTimestampEntry = (type: TimestampType) => {
-		void timestampService.saveTimestamp(type);
+	const timestampService = new TimestampGameService();
+	const createTimestampGameEntry = (type: TimestampGameType) => {
+		void timestampService.saveTimestampGame(type);
 	};
 
 	$: {
 		if (
 			($gameState.gameStage === 'BoxDecision' || $gameState.gameStage === 'AmuletDecision') &&
-			shouldSaveNewRoundTimestamp
+			shouldSaveNewRoundTimestampGame
 		) {
-			createTimestampEntry('round');
-			shouldSaveNewRoundTimestamp = false;
+			createTimestampGameEntry('round');
+			shouldSaveNewRoundTimestampGame = false;
 		}
 	}
 
@@ -68,18 +68,18 @@
 		const type: 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss' = hasWon
 			? `${typeOfBox}Win`
 			: `${typeOfBox}Loss`;
-		createTimestampEntry(type);
+		createTimestampGameEntry(type);
 		gameState.progressFromBoxDecision(hasWon);
-		shouldSaveNewRoundTimestamp = true;
+		shouldSaveNewRoundTimestampGame = true;
 	};
 
 	const handleBuyAmulet = () => {
-		createTimestampEntry('amuletBuy');
+		createTimestampGameEntry('amuletBuy');
 		gameState.purchaseAmulet(true);
 	};
 
 	const handleRejectAmulet = () => {
-		createTimestampEntry('amuletReject');
+		createTimestampGameEntry('amuletReject');
 		gameState.purchaseAmulet(false);
 	};
 </script>
