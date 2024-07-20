@@ -243,7 +243,7 @@
             }
         },
         "Q21IBI": {
-            "question" : "If I think too much about something bad; it will happen.",
+            "question" : "If I think too much about something bad, it will happen.",
             "options" : {
                 "1" : "Strongly disagree",
                 "2" : "Disagree",
@@ -263,7 +263,7 @@
             }
         },
         "Q23IBI": {
-            "question" : "Sometimes I get a feeling that something is going to happen; before it happens.",
+            "question" : "Sometimes I get a feeling that something is going to happen, before it happens.",
             "options" : {
                 "1" : "Strongly disagree",
                 "2" : "Disagree",
@@ -353,7 +353,7 @@
             }
         },
         "Q5TS": {
-            "question" : "Even if there is concrete evidence against what you believe to be true; it is OK to maintain cherished beliefs.",
+            "question" : "Even if there is concrete evidence against what you believe to be true, it is OK to maintain cherished beliefs.",
             "options" : {
                 "1" : "Strongly disagree",
                 "2" : "Disagree",
@@ -363,7 +363,7 @@
             }
         },
         "Q6TS": {
-            "question" : "To; o čem věříte; že je to pravda; je důležitější než důkazy; které tomu odporují; bez ohledu na téma.",
+            "question" : "To, o čem věříte, že je to pravda, je důležitější než důkazy, které tomu odporují, bez ohledu na téma.",
             "options" : {
                 "1" : "Strongly disagree",
                 "2" : "Disagree",
@@ -373,7 +373,7 @@
             }
         },
         "Q7TS": {
-            "question" : "I think there are many wrong ways; but only one right way; to almost anything.",
+            "question" : "I think there are many wrong ways, but only one right way, to almost anything.",
             "options" : {
                 "1" : "Strongly disagree",
                 "2" : "Disagree",
@@ -383,7 +383,7 @@
             }
         },
         "Q8TS": {
-            "question" : "In my experience; the truth is often black and white.",
+            "question" : "In my experience, the truth is often black and white.",
             "options" : {
                 "1" : "Strongly disagree",
                 "2" : "Disagree",
@@ -413,7 +413,7 @@
             }
         },
         "Q11TS": {
-            "question" : "Either something is true or it is false; there is nothing in-between.",
+            "question" : "Either something is true or it is false, there is nothing in-between.",
             "options" : {
                 "1" : "Strongly disagree",
                 "2" : "Disagree",
@@ -453,7 +453,7 @@
             }
         },
         "Q15TS": {
-            "question" : "When I make decisions; I tend to rely on my intuition.",
+            "question" : "When I make decisions, I tend to rely on my intuition.",
             "options" : {
                 "1" : "Strongly disagree",
                 "2" : "Disagree",
@@ -615,7 +615,7 @@
             }
         },
         "email": {
-            "question" : "When an article from the research is published in a scholarly journal; we can send it to your email"
+            "question" : "When an article from the research is published in a scholarly journal, we can send it to your email"
         }
     }
 }

@@ -45,511 +45,511 @@
         "Q1IBI": {
             "question" : "Wykonuję specjalne czynności po to, by zapobiec nieszczęściu.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q2IBI": {
             "question" : "Unikam pechowych liczb.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q3IBI": {
             "question" : "Magia sprawia, że zdarzają się cuda.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q4IBI": {
             "question" : "Magiczne moce wpłynęły na moje życie.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" :"Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" :"Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q5IBI": {
             "question" : "Większość rzeczy, jakie się nam przytrafiają, są wynikiem przeznaczenia.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q6IBI": {
             "question" : "Czasami wykonuję specjalne rytuały ochronne.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q7IBI": {
             "question" : "Niemożliwym jest rzucenie zaklęcia magicznego.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q8IBI": {
             "question" : "Amulety przynoszące szczęście nie działają.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q9IBI": {
             "question" : "Wierzę w magię.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q10IBI": {
             "question" : "Nigdy nie powinno się kusić losu.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q11IBI": {
             "question" : "Nie wierzę w duchową/ nadprzyrodzoną obecność.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q12IBI": {
             "question" : "Wierzę w siły wyższe lub Boga.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q13IBI": {
             "question" : "Dusza przestaje istnieć po śmierci.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q14IBI": {
             "question" : "Wierzę, że anioł stróż bądź inne siły duchowe mnie chronią.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q15IBI": {
             "question" : "To tylko kwestia czasu kiedy nauka będzie w stanie wszystko wyjaśnić.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q16IBI": {
             "question" : "Istnieje niewidzialna siła prowadząca nas wszystkich.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q17IBI": {
             "question" : "Nauka jest kluczem do zrozumienia jak dzieją się rzeczy.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q18IBI": {
             "question" : "Modlę się, aby odpędzić nieszczęście.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q19IBI": {
             "question" : "Życie to nic innego jak seria przypadkowych zdarzeń.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q20IBI": {
             "question" : "Jeśli myślę o czymś za często to się to wydarzy.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q21IBI": {
             "question" : "Jeżeli dużo myślę o czymś złym to się zdarzy.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q22IBI": {
             "question" : "Moje myśli same w sobie kształtują moją rzeczywistość.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q23IBI": {
             "question" : "Czasami mam przeczucie, że coś się wydarzy zanim ma to miejsce.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q24IBI": {
             "question" : "Czasami zmieniam plany bo mam złe przeczucie.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q25IBI": {
             "question" : "Nie istnieje coś takiego jak przypadek.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q26IBI": {
             "question" : "Nie istnieje coś takiego jak szczęście.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q27IBI": {
             "question" : "Niektóre zdarzenia nie mają logicznego wyjaśnienia.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q1TS": {
             "question" : "To ważne aby pozostać przy swoich wierzeniach, nawet jeżeli przedstawione są nam dowody temu przeczące.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q2TS": {
             "question" : "Poczucie, że coś jest prawdziwe jest ważniejsze niż dowody.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q3TS": {
             "question" : "Tylko dlatego, że dowody przeczą moim obecnym przekonaniom nie oznacza to, że moje przekonania są błędne.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q4TS": {
             "question" : "Mogą istnieć dowody przeciwko temu w co wierzę, ale nie znaczy to, że muszę zmienić przez to moje przekonania.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q5TS": {
             "question" : "Nawet jeżeli istnieje konkretny dowód przeczący temu, co uważasz za prawdziwe,  utrzymanie swojego poglądu jest w porządku.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q6TS": {
             "question" : "Niezależnie od tematu, to co uznajesz za prawdziwe jest ważniejsze od dowodów będących przeciw.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q7TS": {
             "question" : "Myślę, że istnieje dużo złych dróg, ale tylko jedna właściwa droga do prawie wszystkiego.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q8TS": {
             "question" : "Zgodnie z moim doświadczeniem prawda jest często czarno-biała.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q9TS": {
             "question" : "Prawda nigdy nie jest względna.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q10TS": {
             "question" : "Prawda się nie zmienia.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q11TS": {
             "question" : "Albo coś jest prawdziwe, albo fałszywe, nie ma nic pomiędzy.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q12TS": {
             "question" : "Nie ma niczego pośrodku pomiędzy tym co prawdziwe a tym co fałszywe.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q13TS": {
             "question" : "Lubię polegać na mojej intuicji.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q14TS": {
             "question" : "Wierzę w poleganie na moich przeczuciach.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q15TS": {
             "question" : "Kiedy podejmuję decyzję mam tendencję do polegania na swojej intuicji.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q16TS": {
             "question" : "Słuchanie mojego wewnętrznego głosu zazwyczaj ułatwia mi w rozwiązywaniu. problemu życiowych.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q17TS": {
             "question" : "Intuicja jest najlepszym przewodnikiem w podejmowaniu decyzji.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q18TS": {
             "question" : "Często podążam za intuicją przy podejmowaniu szybkich decyzji.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q19TS": {
             "question" : "Nie jestem za dobry w rozwiązywaniu skomplikowanych problemów.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q20TS": {
             "question" : "Rozmyślanie nie jest moim ulubionym sposobem spędzania czasu.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q21TS": {
             "question" : "Staram się unikać sytuacji, które wymagają głębszego myślenia o czymś.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q22TS": {
             "question" : "Nie jestem osobą myślącą analitycznie.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q23TS": {
             "question" : "Uważne, ostrożne rozważanie rzeczy nie jest moją mocną stroną.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "Q24TS": {
             "question" : "Długie, intensywne myślenie o czymś przynosi mi niewiele satysfakcji.",
             "options" : {
-                "1" : "Rozhodně nesouhlasím",
-                "2" : "Nesouhlasím",
-                "3" : "Ani nesouhlasím, ani souhlasím",
-                "4" : "Souhlasím",
-                "5" : "Rozhodně souhlasím"
+                "1" : " Zdecydowanie się nie zgadzam",
+                "2" : "Nie zgadzam się",
+                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
+                "4" : "Zgadzam się",
+                "5" : "Zdecydowanie się zgadzam"
             }
         },
         "age": {
@@ -558,10 +558,10 @@
         "gender": {
             "question" : "Jaka jest twoja płeć?",
             "options" : {
-                "F" : "Žena",
-                "M" : "Muž",
-                "O" : "Jiné",
-                "N" : "Nechci odpovídat"
+                "F" : "Kobieta",
+                "M" : "Mężczyzna",
+                "O" : "Inny",
+                "N" : "Nie chcę odpowiadać"
             }
         },
         "QamuletEffect": {
@@ -597,17 +597,17 @@
         "QlikeExperience": {
             "question" : "Jak bardzo podobało ci się to doświadczenie?",
             "options" : {
-                "1" : "Vůbec",
-                "2" : "Spíše nelíbila",
-                "3" : "Tak napůl",
-                "4" : "Spíše líbila",
-                "5" : "Velmi"
+                "1" : "Wcale",
+                "2" : "Raczej nie lubiłem",
+                "3" : "Tak naprawdę nie wiem",
+                "4" : "Raczej polubiłem",
+                "5" : "Bardzo"
             }
         },
         "QfrustrationLevel": {
             "question" : "Jak bardzo frustrujące było to doświadczenie dla ciebie?",
             "options" : {
-                "1" : "Vůbec",
+                "1" : "Wcale",
                 "2" : "Mírně",
                 "3" : "Tak napůl",
                 "4" : "Výrazně",
