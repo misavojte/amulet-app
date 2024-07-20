@@ -36,581 +36,586 @@
 			"score": "Skóre"
 		}
 	},
-	"questions": {
-		"Q1IBI": {
-			"question": "Dělám něco speciálního, abych předešel/a smůle.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q2IBI": {
-			"question": "Vyhýbám se nešťastným číslům.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q3IBI": {
-			"question": "Magie způsobuje zázraky.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q4IBI": {
-			"question": "Magické síly ovlivnily můj život.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q5IBI": {
-			"question": "Věřím na magii.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q6IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q7IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q8IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q9IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q10IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q11IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q12IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q13IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q14IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q15IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q16IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q17IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q18IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q19IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q20IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q21IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q22IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q23IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q24IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q25IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q26IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q27IBI": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q1TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q2TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q3TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q4TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q5TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q6TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q7TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q8TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q9TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q10TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q11TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q12TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q13TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q14TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q15TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q16TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q17TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q18TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q19TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q20TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q21TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q22TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q23TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"Q24TS": {
-			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"options": {
-				"1": "Rozhodně nesouhlasím",
-				"2": "Nesouhlasím",
-				"3": "Ani nesouhlasím, ani souhlasím",
-				"4": "Souhlasím",
-				"5": "Rozhodně souhlasím"
-			}
-		},
-		"age": {
-			"question": "Jaký je Váš věk?"
-		},
-		"gender": {
-			"question": "Jaký je váš gender?",
-			"options": {
-				"F": "Žena",
-				"M": "Muž",
-				"O": "Jiné",
-				"N": "Nechci odpovídat"
-			}
-		},
-		"QamuletEffect": {
-			"question": "Nakolik si myslíte, že měl amulet vliv na váš úspěch?",
-			"options": {
-				"1": "Žádný",
-				"2": "Mírný",
-				"3": "Nevím",
-				"4": "Výrazný",
-				"5": "Velmi výrazný"
-			}
-		},
-		"QstrategyEffect": {
-			"question": "Nakolik si myslíte, že vaše herní strategie ovlivnila výsledek?",
-			"options": {
-				"1": "Nijak",
-				"2": "Mírně",
-				"3": "Nevím",
-				"4": "Výrazně",
-				"5": "Velmi výrazně"
-			}
-		},
-		"QchanceEffect": {
-			"question": "Jaký podíl úspěchu přisuzujete náhodě?",
-			"options": {
-				"1": "Žádný",
-				"2": "Mírný",
-				"3": "Nevím",
-				"4": "Výrazný",
-				"5": "Velmi výrazný"
-			}
-		},
-		"QlikeExperience": {
-			"question": "Jak moc se vám tato zkušenost líbila?",
-			"options": {
-				"1": "Vůbec",
-				"2": "Spíše nelíbila",
-				"3": "Tak napůl",
-				"4": "Spíše líbila",
-				"5": "Velmi"
-			}
-		},
-		"QfrustrationLevel": {
-			"question": "Jak moc pro vás byla tato zkušenost frustrující?",
-			"options": {
-				"1": "Vůbec",
-				"2": "Mírně",
-				"3": "Tak napůl",
-				"4": "Výrazně",
-				"5": "Velmi výrazně"
-			}
-		},
-		"email": {
-			"question": "Až bude z výzkumu publikován článek v odborném periodiku, můžeme vám jej zaslat na email."
-		}
-	}
+    "questionnaire": {
+        "next" : "Next question",
+        "back" : "Previous question",
+        "submitValue" : "Confirm the answer"
+    },
+    "questions": {
+        "Q1IBI": {
+            "question" : "I do something special to prevent bad luck.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q2IBI": {
+            "question" : "I avoid unlucky numbers.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q3IBI": {
+            "question" : "Magic causes miracles to happen. ",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q4IBI": {
+            "question" : "Magical forces have impacted on my life. ",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" :"Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q5IBI": {
+            "question" : "Most things that happen to us are the result of fate.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q6IBI": {
+            "question" : "I sometimes perform special rituals for protection.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q7IBI": {
+            "question" : "It is not possible to cast a magic spell. ",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q8IBI": {
+            "question" : "Good luck charms do not work.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q9IBI": {
+            "question" : "I believe in magic.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q10IBI": {
+            "question" : "You should never tempt fate.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q11IBI": {
+            "question" : "I do not believe in a spiritual presence. ",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q12IBI": {
+            "question" : "I believe in a higher power or God. ",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q13IBI": {
+            "question" : "The soul does not continue to exist after death.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q14IBI": {
+            "question" : "I believe guardian angels or other spiritual forces protect me.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q15IBI": {
+            "question" : "It is just a matter of time until science can explain everything. ",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q16IBI": {
+            "question" : "There is an invisible force guiding us all.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q17IBI": {
+            "question" : "Science is the key to understanding how things happen.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q18IBI": {
+            "question" : "I use prayer to ward off misfortune.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q19IBI": {
+            "question" : "Life is nothing more than a series of random events. ",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q20IBI": {
+            "question" : "If I think too much about something it will happen. ",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q21IBI": {
+            "question" : "If I think too much about something bad; it will happen.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q22IBI": {
+            "question" : "My thoughts alone can alter reality.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q23IBI": {
+            "question" : "Sometimes I get a feeling that something is going to happen; before it happens.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q24IBI": {
+            "question" : "I have sometimes changed my plans because I had a bad feeling.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q25IBI": {
+            "question" : "There is no such thing as a coincidence. ",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q26IBI": {
+            "question" : "There is no such thing as luck. ",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q27IBI": {
+            "question" : "Some things happen for no logical reason at all.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q1TS": {
+            "question" : "It is important to be loyal to your beliefs even when evidence is brought to bear against them.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q2TS": {
+            "question" : "Whether something feels true is more important than evidence.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q3TS": {
+            "question" : "Just because evidence conflicts with my current beliefs does not mean my beliefs are wrong.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q4TS": {
+            "question" : "There may be evidence that goes against what you believe but that does not mean you have to change your beliefs.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q5TS": {
+            "question" : "Even if there is concrete evidence against what you believe to be true; it is OK to maintain cherished beliefs.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q6TS": {
+            "question" : "To; o čem věříte; že je to pravda; je důležitější než důkazy; které tomu odporují; bez ohledu na téma.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q7TS": {
+            "question" : "I think there are many wrong ways; but only one right way; to almost anything.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q8TS": {
+            "question" : "In my experience; the truth is often black and white.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q9TS": {
+            "question" : "Truth is never relative.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q10TS": {
+            "question" : "The truth does not change.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q11TS": {
+            "question" : "Either something is true or it is false; there is nothing in-between.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q12TS": {
+            "question" : "There is no middle ground between what is true and what is false.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q13TS": {
+            "question" : "I like to rely on my intuitive impressions.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q14TS": {
+            "question" : "I believe in trusting my hunches.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q15TS": {
+            "question" : "When I make decisions; I tend to rely on my intuition.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q16TS": {
+            "question" : "Using my “gut-feelings” usually works well for me in figuring out problems in my life.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q17TS": {
+            "question" : "Intuition is the best guide in making decisions.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q18TS": {
+            "question" : "I often go by my instincts when deciding on a course of action.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q19TS": {
+            "question" : "I’m not that good at figuring out complicated problems.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q20TS": {
+            "question" : "Thinking is not my idea of an enjoyable activity.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q21TS": {
+            "question" : "I try to avoid situations that require thinking in depth about something. ",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q22TS": {
+            "question" : "I am not a very analytical thinker. ",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q23TS": {
+            "question" : "Reasoning things out carefully is not one of my strong points. ",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "Q24TS": {
+            "question" : "Thinking hard and for a long time about something gives me little satisfaction.",
+            "options" : {
+                "1" : "Strongly disagree",
+                "2" : "Disagree",
+                "3" : "Neither agree nor disagree",
+                "4" : "Agree",
+                "5" : "Strongly agree"
+            }
+        },
+        "age": {
+            "question" : "What is your age?"
+        },
+        "gender": {
+            "question" : "What is your gender?",
+            "options" : {
+                "F" : "Žena",
+                "M" : "Muž",
+                "O" : "Jiné",
+                "N" : "Nechci odpovídat"
+            }
+        },
+        "QamuletEffect": {
+            "question" : "To what extent do you think the amulet influenced your success?",
+            "options" : {
+                "1" : "Žádný",
+                "2" : "Mírný",
+                "3" : "Nevím",
+                "4" : "Výrazný",
+                "5" : "Velmi výrazný"
+            }
+        },
+        "QstrategyEffect": {
+            "question" : "To what extent do you think your game strategy influenced the outcome?",
+            "options" : {
+                "1" : "Nijak",
+                "2" : "Mírně",
+                "3" : "Nevím",
+                "4" : "Výrazně",
+                "5" : "Velmi výrazně"
+            }
+        },
+        "QchanceEffect": {
+            "question" : "What portion of success do you attribute to chance?",
+            "options" : {
+                "1" : "Žádný",
+                "2" : "Mírný",
+                "3" : "Nevím",
+                "4" : "Výrazný",
+                "5" : "Velmi výrazný"
+            }
+        },
+        "QlikeExperience": {
+            "question" : "How much did you enjoy this experience?",
+            "options" : {
+                "1" : "Vůbec",
+                "2" : "Spíše nelíbila",
+                "3" : "Tak napůl",
+                "4" : "Spíše líbila",
+                "5" : "Velmi"
+            }
+        },
+        "QfrustrationLevel": {
+            "question" : "How frustrating was this experience for you?",
+            "options" : {
+                "1" : "Vůbec",
+                "2" : "Mírně",
+                "3" : "Tak napůl",
+                "4" : "Výrazně",
+                "5" : "Velmi výrazně"
+            }
+        },
+        "email": {
+            "question" : "When an article from the research is published in a scholarly journal; we can send it to your email"
+        }
+    }
 }
