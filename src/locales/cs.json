@@ -44,5 +44,582 @@
     },
     "footer": {
         "text" : "Aplikace je součástí disertačního výzkumu Mgr. Markéty Muczkové na Univerzitě Palackého v Olomouci. Pokud máte jakékoliv dotazy, neváhejte nás kontaktovat na:"
+    },
+    "question": {
+        "Q1IBI": {
+            "question" : "Dělám něco speciálního, abych předešel/a smůle.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q2IBI": {
+            "question" : "Vyhýbám se nešťastným číslům.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q3IBI": {
+            "question" : "Magie způsobuje zázraky.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q4IBI": {
+            "question" : "Magické síly ovlivnily můj život.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" :"Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q5IBI": {
+            "question" : "Věřím na magii.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q6IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q7IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q8IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q9IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q10IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q11IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q12IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q13IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q14IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q15IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q16IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q17IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q18IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q19IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q20IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q21IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q22IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q23IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q24IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q25IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q26IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q27IBI": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q1TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q2TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q3TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q4TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q5TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q6TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q7TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q8TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q9TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q10TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q11TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q12TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q13TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q14TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q15TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q16TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q17TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q18TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q19TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q20TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q21TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q22TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q23TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "Q24TS": {
+            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "answers" : {
+                "1" : "Rozhodně nesouhlasím",
+                "2" : "Nesouhlasím",
+                "3" : "Ani nesouhlasím, ani souhlasím",
+                "4" : "Souhlasím",
+                "5" : "Rozhodně souhlasím"
+            }
+        },
+        "age": {
+            "question" : "Jaký je Váš věk?"
+        },
+        "gender": {
+            "question" : "Jaký je váš gender?",
+            "answers" : {
+                "F" : "Žena",
+                "M" : "Muž",
+                "O" : "Jiné",
+                "N" : "Nechci odpovídat"
+            }
+        },
+        "QamuletEffect": {
+            "question" : "Nakolik si myslíte, že měl amulet vliv na váš úspěch?",
+            "answers" : {
+                "1" : "Žádný",
+                "2" : "Mírný",
+                "3" : "Nevím",
+                "4" : "Výrazný",
+                "5" : "Velmi výrazný"
+            }
+        },
+        "QstrategyEffect": {
+            "question" : "Nakolik si myslíte, že vaše herní strategie ovlivnila výsledek?",
+            "answers" : {
+                "1" : "Nijak",
+                "2" : "Mírně",
+                "3" : "Nevím",
+                "4" : "Výrazně",
+                "5" : "Velmi výrazně"
+            }
+        },
+        "QchanceEffect": {
+            "question" : "Jaký podíl úspěchu přisuzujete náhodě?",
+            "answers" : {
+                "1" : "Žádný",
+                "2" : "Mírný",
+                "3" : "Nevím",
+                "4" : "Výrazný",
+                "5" : "Velmi výrazný"
+            }
+        },
+        "QlikeExperience": {
+            "question" : "Jak moc se vám tato zkušenost líbila?",
+            "answers" : {
+                "1" : "Vůbec",
+                "2" : "Spíše nelíbila",
+                "3" : "Tak napůl",
+                "4" : "Spíše líbila",
+                "5" : "Velmi"
+            }
+        },
+        "QfrustrationLevel": {
+            "question" : "Jak moc pro vás byla tato zkušenost frustrující?",
+            "answers" : {
+                "1" : "Vůbec",
+                "2" : "Mírně",
+                "3" : "Tak napůl",
+                "4" : "Výrazně",
+                "5" : "Velmi výrazně"
+            }
+        },
+        "email": {
+            "question" : "Až bude z výzkumu publikován článek v odborném periodiku, můžeme vám jej zaslat na email."
+        }
     }
 }
