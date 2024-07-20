@@ -92,7 +92,7 @@
             }
         },
         "Q5IBI": {
-            "question" : "Věřím na magii.",
+            "question" : "Většina věcí; které se nám dějí; jsou výsledkem osudu.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -102,7 +102,7 @@
             }
         },
         "Q6IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Někdy vykonávám speciální rituály pro ochranu.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -112,7 +112,7 @@
             }
         },
         "Q7IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Není možné seslat magické kouzlo.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -122,7 +122,7 @@
             }
         },
         "Q8IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Talismany pro štěstí nefungují.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -132,7 +132,7 @@
             }
         },
         "Q9IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Věřím na magii.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -142,7 +142,7 @@
             }
         },
         "Q10IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Nikdy byste neměli pokoušet osud.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -152,7 +152,7 @@
             }
         },
         "Q11IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Nevěřím na duchovní/spirituální přítomnost.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -162,7 +162,7 @@
             }
         },
         "Q12IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Věřím ve vyšší moc nebo Boha.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -172,7 +172,7 @@
             }
         },
         "Q13IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Duše po smrti nepokračuje v existenci.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -182,7 +182,7 @@
             }
         },
         "Q14IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Věřím; že mě chrání strážní andělé nebo jiné duchovní síly.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -192,7 +192,7 @@
             }
         },
         "Q15IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Je jen otázkou času; než věda vše vysvětlí.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -202,7 +202,7 @@
             }
         },
         "Q16IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Existuje neviditelná síla; která nás všechny vede.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -212,7 +212,7 @@
             }
         },
         "Q17IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Věda je klíčem k pochopení toho; jak se věci dějí.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -222,7 +222,7 @@
             }
         },
         "Q18IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Používám modlitbu k odvrácení neštěstí.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -232,7 +232,7 @@
             }
         },
         "Q19IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Život není nic jiného než série náhodných událostí.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -242,7 +242,7 @@
             }
         },
         "Q20IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Pokud o něčem hodně přemýšlím; stane se to.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -252,7 +252,7 @@
             }
         },
         "Q21IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Pokud o něčem špatném hodně přemýšlím; stane se to.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -262,7 +262,7 @@
             }
         },
         "Q22IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Moje myšlenky samy o sobě mohou ovlivňovat realitu.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -272,7 +272,7 @@
             }
         },
         "Q23IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Někdy mám pocit; že se něco stane; předtím; než se to stane.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -282,7 +282,7 @@
             }
         },
         "Q24IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Někdy jsem změnil/a své plány; protože jsem měl/a špatný pocit.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -292,7 +292,7 @@
             }
         },
         "Q25IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Neexistuje nic jako náhoda.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -302,7 +302,7 @@
             }
         },
         "Q26IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Neexistuje nic jako štěstí.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -312,7 +312,7 @@
             }
         },
         "Q27IBI": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Některé věci se dějí zcela bez logického důvodu.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -322,7 +322,7 @@
             }
         },
         "Q1TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Je důležité být věrný svým přesvědčením; i když se proti nim objeví důkazy.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -332,7 +332,7 @@
             }
         },
         "Q2TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Zda se něco zdá být pravdivé; je důležitější než důkaz.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -342,7 +342,7 @@
             }
         },
         "Q3TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "To; že důkazy jsou v rozporu s mými současnými přesvědčeními; neznamená; že moje přesvědčení jsou špatná.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -352,7 +352,7 @@
             }
         },
         "Q4TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Může existovat důkaz proti tomu; čemu věříte; ale to neznamená; že musíte změnit svá přesvědčení.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -362,7 +362,7 @@
             }
         },
         "Q5TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "I když existuje konkrétní důkaz proti tomu; čemu věříte; je v pořádku si zachovat drahocenná přesvědčení.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -372,7 +372,7 @@
             }
         },
         "Q6TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "To; o čem věříte; že je to pravda; je důležitější než důkazy; které tomu odporují; bez ohledu na téma.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -382,7 +382,7 @@
             }
         },
         "Q7TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Myslím si; že téměř ke všemu existuje mnoho nesprávných cest; ale jen jedna správná.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -392,7 +392,7 @@
             }
         },
         "Q8TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Podle mých zkušeností je pravda často černobílá.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -402,7 +402,7 @@
             }
         },
         "Q9TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Pravda nikdy není relativní.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -412,7 +412,7 @@
             }
         },
         "Q10TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Pravda je neměnná.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -422,7 +422,7 @@
             }
         },
         "Q11TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Buď je něco pravdivé nebo nepravdivé; nic mezi tím není.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -432,7 +432,7 @@
             }
         },
         "Q12TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Mezi tím; co je pravda a co ne; není žádný střed.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -442,7 +442,7 @@
             }
         },
         "Q13TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Rád/a se spoléhám na své intuitivní dojmy.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -452,7 +452,7 @@
             }
         },
         "Q14TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Věřím; že je dobré důvěřovat svým předtuchám/tušením.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -462,7 +462,7 @@
             }
         },
         "Q15TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Když se rozhoduji; mám tendenci se spoléhat na svou intuici.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -472,7 +472,7 @@
             }
         },
         "Q16TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Při řešení problémů v mém životě obvykle dobře funguje používání mých vnitřních pocitů.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -482,7 +482,7 @@
             }
         },
         "Q17TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Intuice je nejlepší pomocník při rozhodování.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -492,7 +492,7 @@
             }
         },
         "Q18TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Často se při rozhodování spoléhám na své instinkty.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -502,7 +502,7 @@
             }
         },
         "Q19TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Nejsem moc dobrý/á v řešení složitých problémů.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -512,7 +512,7 @@
             }
         },
         "Q20TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Přemýšlení nesplňuje mou představu příjemné aktivity",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -522,7 +522,7 @@
             }
         },
         "Q21TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Snažím se vyhýbat situacím; ve kterých musím přemýšlet o věcech do hloubky.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -532,7 +532,7 @@
             }
         },
         "Q22TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Nejsem moc analytický/á myslitel/ka.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -542,7 +542,7 @@
             }
         },
         "Q23TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Pečlivé rozvažování věcí není mou silnou stránkou.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -552,7 +552,7 @@
             }
         },
         "Q24TS": {
-            "question" : "Věřím, že můžu ovlivnit výsledek událostí.",
+            "question" : "Dlouhé a intenzivní přemýšlení o něčem mi nepřináší velkou satisfakci.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
