@@ -46,11 +46,13 @@
 </svelte:head>
 
 {#if !isReady}
-	<div class="center">
-		<Circle3 />
-		<p>
-			{$_('app.load')}
-		</p>
+	<div class="overflow-hidden w-screen">
+		<div class="center">
+			<Circle3 />
+			<p>
+				{$_('app.load')}
+			</p>
+		</div>
 	</div>
 {:else}
 	<div class="center">
@@ -64,15 +66,26 @@
 		padding: 0;
 		width: 100%;
 		height: 100%;
-		overflow: hidden;
 	}
 	:global(body) {
 		height: 100vh;
 		display: flex;
 		flex-direction: column;
-		font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-			Helvetica Neue, Arial, Noto Sans, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-			Segoe UI Symbol, 'Noto Color Emoji';
+		font-family:
+			ui-sans-serif,
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			Segoe UI,
+			Roboto,
+			Helvetica Neue,
+			Arial,
+			Noto Sans,
+			sans-serif,
+			'Apple Color Emoji',
+			'Segoe UI Emoji',
+			Segoe UI Symbol,
+			'Noto Color Emoji';
 	}
 	.center {
 		display: flex;

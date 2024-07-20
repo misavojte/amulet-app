@@ -16,7 +16,7 @@
 	}
 </script>
 
-<div class="locale-selects">
+<div class="flex gap-4">
 	{#each locales as { code, name, flag, text }}
 		<button class="locale-select" on:click={() => changeLocale(code)}>
 			<img src={`flags/${flag}`} alt={name + ' flag'} />
@@ -26,13 +26,6 @@
 </div>
 
 <style>
-	.locale-selects {
-		display: flex;
-		justify-content: center;
-		gap: 10px;
-		height: 100%;
-		width: 100%;
-	}
 	.locale-select {
 		align-items: center;
 		cursor: pointer;

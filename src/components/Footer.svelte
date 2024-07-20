@@ -4,9 +4,16 @@
 </script>
 
 <footer>
-	<p>
+	<p class="text-sm text-neutral-700">
 		{$_('footer.text')}
-		<a href="mailto:marketa.muczkova01@upol.cz"> marketa.muczkova01@upol.cz </a>
+		<a
+			class="decoration-dotted text-neutral-500 hover:text-neutral-700
+		
+		"
+			href="mailto:marketa.muczkova01@upol.cz"
+		>
+			marketa.muczkova01@upol.cz
+		</a>
 	</p>
 	<img width="1523" height="472" src="{base}/upol.png" alt="Logo Univerzity Palackého" />
 </footer>
@@ -16,14 +23,6 @@
 		width: 100%;
 		height: auto;
 		max-width: 160px;
-	}
-	a {
-		/* gray */
-		color: #757575;
-		text-decoration: dashed;
-		&:hover {
-			text-decoration: underline;
-		}
 	}
 	footer {
 		display: grid;
@@ -38,10 +37,6 @@
 		font-size: 0.8rem;
 		color: #757575;
 		width: 100%;
-	}
-	p {
-		margin: 0;
-		line-height: 1.15;
 	}
 	@media (max-width: 620px) {
 		footer {

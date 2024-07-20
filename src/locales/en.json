@@ -36,10 +36,10 @@
 			"score": "Skóre"
 		}
 	},
-	"question": {
+	"questions": {
 		"Q1IBI": {
 			"question": "Dělám něco speciálního, abych předešel/a smůle.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -49,7 +49,7 @@
 		},
 		"Q2IBI": {
 			"question": "Vyhýbám se nešťastným číslům.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -59,7 +59,7 @@
 		},
 		"Q3IBI": {
 			"question": "Magie způsobuje zázraky.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -69,7 +69,7 @@
 		},
 		"Q4IBI": {
 			"question": "Magické síly ovlivnily můj život.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -79,7 +79,7 @@
 		},
 		"Q5IBI": {
 			"question": "Věřím na magii.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -89,7 +89,7 @@
 		},
 		"Q6IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -99,7 +99,7 @@
 		},
 		"Q7IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -109,7 +109,7 @@
 		},
 		"Q8IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -119,7 +119,7 @@
 		},
 		"Q9IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -129,7 +129,7 @@
 		},
 		"Q10IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -139,7 +139,7 @@
 		},
 		"Q11IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -149,7 +149,7 @@
 		},
 		"Q12IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -159,7 +159,7 @@
 		},
 		"Q13IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -169,7 +169,7 @@
 		},
 		"Q14IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -179,7 +179,7 @@
 		},
 		"Q15IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -189,7 +189,7 @@
 		},
 		"Q16IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -199,7 +199,7 @@
 		},
 		"Q17IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -209,7 +209,7 @@
 		},
 		"Q18IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -219,7 +219,7 @@
 		},
 		"Q19IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -229,7 +229,7 @@
 		},
 		"Q20IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -239,7 +239,7 @@
 		},
 		"Q21IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -249,7 +249,7 @@
 		},
 		"Q22IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -259,7 +259,7 @@
 		},
 		"Q23IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -269,7 +269,7 @@
 		},
 		"Q24IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -279,7 +279,7 @@
 		},
 		"Q25IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -289,7 +289,7 @@
 		},
 		"Q26IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -299,7 +299,7 @@
 		},
 		"Q27IBI": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -309,7 +309,7 @@
 		},
 		"Q1TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -319,7 +319,7 @@
 		},
 		"Q2TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -329,7 +329,7 @@
 		},
 		"Q3TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -339,7 +339,7 @@
 		},
 		"Q4TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -349,7 +349,7 @@
 		},
 		"Q5TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -359,7 +359,7 @@
 		},
 		"Q6TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -369,7 +369,7 @@
 		},
 		"Q7TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -379,7 +379,7 @@
 		},
 		"Q8TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -389,7 +389,7 @@
 		},
 		"Q9TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -399,7 +399,7 @@
 		},
 		"Q10TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -409,7 +409,7 @@
 		},
 		"Q11TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -419,7 +419,7 @@
 		},
 		"Q12TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -429,7 +429,7 @@
 		},
 		"Q13TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -439,7 +439,7 @@
 		},
 		"Q14TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -449,7 +449,7 @@
 		},
 		"Q15TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -459,7 +459,7 @@
 		},
 		"Q16TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -469,7 +469,7 @@
 		},
 		"Q17TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -479,7 +479,7 @@
 		},
 		"Q18TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -489,7 +489,7 @@
 		},
 		"Q19TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -499,7 +499,7 @@
 		},
 		"Q20TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -509,7 +509,7 @@
 		},
 		"Q21TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -519,7 +519,7 @@
 		},
 		"Q22TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -529,7 +529,7 @@
 		},
 		"Q23TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -539,7 +539,7 @@
 		},
 		"Q24TS": {
 			"question": "Věřím, že můžu ovlivnit výsledek událostí.",
-			"answers": {
+			"options": {
 				"1": "Rozhodně nesouhlasím",
 				"2": "Nesouhlasím",
 				"3": "Ani nesouhlasím, ani souhlasím",
@@ -552,7 +552,7 @@
 		},
 		"gender": {
 			"question": "Jaký je váš gender?",
-			"answers": {
+			"options": {
 				"F": "Žena",
 				"M": "Muž",
 				"O": "Jiné",
@@ -561,7 +561,7 @@
 		},
 		"QamuletEffect": {
 			"question": "Nakolik si myslíte, že měl amulet vliv na váš úspěch?",
-			"answers": {
+			"options": {
 				"1": "Žádný",
 				"2": "Mírný",
 				"3": "Nevím",
@@ -571,7 +571,7 @@
 		},
 		"QstrategyEffect": {
 			"question": "Nakolik si myslíte, že vaše herní strategie ovlivnila výsledek?",
-			"answers": {
+			"options": {
 				"1": "Nijak",
 				"2": "Mírně",
 				"3": "Nevím",
@@ -581,7 +581,7 @@
 		},
 		"QchanceEffect": {
 			"question": "Jaký podíl úspěchu přisuzujete náhodě?",
-			"answers": {
+			"options": {
 				"1": "Žádný",
 				"2": "Mírný",
 				"3": "Nevím",
@@ -591,7 +591,7 @@
 		},
 		"QlikeExperience": {
 			"question": "Jak moc se vám tato zkušenost líbila?",
-			"answers": {
+			"options": {
 				"1": "Vůbec",
 				"2": "Spíše nelíbila",
 				"3": "Tak napůl",
@@ -601,7 +601,7 @@
 		},
 		"QfrustrationLevel": {
 			"question": "Jak moc pro vás byla tato zkušenost frustrující?",
-			"answers": {
+			"options": {
 				"1": "Vůbec",
 				"2": "Mírně",
 				"3": "Tak napůl",
