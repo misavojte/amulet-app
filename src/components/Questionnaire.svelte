@@ -29,6 +29,12 @@
 			</div>
 		{/await}
 	{:else}
-		<QuestionnaireFill {questionConfig} on:questionnaireDone={handleQuestionnaireDone} />
+		<QuestionnaireFill
+			{questionConfig}
+			on:questionnaireDone={handleQuestionnaireDone}
+			on:questionnaireStart={() => questionnaireInterface.startQuestionnaire()}
+			on:questionnaireAnswer={(e) =>
+				questionnaireInterface.saveTimestampQuestionnaire(e.detail.id, e.detail.value)}
+		/>
 	{/if}
 </div>

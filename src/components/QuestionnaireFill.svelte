@@ -4,7 +4,7 @@
 	import { writable } from 'svelte/store';
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, onMount } from 'svelte';
 	import QuestionnaireQuestionText from './QuestionnaireFillQuestionText.svelte';
 	import { type IQuestionConfig } from '$lib/interfaces/IConfig';
 
@@ -17,7 +17,7 @@
 
 	const handleOnInput = () => {
 		// Dispatch the event of the new value
-		dispatch('questionnaireInput', questionValues[$progressStore]);
+		dispatch('questionnaireAnswer', questionValues[$progressStore]);
 		// If no more questionConfig, dispatch the event
 		if ($progressStore === questionConfig.length - 1) {
 			dispatch('questionnaireDone', questionValues);
@@ -60,6 +60,11 @@
 
 	progressStore.subscribe((value) => {
 		shouldSkipBeDisabled = shouldSkipBeDisabledFn();
+	});
+
+	onMount(() => {
+		shouldSkipBeDisabled = shouldSkipBeDisabledFn();
+		dispatch('questionnaireStart', questionValues);
 	});
 </script>
 

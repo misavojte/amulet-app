@@ -1,5 +1,5 @@
 import type { ITimestampQuestionnaireService } from "$lib/interfaces/ITimestampQuestionnaireService";
-import type { TimestampQuestionnaireType, TimestampQuestionnaireEntryObject } from "$lib";
+import type { TimestampQuestionnaireEntryObject } from "$lib";
 import { getContext } from "svelte";
 import { get } from "svelte/store";
 import { writeTimestampQuestionnaire } from "../../firebase";
@@ -9,14 +9,18 @@ export class TimestampQuestionnaireService implements ITimestampQuestionnaireSer
 
     userState: UserStateStore = getContext('userState');
 
-    async saveTimestampQuestionnaire(type: TimestampQuestionnaireType, question: string, answer: string): Promise<void> {
+    async startQuestionnaire(): Promise<void> {
+        console.log('Questionnaire started successfully!');
+    }
+
+    async saveTimestampQuestionnaire(question: string, answer: string): Promise<void> {
         const userState = get(this.userState);
         if (userState.id === null) {
             throw new Error("User is null");
         }
         const timestampEntry: TimestampQuestionnaireEntryObject = {
             timestamp: Date.now(),
-            type,
+            type: 'answer',
             question,
             answer,
             userId: userState.id,

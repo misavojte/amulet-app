@@ -1,10 +1,16 @@
-import type { ITimestampQuestionnaireService, TimestampQuestionnaireType } from "$lib/interfaces/ITimestampQuestionnaireService";
+import type { ITimestampQuestionnaireService } from "$lib/interfaces/ITimestampQuestionnaireService";
 
 export class MockTimestampQuestionnaireService implements ITimestampQuestionnaireService {
 
-    async saveTimestampQuestionnaire(type: TimestampQuestionnaireType): Promise<void> {
+    async startQuestionnaire(): Promise<void> {
         setTimeout(() => {
-            console.log('TimestampQuestionnaire saved successfully!' + type);
+            console.log('Questionnaire started successfully!');
+        }, 1000);
+    }
+
+    async saveTimestampQuestionnaire(question: string, answer: string): Promise<void> {
+        setTimeout(() => {
+            console.log('TimestampQuestionnaire saved successfully!', question, answer);
         }, 1000);
     }
 
