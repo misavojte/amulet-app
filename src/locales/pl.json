@@ -43,7 +43,7 @@
     },
     "questions": {
         "Q1IBI": {
-            "question" : "Dělám něco speciálního, abych předešel/a smůle.",
+            "question" : "Wykonuję specjalne czynności po to, by zapobiec nieszczęściu.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -53,7 +53,7 @@
             }
         },
         "Q2IBI": {
-            "question" : "Vyhýbám se nešťastným číslům.",
+            "question" : "Unikam pechowych liczb.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -63,7 +63,7 @@
             }
         },
         "Q3IBI": {
-            "question" : "Magie způsobuje zázraky.",
+            "question" : "Magia sprawia, że zdarzają się cuda.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -73,7 +73,7 @@
             }
         },
         "Q4IBI": {
-            "question" : "Magické síly ovlivnily můj život.",
+            "question" : "Magiczne moce wpłynęły na moje życie.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -83,7 +83,7 @@
             }
         },
         "Q5IBI": {
-            "question" : "Většina věcí; které se nám dějí; jsou výsledkem osudu.",
+            "question" : "Większość rzeczy, jakie się nam przytrafiają, są wynikiem przeznaczenia.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -93,7 +93,7 @@
             }
         },
         "Q6IBI": {
-            "question" : "Někdy vykonávám speciální rituály pro ochranu.",
+            "question" : "Czasami wykonuję specjalne rytuały ochronne.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -103,7 +103,7 @@
             }
         },
         "Q7IBI": {
-            "question" : "Není možné seslat magické kouzlo.",
+            "question" : "Niemożliwym jest rzucenie zaklęcia magicznego.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -113,7 +113,7 @@
             }
         },
         "Q8IBI": {
-            "question" : "Talismany pro štěstí nefungují.",
+            "question" : "Amulety przynoszące szczęście nie działają.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -123,7 +123,7 @@
             }
         },
         "Q9IBI": {
-            "question" : "Věřím na magii.",
+            "question" : "Wierzę w magię.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -133,7 +133,7 @@
             }
         },
         "Q10IBI": {
-            "question" : "Nikdy byste neměli pokoušet osud.",
+            "question" : "Nigdy nie powinno się kusić losu.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -143,7 +143,7 @@
             }
         },
         "Q11IBI": {
-            "question" : "Nevěřím na duchovní/spirituální přítomnost.",
+            "question" : "Nie wierzę w duchową/ nadprzyrodzoną obecność.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -153,7 +153,7 @@
             }
         },
         "Q12IBI": {
-            "question" : "Věřím ve vyšší moc nebo Boha.",
+            "question" : "Wierzę w siły wyższe lub Boga.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -163,7 +163,7 @@
             }
         },
         "Q13IBI": {
-            "question" : "Duše po smrti nepokračuje v existenci.",
+            "question" : "Dusza przestaje istnieć po śmierci.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -173,7 +173,7 @@
             }
         },
         "Q14IBI": {
-            "question" : "Věřím; že mě chrání strážní andělé nebo jiné duchovní síly.",
+            "question" : "Wierzę, że anioł stróż bądź inne siły duchowe mnie chronią.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -183,7 +183,7 @@
             }
         },
         "Q15IBI": {
-            "question" : "Je jen otázkou času; než věda vše vysvětlí.",
+            "question" : "To tylko kwestia czasu kiedy nauka będzie w stanie wszystko wyjaśnić.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -193,7 +193,7 @@
             }
         },
         "Q16IBI": {
-            "question" : "Existuje neviditelná síla; která nás všechny vede.",
+            "question" : "Istnieje niewidzialna siła prowadząca nas wszystkich.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -203,7 +203,7 @@
             }
         },
         "Q17IBI": {
-            "question" : "Věda je klíčem k pochopení toho; jak se věci dějí.",
+            "question" : "Nauka jest kluczem do zrozumienia jak dzieją się rzeczy.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -213,7 +213,7 @@
             }
         },
         "Q18IBI": {
-            "question" : "Používám modlitbu k odvrácení neštěstí.",
+            "question" : "Modlę się, aby odpędzić nieszczęście.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -223,7 +223,7 @@
             }
         },
         "Q19IBI": {
-            "question" : "Život není nic jiného než série náhodných událostí.",
+            "question" : "Życie to nic innego jak seria przypadkowych zdarzeń.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -233,7 +233,7 @@
             }
         },
         "Q20IBI": {
-            "question" : "Pokud o něčem hodně přemýšlím; stane se to.",
+            "question" : "Jeśli myślę o czymś za często to się to wydarzy.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -243,7 +243,7 @@
             }
         },
         "Q21IBI": {
-            "question" : "Pokud o něčem špatném hodně přemýšlím; stane se to.",
+            "question" : "Jeżeli dużo myślę o czymś złym to się zdarzy.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -253,7 +253,7 @@
             }
         },
         "Q22IBI": {
-            "question" : "Moje myšlenky samy o sobě mohou ovlivňovat realitu.",
+            "question" : "Moje myśli same w sobie kształtują moją rzeczywistość.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -263,7 +263,7 @@
             }
         },
         "Q23IBI": {
-            "question" : "Někdy mám pocit; že se něco stane; předtím; než se to stane.",
+            "question" : "Czasami mam przeczucie, że coś się wydarzy zanim ma to miejsce.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -273,7 +273,7 @@
             }
         },
         "Q24IBI": {
-            "question" : "Někdy jsem změnil/a své plány; protože jsem měl/a špatný pocit.",
+            "question" : "Czasami zmieniam plany bo mam złe przeczucie.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -283,7 +283,7 @@
             }
         },
         "Q25IBI": {
-            "question" : "Neexistuje nic jako náhoda.",
+            "question" : "Nie istnieje coś takiego jak przypadek.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -293,7 +293,7 @@
             }
         },
         "Q26IBI": {
-            "question" : "Neexistuje nic jako štěstí.",
+            "question" : "Nie istnieje coś takiego jak szczęście.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -303,7 +303,7 @@
             }
         },
         "Q27IBI": {
-            "question" : "Některé věci se dějí zcela bez logického důvodu.",
+            "question" : "Niektóre zdarzenia nie mają logicznego wyjaśnienia.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -313,7 +313,7 @@
             }
         },
         "Q1TS": {
-            "question" : "Je důležité být věrný svým přesvědčením; i když se proti nim objeví důkazy.",
+            "question" : "To ważne aby pozostać przy swoich wierzeniach, nawet jeżeli przedstawione są nam dowody temu przeczące.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -323,7 +323,7 @@
             }
         },
         "Q2TS": {
-            "question" : "Zda se něco zdá být pravdivé; je důležitější než důkaz.",
+            "question" : "Poczucie, że coś jest prawdziwe jest ważniejsze niż dowody.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -333,7 +333,7 @@
             }
         },
         "Q3TS": {
-            "question" : "To; že důkazy jsou v rozporu s mými současnými přesvědčeními; neznamená; že moje přesvědčení jsou špatná.",
+            "question" : "Tylko dlatego, że dowody przeczą moim obecnym przekonaniom nie oznacza to, że moje przekonania są błędne.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -343,7 +343,7 @@
             }
         },
         "Q4TS": {
-            "question" : "Může existovat důkaz proti tomu; čemu věříte; ale to neznamená; že musíte změnit svá přesvědčení.",
+            "question" : "Mogą istnieć dowody przeciwko temu w co wierzę, ale nie znaczy to, że muszę zmienić przez to moje przekonania.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -353,7 +353,7 @@
             }
         },
         "Q5TS": {
-            "question" : "I když existuje konkrétní důkaz proti tomu; čemu věříte; je v pořádku si zachovat drahocenná přesvědčení.",
+            "question" : "Nawet jeżeli istnieje konkretny dowód przeczący temu, co uważasz za prawdziwe,  utrzymanie swojego poglądu jest w porządku.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -363,7 +363,7 @@
             }
         },
         "Q6TS": {
-            "question" : "To; o čem věříte; že je to pravda; je důležitější než důkazy; které tomu odporují; bez ohledu na téma.",
+            "question" : "Niezależnie od tematu, to co uznajesz za prawdziwe jest ważniejsze od dowodów będących przeciw.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -373,7 +373,7 @@
             }
         },
         "Q7TS": {
-            "question" : "Myslím si; že téměř ke všemu existuje mnoho nesprávných cest; ale jen jedna správná.",
+            "question" : "Myślę, że istnieje dużo złych dróg, ale tylko jedna właściwa droga do prawie wszystkiego.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -383,7 +383,7 @@
             }
         },
         "Q8TS": {
-            "question" : "Podle mých zkušeností je pravda často černobílá.",
+            "question" : "Zgodnie z moim doświadczeniem prawda jest często czarno-biała.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -393,7 +393,7 @@
             }
         },
         "Q9TS": {
-            "question" : "Pravda nikdy není relativní.",
+            "question" : "Prawda nigdy nie jest względna.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -403,7 +403,7 @@
             }
         },
         "Q10TS": {
-            "question" : "Pravda je neměnná.",
+            "question" : "Prawda się nie zmienia.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -413,7 +413,7 @@
             }
         },
         "Q11TS": {
-            "question" : "Buď je něco pravdivé nebo nepravdivé; nic mezi tím není.",
+            "question" : "Albo coś jest prawdziwe, albo fałszywe, nie ma nic pomiędzy.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -423,7 +423,7 @@
             }
         },
         "Q12TS": {
-            "question" : "Mezi tím; co je pravda a co ne; není žádný střed.",
+            "question" : "Nie ma niczego pośrodku pomiędzy tym co prawdziwe a tym co fałszywe.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -433,7 +433,7 @@
             }
         },
         "Q13TS": {
-            "question" : "Rád/a se spoléhám na své intuitivní dojmy.",
+            "question" : "Lubię polegać na mojej intuicji.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -443,7 +443,7 @@
             }
         },
         "Q14TS": {
-            "question" : "Věřím; že je dobré důvěřovat svým předtuchám/tušením.",
+            "question" : "Wierzę w poleganie na moich przeczuciach.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -453,7 +453,7 @@
             }
         },
         "Q15TS": {
-            "question" : "Když se rozhoduji; mám tendenci se spoléhat na svou intuici.",
+            "question" : "Kiedy podejmuję decyzję mam tendencję do polegania na swojej intuicji.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -463,7 +463,7 @@
             }
         },
         "Q16TS": {
-            "question" : "Při řešení problémů v mém životě obvykle dobře funguje používání mých vnitřních pocitů.",
+            "question" : "Słuchanie mojego wewnętrznego głosu zazwyczaj ułatwia mi w rozwiązywaniu. problemu życiowych.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -473,7 +473,7 @@
             }
         },
         "Q17TS": {
-            "question" : "Intuice je nejlepší pomocník při rozhodování.",
+            "question" : "Intuicja jest najlepszym przewodnikiem w podejmowaniu decyzji.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -483,7 +483,7 @@
             }
         },
         "Q18TS": {
-            "question" : "Často se při rozhodování spoléhám na své instinkty.",
+            "question" : "Często podążam za intuicją przy podejmowaniu szybkich decyzji.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -493,7 +493,7 @@
             }
         },
         "Q19TS": {
-            "question" : "Nejsem moc dobrý/á v řešení složitých problémů.",
+            "question" : "Nie jestem za dobry w rozwiązywaniu skomplikowanych problemów.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -503,7 +503,7 @@
             }
         },
         "Q20TS": {
-            "question" : "Přemýšlení nesplňuje mou představu příjemné aktivity",
+            "question" : "Rozmyślanie nie jest moim ulubionym sposobem spędzania czasu.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -513,7 +513,7 @@
             }
         },
         "Q21TS": {
-            "question" : "Snažím se vyhýbat situacím; ve kterých musím přemýšlet o věcech do hloubky.",
+            "question" : "Staram się unikać sytuacji, które wymagają głębszego myślenia o czymś.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -523,7 +523,7 @@
             }
         },
         "Q22TS": {
-            "question" : "Nejsem moc analytický/á myslitel/ka.",
+            "question" : "Nie jestem osobą myślącą analitycznie.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -533,7 +533,7 @@
             }
         },
         "Q23TS": {
-            "question" : "Pečlivé rozvažování věcí není mou silnou stránkou.",
+            "question" : "Uważne, ostrożne rozważanie rzeczy nie jest moją mocną stroną.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -543,7 +543,7 @@
             }
         },
         "Q24TS": {
-            "question" : "Dlouhé a intenzivní přemýšlení o něčem mi nepřináší velkou satisfakci.",
+            "question" : "Długie, intensywne myślenie o czymś przynosi mi niewiele satysfakcji.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -553,10 +553,10 @@
             }
         },
         "age": {
-            "question" : "Jaký je Váš věk?"
+            "question" : "Ile masz lat?"
         },
         "gender": {
-            "question" : "Jaký je váš gender?",
+            "question" : "Jaka jest twoja płeć?",
             "options" : {
                 "F" : "Žena",
                 "M" : "Muž",
@@ -565,7 +565,7 @@
             }
         },
         "QamuletEffect": {
-            "question" : "Nakolik si myslíte, že měl amulet vliv na váš úspěch?",
+            "question" : "W jakim stopniu uważasz, że amulet miał wpływ na twój sukces?",
             "options" : {
                 "1" : "Žádný",
                 "2" : "Mírný",
@@ -575,7 +575,7 @@
             }
         },
         "QstrategyEffect": {
-            "question" : "Nakolik si myslíte, že vaše herní strategie ovlivnila výsledek?",
+            "question" : "W jakim stopniu uważasz, że twoja strategia gry wpłynęła na wynik?",
             "options" : {
                 "1" : "Nijak",
                 "2" : "Mírně",
@@ -585,7 +585,7 @@
             }
         },
         "QchanceEffect": {
-            "question" : "Jaký podíl úspěchu přisuzujete náhodě?",
+            "question" : "Jaką część sukcesu przypisujesz przypadkowi?",
             "options" : {
                 "1" : "Žádný",
                 "2" : "Mírný",
@@ -595,7 +595,7 @@
             }
         },
         "QlikeExperience": {
-            "question" : "Jak moc se vám tato zkušenost líbila?",
+            "question" : "Jak bardzo podobało ci się to doświadczenie?",
             "options" : {
                 "1" : "Vůbec",
                 "2" : "Spíše nelíbila",
@@ -605,7 +605,7 @@
             }
         },
         "QfrustrationLevel": {
-            "question" : "Jak moc pro vás byla tato zkušenost frustrující?",
+            "question" : "Jak bardzo frustrujące było to doświadczenie dla ciebie?",
             "options" : {
                 "1" : "Vůbec",
                 "2" : "Mírně",
@@ -615,7 +615,7 @@
             }
         },
         "email": {
-            "question" : "Až bude z výzkumu publikován článek v odborném periodiku, můžeme vám jej zaslat na email."
+            "question" : "Kiedy artykuł z badań zostanie opublikowany w czasopiśmie naukowym, możemy go wysłać na twój email."
         }
     }
 }
