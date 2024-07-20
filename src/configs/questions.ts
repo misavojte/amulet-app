@@ -1,4 +1,4 @@
-import { IQuestionConfig } from "$lib/interfaces/IConfig";
+import { type IQuestionConfig } from "$lib/interfaces/IConfig";
 
 export const mockQuestions: IQuestionConfig = [
 	{

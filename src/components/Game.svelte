@@ -10,7 +10,7 @@
 	import { getContext } from 'svelte';
 	import { TimestampGameService } from '$lib/services/TimestampGameService';
 	import GamePerspective from './GamePerspective.svelte';
-	import { ITimestampGameService } from '$lib/interfaces/ITimestampGameService';
+	import type { ITimestampGameService } from '$lib/interfaces/ITimestampGameService';
 	const gameState: GameStateStore = getContext('gameState');
 
 	export let userId: string;
