@@ -38,14 +38,8 @@ export interface DbData {
     boxId: number;
 }
 
-export type TimestampGameType = 'round' | 'amuletStart' | 'amuletBuy' | 'amuletReject' | 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss';
-
-export interface TimestampGameEntryObject {
-    timestamp: number;
-    type: TimestampGameType;
-    round: number;
-    repeat: number;
-}
+export type { ITimestampGameService, TimestampGameType, TimestampGameEntryObject} from "$lib/interfaces/ITimestampGameService";
+export type { ITimestampQuestionnaireService, TimestampQuestionnaireType, TimestampQuestionnaireEntryObject} from "$lib/interfaces/ITimestampQuestionnaireService";
 
 /**
  * In FireBase, saved in: /timestamps/{url}/{userId}/{userName}

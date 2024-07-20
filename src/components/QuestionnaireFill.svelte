@@ -1,27 +1,29 @@
 <script lang="ts">
 	import QuestionnaireProgress from './QuestionnaireFillProgress.svelte';
 	import QuestionnaireSelect from './QuestionnaireFillQuestionSelect.svelte';
-	import { questions } from '../configs/questions';
 	import { writable } from 'svelte/store';
 	import { _ } from 'svelte-i18n';
 	import { fly } from 'svelte/transition';
 	import { createEventDispatcher } from 'svelte';
 	import QuestionnaireQuestionText from './QuestionnaireFillQuestionText.svelte';
+	import { type IQuestionConfig } from '$lib/interfaces/IConfig';
+
+	export let questionConfig: IQuestionConfig;
 
 	const progressStore = writable(0);
 	const dispatch = createEventDispatcher();
 
-	$: questionSingleArray = questions[$progressStore] ? [questions[$progressStore]] : [];
+	$: questionSingleArray = questionConfig[$progressStore] ? [questionConfig[$progressStore]] : [];
 
 	const handleOnInput = () => {
 		// Dispatch the event of the new value
 		dispatch('questionnaireInput', questionValues[$progressStore]);
-		// If no more questions, dispatch the event
-		if ($progressStore === questions.length - 1) {
+		// If no more questionConfig, dispatch the event
+		if ($progressStore === questionConfig.length - 1) {
 			dispatch('questionnaireDone', questionValues);
 			return;
 		}
-		// If there are more questions, update the progress store
+		// If there are more questionConfig, update the progress store
 		lastChangeDirection = 1;
 		progressStore.update((value) => value + 1);
 	};
@@ -33,7 +35,7 @@
 
 	$: lastChangeDirection = 1; // 1 for forward, -1 for backward
 
-	const questionValues = questions.map((question) => {
+	const questionValues = questionConfig.map((question) => {
 		return {
 			id: question.id,
 			value: '',
@@ -62,7 +64,10 @@
 </script>
 
 <div class="flex flex-col justify-center items-center row-span-2 w-full">
-	<QuestionnaireProgress currentQuestionIndex={$progressStore} totalQuestions={questions.length} />
+	<QuestionnaireProgress
+		currentQuestionIndex={$progressStore}
+		totalQuestions={questionConfig.length}
+	/>
 </div>
 <div class="flex flex-col justify-center items-center row-span-9 relative">
 	{#each questionSingleArray as question (question.id)}

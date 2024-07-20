@@ -10,6 +10,7 @@
 	import { getContext } from 'svelte';
 	import { TimestampGameService } from '$lib/services/TimestampGameService';
 	import GamePerspective from './GamePerspective.svelte';
+	import { ITimestampGameService } from '$lib/interfaces/ITimestampGameService';
 	const gameState: GameStateStore = getContext('gameState');
 
 	export let userId: string;
@@ -18,7 +19,7 @@
 
 	let hasWonPreviousRound = false;
 
-	const timestampService = new TimestampGameService();
+	const timestampService: ITimestampGameService = new TimestampGameService();
 	const createTimestampGameEntry = (type: TimestampGameType) => {
 		void timestampService.saveTimestampGame(type);
 	};

@@ -1,53 +1,46 @@
 <script lang="ts">
-  import Questionnaire from "../../components/Questionnaire.svelte";
+	import Questionnaire from '../../components/Questionnaire.svelte';
 
-  import { _ } from "svelte-i18n";
-  import LanguagePick from "../../components/LanguagePick.svelte";
-  import Footer from "../../components/Footer.svelte";
+	import { _ } from 'svelte-i18n';
+	import LanguagePick from '../../components/LanguagePick.svelte';
+	import Footer from '../../components/Footer.svelte';
 
-  // i18n.js
-  import { init, addMessages } from "svelte-i18n";
-  import en from "../../locales/en.json";
-  import pl from "../../locales/pl.json";
-  import cs from "../../locales/cs.json";
+	import { questions } from '../../configs/questions';
 
-  addMessages("en", en);
-  addMessages("pl", pl);
-  addMessages("cs", cs);
+	// i18n.js
+	import { init, addMessages } from 'svelte-i18n';
+	import en from '../../locales/en.json';
+	import pl from '../../locales/pl.json';
+	import cs from '../../locales/cs.json';
+	import { MockTimestampQuestionnaireService } from '$lib/services/TimestampQuestionnaireService';
 
-  init({
-    fallbackLocale: "en",
-    initialLocale: "en",
-  });
+	addMessages('en', en);
+	addMessages('pl', pl);
+	addMessages('cs', cs);
 
-  let stage = "LanguagePick";
+	init({
+		fallbackLocale: 'en',
+		initialLocale: 'en'
+	});
 
-  const handleLocaleChange = () => {
-    stage = "Info";
-  };
+	let stage = 'LanguagePick';
 
-  const gameConfig = {
-    numberOfRounds: 11,
-    startScore: 100,
-    scenario: "Random",
-    priceOfAmulet: 10,
-    scoreOnWin: 30,
-  };
+	const handleLocaleChange = () => {
+		stage = 'Info';
+	};
 
-  const locale = "cs";
+	const service = new MockTimestampQuestionnaireService();
 </script>
 
-{#if stage !== "Experiment"}
-  <div
-    class="max-w-screen-md flex flex-col justify-between items-center mx-auto h-screen"
-  >
-    <main class="h-full flex flex-col justify-center items-center w-full">
-      {#if stage === "LanguagePick"}
-        <LanguagePick on:localeChange={handleLocaleChange} />
-      {:else}
-        <Questionnaire />
-      {/if}
-    </main>
-    <Footer />
-  </div>
+{#if stage !== 'Experiment'}
+	<div class="max-w-screen-md flex flex-col justify-between items-center mx-auto h-screen">
+		<main class="h-full flex flex-col justify-center items-center w-full">
+			{#if stage === 'LanguagePick'}
+				<LanguagePick on:localeChange={handleLocaleChange} />
+			{:else}
+				<Questionnaire questionnaireInterface={service} questionConfig={questions} />
+			{/if}
+		</main>
+		<Footer />
+	</div>
 {/if}

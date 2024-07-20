@@ -1,16 +1,13 @@
 <script lang="ts">
+	import { type ITimestampQuestionnaireService } from '$lib';
+	import { type IQuestionConfig } from '$lib/interfaces/IConfig';
 	import QuestionnaireFill from './QuestionnaireFill.svelte';
 
-	export let processDone: (data: any) => Promise<void> = async () => {
-		new Promise<void>((resolve) => {
-			setTimeout(() => {
-				resolve();
-			}, 1000);
-		});
-	};
+	export let questionnaireInterface: ITimestampQuestionnaireService;
+	export let questionConfig: IQuestionConfig;
 
 	const handleQuestionnaireDone = (data: any) => {
-		promise = processDone(data);
+		promise = questionnaireInterface.saveQuestionnaire(data);
 	};
 
 	let promise: Promise<void> | null = null;
@@ -32,6 +29,6 @@
 			</div>
 		{/await}
 	{:else}
-		<QuestionnaireFill on:questionnaireDone={handleQuestionnaireDone} />
+		<QuestionnaireFill {questionConfig} on:questionnaireDone={handleQuestionnaireDone} />
 	{/if}
 </div>

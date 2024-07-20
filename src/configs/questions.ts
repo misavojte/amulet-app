@@ -1,4 +1,31 @@
-export const questions = [
+import { IQuestionConfig } from "$lib/interfaces/IConfig";
+
+export const mockQuestions: IQuestionConfig = [
+	{
+		id: 'email',
+		type: 'email',
+		required: false
+	},
+	{
+		id: 'age',
+		type: 'number',
+		required: true
+	},
+	{
+		id: 'Q1IBI',
+		type: 'select',
+		options: ['1', '2', '3', '4', '5'],
+		required: true
+	},
+	{
+		id: 'Q2IBI',
+		type: 'select',
+		options: ['1', '2', '3', '4', '5'],
+		required: true
+	},
+] as const;
+
+export const questions: IQuestionConfig = [
 	{
 		id: 'email',
 		type: 'email',

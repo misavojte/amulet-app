@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push, set, get } from "firebase/database";
 import { getAuth, signInAnonymously } from "firebase/auth";
-import type { DbData, LeaderboardEntry, LeaderboardEntryBase, TimestampGameEntryObject, TimestampGameEntryUrl } from '$lib';
+import type { DbData, LeaderboardEntry, LeaderboardEntryBase, TimestampGameEntryObject, TimestampQuestionnaireEntryObject } from '$lib';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -64,12 +64,10 @@ export const writeRoundData = (data: DbData) => {
 }
 
 /**
- * In FireBase, saved in: db/timestamps/{url}/{userId}/{userName}
+ * In FireBase, saved in: db/timestamps-game
  */
-export const writeTimestampGame = (data: TimestampGameEntryObject, urlObject: TimestampGameEntryUrl): Promise<void> => {
-  // replace all dots with underscores in urlObject.url
-  urlObject.url = urlObject.url.replaceAll('.', '_');
-  const timestampRef = ref(db, 'timestamps/' + urlObject.url + '/' + urlObject.userId + '/' + urlObject.userName + '/');
+export const writeTimestampGame = (data: TimestampGameEntryObject): Promise<void> => {
+  const timestampRef = ref(db, 'timestamps-game/');
   const newTimestampGameRef = push(timestampRef);
   return new Promise((resolve, reject) => {
     set(newTimestampGameRef, data)
@@ -84,6 +82,24 @@ export const writeTimestampGame = (data: TimestampGameEntryObject, urlObject: Ti
   });
 }
 
+/**
+ * In FireBase, saved in: db/timestamps-questionnaire
+ */
+export const writeTimestampQuestionnaire = (data: TimestampQuestionnaireEntryObject): Promise<void> => {
+  const timestampRef = ref(db, 'timestamps-questionnaire/');
+  const newTimestampGameRef = push(timestampRef);
+  return new Promise((resolve, reject) => {
+    set(newTimestampGameRef, data)
+      .then(() => {
+        console.log('TimestampQuestionnaire saved successfully!');
+        resolve();
+      })
+      .catch((error) => {
+        console.error('Error saving timestamp: ', error);
+        reject(error);
+      });
+  });
+}
 
 
 const auth = getAuth();
