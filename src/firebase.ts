@@ -2,6 +2,8 @@ import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push, set, get } from "firebase/database";
 import { getAuth, signInAnonymously } from "firebase/auth";
 import type { DbData, LeaderboardEntry, LeaderboardEntryBase, TimestampGameEntryObject, TimestampQuestionnaireEntryObject } from '$lib';
+import type { BeliefInventoryResult } from '$lib/interfaces/IBeliefInventoryService';
+import type { ThinkingStyleResult } from '$lib/interfaces/IThinkingStyleService';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -143,4 +145,29 @@ export const writeLeaderboardEntry = (entry: LeaderboardEntry) => {
     .catch((error) => {
       console.error('Error saving leaderboard entry: ', error);
     });
+}
+
+export type QuestionnaireScore = BeliefInventoryResult & ThinkingStyleResult & { 
+  userId: string;
+  sessionId: string;
+  timestamp: number;
+  gender: string;
+  age: string;
+  email: string; };
+
+export const writeQuestionnaireScore = async (score: QuestionnaireScore) => {
+  // save to db/questionnaire-scores/{sessionId}
+  const questionnaireScoreRef = ref(db, 'questionnaire-scores/' + score.sessionId);
+  const newQuestionnaireScoreRef = push(questionnaireScoreRef);
+  return set(newQuestionnaireScoreRef, score)
+}
+
+export const getQuestionnaireScore = async (sessionId: string) : Promise<QuestionnaireScore> => {
+  const questionnaireScoreRef = ref(db, 'questionnaire-scores/' + sessionId);
+  const questionnaireScoreSnapshot = await get(questionnaireScoreRef);
+  const questionnaireScoreData = questionnaireScoreSnapshot.val();
+  if (questionnaireScoreData === null) {
+    throw new Error("No data found for sessionId: " + sessionId);
+  }
+  return questionnaireScoreData;
 }
