@@ -4,10 +4,14 @@ import { getContext } from "svelte";
 import { get } from "svelte/store";
 import { writeTimestampQuestionnaire } from "../../firebase";
 import type { UserStateStore } from "../../stores/UserState";
+import { IBeliefInventoryService } from "$lib/interfaces/IBeliefInventoryService";
+import { IThinkingStyleService } from "$lib/interfaces/IThinkingStyleService";
 
 export class TimestampQuestionnaireService implements ITimestampQuestionnaireService {
 
     userState: UserStateStore = getContext('userState');
+    beliefInventoryService: IBeliefInventoryService = getContext('beliefInventoryService');
+    thinkingStyleService: IThinkingStyleService = getContext('thinkingStyleService');
 
     async startQuestionnaire(): Promise<void> {
         console.log('Questionnaire started successfully!');
@@ -26,6 +30,10 @@ export class TimestampQuestionnaireService implements ITimestampQuestionnaireSer
             userId: userState.id,
             sessionId: userState.id // TODO FIX
         }
+
+        this.beliefInventoryService.saveBeliefInventory(timestampEntry);
+        this.thinkingStyleService.saveThinkingStyle(timestampEntry);
+        
         return writeTimestampQuestionnaire(timestampEntry);
     }
 
