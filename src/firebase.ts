@@ -156,18 +156,7 @@ export type QuestionnaireScore = BeliefInventoryResult & ThinkingStyleResult & {
   email: string; };
 
 export const writeQuestionnaireScore = async (score: QuestionnaireScore) => {
-  // save to db/questionnaire-scores/{sessionId}
-  const questionnaireScoreRef = ref(db, 'questionnaire-scores/' + score.sessionId);
+  const questionnaireScoreRef = ref(db, 'questionnaire-scores/');
   const newQuestionnaireScoreRef = push(questionnaireScoreRef);
   return set(newQuestionnaireScoreRef, score)
-}
-
-export const getQuestionnaireScore = async (sessionId: string) : Promise<QuestionnaireScore> => {
-  const questionnaireScoreRef = ref(db, 'questionnaire-scores/' + sessionId);
-  const questionnaireScoreSnapshot = await get(questionnaireScoreRef);
-  const questionnaireScoreData = questionnaireScoreSnapshot.val();
-  if (questionnaireScoreData === null) {
-    throw new Error("No data found for sessionId: " + sessionId);
-  }
-  return questionnaireScoreData;
 }
