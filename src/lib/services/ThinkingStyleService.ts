@@ -16,8 +16,8 @@ export class ThinkingStyleService implements IThinkingStyleService {
             return;
         }
         // check if reversed, in this settings, numbers are alwas 0-5...
-        const MAXIMUM_ANSWER = 5;
-        const answer = questionInfo.isReversed ? MAXIMUM_ANSWER - originalAnswer : originalAnswer;
+        const MAXIMUM_ANSWER_VALUE = 5;
+        const answer = questionInfo.isReversed ? MAXIMUM_ANSWER_VALUE - originalAnswer : originalAnswer;
         this.score[entry.sessionId][questionInfo.subscale] += answer;
     }
 
