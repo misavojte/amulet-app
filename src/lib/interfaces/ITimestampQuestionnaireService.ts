@@ -1,7 +1,11 @@
+/**
+ * Acts as a service for the timestamp questionnaire.
+ * Actual implementation should include call to the via get context IThinkingStyleService for saving the data.
+ */
 export interface ITimestampQuestionnaireService {
     startQuestionnaire(): Promise<void>;
     saveTimestampQuestionnaire(question: string, answer: string): Promise<void>;
-    saveQuestionnaire(entry: unknown): Promise<void>;
+    saveQuestionnaire(): Promise<void>;
 }
 
 export interface TimestampQuestionnaireEntryObject {
