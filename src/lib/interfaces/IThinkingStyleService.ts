@@ -2,7 +2,7 @@ import type { TimestampQuestionnaireEntryObject } from "./ITimestampQuestionnair
 
 export interface IThinkingStyleService {
     saveThinkingStyle(entry: TimestampQuestionnaireEntryObject): Promise<void>;
-    getThinkingStyle(sessionId: string): Promise<TimestampQuestionnaireEntryObject[]>;
+    getThinkingStyle(sessionId: string): ThinkingStyleResult;
 }
 
 export interface ThinkingStyleElligibleQuestionnaireQuestion {

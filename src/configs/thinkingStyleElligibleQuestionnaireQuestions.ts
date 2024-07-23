@@ -121,4 +121,4 @@ export const thinkingStyleElligibleQuestionnaireQuestions: ThinkingStyleElligibl
         subscale: 'preferenceForRationalThinking',
         isReversed: true,
     }
-]
+] as const;
