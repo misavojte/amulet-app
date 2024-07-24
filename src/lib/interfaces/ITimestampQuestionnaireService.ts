@@ -1,3 +1,6 @@
+import type { BeliefInventoryResult } from './IBeliefInventoryService';
+import type { ThinkingStyleResult } from './IThinkingStyleService';
+
 /**
  * Acts as a service for the timestamp questionnaire.
  * Actual implementation should include call to the via get context IThinkingStyleService for saving the data.
@@ -9,7 +12,7 @@ export interface ITimestampQuestionnaireService {
         id: string;
         value: string;
         required: boolean;
-    }[]): Promise<void>;
+    }[]): Promise<QuestionnaireScore>;
 }
 
 export interface TimestampQuestionnaireEntryObject {
@@ -27,3 +30,8 @@ export interface StartQuestionnaireEntryObject {
     userId: string;
     sessionId: string;
 }
+export type QuestionnaireScore = BeliefInventoryResult & ThinkingStyleResult & {
+  userId: string;
+  sessionId: string;
+  timestamp: number;
+};

@@ -1,5 +1,4 @@
 import type { ThinkingStyleResult, IThinkingStyleService } from "$lib/interfaces/IThinkingStyleService";
-import type { TimestampQuestionnaireEntryObject } from "$lib/interfaces/ITimestampQuestionnaireService";
 import { thinkingStyleElligibleQuestionnaireQuestions } from "../../configs/thinkingStyleElligibleQuestionnaireQuestions";
 
 export class ThinkingStyleService implements IThinkingStyleService {

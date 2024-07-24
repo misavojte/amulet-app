@@ -1,4 +1,4 @@
-import type { ITimestampQuestionnaireService } from "$lib/interfaces/ITimestampQuestionnaireService";
+import type { ITimestampQuestionnaireService, QuestionnaireScore } from "$lib/interfaces/ITimestampQuestionnaireService";
 
 export class MockTimestampQuestionnaireService implements ITimestampQuestionnaireService {
 
@@ -19,10 +19,22 @@ export class MockTimestampQuestionnaireService implements ITimestampQuestionnair
             value: string;
             required: boolean;
         }[]
-    ): Promise<void> {
-        setTimeout(() => {
-            console.log('TimestampQuestionnaire saved successfully!');
-            console.log(data);
-        }, 1000);
+    ): Promise<QuestionnaireScore> {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                console.log('Questionnaire saved successfully!', data);
+                resolve({
+                    userId: 'mockUserId',
+                    sessionId: 'mockSessionId',
+                    timestamp: Date.now(),
+                    beliefInventory: 0,
+                    activelyOpenMindedThinking: 0,
+                    preferenceForIntuitiveThinking: 0,
+                    preferenceForRationalThinking: 0,
+                    closeMindedThinking: 0,
+                });
+            }
+            , 1000);
+        });
     }
 }

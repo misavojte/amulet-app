@@ -2,7 +2,8 @@ import type { ITimestampQuestionnaireService, StartQuestionnaireEntryObject } fr
 import type { TimestampQuestionnaireEntryObject } from "$lib";
 import { getContext } from "svelte";
 import { get } from "svelte/store";
-import { type QuestionnaireScore, writeQuestionnaireScore, writeTimestampQuestionnaire } from "../../firebase";
+import { writeQuestionnaireScore, writeTimestampQuestionnaire } from "../../firebase";
+import { type QuestionnaireScore } from '$lib/interfaces/ITimestampQuestionnaireService';
 import type { UserStateStore } from "../../stores/UserState";
 import type { IBeliefInventoryService } from "$lib/interfaces/IBeliefInventoryService";
 import type { IThinkingStyleService } from "$lib/interfaces/IThinkingStyleService";
@@ -54,7 +55,7 @@ export class TimestampQuestionnaireService implements ITimestampQuestionnaireSer
             value: string;
             required: boolean;
         }[]
-    ): Promise<void> {
+    ): Promise<QuestionnaireScore> {
         const userState = get(this.userState);
         if (userState.userId === null || userState.sessionId === null) {
             throw new Error("User or sessionId is null");

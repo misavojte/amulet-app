@@ -1,5 +1,5 @@
-<script>
-	import { _ } from 'svelte-i18n';
+<script lang="ts">
+	import { _, getLocaleFromNavigator } from 'svelte-i18n';
 	import LanguagePick from '../components/LanguagePick.svelte';
 	import Intro from '../components/Intro.svelte';
 	import App from '../components/App.svelte';
@@ -10,6 +10,7 @@
 	import en from '../locales/en.json';
 	import pl from '../locales/pl.json';
 	import cs from '../locales/cs.json';
+	import type { QuestionnaireScore } from '$lib/interfaces/ITimestampQuestionnaireService';
 
 	addMessages('en', en);
 	addMessages('pl', pl);
@@ -34,7 +35,27 @@
 		scoreOnWin: 30
 	};
 
-	const locale = 'cs';
+	// const locale = 'cs';
+
+	const createSearchParamResultUrl = (questionnaireResult: QuestionnaireScore) => {
+		// 'activelyOpenMindedThinking' | 'closeMindedThinking' | 'preferenceForIntuitiveThinking' | 'preferenceForRationalThinking';
+		const searchParams = new URLSearchParams();
+		searchParams.append('a', questionnaireResult.activelyOpenMindedThinking.toString());
+		searchParams.append('b', questionnaireResult.closeMindedThinking.toString());
+		searchParams.append('c', questionnaireResult.preferenceForIntuitiveThinking.toString());
+		searchParams.append('d', questionnaireResult.preferenceForRationalThinking.toString());
+		return searchParams;
+	};
+
+	const createResultUrl = (questionnaireResult: QuestionnaireScore) => {
+		// then current locale from svelte-i18n
+		const locale = getLocaleFromNavigator();
+		if (!locale) {
+			throw new Error('Locale not found');
+		}
+		const searchParams = createSearchParamResultUrl(questionnaireResult);
+		return `result/${locale}?${searchParams.toString()}`;
+	};
 </script>
 
 {#if stage !== 'Experiment'}
