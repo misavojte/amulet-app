@@ -8,13 +8,13 @@ export interface UserStateStore extends Writable<UserState> {
 }
 
 export const createUserState = () => {
-    const store = writable<UserState>({ id: null, name: null });
+    const store = writable<UserState>({ userId: null, sessionId: null });
     const { subscribe, set, update } = store;
     return {
         subscribe,
         update,
         set,
-        reset: () => set({ id: null, name: null }),
+        reset: () => set({ userId: null, sessionId: null }),
         updateState: (updates: Partial<UserState>) => update(state => ({ ...state, ...updates })),
     };
 }

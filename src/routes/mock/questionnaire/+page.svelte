@@ -1,17 +1,17 @@
 <script lang="ts">
-	import Questionnaire from '../../components/Questionnaire.svelte';
+	import Questionnaire from '../../../components/Questionnaire.svelte';
 
 	import { _ } from 'svelte-i18n';
-	import LanguagePick from '../../components/LanguagePick.svelte';
-	import Footer from '../../components/Footer.svelte';
+	import LanguagePick from '../../../components/LanguagePick.svelte';
+	import Footer from '../../../components/Footer.svelte';
 
-	import { mockQuestions } from '../../configs/questions';
+	import { mockQuestions } from '../../../configs/questions';
 
 	// i18n.js
 	import { init, addMessages } from 'svelte-i18n';
-	import en from '../../locales/en.json';
-	import pl from '../../locales/pl.json';
-	import cs from '../../locales/cs.json';
+	import en from '../../../locales/en.json';
+	import pl from '../../../locales/pl.json';
+	import cs from '../../../locales/cs.json';
 
 	import { MockTimestampQuestionnaireService } from '$lib/services/MockTimestampQuestionnaireService';
 

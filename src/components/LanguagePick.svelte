@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { locale } from 'svelte-i18n';
 	import { createEventDispatcher } from 'svelte';
-
 	const locales = [
 		{ code: 'en', name: 'English', flag: 'en.svg', text: 'Continue in English' },
 		{ code: 'pl', name: 'Polish', flag: 'pl.svg', text: 'Kontynuuj po polsku' },
@@ -19,7 +18,7 @@
 <div class="flex gap-4">
 	{#each locales as { code, name, flag, text }}
 		<button class="locale-select" on:click={() => changeLocale(code)}>
-			<img src={`flags/${flag}`} alt={name + ' flag'} />
+			<img src={`/flags/${flag}`} alt={name + ' flag'} />
 			<p>{text}</p>
 		</button>
 	{/each}

@@ -1,11 +1,11 @@
-import type { ITimestampQuestionnaireService } from "$lib/interfaces/ITimestampQuestionnaireService";
+import type { ITimestampQuestionnaireService, StartQuestionnaireEntryObject } from "$lib/interfaces/ITimestampQuestionnaireService";
 import type { TimestampQuestionnaireEntryObject } from "$lib";
 import { getContext } from "svelte";
 import { get } from "svelte/store";
 import { writeTimestampQuestionnaire } from "../../firebase";
 import type { UserStateStore } from "../../stores/UserState";
-import { IBeliefInventoryService } from "$lib/interfaces/IBeliefInventoryService";
-import { IThinkingStyleService } from "$lib/interfaces/IThinkingStyleService";
+import type { IBeliefInventoryService } from "$lib/interfaces/IBeliefInventoryService";
+import type { IThinkingStyleService } from "$lib/interfaces/IThinkingStyleService";
 
 export class TimestampQuestionnaireService implements ITimestampQuestionnaireService {
 
@@ -14,21 +14,33 @@ export class TimestampQuestionnaireService implements ITimestampQuestionnaireSer
     thinkingStyleService: IThinkingStyleService = getContext('thinkingStyleService');
 
     async startQuestionnaire(): Promise<void> {
-        console.log('Questionnaire started successfully!');
+        
+        const userState = get(this.userState);
+        if (userState.userId === null || userState.sessionId === null) {
+            throw new Error("User or sessionId is null");
+        }
+        const timestampEntry: StartQuestionnaireEntryObject = {
+            timestamp: Date.now(),
+            type: 'start',
+            userId: userState.userId,
+            sessionId: userState.sessionId // TODO FIX
+        }
+
+        return writeTimestampQuestionnaire(timestampEntry);
     }
 
     async saveTimestampQuestionnaire(question: string, answer: string): Promise<void> {
         const userState = get(this.userState);
-        if (userState.id === null) {
-            throw new Error("User is null");
+        if (userState.userId === null || userState.sessionId === null) {
+            throw new Error("User or sessionId is null");
         }
         const timestampEntry: TimestampQuestionnaireEntryObject = {
             timestamp: Date.now(),
             type: 'answer',
             question,
             answer,
-            userId: userState.id,
-            sessionId: userState.id // TODO FIX
+            userId: userState.userId,
+            sessionId: userState.sessionId // TODO FIX
         }
 
         this.beliefInventoryService.saveBeliefInventory(timestampEntry);

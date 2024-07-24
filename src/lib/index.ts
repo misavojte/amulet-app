@@ -19,8 +19,8 @@ export interface GameState {
 }
 
 export interface UserState {
-    id: string | null;
-    name: string | null;
+    userId: string | null;
+    sessionId: string | null;
 }
 
 export type GameStageType = 'Start' | 'AmuletDecision' | 'BoxDecision' | 'AfterBoxDecision' | 'End';

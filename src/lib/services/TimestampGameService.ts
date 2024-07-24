@@ -15,7 +15,7 @@ export class TimestampGameService implements ITimestampGameService {
         const state = get(this.gameState);
         const userState = get(this.userState);
         const config = state.config;
-        if (userState.id === null) {
+        if (userState.userId === null || userState.sessionId === null) {
             throw new Error("User is null");
         }
         const timestampEntry: TimestampGameEntryObject = {
@@ -23,8 +23,8 @@ export class TimestampGameService implements ITimestampGameService {
             type,
             round: config.numberOfRounds - state.numberOfRounds + 1,
             repeat: state.numberOfRepeats,
-            userId: userState.id,
-            sessionId: userState.id // TODO FIX
+            userId: userState.userId,
+            sessionId: userState.sessionId // TODO FIX
         }
         return writeTimestampGame(timestampEntry);
     }
