@@ -48,8 +48,6 @@ export class TimestampQuestionnaireService implements ITimestampQuestionnaireSer
         const wasCapturedByBeliefInventory = this.beliefInventoryService.saveBeliefInventory(timestampEntry);
         const wasCapturedByThinkingStyle = this.thinkingStyleService.saveThinkingStyle(timestampEntry);
 
-        console.log(wasCapturedByThinkingStyle, wasCapturedByBeliefInventory, question, answer);
-
         if (!wasCapturedByBeliefInventory && !wasCapturedByThinkingStyle) {
             // log to meta questions
             this.metaQuestions[question] = answer;
