@@ -2,111 +2,111 @@ import type { BeliefInventoryElligibleQuestionnaireQuestion } from "$lib/interfa
 
 export const beliefInventoryElligibleQuestionnaireQuestions: BeliefInventoryElligibleQuestionnaireQuestion[] = [
     {
-        questionId: 'Q1BI',
+        questionId: 'Q1IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q2BI',
+        questionId: 'Q2IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q3BI',
+        questionId: 'Q3IBI',
         isReversed: false,
     },
         {
-        questionId: 'Q4BI',
+        questionId: 'Q4IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q5BI',
+        questionId: 'Q5IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q6BI',
+        questionId: 'Q6IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q7BI',
+        questionId: 'Q7IBI',
         isReversed: true,
     },
     {
-        questionId: 'Q8BI',
+        questionId: 'Q8IBI',
         isReversed: true,
     },
     {
-        questionId: 'Q9BI',
+        questionId: 'Q9IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q10BI',
+        questionId: 'Q10IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q11BI',
+        questionId: 'Q11IBI',
         isReversed: true,
     },
     {
-        questionId: 'Q12BI',
+        questionId: 'Q12IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q13BI',
+        questionId: 'Q13IBI',
         isReversed: true,
     },
     {
-        questionId: 'Q14BI',
+        questionId: 'Q14IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q15BI',
+        questionId: 'Q15IBI',
         isReversed: true,
     },
     {
-        questionId: 'Q16BI',
+        questionId: 'Q16IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q17BI',
+        questionId: 'Q17IBI',
         isReversed: true,
     },
     {
-        questionId: 'Q18BI',
+        questionId: 'Q18IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q19BI',
+        questionId: 'Q19IBI',
         isReversed: true,
     },
     {
-        questionId: 'Q20BI',
+        questionId: 'Q20IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q21BI',
+        questionId: 'Q21IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q22BI',
+        questionId: 'Q22IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q23BI',
+        questionId: 'Q23IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q24BI',
+        questionId: 'Q24IBI',
         isReversed: false,
     },
     {
-        questionId: 'Q25BI',
+        questionId: 'Q25IBI',
         isReversed: true,
     },
     {
-        questionId: 'Q26BI',
+        questionId: 'Q26IBI',
         isReversed: true,
     },
     {
-        questionId: 'Q27BI',
+        questionId: 'Q27IBI',
         isReversed: false,
     }
 ] as const;

@@ -2,12 +2,14 @@ import type { ITimestampQuestionnaireService, StartQuestionnaireEntryObject } fr
 import type { TimestampQuestionnaireEntryObject } from "$lib";
 import { getContext } from "svelte";
 import { get } from "svelte/store";
-import { writeTimestampQuestionnaire } from "../../firebase";
+import { type QuestionnaireScore, writeQuestionnaireScore, writeTimestampQuestionnaire } from "../../firebase";
 import type { UserStateStore } from "../../stores/UserState";
 import type { IBeliefInventoryService } from "$lib/interfaces/IBeliefInventoryService";
 import type { IThinkingStyleService } from "$lib/interfaces/IThinkingStyleService";
 
 export class TimestampQuestionnaireService implements ITimestampQuestionnaireService {
+
+    metaQuestions: Record<string, string> = {};
 
     userState: UserStateStore = getContext('userState');
     beliefInventoryService: IBeliefInventoryService = getContext('beliefInventoryService');
@@ -43,13 +45,34 @@ export class TimestampQuestionnaireService implements ITimestampQuestionnaireSer
             sessionId: userState.sessionId // TODO FIX
         }
 
-        this.beliefInventoryService.saveBeliefInventory(timestampEntry);
-        this.thinkingStyleService.saveThinkingStyle(timestampEntry);
+        const wasCapturedByBeliefInventory = this.beliefInventoryService.saveBeliefInventory(timestampEntry);
+        const wasCapturedByThinkingStyle = this.thinkingStyleService.saveThinkingStyle(timestampEntry);
+
+        console.log(wasCapturedByThinkingStyle, wasCapturedByBeliefInventory, question, answer);
+
+        if (!wasCapturedByBeliefInventory && !wasCapturedByThinkingStyle) {
+            // log to meta questions
+            this.metaQuestions[question] = answer;
+        }
         
         return writeTimestampQuestionnaire(timestampEntry);
     }
 
     async saveQuestionnaire(): Promise<void> {
-        console.log('TimestampQuestionnaire saved successfully!');
+        const userState = get(this.userState);
+        if (userState.userId === null || userState.sessionId === null) {
+            throw new Error("User or sessionId is null");
+        }
+        const beliefInventory = this.beliefInventoryService.getBeliefInventory(userState.sessionId);
+        const thinkingStyle = this.thinkingStyleService.getThinkingStyle(userState.sessionId);
+        const questionnaireScore: QuestionnaireScore = {
+            ...beliefInventory,
+            ...thinkingStyle,
+            ...this.metaQuestions,
+            userId: userState.userId,
+            sessionId: userState.sessionId,
+            timestamp: Date.now()
+        }
+        return writeQuestionnaireScore(questionnaireScore);
     }
 }

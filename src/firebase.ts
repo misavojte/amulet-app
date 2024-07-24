@@ -152,9 +152,7 @@ export type QuestionnaireScore = BeliefInventoryResult & ThinkingStyleResult & {
   userId: string;
   sessionId: string;
   timestamp: number;
-  gender: string;
-  age: string;
-  email: string; };
+};
 
 export const writeQuestionnaireScore = async (score: QuestionnaireScore) => {
   const questionnaireScoreRef = ref(db, 'questionnaire-scores/');

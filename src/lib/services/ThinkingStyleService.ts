@@ -5,27 +5,30 @@ import { thinkingStyleElligibleQuestionnaireQuestions } from "../../configs/thin
 export class ThinkingStyleService implements IThinkingStyleService {
 
     // Keep score in an object, where the key is a sessionId.. in it, there is a object with the score
-    score: Record<string, ThinkingStyleResult> = {};
+    score: ThinkingStyleResult = {
+        activelyOpenMindedThinking: 0,
+        closeMindedThinking: 0,
+        preferenceForIntuitiveThinking: 0,
+        preferenceForRationalThinking: 0,
+    };
 
-    async saveThinkingStyle(entry: TimestampQuestionnaireEntryObject): Promise<void> {
+    saveThinkingStyle(entry: TimestampQuestionnaireEntryObject): boolean {
         const questionInfo = thinkingStyleElligibleQuestionnaireQuestions.find(q => q.questionId === entry.question);
-        if (!questionInfo) return;
+        if (!questionInfo) return false;
         const originalAnswer = parseInt(entry.answer);
         if (isNaN(originalAnswer)) {
             console.warn(`Answer for question ${entry.question} is not a number`);
-            return;
+            return false;
         }
         // check if reversed, in this settings, numbers are alwas 0-5...
         const MAXIMUM_ANSWER_VALUE = 5;
         const answer = questionInfo.isReversed ? MAXIMUM_ANSWER_VALUE - originalAnswer : originalAnswer;
-        this.score[entry.sessionId][questionInfo.subscale] += answer;
+        this.score[questionInfo.subscale] += answer;
+        return true;
     }
 
-    getThinkingStyle(sessionId: string): ThinkingStyleResult {
-        if (!this.score[sessionId]) {
-            throw new Error("No entry for sessionId");
-        }
-        return this.score[sessionId];
+    getThinkingStyle(): ThinkingStyleResult {
+        return this.score;
     }
 
 }

@@ -23,6 +23,12 @@ export const mockQuestions: IQuestionConfig = [
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
+	{
+		id: 'Q1TS',
+		type: 'select',
+		options: ['1', '2', '3', '4', '5'],
+		required: true
+	},
 ] as const;
 
 export const questions: IQuestionConfig = [

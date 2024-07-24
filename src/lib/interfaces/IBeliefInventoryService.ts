@@ -1,7 +1,7 @@
 import type { TimestampQuestionnaireEntryObject } from "./ITimestampQuestionnaireService";
 
 export interface IBeliefInventoryService {
-    saveBeliefInventory(entry: TimestampQuestionnaireEntryObject): Promise<void>;
+    saveBeliefInventory(entry: TimestampQuestionnaireEntryObject): boolean;
     getBeliefInventory(sessionId: string): BeliefInventoryResult;
 }
 
