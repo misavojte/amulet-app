@@ -20,6 +20,6 @@
 	options={{
 		responsive: true,
 		aspectRatio: 1,
-		scales: { r: { suggestedMin: 0, suggestedMax: 30 } }
+		scales: { r: { suggestedMin: 0, suggestedMax: 100 } }
 	}}
 />

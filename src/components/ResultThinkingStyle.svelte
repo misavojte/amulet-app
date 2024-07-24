@@ -18,12 +18,17 @@
 		return getThinkingStyleDataset(searchParamEntries);
 	};
 
-	const parseFloat = (value: string) => {
+	const parseFloatAndNormalize = (value: string) => {
 		const parsed = Number.parseFloat(value);
 		if (Number.isNaN(parsed)) {
 			throw new Error('Invalid score data');
 		}
-		return parsed;
+		const MAXIMUM_POSSIBLE_SCORE = 30;
+		const MINIMUM_POSSIBLE_SCORE = 0;
+		if (parsed < MINIMUM_POSSIBLE_SCORE || parsed > MAXIMUM_POSSIBLE_SCORE) {
+			throw new Error('Invalid score data');
+		}
+		return (parsed / MAXIMUM_POSSIBLE_SCORE) * 100;
 	};
 
 	const getThinkingStyleDataset = (urlSearchParamEntries: { [x: string]: string }) => {
@@ -47,10 +52,10 @@
 			datasets: [
 				{
 					data: [
-						parseFloat(urlSearchParamEntries.a),
-						parseFloat(urlSearchParamEntries.b),
-						parseFloat(urlSearchParamEntries.c),
-						parseFloat(urlSearchParamEntries.d)
+						parseFloatAndNormalize(urlSearchParamEntries.a),
+						parseFloatAndNormalize(urlSearchParamEntries.b),
+						parseFloatAndNormalize(urlSearchParamEntries.c),
+						parseFloatAndNormalize(urlSearchParamEntries.d)
 					],
 					backgroundColor: [
 						'rgba(247, 70, 74, 0.5)',
