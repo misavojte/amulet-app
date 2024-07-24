@@ -46,6 +46,7 @@
 				<LanguagePick on:localeChange={handleLocaleChange} />
 			{:else if $userState.userId}
 				<ResultThinkingStyle />
+				<a href="/result" class="text-blue-500 underline">res</a>
 			{:else}
 				<Loader />
 			{/if}

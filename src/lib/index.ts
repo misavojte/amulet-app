@@ -39,7 +39,7 @@ export interface DbData {
 }
 
 export type { ITimestampGameService, TimestampGameType, TimestampGameEntryObject} from "$lib/interfaces/ITimestampGameService";
-export type { ITimestampQuestionnaireService, TimestampQuestionnaireType, TimestampQuestionnaireEntryObject} from "$lib/interfaces/ITimestampQuestionnaireService";
+export type { ITimestampQuestionnaireService, TimestampQuestionnaireEntryObject} from "$lib/interfaces/ITimestampQuestionnaireService";
 
 /**
  * In FireBase, saved in: /timestamps/{url}/{userId}/{userName}

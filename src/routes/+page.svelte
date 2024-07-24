@@ -2,7 +2,7 @@
 	import { _, getLocaleFromNavigator } from 'svelte-i18n';
 	import LanguagePick from '../components/LanguagePick.svelte';
 	import Intro from '../components/Intro.svelte';
-	import App from '../components/App.svelte';
+	import App from '../components/Game.svelte';
 	import Footer from '../components/Footer.svelte';
 
 	// i18n.js
@@ -11,6 +11,9 @@
 	import pl from '../locales/pl.json';
 	import cs from '../locales/cs.json';
 	import type { QuestionnaireScore } from '$lib/interfaces/ITimestampQuestionnaireService';
+	import { createUserState } from '../stores/UserState';
+	import { setContext } from 'svelte';
+	import { getAuthAnonymousUser } from '../firebase';
 
 	addMessages('en', en);
 	addMessages('pl', pl);
@@ -56,6 +59,12 @@
 		const searchParams = createSearchParamResultUrl(questionnaireResult);
 		return `result/${locale}?${searchParams.toString()}`;
 	};
+
+	const userState = createUserState();
+	getAuthAnonymousUser().then((userId) => {
+		userState.set({ userId, sessionId: 'mock' });
+	});
+	setContext('userState', userState);
 </script>
 
 {#if stage !== 'Experiment'}
@@ -73,8 +82,14 @@
 	</div>
 {/if}
 
-{#if stage === 'Experiment'}
-	<App {locale} {gameConfig} />
+{#if stage === 'Experiment' && $userState.userId && $userState.sessionId}
+	<App
+		user={{
+			userId: $userState.userId,
+			sessionId: $userState.sessionId
+		}}
+		{gameConfig}
+	/>
 {/if}
 
 <style>

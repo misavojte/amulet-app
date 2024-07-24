@@ -7,9 +7,6 @@
 	import UiError from './UIError.svelte';
 
 	const getData = async () => {
-		if (!browser) {
-			Promise.reject(new Error('Not running in browser'));
-		}
 		const urlSearchParams: URLSearchParams = new URLSearchParams($page.url.search);
 		const searchParamEntries = {
 			...Object.fromEntries(urlSearchParams.entries())
@@ -68,21 +65,22 @@
 			labels: [scoreLabels.a, scoreLabels.b, scoreLabels.c, scoreLabels.d]
 		};
 	};
-
-	let dataset = getData();
-	console.log(dataset);
 </script>
 
 <div class="container mx-auto p-4 flex flex-col items-center w-full">
 	<h2 class="text-2xl font-bold">{$_('result.thinkingstyle.title')}</h2>
 	<p class="text-lg mt-4 mb-4">{$_('result.thinkingstyle.description')}</p>
 	<div class="aspect-square w-full flex items-center justify-center">
-		{#await dataset}
+		{#if browser}
+			{#await getData()}
+				<UiLoader />
+			{:then dataset}
+				<ResultThinkingStylePlot data={dataset} />
+			{:catch error}
+				<UiError message={error.message} />
+			{/await}
+		{:else}
 			<UiLoader />
-		{:then dataset}
-			<ResultThinkingStylePlot data={dataset} />
-		{:catch error}
-			<UiError message={error.message} />
-		{/await}
+		{/if}
 	</div>
 </div>

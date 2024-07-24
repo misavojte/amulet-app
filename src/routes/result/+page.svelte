@@ -1,63 +1,56 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
-	import { browser } from '$app/environment';
-	import { page } from '$app/stores';
+	import { _, locale } from 'svelte-i18n';
+	import LanguagePick from '../../components/LanguagePick.svelte';
+	import Footer from '../../components/Footer.svelte';
+	import { onMount } from 'svelte';
 
-	const getData = async (urlSearchParams: URLSearchParams) => {
-		const searchParamEntries = {
-			...Object.fromEntries(urlSearchParams.entries())
-		};
+	// i18n.js
+	import { init, addMessages } from 'svelte-i18n';
+	import en from '../../locales/en.json';
+	import pl from '../../locales/pl.json';
+	import cs from '../../locales/cs.json';
 
-		return {
-			thinkingStyle: getThinkingStyleDataset(searchParamEntries)
-		};
+	import Result from '../../components/Result.svelte';
+
+	const initialLocale = $locale;
+	let isReady = false;
+	console.warn('Initial locale', initialLocale, isReady);
+
+	addMessages('en', en);
+	addMessages('pl', pl);
+	addMessages('cs', cs);
+
+	init({
+		fallbackLocale: 'en',
+		initialLocale: 'en'
+	});
+
+	const handleLocaleChange = () => {
+		isReady = true;
 	};
 
-	const parseFloat = (value: string) => {
-		const parsed = Number.parseFloat(value);
-		if (Number.isNaN(parsed)) {
-			throw new Error('Invalid score data');
+	onMount(() => {
+		if (initialLocale) {
+			if (initialLocale === 'cs') {
+				handleLocaleChange();
+			}
+			if (initialLocale === 'pl') {
+				handleLocaleChange();
+			}
+			if (initialLocale === 'en') {
+				handleLocaleChange();
+			}
 		}
-		return parsed;
-	};
-
-	const getThinkingStyleDataset = (urlSearchParamEntries: { [x: string]: string }) => {
-		// 1. a is 'activelyOpenMindedThinking'
-		// 2. b is 'closeMindedThinking'
-		// 3. c is 'preferenceForIntuitiveThinking'
-		// 4. d is  'preferenceForRationalThinking'
-		const scoreLabels = {
-			a: $_('result.a.name'),
-			b: $_('result.b.name'),
-			c: $_('result.c.name'),
-			d: $_('result.d.name')
-		};
-
-		// if does not contain all keys from the score, throw an error
-		if (!Object.keys(scoreLabels).every((key) => key in urlSearchParamEntries)) {
-			throw new Error('Invalid score data');
-		}
-
-		return {
-			datasets: [
-				{
-					data: [
-						parseFloat(urlSearchParamEntries.a),
-						parseFloat(urlSearchParamEntries.b),
-						parseFloat(urlSearchParamEntries.c),
-						parseFloat(urlSearchParamEntries.d)
-					],
-					backgroundColor: [
-						'rgba(247, 70, 74, 0.5)',
-						'rgba(70, 191, 189, 0.5)',
-						'rgba(253, 180, 92, 0.5)',
-						'rgba(148, 159, 177, 0.5)'
-					]
-				}
-			],
-			labels: [scoreLabels.a, scoreLabels.b, scoreLabels.c, scoreLabels.d]
-		};
-	};
-
-	$: datasets = browser && getData($page.url.searchParams);
+	});
 </script>
+
+<div class="max-w-screen-md flex flex-col justify-between items-center mx-auto h-screen">
+	<main class="h-full flex flex-col justify-center items-center w-full">
+		{#if isReady}
+			<Result />
+		{:else}
+			<LanguagePick on:localeChange={handleLocaleChange} />
+		{/if}
+	</main>
+	<Footer />
+</div>

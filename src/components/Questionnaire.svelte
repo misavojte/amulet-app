@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { type ITimestampQuestionnaireService } from '$lib';
 	import { type IQuestionConfig } from '$lib/interfaces/IConfig';
+	import type { QuestionnaireScore } from '$lib/interfaces/ITimestampQuestionnaireService';
 	import QuestionnaireFill from './QuestionnaireFill.svelte';
 	import UiLoader from './UILoader.svelte';
 
@@ -32,7 +33,7 @@
 			});
 	};
 
-	let promise: Promise<void> | null = null;
+	let promise: Promise<QuestionnaireScore> | null = null;
 </script>
 
 <div class="w-full h-full grid grid-rows-12 grow overflow-hidden">
