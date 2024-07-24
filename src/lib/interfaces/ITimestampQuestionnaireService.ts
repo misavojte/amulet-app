@@ -5,7 +5,11 @@
 export interface ITimestampQuestionnaireService {
     startQuestionnaire(): Promise<void>;
     saveTimestampQuestionnaire(question: string, answer: string): Promise<void>;
-    saveQuestionnaire(): Promise<void>;
+    saveQuestionnaire(data: {
+        id: string;
+        value: string;
+        required: boolean;
+    }[]): Promise<void>;
 }
 
 export interface TimestampQuestionnaireEntryObject {

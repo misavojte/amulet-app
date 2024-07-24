@@ -39,7 +39,12 @@
 			{#if stage === 'LanguagePick'}
 				<LanguagePick on:localeChange={handleLocaleChange} />
 			{:else}
-				<Questionnaire questionnaireInterface={service} questionConfig={mockQuestions} />
+				<Questionnaire
+					questionnaireInterface={service}
+					questionConfig={mockQuestions}
+					on:questionnaireSaved={(e) => alert(JSON.stringify(e.detail))}
+					on:questionnaireError={(e) => alert('Error ' + e.detail.message)}
+				/>
 			{/if}
 		</main>
 		<Footer />

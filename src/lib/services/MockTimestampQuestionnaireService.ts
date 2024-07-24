@@ -14,9 +14,15 @@ export class MockTimestampQuestionnaireService implements ITimestampQuestionnair
         }, 1000);
     }
 
-    async saveQuestionnaire(): Promise<void> {
+    async saveQuestionnaire(data: {
+            id: string;
+            value: string;
+            required: boolean;
+        }[]
+    ): Promise<void> {
         setTimeout(() => {
             console.log('TimestampQuestionnaire saved successfully!');
+            console.log(data);
         }, 1000);
     }
 }

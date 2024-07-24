@@ -2,12 +2,34 @@
 	import { type ITimestampQuestionnaireService } from '$lib';
 	import { type IQuestionConfig } from '$lib/interfaces/IConfig';
 	import QuestionnaireFill from './QuestionnaireFill.svelte';
+	import UiLoader from './UILoader.svelte';
+
+	import { createEventDispatcher } from 'svelte';
 
 	export let questionnaireInterface: ITimestampQuestionnaireService;
 	export let questionConfig: IQuestionConfig;
 
-	const handleQuestionnaireDone = (data: any) => {
-		promise = questionnaireInterface.saveQuestionnaire(data);
+	const dispatch = createEventDispatcher();
+
+	const handleQuestionnaireDone = (
+		event: CustomEvent<
+			{
+				id: string;
+				value: string;
+				required: boolean;
+			}[]
+		>
+	) => {
+		promise = questionnaireInterface.saveQuestionnaire(event.detail);
+		promise
+			.then(() => {
+				console.info('Questionnaire saved');
+				dispatch('questionnaireSaved', event.detail);
+			})
+			.catch((e: Error) => {
+				console.warn(e);
+				dispatch('questionnaireError', e);
+			});
 	};
 
 	let promise: Promise<void> | null = null;
@@ -15,19 +37,9 @@
 
 <div class="w-full h-full grid grid-rows-12 grow overflow-hidden">
 	{#if promise}
-		{#await promise}
-			<div class="center">
-				<p>Loading...</p>
-			</div>
-		{:then x}
-			<div>
-				<p>Done!</p>
-			</div>
-		{:catch e}
-			<div>
-				<p>Error: {e.message}</p>
-			</div>
-		{/await}
+		<div class="flex justify-center items-center row-span-12">
+			<UiLoader />
+		</div>
 	{:else}
 		<QuestionnaireFill
 			{questionConfig}

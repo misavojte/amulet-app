@@ -12,12 +12,12 @@ export class ThinkingStyleService implements IThinkingStyleService {
         preferenceForRationalThinking: 0,
     };
 
-    saveThinkingStyle(entry: TimestampQuestionnaireEntryObject): boolean {
-        const questionInfo = thinkingStyleElligibleQuestionnaireQuestions.find(q => q.questionId === entry.question);
+    saveThinkingStyle(id: string, value: string): boolean {
+        const questionInfo = thinkingStyleElligibleQuestionnaireQuestions.find(q => q.questionId === id);
         if (!questionInfo) return false;
-        const originalAnswer = parseInt(entry.answer);
+        const originalAnswer = parseInt(value);
         if (isNaN(originalAnswer)) {
-            console.warn(`Answer for question ${entry.question} is not a number`);
+            console.warn(`Answer for question ${id} is not a number`);
             return false;
         }
         // check if reversed, in this settings, numbers are alwas 0-5...

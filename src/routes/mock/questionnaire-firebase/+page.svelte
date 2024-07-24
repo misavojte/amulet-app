@@ -19,6 +19,7 @@
 	import { getAuthAnonymousUser } from '../../../firebase';
 	import { BeliefInventoryService } from '$lib/services/BeliefInventoryService';
 	import { ThinkingStyleService } from '$lib/services/ThinkingStyleService';
+	import Loader from '../../../components/UILoader.svelte';
 
 	addMessages('en', en);
 	addMessages('pl', pl);
@@ -56,9 +57,14 @@
 			{#if stage === 'LanguagePick'}
 				<LanguagePick on:localeChange={handleLocaleChange} />
 			{:else if $userState.userId}
-				<Questionnaire questionnaireInterface={service} questionConfig={mockQuestions} />
+				<Questionnaire
+					questionnaireInterface={service}
+					questionConfig={mockQuestions}
+					on:questionnaireSaved={(e) => alert(JSON.stringify(e.detail))}
+					on:questionnaireError={(e) => alert('Error ' + e.detail.message)}
+				/>
 			{:else}
-				<p>Loading...</p>
+				<Loader />
 			{/if}
 		</main>
 		<Footer />

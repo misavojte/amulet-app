@@ -9,8 +9,6 @@ import type { IThinkingStyleService } from "$lib/interfaces/IThinkingStyleServic
 
 export class TimestampQuestionnaireService implements ITimestampQuestionnaireService {
 
-    metaQuestions: Record<string, string> = {};
-
     userState: UserStateStore = getContext('userState');
     beliefInventoryService: IBeliefInventoryService = getContext('beliefInventoryService');
     thinkingStyleService: IThinkingStyleService = getContext('thinkingStyleService');
@@ -45,28 +43,40 @@ export class TimestampQuestionnaireService implements ITimestampQuestionnaireSer
             sessionId: userState.sessionId // TODO FIX
         }
 
-        const wasCapturedByBeliefInventory = this.beliefInventoryService.saveBeliefInventory(timestampEntry);
-        const wasCapturedByThinkingStyle = this.thinkingStyleService.saveThinkingStyle(timestampEntry);
-
-        if (!wasCapturedByBeliefInventory && !wasCapturedByThinkingStyle) {
-            // log to meta questions
-            this.metaQuestions[question] = answer;
-        }
+        
         
         return writeTimestampQuestionnaire(timestampEntry);
     }
 
-    async saveQuestionnaire(): Promise<void> {
+    async saveQuestionnaire(data: 
+        {
+            id: string;
+            value: string;
+            required: boolean;
+        }[]
+    ): Promise<void> {
         const userState = get(this.userState);
         if (userState.userId === null || userState.sessionId === null) {
             throw new Error("User or sessionId is null");
         }
+
+        const metaQuestions: Record<string, string> = {};
+
+        data.forEach(({ id, value }) => {
+            const wasCapturedByBeliefInventory = this.beliefInventoryService.saveBeliefInventory(id, value);
+            const wasCapturedByThinkingStyle = this.thinkingStyleService.saveThinkingStyle(id, value);
+            if (!wasCapturedByBeliefInventory && !wasCapturedByThinkingStyle) {
+                // log to meta questions
+                metaQuestions[id] = value;
+            }
+        });
+
         const beliefInventory = this.beliefInventoryService.getBeliefInventory(userState.sessionId);
         const thinkingStyle = this.thinkingStyleService.getThinkingStyle(userState.sessionId);
         const questionnaireScore: QuestionnaireScore = {
             ...beliefInventory,
             ...thinkingStyle,
-            ...this.metaQuestions,
+            ...metaQuestions,
             userId: userState.userId,
             sessionId: userState.sessionId,
             timestamp: Date.now()

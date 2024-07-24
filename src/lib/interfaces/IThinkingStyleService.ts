@@ -1,7 +1,5 @@
-import type { TimestampQuestionnaireEntryObject } from "./ITimestampQuestionnaireService";
-
 export interface IThinkingStyleService {
-    saveThinkingStyle(entry: TimestampQuestionnaireEntryObject): boolean;
+    saveThinkingStyle(id: string, value: string): boolean;
     getThinkingStyle(sessionId: string): ThinkingStyleResult;
 }
 

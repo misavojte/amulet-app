@@ -1,7 +1,5 @@
-import type { TimestampQuestionnaireEntryObject } from "./ITimestampQuestionnaireService";
-
 export interface IBeliefInventoryService {
-    saveBeliefInventory(entry: TimestampQuestionnaireEntryObject): boolean;
+    saveBeliefInventory(id: string, value: string): boolean
     getBeliefInventory(sessionId: string): BeliefInventoryResult;
 }
 
