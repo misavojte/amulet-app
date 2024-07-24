@@ -83,13 +83,7 @@
 {/if}
 
 {#if stage === 'Experiment' && $userState.userId && $userState.sessionId}
-	<App
-		user={{
-			userId: $userState.userId,
-			sessionId: $userState.sessionId
-		}}
-		{gameConfig}
-	/>
+	<App {gameConfig} />
 {/if}
 
 <style>

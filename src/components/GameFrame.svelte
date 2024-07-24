@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Start from './Start.svelte';
+	import Start from './GameStart.svelte';
 	import End from './End.svelte';
 	import { _ } from 'svelte-i18n';
 
@@ -12,11 +12,6 @@
 	import GamePerspective from './GamePerspective.svelte';
 	import type { ITimestampGameService } from '$lib/interfaces/ITimestampGameService';
 	const gameState: GameStateStore = getContext('gameState');
-
-	export let user: {
-		userId: string;
-		sessionId: string;
-	};
 
 	let shouldSaveNewRoundTimestampGame = true;
 

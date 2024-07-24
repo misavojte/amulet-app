@@ -6,17 +6,13 @@
 	import { createGameState } from '../stores/GameState';
 
 	export let gameConfig: GameConfig;
-	export let user: {
-		userId: string;
-		sessionId: string;
-	};
 
 	const gameState = createGameState(gameConfig);
 	setContext('gameState', gameState);
 </script>
 
 <div class="flex flex-col items-center justify-center w-full h-full overflow-auto">
-	<Game {user} />
+	<Game />
 </div>
 
 <style>
