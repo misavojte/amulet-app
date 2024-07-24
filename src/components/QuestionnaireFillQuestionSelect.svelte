@@ -6,6 +6,7 @@
 	export let question: {
 		id: string;
 		type: string;
+		required: boolean;
 		options: readonly string[];
 	};
 	export let value: string = '';
@@ -17,7 +18,10 @@
 	};
 </script>
 
-<QuestionnaireQuestion questionText={$_('questions.' + question.id + '.question')}>
+<QuestionnaireQuestion
+	questionText={$_('questions.' + question.id + '.question')}
+	required={question.required}
+>
 	<ul class="flex flex-col">
 		{#each question.options as option}
 			<li>

@@ -18,7 +18,10 @@
 	};
 </script>
 
-<QuestionnaireQuestion questionText={$_('questions.' + question.id + '.question')}>
+<QuestionnaireQuestion
+	questionText={$_('questions.' + question.id + '.question')}
+	required={question.required}
+>
 	<form class="flex flex-col gap-4" on:submit|preventDefault={handleOptionChange}>
 		{#if question.type === 'text'}
 			<input
