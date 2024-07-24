@@ -1,7 +1,10 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push, set, get } from "firebase/database";
 import { getAuth, signInAnonymously } from "firebase/auth";
-import type { DbData, LeaderboardEntry, LeaderboardEntryBase, TimestampEntryObject, TimestampEntryUrl } from '$lib';
+import type { DbData, LeaderboardEntry, LeaderboardEntryBase, TimestampGameEntryObject, TimestampQuestionnaireEntryObject } from '$lib';
+import type { BeliefInventoryResult } from '$lib/interfaces/IBeliefInventoryService';
+import type { ThinkingStyleResult } from '$lib/interfaces/IThinkingStyleService';
+import type { StartQuestionnaireEntryObject } from '$lib/interfaces/ITimestampQuestionnaireService';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -64,17 +67,15 @@ export const writeRoundData = (data: DbData) => {
 }
 
 /**
- * In FireBase, saved in: db/timestamps/{url}/{userId}/{userName}
+ * In FireBase, saved in: db/timestamps-game
  */
-export const writeTimestamp = (data: TimestampEntryObject, urlObject: TimestampEntryUrl): Promise<void> => {
-  // replace all dots with underscores in urlObject.url
-  urlObject.url = urlObject.url.replaceAll('.', '_');
-  const timestampRef = ref(db, 'timestamps/' + urlObject.url + '/' + urlObject.userId + '/' + urlObject.userName + '/');
-  const newTimestampRef = push(timestampRef);
+export const writeTimestampGame = (data: TimestampGameEntryObject): Promise<void> => {
+  const timestampRef = ref(db, 'timestamps-game/');
+  const newTimestampGameRef = push(timestampRef);
   return new Promise((resolve, reject) => {
-    set(newTimestampRef, data)
+    set(newTimestampGameRef, data)
       .then(() => {
-        console.log('Timestamp saved successfully!');
+        console.log('TimestampGame saved successfully!');
         resolve();
       })
       .catch((error) => {
@@ -84,6 +85,24 @@ export const writeTimestamp = (data: TimestampEntryObject, urlObject: TimestampE
   });
 }
 
+/**
+ * In FireBase, saved in: db/timestamps-questionnaire
+ */
+export const writeTimestampQuestionnaire = (data: TimestampQuestionnaireEntryObject | StartQuestionnaireEntryObject): Promise<void> => {
+  const timestampRef = ref(db, 'timestamps-questionnaire/');
+  const newTimestampGameRef = push(timestampRef);
+  return new Promise((resolve, reject) => {
+    set(newTimestampGameRef, data)
+      .then(() => {
+        console.log('TimestampQuestionnaire saved successfully!');
+        resolve();
+      })
+      .catch((error) => {
+        console.error('Error saving timestamp: ', error);
+        reject(error);
+      });
+  });
+}
 
 
 const auth = getAuth();
@@ -127,4 +146,16 @@ export const writeLeaderboardEntry = (entry: LeaderboardEntry) => {
     .catch((error) => {
       console.error('Error saving leaderboard entry: ', error);
     });
+}
+
+export type QuestionnaireScore = BeliefInventoryResult & ThinkingStyleResult & { 
+  userId: string;
+  sessionId: string;
+  timestamp: number;
+};
+
+export const writeQuestionnaireScore = async (score: QuestionnaireScore) => {
+  const questionnaireScoreRef = ref(db, 'questionnaire-scores/');
+  const newQuestionnaireScoreRef = push(questionnaireScoreRef);
+  return set(newQuestionnaireScoreRef, score)
 }

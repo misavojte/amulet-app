@@ -19,8 +19,8 @@ export interface GameState {
 }
 
 export interface UserState {
-    id: string | null;
-    name: string | null;
+    userId: string | null;
+    sessionId: string | null;
 }
 
 export type GameStageType = 'Start' | 'AmuletDecision' | 'BoxDecision' | 'AfterBoxDecision' | 'End';
@@ -38,19 +38,13 @@ export interface DbData {
     boxId: number;
 }
 
-export type TimestampType = 'round' | 'amuletStart' | 'amuletBuy' | 'amuletReject' | 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss';
-
-export interface TimestampEntryObject {
-    timestamp: number;
-    type: TimestampType;
-    round: number;
-    repeat: number;
-}
+export type { ITimestampGameService, TimestampGameType, TimestampGameEntryObject} from "$lib/interfaces/ITimestampGameService";
+export type { ITimestampQuestionnaireService, TimestampQuestionnaireType, TimestampQuestionnaireEntryObject} from "$lib/interfaces/ITimestampQuestionnaireService";
 
 /**
  * In FireBase, saved in: /timestamps/{url}/{userId}/{userName}
  */
-export interface TimestampEntryUrl {
+export interface TimestampGameEntryUrl {
     userId: string;
     userName: string;
     url: string;
