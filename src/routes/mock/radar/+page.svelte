@@ -1,52 +1,55 @@
-<script>
-	import { PolarArea } from 'svelte-chartjs';
+<script lang="ts">
+	import { _ } from 'svelte-i18n';
+	import LanguagePick from '../../../components/LanguagePick.svelte';
+	import Footer from '../../../components/Footer.svelte';
 
-	export const data = {
-		datasets: [
-			{
-				data: [4.23, 2.0, 1.5, 15],
-				backgroundColor: [
-					'rgba(247, 70, 74, 0.5)',
-					'rgba(70, 191, 189, 0.5)',
-					'rgba(253, 180, 92, 0.5)',
-					'rgba(148, 159, 177, 0.5)'
-				]
-			}
-		],
-		labels: [
-			'Actively Open-minded Thinking',
-			'Close-Minded Thinking',
-			'Preference for Intuitive Thinking',
-			'Preference for Effortful Thinking'
-		]
+	// i18n.js
+	import { init, addMessages } from 'svelte-i18n';
+	import en from '../../../locales/en.json';
+	import pl from '../../../locales/pl.json';
+	import cs from '../../../locales/cs.json';
+
+	import { createUserState } from '../../../stores/UserState';
+	import { setContext } from 'svelte';
+	import { getAuthAnonymousUser } from '../../../firebase';
+	import Loader from '../../../components/UILoader.svelte';
+
+	import ResultThinkingStyle from '../../../components/ResultThinkingStyle.svelte';
+
+	addMessages('en', en);
+	addMessages('pl', pl);
+	addMessages('cs', cs);
+
+	init({
+		fallbackLocale: 'en',
+		initialLocale: 'en'
+	});
+
+	let stage = 'LanguagePick';
+
+	const handleLocaleChange = () => {
+		stage = 'Info';
 	};
 
-	import {
-		Chart as ChartJS,
-		Title,
-		Tooltip,
-		Legend,
-		ArcElement,
-		RadialLinearScale
-	} from 'chart.js';
+	const userState = createUserState();
+	setContext('userState', userState);
 
-	ChartJS.register(Title, Tooltip, Legend, ArcElement, RadialLinearScale);
+	getAuthAnonymousUser().then((userId) => {
+		userState.set({ userId, sessionId: 'mock' });
+	});
 </script>
 
-<main class="container mx-auto p-4 flex flex-col items-center w-full">
-	<h1 class="text-4xl font-bold">Polar Area Chart</h1>
-	<p class="mt-4 text-lg">
-		A polar area chart is similar to a pie chart, but the sectors are equal angles and differ in how
-		far they extend from the center of the circle.
-	</p>
-	<div class="max-w-2xl w-full mt-8">
-		<PolarArea
-			{data}
-			options={{
-				responsive: true,
-				aspectRatio: 1,
-				scales: { r: { suggestedMin: 0, suggestedMax: 30 } }
-			}}
-		/>
+{#if stage !== 'Experiment'}
+	<div class="max-w-screen-md flex flex-col justify-between items-center mx-auto h-screen">
+		<main class="h-full flex flex-col justify-center items-center w-full">
+			{#if stage === 'LanguagePick'}
+				<LanguagePick on:localeChange={handleLocaleChange} />
+			{:else if $userState.userId}
+				<ResultThinkingStyle />
+			{:else}
+				<Loader />
+			{/if}
+		</main>
+		<Footer />
 	</div>
-</main>
+{/if}
