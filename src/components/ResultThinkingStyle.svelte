@@ -32,10 +32,10 @@
 		// 3. c is 'preferenceForIntuitiveThinking'
 		// 4. d is  'preferenceForRationalThinking'
 		const scoreLabels = {
-			a: $_('result.a.name'),
-			b: $_('result.b.name'),
-			c: $_('result.c.name'),
-			d: $_('result.d.name')
+			a: $_('result.a.title'),
+			b: $_('result.b.title'),
+			c: $_('result.c.title'),
+			d: $_('result.d.title')
 		};
 
 		// if does not contain all keys from the score, throw an error

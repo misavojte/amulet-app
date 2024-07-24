@@ -41,6 +41,28 @@
         "back" : "Previous question",
         "submitValue" : "Confirm the answer"
     },
+    "result": {
+        "thinkingstyle" : {
+            "title" : "Typ myšlení",
+            "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy myšlení. Čím výše je bod, tím více odpovědí se shoduje s daným typem myšlení."
+        },
+        "a" : {
+            "title" : "A",
+            "description" : "Popis typu A"
+        },
+        "b" : {
+            "title" : "B",
+            "description" : "Popis typu B"
+        },
+        "c" : {
+            "title" : "C",
+            "description" : "Popis typu C"
+        },
+        "d" : {
+            "title" : "D",
+            "description" : "Popis typu D"
+        }
+    },
     "questions": {
         "Q1IBI": {
             "question" : "I do something special to prevent bad luck.",
