@@ -2,7 +2,7 @@
 	import { _, getLocaleFromNavigator } from 'svelte-i18n';
 	import LanguagePick from '../components/LanguagePick.svelte';
 	import Intro from '../components/Intro.svelte';
-	import App from '../components/Game.svelte';
+	import Game from '../components/Game.svelte';
 	import Footer from '../components/Footer.svelte';
 
 	// i18n.js
@@ -83,7 +83,7 @@
 {/if}
 
 {#if stage === 'Experiment' && $userState.userId && $userState.sessionId}
-	<App {gameConfig} />
+	<Game {gameConfig} />
 {/if}
 
 <style>
