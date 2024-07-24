@@ -19,7 +19,6 @@
 	import { getAuthAnonymousUser } from '../../../firebase';
 	import { BeliefInventoryService } from '$lib/services/BeliefInventoryService';
 	import { ThinkingStyleService } from '$lib/services/ThinkingStyleService';
-	import { set } from 'firebase/database';
 
 	addMessages('en', en);
 	addMessages('pl', pl);

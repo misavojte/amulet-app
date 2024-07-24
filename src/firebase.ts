@@ -4,7 +4,7 @@ import { getAuth, signInAnonymously } from "firebase/auth";
 import type { DbData, LeaderboardEntry, LeaderboardEntryBase, TimestampGameEntryObject, TimestampQuestionnaireEntryObject } from '$lib';
 import type { BeliefInventoryResult } from '$lib/interfaces/IBeliefInventoryService';
 import type { ThinkingStyleResult } from '$lib/interfaces/IThinkingStyleService';
-import { StartQuestionnaireEntryObject } from '$lib/interfaces/ITimestampQuestionnaireService';
+import type { StartQuestionnaireEntryObject } from '$lib/interfaces/ITimestampQuestionnaireService';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
