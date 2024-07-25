@@ -38,7 +38,7 @@
 	};
 </script>
 
-<div class="aspect-square w-full flex items-center justify-center">
+<div class="w-full h-full flex items-center justify-center">
 	{#if browser}
 		{#await getData()}
 			<UiLoader />

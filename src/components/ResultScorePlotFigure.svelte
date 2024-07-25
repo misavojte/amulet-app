@@ -12,6 +12,7 @@
 	{data}
 	options={{
 		responsive: true,
-		scales: { y: { suggestedMin: 0, suggestedMax: 400 } }
+		aspectRatio: 4 / 3,
+		scales: { y: { min: 0 } }
 	}}
 />

@@ -73,7 +73,7 @@
         },
         "s" : {
             "title" : "Získané herní skóre",
-            "description" : "Vaše skóre získané během hry.",
+            "description" : "Vaše skóre získané během hry je {score} bodů.",
             "you": "Vaše skóre",
             "average": "Průměrné skóre",
             "best": "Skóre nejlepšího hráče"
