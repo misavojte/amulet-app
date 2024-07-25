@@ -47,8 +47,12 @@
 	 * Using UserState component
 	 */
 	const userState = createUserState();
+	const sessionId = Date.now().toString() + '_' + Math.random().toString();
 	getAuthAnonymousUser().then((userId) => {
-		userState.set({ userId, sessionId: 'mock' }); //todo remove mock
+		userState.set({
+			userId,
+			sessionId
+		});
 	});
 	setContext('userState', userState);
 
