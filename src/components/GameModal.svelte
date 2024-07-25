@@ -2,7 +2,7 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<div class="rounded" in:fade={{ duration: 300, delay: 1500 }} out:fade={{ duration: 100 }}>
+<div class="rounded" in:fade={{ duration: 300 }} out:fade={{ duration: 300 }}>
 	<div class="flex items-center justify-center flex-col gap-8">
 		<slot />
 	</div>

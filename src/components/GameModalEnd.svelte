@@ -9,17 +9,15 @@
 </script>
 
 <RoundedWrapper>
-	<h1>
+	<h1 class="text-center text-2xl font-bold">
 		{$_('end.title')}
 	</h1>
-	<div class="inner">
-		<GameModalEndScore />
-		{#if $gameState.allowRepeat}
-			<UiButton on:click={() => gameState.repeat()} text={$_('end.repeat')} />
-		{:else}
-			<todo></todo>
-		{/if}
-	</div>
+	<GameModalEndScore />
+	{#if $gameState.allowRepeat}
+		<UiButton on:click={() => gameState.repeat()} text={$_('end.repeat')} />
+	{:else}
+		<todo></todo>
+	{/if}
 </RoundedWrapper>
 
 <style>
