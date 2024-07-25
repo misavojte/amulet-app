@@ -3,6 +3,7 @@ import type { Writable } from 'svelte/store';
 import type { GameConfig, GameState } from '$lib';
 import { updateState } from '$lib/utils/storeUtils';
 
+// make it a return type of createGameState
 export interface GameStateStore extends Writable<GameState> {
 	reset: () => void;
 	updateState: (updates: Partial<GameState>) => void;
@@ -45,7 +46,7 @@ export const createGameState = (config: GameConfig): GameStateStore => {
 		updateState: (updates: Partial<GameState>) => updateState(store, updates),
 		purchaseAmulet: (purchase: boolean) => purchaseAmulet(store, purchase),
 		repeat: () => repeatGameState(store, config),
-		progressFromBoxDecision: (win: boolean) => progressFromBoxDecision(store, win)
+		progressFromBoxDecision: (win: boolean) => progressFromBoxDecision(store, win),
 	};
 };
 
@@ -59,6 +60,7 @@ const createInitialGameState = (config: GameConfig): GameState => ({
 	gameStage: 'Start',
 	score: config.startScore,
 	numberOfRepeats: 0,
+	isFirstRound: true,
 	config
 });
 
@@ -81,6 +83,7 @@ export const progressFromBoxDecision = (state: Writable<GameState>, win: boolean
 	// Choose next game stage based on number of rounds left
 	const nextGameStage = get(state).numberOfRounds > 1 ? 'AmuletDecision' : 'End';
 	const delayOfNextStage = win ? 3000 : 2000;
+	const newScore = win && !get(state).isFirstRound ? get(state).score + get(state).config.scoreOnWin : get(state).score; 
 
 	updateState(state, {
 		gameStage: 'AfterBoxDecision', // 'AfterBoxDecision' is a temporary stage to show the result of the box decision before moving to the next stage
@@ -88,14 +91,15 @@ export const progressFromBoxDecision = (state: Writable<GameState>, win: boolean
 		blockInteraction: true,
 		numberOfRounds: get(state).numberOfRounds - 1,
 		hasAmulet: false,
-		score: win ? get(state).score + get(state).config.scoreOnWin : get(state).score
+		score: newScore
 	});
 
 	setTimeout(() => {
 		updateState(state, {
 			gameStage: nextGameStage,
 			blockInteraction: false,
-			hasCurrentlyWon: false
+			hasCurrentlyWon: false,
+			isFirstRound: false
 		});
 	}, delayOfNextStage);
 };

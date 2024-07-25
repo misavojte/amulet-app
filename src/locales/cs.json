@@ -40,7 +40,9 @@
     "box": {
         "whichBox" : "Která krabice má poklad?",
         "won" : "Vyhrál jsi {score} bodů!",
-        "lost" : "Nenašel jsi poklad"
+        "lost" : "Nenašel jsi poklad",
+        "whichBoxFirstRound" : "Vítejte v zácvičném kole. Přijdete na to, která krabice má poklad?",
+        "wonFirstRound" : "Našel jsi poklad! V ostrém kole bys získal/a {score} bodů."
     },
     "footer": {
         "text" : "Aplikace je součástí disertačního výzkumu Mgr. Markéty Muczkové na Univerzitě Palackého v Olomouci. Pokud máte jakékoliv dotazy, neváhejte nás kontaktovat na:"

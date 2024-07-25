@@ -17,6 +17,7 @@ export interface GameState {
     gameStage: GameStageType;
     score: number;
     numberOfRepeats: number;
+    isFirstRound: boolean;
     config: GameConfig;
 }
 
