@@ -2,11 +2,14 @@
 	import { _ } from 'svelte-i18n';
 	import UiCopyButton from './UICopyButton.svelte';
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 
 	const toCopy = $page.url.href;
 	const textCopyResult = $_('result.share.copyResult');
 	const textCopyExperiment = $_('result.share.copyExperiment');
 	const textCopied = $_('result.share.copied');
+
+	const toCopyBase = base;
 </script>
 
 <div class="container mx-auto p-4 flex flex-col items-center w-full">
@@ -16,6 +19,6 @@
 	</p>
 	<div class="flex gap-2 items-center w-full justify-center mt-4">
 		<UiCopyButton {toCopy} textCopy={textCopyResult} {textCopied} />
-		<UiCopyButton {toCopy} textCopy={textCopyExperiment} {textCopied} />
+		<UiCopyButton toCopy={toCopyBase} textCopy={textCopyExperiment} {textCopied} />
 	</div>
 </div>
