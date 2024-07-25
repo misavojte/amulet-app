@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Cuboid from './Cuboid.svelte';
-	import CounterHolder from './CounterHolder.svelte';
+	import Cuboid from './GameCuboid.svelte';
+	import CounterHolder from './GameCounter.svelte';
 	import GameAmulet from './GameAmulet.svelte';
 	import GameInstruction from './GameInstruction.svelte';
 </script>
@@ -74,6 +74,7 @@
 		transform-style: preserve-3d;
 		width: 1200px;
 	}
+
 	.pattern {
 		background: linear-gradient(
 			90deg,

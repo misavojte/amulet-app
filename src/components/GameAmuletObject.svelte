@@ -59,10 +59,10 @@
 </script>
 
 <div
-	class="main"
+	class="main absolute top-4"
 	style={cssVarStyles}
 	on:click={evaluateClick}
-	class:hidden={!$gameState.hasAmulet &&
+	class:hidden-custom={!$gameState.hasAmulet &&
 		!wasAmuletActiveInThisRound &&
 		$gameState.gameStage !== 'AmuletDecision'}
 >
@@ -107,7 +107,7 @@
 </div>
 
 <style>
-	.hidden {
+	.hidden-custom {
 		transform: translateY(-1000px) !important;
 	}
 	.main {

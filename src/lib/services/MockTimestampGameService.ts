@@ -19,6 +19,6 @@ export class MockTimestampGameService extends AbstractTimestampGameService imple
             userId: userState.userId ?? "mock-user-id",
             sessionId: userState.sessionId ?? "mock-session-id"
         }
-        alert(JSON.stringify(timestampEntry));
+        console.info(timestampEntry);
     }
 }

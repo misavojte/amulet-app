@@ -42,7 +42,7 @@
 
 	const gameConfig = {
 		allowRepeat: true,
-		numberOfRounds: 11,
+		numberOfRounds: 3,
 		startScore: 100,
 		scenario: 'Random',
 		priceOfAmulet: 10,

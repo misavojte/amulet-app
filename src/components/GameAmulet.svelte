@@ -9,7 +9,7 @@
 	$: console.log($gameState.gameStage);
 </script>
 
-<div>
+<div class="relative w-96 h-96 flex justify-center items-center">
 	<GameAmuletObject length={200} on:buyAmulet />
 	<GameAmuletRefuse isShown={$gameState.gameStage === 'AmuletDecision'} on:refuseAmulet />
 </div>
@@ -17,10 +17,5 @@
 <style>
 	div {
 		transform-style: preserve-3d;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		gap: 60px;
 	}
 </style>
