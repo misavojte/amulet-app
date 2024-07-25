@@ -20,7 +20,7 @@
 	{#each locales as { code, name, flag, text }}
 		<button class="locale-select" on:click={() => changeLocale(code)}>
 			<img
-				class="bg-slate-500"
+				class="bg-slate-300 aspect-square w-12 h-12 rounded-full object-cover object-center"
 				width="50"
 				height="50"
 				src={`${base}/flags/${flag}`}
@@ -45,14 +45,6 @@
 	}
 	.locale-select:hover {
 		background-color: #e0e0e0;
-	}
-	.locale-select img {
-		width: 50px;
-		height: 50px;
-		object-fit: cover;
-		object-position: center;
-		border-radius: 100%;
-		margin: auto;
 	}
 	.locale-select p {
 		font-size: 18px;
