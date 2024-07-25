@@ -141,4 +141,24 @@
 			height: calc(100vh * 0.666);
 		}
 	}
+
+	@media (max-width: 1470px) {
+		.perspective {
+			transform: scale(0.8) perspective(calc(100vh * 1.2)) rotateX(25deg) translateY(-5%);
+			height: calc(100vh * 1.2);
+		}
+		.chest-postions {
+			padding: 3rem;
+		}
+	}
+
+	@media (max-width: 1200px) {
+		.perspective {
+			transform: scale(0.6) perspective(calc(100vh * 1.666)) rotateX(25deg) translateY(-5%);
+			height: calc(100vh * 1.666);
+		}
+		.chest-postions {
+			padding: 2rem;
+		}
+	}
 </style>
