@@ -1,8 +1,9 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push, set, get } from "firebase/database";
 import { getAuth, signInAnonymously } from "firebase/auth";
-import type { DbData, LeaderboardEntry, LeaderboardEntryBase, TimestampGameEntryObject, TimestampQuestionnaireEntryObject } from '$lib';
+import type { DbData, TimestampGameEntryObject, TimestampQuestionnaireEntryObject } from '$lib';
 import type { QuestionnaireScore, StartQuestionnaireEntryObject } from '$lib/interfaces/ITimestampQuestionnaireService';
+import type { GameScoreEntry } from '$lib/interfaces/IGameScoreService';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -120,30 +121,21 @@ export const getAuthAnonymousUser = async () : Promise<string> => {
   }
 }
 
-// get first 10 entries from leaderboard (LeaderboardEntryBase[])
-// TODO: refactor
-export const getLeaderboard = async () : Promise<LeaderboardEntryBase[]> => {
-  const leaderboardRef = ref(db, 'leaderboard/');
-  const leaderboardSnapshot = await get(leaderboardRef);
-  const leaderboardData = leaderboardSnapshot.val();
-  if (leaderboardData === null) {
-    return [];
-  }
-  const leaderboardEntries: LeaderboardEntry[] = Object.values(leaderboardData);
-  leaderboardEntries.sort((a: LeaderboardEntry, b: LeaderboardEntry) => b.score - a.score);
-  return leaderboardEntries.slice(0, 10);
+export const writeGameScore = async (data: GameScoreEntry) => {
+  const gameScoreRef = ref(db, 'game-scores/');
+  const newGameScoreRef = push(gameScoreRef);
+  await set(newGameScoreRef, data);
+  return data;
 }
 
-export const writeLeaderboardEntry = (entry: LeaderboardEntry) => {
-  const leaderboardRef = ref(db, 'leaderboard/');
-  const newLeaderboardRef = push(leaderboardRef);
-  set(newLeaderboardRef, entry)
-    .then(() => {
-      console.log('Leaderboard entry saved successfully!');
-    })
-    .catch((error) => {
-      console.error('Error saving leaderboard entry: ', error);
-    });
+export const getGameScores = async () : Promise<GameScoreEntry[]> => {
+  const gameScoresRef = ref(db, 'game-scores/');
+  const gameScoresSnapshot = await get(gameScoresRef);
+  const gameScoresData = gameScoresSnapshot.val();
+  if (gameScoresData === null) {
+    return [];
+  }
+  return Object.values(gameScoresData);
 }
 
 export const writeQuestionnaireScore = async (score: QuestionnaireScore) => {

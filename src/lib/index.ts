@@ -7,6 +7,7 @@ export interface GameConfig {
 }
 
 export interface GameState {
+    allowRepeat: boolean;
     hasAmulet: boolean;
     numberOfRounds: number;
     hasCurrentlyWon: boolean;
@@ -48,15 +49,4 @@ export interface TimestampGameEntryUrl {
     userId: string;
     userName: string;
     url: string;
-}
-
-export interface LeaderboardEntryBase {
-    userName: string;
-    score: number;
-    mark?: boolean;
-}
-
-export interface LeaderboardEntry extends LeaderboardEntryBase {
-    timestamp: number;
-    userId: string;
 }

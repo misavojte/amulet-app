@@ -50,6 +50,7 @@ export const createGameState = (config: GameConfig): GameStateStore => {
 };
 
 const createInitialGameState = (config: GameConfig): GameState => ({
+	allowRepeat: false, // todo
 	hasAmulet: false,
 	numberOfRounds: config.numberOfRounds,
 	hasCurrentlyWon: false,

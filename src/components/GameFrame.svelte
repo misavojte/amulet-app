@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Start from './GameStart.svelte';
-	import End from './End.svelte';
+	import GameModalStart from './GameModalStart.svelte';
+	import GameModalEnd from './GameModalEnd.svelte';
 	import { _ } from 'svelte-i18n';
 
 	import type { TimestampGameType } from '$lib';
@@ -85,10 +85,10 @@
 
 <div class="central-holder">
 	{#if $gameState?.gameStage === 'Start'}
-		<Start />
+		<GameModalStart />
 	{/if}
 	{#if $gameState?.gameStage === 'End'}
-		<End />
+		<GameModalEnd />
 	{/if}
 	<!-- Note that position and therefore visibility of boxes and amulet are controlled by the gameState -->
 	<GamePerspective
