@@ -1,11 +1,7 @@
 <script lang="ts">
-	import Questionnaire from '../../../components/Questionnaire.svelte';
-
 	import { _ } from 'svelte-i18n';
 	import LanguagePick from '../../../components/LanguagePick.svelte';
 	import Footer from '../../../components/Footer.svelte';
-
-	import { mockQuestions } from '../../../configs/questions';
 
 	// i18n.js
 	import { init, addMessages } from 'svelte-i18n';
@@ -15,11 +11,12 @@
 
 	import { createUserState } from '../../../stores/UserState';
 	import { setContext } from 'svelte';
-	import { TimestampQuestionnaireService } from '$lib/services/TimestampQuestionnaireService';
 	import { getAuthAnonymousUser } from '../../../firebase';
-	import { BeliefInventoryService } from '$lib/services/BeliefInventoryService';
-	import { ThinkingStyleService } from '$lib/services/ThinkingStyleService';
 	import Loader from '../../../components/UILoader.svelte';
+
+	import Game from '../../../components/Game.svelte';
+	import type { ITimestampGameService } from '$lib';
+	import { MockTimestampGameService } from '$lib/services/MockTimestampGameService';
 
 	addMessages('en', en);
 	addMessages('pl', pl);
@@ -37,22 +34,25 @@
 	};
 
 	const userState = createUserState();
-	const beliefInventoryService = new BeliefInventoryService();
-	const thinkingStyleService = new ThinkingStyleService();
-
-	setContext('beliefInventoryService', beliefInventoryService);
-	setContext('thinkingStyleService', thinkingStyleService);
 	setContext('userState', userState);
 
 	getAuthAnonymousUser().then((userId) => {
 		userState.set({ userId, sessionId: 'mock' });
 	});
 
-	const service = new TimestampQuestionnaireService(
-		userState,
-		beliefInventoryService,
-		thinkingStyleService
-	);
+	const scenarioArray = ['Random', 'AlwaysWin', 'AlwaysLose', 'Random', 'Random', 'Random'];
+	const randomScenario = scenarioArray[Math.floor(Math.random() * scenarioArray.length)];
+
+	const gameConfig = {
+		allowRepeat: true,
+		numberOfRounds: 3,
+		startScore: 100,
+		scenario: randomScenario,
+		priceOfAmulet: 10,
+		scoreOnWin: 30
+	};
+
+	const mockGameTimestampService: ITimestampGameService = new MockTimestampGameService();
 </script>
 
 {#if stage !== 'Experiment'}
@@ -61,12 +61,7 @@
 			{#if stage === 'LanguagePick'}
 				<LanguagePick on:localeChange={handleLocaleChange} />
 			{:else if $userState.userId}
-				<Questionnaire
-					questionnaireInterface={service}
-					questionConfig={mockQuestions}
-					on:questionnaireSaved={(e) => alert(JSON.stringify(e.detail))}
-					on:questionnaireError={(e) => alert('Error ' + e.detail.message)}
-				/>
+				<Game {gameConfig} timestampService={mockGameTimestampService} />
 			{:else}
 				<Loader />
 			{/if}

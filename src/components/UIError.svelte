@@ -2,10 +2,14 @@
 	import { _ } from 'svelte-i18n';
 
 	export let message: string;
+
+	$: {
+		console.log('Error message:', message);
+	}
 </script>
 
 <div
-	class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
+	class="flex items-center p-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
 	role="alert"
 >
 	<svg

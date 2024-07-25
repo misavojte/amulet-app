@@ -13,7 +13,7 @@
 </script>
 
 <button
-	class="pushable"
+	class="pushable absolute bottom-0 left-0 w-full"
 	on:click={handleRefuseAmulet}
 	disabled={!isShown}
 	style="background-color: {bottomColor};"

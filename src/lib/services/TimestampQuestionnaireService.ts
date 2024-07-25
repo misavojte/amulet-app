@@ -1,6 +1,5 @@
 import type { ITimestampQuestionnaireService, StartQuestionnaireEntryObject } from "$lib/interfaces/ITimestampQuestionnaireService";
 import type { TimestampQuestionnaireEntryObject } from "$lib";
-import { getContext } from "svelte";
 import { get } from "svelte/store";
 import { writeQuestionnaireScore, writeTimestampQuestionnaire } from "../../firebase";
 import { type QuestionnaireScore } from '$lib/interfaces/ITimestampQuestionnaireService';
@@ -10,9 +9,19 @@ import type { IThinkingStyleService } from "$lib/interfaces/IThinkingStyleServic
 
 export class TimestampQuestionnaireService implements ITimestampQuestionnaireService {
 
-    userState: UserStateStore = getContext('userState');
-    beliefInventoryService: IBeliefInventoryService = getContext('beliefInventoryService');
-    thinkingStyleService: IThinkingStyleService = getContext('thinkingStyleService');
+    userState: UserStateStore;
+    beliefInventoryService: IBeliefInventoryService;
+    thinkingStyleService: IThinkingStyleService;
+
+    constructor (
+        userState: UserStateStore,
+        beliefInventoryService: IBeliefInventoryService,
+        thinkingStyleService: IThinkingStyleService
+    ) {
+        this.userState = userState;
+        this.beliefInventoryService = beliefInventoryService;
+        this.thinkingStyleService = thinkingStyleService;
+    }
 
     async startQuestionnaire(): Promise<void> {
         

@@ -34,7 +34,7 @@
 	{:else if $gameState.gameStage === 'BoxDecision'}
 		<div in:fade={{ duration: 799, delay: 800 }} out:fade={{ duration: 799 }}>
 			<div>
-				{$_('box.whichBox')}
+				{$_($gameState.isFirstRound ? 'box.whichBoxFirstRound' : 'box.whichBox')}
 			</div>
 		</div>
 	{:else if $gameState.gameStage === 'AfterBoxDecision'}
@@ -42,7 +42,7 @@
 			<div>
 				{#if $gameState.hasCurrentlyWon}
 					{$_({
-						id: 'box.won',
+						id: $gameState.isFirstRound ? 'box.wonFirstRound' : 'box.won',
 						values: { score: $gameState.config.scoreOnWin }
 					})}
 				{:else}

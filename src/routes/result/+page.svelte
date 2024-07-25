@@ -44,8 +44,8 @@
 	});
 </script>
 
-<div class="max-w-screen-md flex flex-col justify-between items-center mx-auto h-screen">
-	<main class="h-full flex flex-col justify-center items-center w-full">
+<div class="max-w-screen-md flex flex-col justify-between items-center mx-auto min-h-screen h-full">
+	<main class="h-full flex flex-col justify-center items-center w-full flex-grow">
 		{#if isReady}
 			<Result />
 		{:else}

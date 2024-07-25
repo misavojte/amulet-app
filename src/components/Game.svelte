@@ -1,45 +1,35 @@
 <script lang="ts">
-	import Game from './GameFrame.svelte';
+	import GameFrame from './GameFrame.svelte';
 
 	import type { GameConfig } from '$lib';
-	import { setContext } from 'svelte';
+	import { setContext, getContext } from 'svelte';
 	import { createGameState } from '../stores/GameState';
+	import type { ITimestampGameService } from '$lib/interfaces/ITimestampGameService';
+	import type { UserStateStore } from '../stores/UserState';
+	import UiError from './UIError.svelte';
 
 	export let gameConfig: GameConfig;
+	export let timestampService: ITimestampGameService;
+
+	let errorMessage: string[] = [];
 
 	const gameState = createGameState(gameConfig);
 	setContext('gameState', gameState);
+
+	const userState = getContext<UserStateStore>('userState');
+	if (!userState) {
+		errorMessage.push('User state is not set');
+	}
+	timestampService.init(gameState, userState);
+	timestampService.saveInitialTimestampGame();
 </script>
 
-<div class="flex flex-col items-center justify-center w-full h-full overflow-auto">
-	<Game />
+<div
+	class="flex absolute top-0 left-0 flex-col items-center justify-center w-screen h-screen overflow-hidden z-10 bg-white"
+>
+	{#if errorMessage.length > 0}
+		<UiError message={errorMessage.join('< br />')} />
+	{:else}
+		<GameFrame {timestampService} {gameState} on:gameCompleteEnd />
+	{/if}
 </div>
-
-<style>
-	:global(html, body) {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		height: 100%;
-	}
-	:global(body) {
-		height: 100vh;
-		display: flex;
-		flex-direction: column;
-		font-family:
-			ui-sans-serif,
-			system-ui,
-			-apple-system,
-			BlinkMacSystemFont,
-			Segoe UI,
-			Roboto,
-			Helvetica Neue,
-			Arial,
-			Noto Sans,
-			sans-serif,
-			'Apple Color Emoji',
-			'Segoe UI Emoji',
-			Segoe UI Symbol,
-			'Noto Color Emoji';
-	}
-</style>

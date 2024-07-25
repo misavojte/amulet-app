@@ -40,7 +40,9 @@
     "box": {
         "whichBox" : "Která krabice má poklad?",
         "won" : "Vyhrál jsi {score} bodů!",
-        "lost" : "Nenašel jsi poklad"
+        "lost" : "Nenašel jsi poklad",
+        "whichBoxFirstRound" : "Vítejte v zácvičném kole. Přijdete na to, která krabice má poklad?",
+        "wonFirstRound" : "Našel jsi poklad! V ostrém kole bys získal/a {score} bodů."
     },
     "footer": {
         "text" : "Aplikace je součástí disertačního výzkumu Mgr. Markéty Muczkové na Univerzitě Palackého v Olomouci. Pokud máte jakékoliv dotazy, neváhejte nás kontaktovat na:"
@@ -51,6 +53,8 @@
         "submitValue" : "Potvrdit odpověď"
     },
     "result": {
+        "title" : "Výsledky experimentu",
+        "description" : "Děkujeme za váš čas. Níže vidíte výsledky vašich odpovědí.",
         "thinkingstyle" : {
             "title" : "Typ myšlení",
             "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy myšlení. Čím výše je bod, tím více odpovědí se shoduje s daným typem myšlení."
@@ -70,6 +74,20 @@
         "d" : {
             "title" : "D",
             "description" : "Popis typu D"
+        },
+        "s" : {
+            "title" : "Získané herní skóre",
+            "description" : "Vaše skóre získané během hry je {score} bodů.",
+            "you": "Vaše skóre",
+            "average": "Průměrné skóre",
+            "best": "Skóre nejlepšího hráče"
+        },
+        "share" : {
+            "title" : "Sdílet výsledky",
+            "description" : "Pokud chcete, můžete sdílet své výsledky na sociálních sítích. Velmi nám tím pomůžete s výzkumem.",
+            "copyResult" : "Kopírovat odkaz výsledků",
+            "copyExperiment" : "Kopírovat odkaz na experiment",
+            "copied" : "Zkopírováno!"
         }
     },
     "questions": {

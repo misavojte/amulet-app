@@ -1,31 +1,29 @@
 import type { GameScoreEntry, InitialTimestampGameEntry, ITimestampGameService } from "$lib/interfaces/ITimestampGameService";
 import type { TimestampGameType, TimestampGameEntryObject } from "$lib";
 import { get } from "svelte/store";
-import { writeGameScore, writeInitialTimestampGame, writeTimestampGame } from "../../firebase";
 import { AbstractTimestampGameService } from "./AbstractTimestampGameService";
 import { locale } from "svelte-i18n";
 
-export class TimestampGameService extends AbstractTimestampGameService implements ITimestampGameService {
+export class MockTimestampGameService extends AbstractTimestampGameService implements ITimestampGameService {
+
     async saveTimestampGame(type: TimestampGameType): Promise<void> {
-        if (this.gameState === null || this.userState === null) throw new Error("Game or user state is null");
+        if (this.gameState === null) throw new Error("Game state is null");
+        if (this.userState === null) throw new Error("User state is null");
         const state = get(this.gameState);
         const userState = get(this.userState);
         const config = state.config;
-        if (userState.userId === null || userState.sessionId === null) {
-            throw new Error("User is null");
-        }
         const timestampEntry: TimestampGameEntryObject = {
             timestamp: Date.now(),
             type,
             round: config.numberOfRounds - state.numberOfRounds + 1,
             repeat: state.numberOfRepeats,
-            userId: userState.userId,
-            sessionId: userState.sessionId // TODO FIX
+            userId: userState.userId ?? "mock-user-id",
+            sessionId: userState.sessionId ?? "mock-session-id"
         }
-        return writeTimestampGame(timestampEntry);
+        console.info(timestampEntry);
     }
 
-    writeGameScore(): Promise<GameScoreEntry> {
+    async writeGameScore(): Promise<GameScoreEntry> {
         if (this.gameState === null || this.userState === null) throw new Error("Game or user state is null");
         const userStateValue = get(this.userState);
         const sessionId = userStateValue.sessionId;
@@ -47,7 +45,8 @@ export class TimestampGameService extends AbstractTimestampGameService implement
             timestamp
         };
 
-        return writeGameScore(data);
+        console.info(data);
+        return data;
     }
 
     async saveInitialTimestampGame(): Promise<InitialTimestampGameEntry> {
@@ -69,6 +68,7 @@ export class TimestampGameService extends AbstractTimestampGameService implement
             locale: get(locale) ?? "Unknown"
         };
 
-        return writeInitialTimestampGame(data);
+        console.info(data);
+        return data;
     }
 }

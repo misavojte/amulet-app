@@ -1,23 +1,21 @@
 <script lang="ts">
-	import Start from './GameStart.svelte';
-	import End from './End.svelte';
+	import GameModalStart from './GameModalStart.svelte';
+	import GameModalEnd from './GameModalEnd.svelte';
 	import { _ } from 'svelte-i18n';
 
 	import type { TimestampGameType } from '$lib';
 
 	import ConfettiWrapper from './ConfettiWrapper.svelte';
 	import type { GameStateStore } from '../stores/GameState';
-	import { getContext } from 'svelte';
-	import { TimestampGameService } from '$lib/services/TimestampGameService';
 	import GamePerspective from './GamePerspective.svelte';
 	import type { ITimestampGameService } from '$lib/interfaces/ITimestampGameService';
-	const gameState: GameStateStore = getContext('gameState');
+
+	export let timestampService: ITimestampGameService;
+	export let gameState: GameStateStore;
 
 	let shouldSaveNewRoundTimestampGame = true;
-
 	let hasWonPreviousRound = false;
 
-	const timestampService: ITimestampGameService = new TimestampGameService();
 	const createTimestampGameEntry = (type: TimestampGameType) => {
 		void timestampService.saveTimestampGame(type);
 	};
@@ -60,6 +58,7 @@
 	};
 
 	const playRound = (e: CustomEvent): void => {
+		console.log('Playing round', e.detail.id);
 		if (!$gameState) throw new Error('Game state is not set');
 		const hasWon = play($gameState.scenario, $gameState.hasAmulet);
 		hasWonPreviousRound = hasWon;
@@ -67,7 +66,8 @@
 		const type: 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss' = hasWon
 			? `${typeOfBox}Win`
 			: `${typeOfBox}Loss`;
-		createTimestampGameEntry(type);
+		//createTimestampGameEntry(type);
+		timestampService.saveTimestampGame(type);
 		gameState.progressFromBoxDecision(hasWon);
 		shouldSaveNewRoundTimestampGame = true;
 	};
@@ -85,14 +85,14 @@
 
 <div class="central-holder">
 	{#if $gameState?.gameStage === 'Start'}
-		<Start />
+		<GameModalStart />
 	{/if}
 	{#if $gameState?.gameStage === 'End'}
-		<End />
+		<GameModalEnd {timestampService} on:gameCompleteEnd />
 	{/if}
 	<!-- Note that position and therefore visibility of boxes and amulet are controlled by the gameState -->
 	<GamePerspective
-		on:openTopEvent={playRound}
+		on:openTopEvent={(e) => playRound(e)}
 		on:buyAmulet={handleBuyAmulet}
 		on:refuseAmulet={handleRejectAmulet}
 	/>

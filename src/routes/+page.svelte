@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _, getLocaleFromNavigator } from 'svelte-i18n';
+	import { _ } from 'svelte-i18n';
 	import LanguagePick from '../components/LanguagePick.svelte';
 	import Intro from '../components/Intro.svelte';
 	import Game from '../components/Game.svelte';
@@ -14,7 +14,19 @@
 	import { createUserState } from '../stores/UserState';
 	import { setContext } from 'svelte';
 	import { getAuthAnonymousUser } from '../firebase';
+	import { TimestampGameService } from '$lib/services/TimestampGameService';
+	import { type GameState } from '$lib';
+	import Questionnaire from '../components/Questionnaire.svelte';
+	import { mockQuestions, questions } from '../configs/questions';
+	import { TimestampQuestionnaireService } from '$lib/services/TimestampQuestionnaireService';
+	import { goto } from '$app/navigation';
+	import { BeliefInventoryService } from '$lib/services/BeliefInventoryService';
+	import { ThinkingStyleService } from '$lib/services/ThinkingStyleService';
 
+	/**
+	 * Language setup
+	 * Using svelte-i18n
+	 */
 	addMessages('en', en);
 	addMessages('pl', pl);
 	addMessages('cs', cs);
@@ -30,15 +42,64 @@
 		stage = 'Info';
 	};
 
+	/**
+	 * User setup
+	 * Using UserState component
+	 */
+	const userState = createUserState();
+	const sessionId = Date.now().toString() + '_' + Math.random().toString();
+	getAuthAnonymousUser().then((userId) => {
+		userState.set({
+			userId,
+			sessionId
+		});
+	});
+	setContext('userState', userState);
+
+	/**
+	 * Game setup
+	 * Using Game component
+	 * Game component is responsible for handling the game logic and rendering
+	 * We need to pass the game configuration and timestamp service
+	 */
+	let savedUserScore: number | null = null;
+
+	// decide scenario between 'Random', 'AlwaysWin', 'AlwaysLose'
+	// in chances 4 : 1 : 1 by randomly selecting
+	const scenarioArray = ['Random', 'AlwaysWin', 'AlwaysLose', 'Random', 'Random', 'Random'];
+	const randomScenario = scenarioArray[Math.floor(Math.random() * scenarioArray.length)];
+
 	const gameConfig = {
-		numberOfRounds: 11,
+		allowRepeat: false,
+		numberOfRounds: 2,
 		startScore: 100,
-		scenario: 'Random',
+		scenario: randomScenario,
 		priceOfAmulet: 10,
 		scoreOnWin: 30
 	};
 
-	// const locale = 'cs';
+	const timestampService = new TimestampGameService();
+
+	const handleGameCompleteEnd = (e: CustomEvent<GameState>) => {
+		savedUserScore = e.detail.score;
+		console.log('Game complete', savedUserScore);
+		stage = 'Questionnaire';
+	};
+
+	/**
+	 * Questionnaire setup
+	 * Using Questionnaire component to gather user's answers
+	 * Needs to pass the timestamp service to save the results and questions
+	 */
+	const questionConfig = questions;
+	// const questionConfig = mockQuestions;
+	const beliefInventoryService = new BeliefInventoryService();
+	const thinkingStyleService = new ThinkingStyleService();
+	const questionnaireInterface = new TimestampQuestionnaireService(
+		userState,
+		beliefInventoryService,
+		thinkingStyleService
+	);
 
 	const createSearchParamResultUrl = (questionnaireResult: QuestionnaireScore) => {
 		// 'activelyOpenMindedThinking' | 'closeMindedThinking' | 'preferenceForIntuitiveThinking' | 'preferenceForRationalThinking';
@@ -51,31 +112,29 @@
 	};
 
 	const createResultUrl = (questionnaireResult: QuestionnaireScore) => {
-		// then current locale from svelte-i18n
-		const locale = getLocaleFromNavigator();
-		if (!locale) {
-			throw new Error('Locale not found');
-		}
 		const searchParams = createSearchParamResultUrl(questionnaireResult);
-		return `result/${locale}?${searchParams.toString()}`;
+		return `result?${searchParams.toString()}`;
 	};
 
-	const userState = createUserState();
-	getAuthAnonymousUser().then((userId) => {
-		userState.set({ userId, sessionId: 'mock' });
-	});
-	setContext('userState', userState);
+	const handleQuestionnaireSaved = (e: CustomEvent<QuestionnaireScore>) => {
+		const resultUrl = createResultUrl(e.detail);
+		goto(resultUrl);
+	};
 </script>
 
 {#if stage !== 'Experiment'}
-	<div class="layout">
-		<main>
+	<div class="max-w-screen-md flex flex-col justify-between items-center mx-auto min-h-screen">
+		<main class="h-full flex flex-col justify-center items-center w-full">
 			{#if stage === 'LanguagePick'}
 				<LanguagePick on:localeChange={handleLocaleChange} />
-			{/if}
-
-			{#if stage === 'Info'}
+			{:else if stage === 'Info'}
 				<Intro on:startExperiment={() => (stage = 'Experiment')} />
+			{:else if stage === 'Questionnaire'}
+				<Questionnaire
+					{questionConfig}
+					{questionnaireInterface}
+					on:questionnaireSaved={handleQuestionnaireSaved}
+				/>
 			{/if}
 		</main>
 		<Footer />
@@ -83,7 +142,7 @@
 {/if}
 
 {#if stage === 'Experiment' && $userState.userId && $userState.sessionId}
-	<Game {gameConfig} />
+	<Game {gameConfig} {timestampService} on:gameCompleteEnd={handleGameCompleteEnd} />
 {/if}
 
 <style>

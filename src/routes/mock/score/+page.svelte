@@ -1,11 +1,7 @@
 <script lang="ts">
-	import Questionnaire from '../../../components/Questionnaire.svelte';
-
 	import { _ } from 'svelte-i18n';
 	import LanguagePick from '../../../components/LanguagePick.svelte';
 	import Footer from '../../../components/Footer.svelte';
-
-	import { mockQuestions } from '../../../configs/questions';
 
 	// i18n.js
 	import { init, addMessages } from 'svelte-i18n';
@@ -15,11 +11,11 @@
 
 	import { createUserState } from '../../../stores/UserState';
 	import { setContext } from 'svelte';
-	import { TimestampQuestionnaireService } from '$lib/services/TimestampQuestionnaireService';
 	import { getAuthAnonymousUser } from '../../../firebase';
-	import { BeliefInventoryService } from '$lib/services/BeliefInventoryService';
-	import { ThinkingStyleService } from '$lib/services/ThinkingStyleService';
 	import Loader from '../../../components/UILoader.svelte';
+
+	import ResultScorePlot from '../../../components/ResultScorePlot.svelte';
+	import { GameScoreGetterServiceMock } from '$lib/services/GameScoreGetterService';
 
 	addMessages('en', en);
 	addMessages('pl', pl);
@@ -37,22 +33,14 @@
 	};
 
 	const userState = createUserState();
-	const beliefInventoryService = new BeliefInventoryService();
-	const thinkingStyleService = new ThinkingStyleService();
-
-	setContext('beliefInventoryService', beliefInventoryService);
-	setContext('thinkingStyleService', thinkingStyleService);
 	setContext('userState', userState);
 
 	getAuthAnonymousUser().then((userId) => {
 		userState.set({ userId, sessionId: 'mock' });
 	});
+	3;
 
-	const service = new TimestampQuestionnaireService(
-		userState,
-		beliefInventoryService,
-		thinkingStyleService
-	);
+	const service = new GameScoreGetterServiceMock();
 </script>
 
 {#if stage !== 'Experiment'}
@@ -61,12 +49,7 @@
 			{#if stage === 'LanguagePick'}
 				<LanguagePick on:localeChange={handleLocaleChange} />
 			{:else if $userState.userId}
-				<Questionnaire
-					questionnaireInterface={service}
-					questionConfig={mockQuestions}
-					on:questionnaireSaved={(e) => alert(JSON.stringify(e.detail))}
-					on:questionnaireError={(e) => alert('Error ' + e.detail.message)}
-				/>
+				<ResultScorePlot {service} />
 			{:else}
 				<Loader />
 			{/if}

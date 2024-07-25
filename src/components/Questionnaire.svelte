@@ -23,9 +23,9 @@
 	) => {
 		promise = questionnaireInterface.saveQuestionnaire(event.detail);
 		promise
-			.then(() => {
+			.then((data: QuestionnaireScore) => {
 				console.info('Questionnaire saved');
-				dispatch('questionnaireSaved', event.detail);
+				dispatch('questionnaireSaved', data);
 			})
 			.catch((e: Error) => {
 				console.warn(e);

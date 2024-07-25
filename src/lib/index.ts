@@ -1,4 +1,5 @@
 export interface GameConfig {
+    allowRepeat: boolean;
     numberOfRounds: number;
     startScore: number;
     scenario: string;
@@ -7,6 +8,7 @@ export interface GameConfig {
 }
 
 export interface GameState {
+    allowRepeat: boolean;
     hasAmulet: boolean;
     numberOfRounds: number;
     hasCurrentlyWon: boolean;
@@ -15,6 +17,7 @@ export interface GameState {
     gameStage: GameStageType;
     score: number;
     numberOfRepeats: number;
+    isFirstRound: boolean;
     config: GameConfig;
 }
 
@@ -48,15 +51,4 @@ export interface TimestampGameEntryUrl {
     userId: string;
     userName: string;
     url: string;
-}
-
-export interface LeaderboardEntryBase {
-    userName: string;
-    score: number;
-    mark?: boolean;
-}
-
-export interface LeaderboardEntry extends LeaderboardEntryBase {
-    timestamp: number;
-    userId: string;
 }
