@@ -19,7 +19,13 @@
 <div class="flex gap-4">
 	{#each locales as { code, name, flag, text }}
 		<button class="locale-select" on:click={() => changeLocale(code)}>
-			<img src={`${base}/flags/${flag}`} alt={name + ' flag'} />
+			<img
+				class="bg-slate-500"
+				width="50"
+				height="50"
+				src={`${base}/flags/${flag}`}
+				alt={name + ' flag'}
+			/>
 			<p>{text}</p>
 		</button>
 	{/each}

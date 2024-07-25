@@ -2,7 +2,7 @@
 	import { spring } from 'svelte/motion';
 
 	export let count = 0;
-    export let text = 'Counter';
+	export let text = 'Counter';
 
 	const displayed_count = spring();
 	$: displayed_count.set(count);
@@ -15,7 +15,7 @@
 </script>
 
 <div class="counter">
-    <div>{text}: </div>
+	<div>{text}:</div>
 	<div class="counter-viewport">
 		<div class="counter-digits" style="transform: translate(0, {100 * offset}%)">
 			<span class="hidden" aria-hidden="true">{Math.floor($displayed_count + 1)}</span>
@@ -28,9 +28,9 @@
 	.counter {
 		font-size: 30px;
 		display: flex;
-        align-items: center;
+		align-items: center;
 		margin: 0;
-        color: #483d41;
+		color: #483d41;
 	}
 
 	.counter-viewport {
