@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _, getLocaleFromNavigator } from 'svelte-i18n';
+	import { _ } from 'svelte-i18n';
 	import LanguagePick from '../components/LanguagePick.svelte';
 	import Intro from '../components/Intro.svelte';
 	import Game from '../components/Game.svelte';
@@ -91,8 +91,8 @@
 	 * Using Questionnaire component to gather user's answers
 	 * Needs to pass the timestamp service to save the results and questions
 	 */
-	// const questionConfig = questions;
-	const questionConfig = mockQuestions;
+	const questionConfig = questions;
+	// const questionConfig = mockQuestions;
 	const beliefInventoryService = new BeliefInventoryService();
 	const thinkingStyleService = new ThinkingStyleService();
 	const questionnaireInterface = new TimestampQuestionnaireService(
