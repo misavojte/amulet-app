@@ -29,6 +29,6 @@
 	{#if errorMessage.length > 0}
 		<UiError message={errorMessage.join('< br />')} />
 	{:else}
-		<GameFrame {timestampService} {gameState} />
+		<GameFrame {timestampService} {gameState} on:gameCompleteEnd />
 	{/if}
 </div>

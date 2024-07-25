@@ -48,7 +48,11 @@
 		userState.set({ userId, sessionId: 'mock' });
 	});
 
-	const service = new TimestampQuestionnaireService();
+	const service = new TimestampQuestionnaireService(
+		userState,
+		beliefInventoryService,
+		thinkingStyleService
+	);
 </script>
 
 {#if stage !== 'Experiment'}

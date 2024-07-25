@@ -5,12 +5,19 @@
 	import { getContext } from 'svelte';
 	import GameModalEndScore from './GameModalEndScore.svelte';
 	import UiButton from './UIButton.svelte';
+	import { createEventDispatcher } from 'svelte';
 	import type { ITimestampGameService } from '$lib';
+	import { get } from 'svelte/store';
 
 	export let timestampService: ITimestampGameService;
-	console.warn(timestampService, 'timestampService in GME');
+
+	const dispatch = createEventDispatcher();
 
 	const gameStateStore: GameStateStore = getContext('gameState');
+
+	const signalEnd = () => {
+		dispatch('gameCompleteEnd', get(gameStateStore));
+	};
 </script>
 
 <RoundedWrapper>
@@ -21,6 +28,9 @@
 	{#if $gameStateStore.allowRepeat}
 		<UiButton on:click={() => gameStateStore.repeat()} text={$_('end.repeat')} />
 	{:else}
-		<todo></todo>
+		<p class="text-center text-sm text-neutral-700">
+			{$_('end.noRepeat')}
+		</p>
+		<UiButton on:click={signalEnd} text={$_('end.end')} />
 	{/if}
 </RoundedWrapper>
