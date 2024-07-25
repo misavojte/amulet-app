@@ -60,11 +60,16 @@
 	 */
 	let savedUserScore: number | null = null;
 
+	// decide scenario between 'Random', 'AlwaysWin', 'AlwaysLose'
+	// in chances 4 : 1 : 1 by randomly selecting
+	const scenarioArray = ['Random', 'AlwaysWin', 'AlwaysLose', 'Random', 'Random', 'Random'];
+	const randomScenario = scenarioArray[Math.floor(Math.random() * scenarioArray.length)];
+
 	const gameConfig = {
 		allowRepeat: false,
 		numberOfRounds: 2,
 		startScore: 100,
-		scenario: 'Random',
+		scenario: randomScenario,
 		priceOfAmulet: 10,
 		scoreOnWin: 30
 	};
