@@ -19,31 +19,3 @@
 		<todo></todo>
 	{/if}
 </RoundedWrapper>
-
-<style>
-	h1 {
-		margin-bottom: 0;
-		font-size: 25px;
-	}
-	.inner {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		gap: 12px;
-		height: 100%;
-		width: 100%;
-	}
-	button {
-		background: #efeeed;
-		border: none;
-		padding: 10px 15px;
-		border-radius: 4px;
-		border: 1px solid;
-		cursor: pointer;
-		margin-bottom: 15px;
-	}
-	button:hover {
-		background: #d0cecd;
-	}
-</style>
