@@ -3,7 +3,7 @@
 </script>
 
 <div class="rounded" in:fade={{ duration: 300, delay: 1500 }} out:fade={{ duration: 100 }}>
-	<div class="inner">
+	<div class="flex items-center justify-center flex-col gap-8">
 		<slot />
 	</div>
 </div>
@@ -25,24 +25,5 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-	}
-
-	.inner {
-		background: none;
-		padding: 10px 20px;
-		box-sizing: border-box;
-		-moz-background-clip: padding;
-		-webkit-background-clip: padding;
-		background-clip: padding-box;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		justify-content: space-between;
-		border: 15px double rgb(0 0 0 / 6%);
-		box-sizing: border-box;
-		border-radius: 25px;
-		width: 480px;
-		height: 480px;
-		gap: 20px;
 	}
 </style>

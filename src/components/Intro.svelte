@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button from './Button.svelte';
+	import Button from './UIButton.svelte';
 	import { createEventDispatcher } from 'svelte';
 	// import { experimentStore } from "$lib/stores/experimentStore";
 	// import { getAuthAnonymousUser } from "$lib/config/firebase";
@@ -80,7 +80,6 @@
 			on:click={() => {
 				revealMore = true;
 			}}
-			size="big"
 		/>
 	{/if}
 	{#if revealMore}
