@@ -17,7 +17,7 @@
 
 <div class="container mx-auto p-4 flex flex-col items-center w-full">
 	<h2 class="text-2xl font-bold">{$_('result.s.title')}</h2>
-	<p class="text-lg mt-4 mb-4">
+	<p class="text-lg mt-4 mb-4 text-center">
 		{$_({
 			id: 'result.s.description',
 			values: { score }

@@ -53,6 +53,8 @@
         "submitValue" : "Potvrdit odpověď"
     },
     "result": {
+        "title" : "Výsledky experimentu",
+        "description" : "Děkujeme za váš čas. Níže vidíte výsledky vašich odpovědí.",
         "thinkingstyle" : {
             "title" : "Typ myšlení",
             "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy myšlení. Čím výše je bod, tím více odpovědí se shoduje s daným typem myšlení."
@@ -79,6 +81,13 @@
             "you": "Vaše skóre",
             "average": "Průměrné skóre",
             "best": "Skóre nejlepšího hráče"
+        },
+        "share" : {
+            "title" : "Sdílet výsledky",
+            "description" : "Pokud chcete, můžete sdílet své výsledky na sociálních sítích. Velmi nám tím pomůžete s výzkumem.",
+            "copyResult" : "Kopírovat odkaz výsledků",
+            "copyExperiment" : "Kopírovat odkaz na experiment",
+            "copied" : "Zkopírováno!"
         }
     },
     "questions": {
