@@ -5,35 +5,36 @@
 	import UiLoader from './UILoader.svelte';
 	import ResultThinkingStylePlot from './ResultThinkingStylePlot.svelte';
 	import UiError from './UIError.svelte';
+	import { getContext } from 'svelte';
+	import type { GameStateStore } from '../stores/GameState';
+	import { get } from 'svelte/store';
+	import type { IGameScoreService } from '$lib/interfaces/IGameScoreService';
 
 	export let userScoreSource: 'URLSearchParams' | 'GameStateStore' = 'URLSearchParams';
 
 	const getData = async () => {
 		const userScore =
 			userScoreSource === 'URLSearchParams'
-				? getUserScoreDatasetFromSearchParam()
-				: getScoreDatasetFromGameStateStore();
+				? getUserScoreFromSearchParam()
+				: getUserScoreFromGameStateStore();
 
-		const averageScore = 50;
-		const bestScore = 80;
-
+		const gameScoreService = getContext<IGameScoreService>('gameScoreService');
+		if (!gameScoreService) {
+			throw new Error('Game score service is not set through context');
+		}
+		const { averageScore, bestScore } = await gameScoreService.getGameScores();
 		return getScoreDatasetStructure(userScore, averageScore, bestScore);
 	};
 
-	const parseFloatAndNormalize = (value: string) => {
-		const parsed = Number.parseFloat(value);
+	const parseInt = (value: string) => {
+		const parsed = Number.parseInt(value);
 		if (Number.isNaN(parsed)) {
 			throw new Error('Invalid score data');
 		}
-		const MAXIMUM_POSSIBLE_SCORE = 30;
-		const MINIMUM_POSSIBLE_SCORE = 0;
-		if (parsed < MINIMUM_POSSIBLE_SCORE || parsed > MAXIMUM_POSSIBLE_SCORE) {
-			throw new Error('Invalid score data');
-		}
-		return (parsed / MAXIMUM_POSSIBLE_SCORE) * 100;
+		return parsed;
 	};
 
-	const getUserScoreDatasetFromSearchParam = () => {
+	const getUserScoreFromSearchParam = () => {
 		const urlSearchParams: URLSearchParams = new URLSearchParams($page.url.search);
 		const urlSearchParamEntries = {
 			...Object.fromEntries(urlSearchParams.entries())
@@ -45,7 +46,19 @@
 			throw new Error('Invalid score data');
 		}
 
-		return parseFloatAndNormalize(urlSearchParamEntries.s);
+		return parseInt(urlSearchParamEntries.s);
+	};
+
+	const getUserScoreFromGameStateStore = () => {
+		const gameState = getContext<GameStateStore>('gameState');
+		if (!gameState) {
+			throw new Error('Game state is not set');
+		}
+		const gameStateValue = get(gameState);
+		if (!gameStateValue) {
+			throw new Error('Game state is not set');
+		}
+		return gameStateValue.score;
 	};
 
 	const getScoreDatasetStructure = (userScore: number, averageScore: number, bestScore: number) => {
