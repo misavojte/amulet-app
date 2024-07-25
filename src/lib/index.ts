@@ -1,4 +1,5 @@
 export interface GameConfig {
+    allowRepeat: boolean;
     numberOfRounds: number;
     startScore: number;
     scenario: string;

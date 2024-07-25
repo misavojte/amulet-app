@@ -1,4 +1,8 @@
+import type { GameStateStore } from "../../stores/GameState";
+import type { UserStateStore } from "../../stores/UserState";
+
 export interface ITimestampGameService {
+    init(gameState: GameStateStore, userState: UserStateStore): void;
     saveTimestampGame(entry: TimestampGameType): Promise<void>;
 }
 
