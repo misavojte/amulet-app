@@ -70,6 +70,13 @@
         "d" : {
             "title" : "D",
             "description" : "Popis typu D"
+        },
+        "s" : {
+            "title" : "Získané herní skóre",
+            "description" : "Vaše skóre získané během hry.",
+            "you": "Vaše skóre",
+            "average": "Průměrné skóre",
+            "best": "Skóre nejlepšího hráče"
         }
     },
     "questions": {

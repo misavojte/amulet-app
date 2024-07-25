@@ -2,9 +2,9 @@
 	import { _ } from 'svelte-i18n';
 	import { browser } from '$app/environment';
 	import UiLoader from './UILoader.svelte';
-	import ResultThinkingStylePlot from './ResultThinkingStylePlot.svelte';
 	import UiError from './UIError.svelte';
 	import type { IGameScoreGetterService } from '$lib/interfaces/IGameScoreGetterService';
+	import ResultScorePlotFigure from './ResultScorePlotFigure.svelte';
 
 	export let service: IGameScoreGetterService;
 
@@ -18,15 +18,22 @@
 		return {
 			datasets: [
 				{
-					data: [userScore, averageScore, bestScore],
-					backgroundColor: [
-						'rgba(247, 70, 74, 0.5)',
-						'rgba(70, 191, 189, 0.5)',
-						'rgba(253, 180, 92, 0.5)'
-					]
+					data: [userScore],
+					backgroundColor: ['rgba(247, 70, 74, 0.5)'],
+					label: $_('result.s.you')
+				},
+				{
+					data: [averageScore],
+					backgroundColor: ['rgba(70, 191, 189, 0.5)'],
+					label: $_('result.s.average')
+				},
+				{
+					data: [bestScore],
+					backgroundColor: ['rgba(253, 180, 92, 0.5)'],
+					label: $_('result.s.best')
 				}
 			],
-			labels: [$_('result.s.you'), $_('result.s.average'), $_('result.s.best')]
+			labels: [$_('result.s.title')]
 		};
 	};
 </script>
@@ -36,7 +43,7 @@
 		{#await getData()}
 			<UiLoader />
 		{:then dataset}
-			<ResultThinkingStylePlot data={dataset} />
+			<ResultScorePlotFigure data={dataset} />
 		{:catch error}
 			<UiError message={error.message} />
 		{/await}

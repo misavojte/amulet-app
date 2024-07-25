@@ -14,7 +14,8 @@
 	import { getAuthAnonymousUser } from '../../../firebase';
 	import Loader from '../../../components/UILoader.svelte';
 
-	import ResultThinkingStyle from '../../../components/ResultThinkingStyle.svelte';
+	import ResultScorePlot from '../../../components/ResultScorePlot.svelte';
+	import { GameScoreGetterServiceMock } from '$lib/services/GameScoreGetterService';
 
 	addMessages('en', en);
 	addMessages('pl', pl);
@@ -37,6 +38,9 @@
 	getAuthAnonymousUser().then((userId) => {
 		userState.set({ userId, sessionId: 'mock' });
 	});
+	3;
+
+	const service = new GameScoreGetterServiceMock();
 </script>
 
 {#if stage !== 'Experiment'}
@@ -45,7 +49,7 @@
 			{#if stage === 'LanguagePick'}
 				<LanguagePick on:localeChange={handleLocaleChange} />
 			{:else if $userState.userId}
-				<ResultThinkingStyle />
+				<ResultScorePlot {service} />
 			{:else}
 				<Loader />
 			{/if}

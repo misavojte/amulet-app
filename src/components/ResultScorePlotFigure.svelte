@@ -3,16 +3,9 @@
 
 	export let data;
 
-	import {
-		Chart as ChartJS,
-		Title,
-		Tooltip,
-		Legend,
-		ArcElement,
-		RadialLinearScale
-	} from 'chart.js';
+	import { Chart, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
 
-	ChartJS.register(Title, Tooltip, Legend, ArcElement, RadialLinearScale);
+	Chart.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 </script>
 
 <Bar
