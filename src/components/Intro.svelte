@@ -120,12 +120,7 @@
 			souhlasím se zpracováním osobních údajů.
 		</p>
 		<br />
-		<Button
-			text="Souhlasím, zahájit experiment"
-			on:click={handleClick}
-			size="big"
-			disabled={!isReady}
-		/>
+		<Button text="Souhlasím, zahájit experiment" on:click={handleClick} disabled={!isReady} />
 	{/if}
 </div>
 
