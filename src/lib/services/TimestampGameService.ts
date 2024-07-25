@@ -1,7 +1,7 @@
-import type { ITimestampGameService } from "$lib/interfaces/ITimestampGameService";
+import type { GameScoreEntry, ITimestampGameService } from "$lib/interfaces/ITimestampGameService";
 import type { TimestampGameType, TimestampGameEntryObject } from "$lib";
 import { get } from "svelte/store";
-import { writeTimestampGame } from "../../firebase";
+import { writeGameScore, writeTimestampGame } from "../../firebase";
 import { AbstractTimestampGameService } from "./AbstractTimestampGameService";
 
 export class TimestampGameService extends AbstractTimestampGameService implements ITimestampGameService {
@@ -22,5 +22,30 @@ export class TimestampGameService extends AbstractTimestampGameService implement
             sessionId: userState.sessionId // TODO FIX
         }
         return writeTimestampGame(timestampEntry);
+    }
+
+    writeGameScore(): Promise<GameScoreEntry> {
+        if (this.gameState === null || this.userState === null) throw new Error("Game or user state is null");
+        const userStateValue = get(this.userState);
+        const sessionId = userStateValue.sessionId;
+        if (sessionId === null || sessionId === undefined) throw new Error("Session is null");
+
+        const userId = userStateValue.userId;
+        if (userId === null || userId === undefined) throw new Error("User is null");
+
+        const gameStateValue = get(this.gameState);
+        const score = gameStateValue.score;
+        if (score === null || score === undefined) throw new Error("Score is null");
+
+        const timestamp = Date.now();
+
+        const data: GameScoreEntry = {
+            sessionId,
+            userId,
+            score,
+            timestamp
+        };
+
+        return writeGameScore(data);
     }
 }

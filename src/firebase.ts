@@ -3,7 +3,7 @@ import { getDatabase, ref, push, set, get } from "firebase/database";
 import { getAuth, signInAnonymously } from "firebase/auth";
 import type { DbData, TimestampGameEntryObject, TimestampQuestionnaireEntryObject } from '$lib';
 import type { QuestionnaireScore, StartQuestionnaireEntryObject } from '$lib/interfaces/ITimestampQuestionnaireService';
-import type { GameScoreEntry } from '$lib/interfaces/IGameScoreService';
+import type { GameScoreEntry } from "$lib/interfaces/ITimestampGameService";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional

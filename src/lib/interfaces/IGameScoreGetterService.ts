@@ -1,4 +1,4 @@
-import type { GameScoreResult } from "./IGameScoreService";
+import type { GameScoreResult } from "./ITimestampGameService";
 
 export interface IGameScoreGetterService {
     getUserScore(): number;

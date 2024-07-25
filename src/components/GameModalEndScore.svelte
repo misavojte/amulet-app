@@ -1,9 +1,16 @@
-<script>
-	import { GameScoreGetterServiceMock } from '$lib/services/GameScoreGetterService';
+<script lang="ts">
+	import { GameScoreGetterServiceStore } from '$lib/services/GameScoreGetterService';
+	import type { GameStateStore } from '../stores/GameState';
 	import ResultScorePlot from './ResultScorePlot.svelte';
 	import { _ } from 'svelte-i18n';
+	import type { ITimestampGameService } from '$lib';
 
-	const service = new GameScoreGetterServiceMock();
+	export let gameStateStore: GameStateStore;
+	export let timestampService: ITimestampGameService;
+
+	const service = new GameScoreGetterServiceStore(gameStateStore);
+	console.warn(timestampService);
+	timestampService.writeGameScore();
 </script>
 
 <div

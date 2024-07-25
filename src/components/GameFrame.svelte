@@ -88,7 +88,7 @@
 		<GameModalStart />
 	{/if}
 	{#if $gameState?.gameStage === 'End'}
-		<GameModalEnd />
+		<GameModalEnd {timestampService} />
 	{/if}
 	<!-- Note that position and therefore visibility of boxes and amulet are controlled by the gameState -->
 	<GamePerspective
