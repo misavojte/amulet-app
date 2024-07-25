@@ -3,7 +3,7 @@ import { getDatabase, ref, push, set, get } from "firebase/database";
 import { getAuth, signInAnonymously } from "firebase/auth";
 import type { DbData, TimestampGameEntryObject, TimestampQuestionnaireEntryObject } from '$lib';
 import type { QuestionnaireScore, StartQuestionnaireEntryObject } from '$lib/interfaces/ITimestampQuestionnaireService';
-import type { GameScoreEntry } from "$lib/interfaces/ITimestampGameService";
+import type { GameScoreEntry, InitialTimestampGameEntry } from "$lib/interfaces/ITimestampGameService";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -143,4 +143,11 @@ export const writeQuestionnaireScore = async (score: QuestionnaireScore) => {
   const newQuestionnaireScoreRef = push(questionnaireScoreRef);
   await set(newQuestionnaireScoreRef, score);
   return score;
+}
+
+export const writeInitialTimestampGame = async (data: InitialTimestampGameEntry) => {
+  const timestampRef = ref(db, 'game-configs/');
+  const newTimestampGameRef = push(timestampRef);
+  await set(newTimestampGameRef, data);
+  return data;
 }

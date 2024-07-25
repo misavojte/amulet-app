@@ -17,7 +17,7 @@
 	import { TimestampGameService } from '$lib/services/TimestampGameService';
 	import { type GameState } from '$lib';
 	import Questionnaire from '../components/Questionnaire.svelte';
-	import { questions } from '../configs/questions';
+	import { mockQuestions, questions } from '../configs/questions';
 	import { TimestampQuestionnaireService } from '$lib/services/TimestampQuestionnaireService';
 	import { goto } from '$app/navigation';
 	import { BeliefInventoryService } from '$lib/services/BeliefInventoryService';
@@ -82,7 +82,8 @@
 	 * Using Questionnaire component to gather user's answers
 	 * Needs to pass the timestamp service to save the results and questions
 	 */
-	const questionConfig = questions;
+	// const questionConfig = questions;
+	const questionConfig = mockQuestions;
 	const beliefInventoryService = new BeliefInventoryService();
 	const thinkingStyleService = new ThinkingStyleService();
 	const questionnaireInterface = new TimestampQuestionnaireService(

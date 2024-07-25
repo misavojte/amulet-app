@@ -1,8 +1,10 @@
+import { GameConfig } from "$lib";
 import type { GameStateStore } from "../../stores/GameState";
 import type { UserStateStore } from "../../stores/UserState";
 
 export interface ITimestampGameService {
     init(gameState: GameStateStore, userState: UserStateStore): void;
+    saveInitialTimestampGame(): Promise<InitialTimestampGameEntry>;
     saveTimestampGame(entry: TimestampGameType): Promise<void>;
     writeGameScore(): Promise<GameScoreEntry>;
 }
@@ -28,3 +30,10 @@ export interface GameScoreEntry {
     timestamp: number;
     userId: string;
 }
+
+export type InitialTimestampGameEntry = {
+    sessionId: string;
+    userId: string;
+    timestamp: number;
+    locale: string;
+} & GameConfig;

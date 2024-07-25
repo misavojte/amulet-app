@@ -1,4 +1,4 @@
-import type { GameScoreEntry, ITimestampGameService } from "$lib/interfaces/ITimestampGameService";
+import type { GameScoreEntry, InitialTimestampGameEntry, ITimestampGameService } from "$lib/interfaces/ITimestampGameService";
 import type { TimestampGameType } from "$lib";
 import type { GameStateStore } from "../../stores/GameState";
 import type { UserStateStore } from "../../stores/UserState";
@@ -14,4 +14,5 @@ export abstract class AbstractTimestampGameService implements ITimestampGameServ
 
     abstract saveTimestampGame(type: TimestampGameType): Promise<void>;
     abstract writeGameScore(): Promise<GameScoreEntry>;
+    abstract saveInitialTimestampGame(): Promise<InitialTimestampGameEntry>;
 }

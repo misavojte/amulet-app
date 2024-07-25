@@ -21,6 +21,7 @@
 		errorMessage.push('User state is not set');
 	}
 	timestampService.init(gameState, userState);
+	timestampService.saveInitialTimestampGame();
 </script>
 
 <div

@@ -1,7 +1,8 @@
-import type { GameScoreEntry, ITimestampGameService } from "$lib/interfaces/ITimestampGameService";
+import type { GameScoreEntry, InitialTimestampGameEntry, ITimestampGameService } from "$lib/interfaces/ITimestampGameService";
 import type { TimestampGameType, TimestampGameEntryObject } from "$lib";
 import { get } from "svelte/store";
 import { AbstractTimestampGameService } from "./AbstractTimestampGameService";
+import { locale } from "svelte-i18n";
 
 export class MockTimestampGameService extends AbstractTimestampGameService implements ITimestampGameService {
 
@@ -42,6 +43,29 @@ export class MockTimestampGameService extends AbstractTimestampGameService imple
             userId,
             score,
             timestamp
+        };
+
+        console.info(data);
+        return data;
+    }
+
+    async saveInitialTimestampGame(): Promise<InitialTimestampGameEntry> {
+        if (this.gameState === null || this.userState === null) throw new Error("Game or user state is null");
+        const userStateValue = get(this.userState);
+        const sessionId = userStateValue.sessionId;
+        if (sessionId === null || sessionId === undefined) throw new Error("Session is null");
+
+        const userId = userStateValue.userId;
+        if (userId === null || userId === undefined) throw new Error("User is null");
+
+        const gameStateValue = get(this.gameState);
+    
+        const data = {
+            timestamp: Date.now(),
+            userId,
+            sessionId,
+            ...gameStateValue.config,
+            locale: get(locale) ?? "Unknown"
         };
 
         console.info(data);
