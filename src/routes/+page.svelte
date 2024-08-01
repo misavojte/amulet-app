@@ -102,12 +102,16 @@
 	);
 
 	const createSearchParamResultUrl = (questionnaireResult: QuestionnaireScore) => {
+		if (!savedUserScore) {
+			throw new Error('Saved user score is not set');
+		}
 		// 'activelyOpenMindedThinking' | 'closeMindedThinking' | 'preferenceForIntuitiveThinking' | 'preferenceForRationalThinking';
 		const searchParams = new URLSearchParams();
 		searchParams.append('a', questionnaireResult.activelyOpenMindedThinking.toString());
 		searchParams.append('b', questionnaireResult.closeMindedThinking.toString());
 		searchParams.append('c', questionnaireResult.preferenceForIntuitiveThinking.toString());
 		searchParams.append('d', questionnaireResult.preferenceForRationalThinking.toString());
+		searchParams.append('s', savedUserScore.toString());
 		return searchParams;
 	};
 
