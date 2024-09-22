@@ -22,6 +22,7 @@
 	import { goto } from '$app/navigation';
 	import { BeliefInventoryService } from '$lib/services/BeliefInventoryService';
 	import { ThinkingStyleService } from '$lib/services/ThinkingStyleService';
+	import { IQuestionConfig } from '$lib/interfaces/IConfig';
 
 	/**
 	 * Language setup
@@ -88,10 +89,16 @@
 
 	/**
 	 * Questionnaire setup
-	 * Using Questionnaire component to gather user's answers
-	 * Needs to pass the timestamp service to save the results and questions
+	 * Using Questionnaire component
+	 * Questionnaire component is responsible for handling the questionnaire logic and rendering
+	 * We need to pass the questionnaire configuration and timestamp service
 	 */
-	const questionConfig = questions;
+
+	// Do not randomize the last 8 questions
+	const questionsAtTheEnd = questions.slice(-8);
+	const questionsToRandomize = questions.slice(0, -8).sort(() => Math.random() - 0.5); // possible randomization bias, but good enough for this purpose
+	const questionConfig = [...questionsToRandomize, ...questionsAtTheEnd];
+
 	// const questionConfig = mockQuestions;
 	const beliefInventoryService = new BeliefInventoryService();
 	const thinkingStyleService = new ThinkingStyleService();
