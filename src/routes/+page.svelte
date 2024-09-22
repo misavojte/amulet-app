@@ -17,12 +17,11 @@
 	import { TimestampGameService } from '$lib/services/TimestampGameService';
 	import { type GameState } from '$lib';
 	import Questionnaire from '../components/Questionnaire.svelte';
-	import { mockQuestions, questions } from '../configs/questions';
+	import { questions } from '../configs/questions';
 	import { TimestampQuestionnaireService } from '$lib/services/TimestampQuestionnaireService';
 	import { goto } from '$app/navigation';
 	import { BeliefInventoryService } from '$lib/services/BeliefInventoryService';
 	import { ThinkingStyleService } from '$lib/services/ThinkingStyleService';
-	import { IQuestionConfig } from '$lib/interfaces/IConfig';
 
 	/**
 	 * Language setup
@@ -119,6 +118,9 @@
 		searchParams.append('c', questionnaireResult.preferenceForIntuitiveThinking.toString());
 		searchParams.append('d', questionnaireResult.preferenceForRationalThinking.toString());
 		searchParams.append('s', savedUserScore.toString());
+		searchParams.append('ibiF1', questionnaireResult.beliefInventoryF1.toString());
+		searchParams.append('ibiF2', questionnaireResult.beliefInventoryF2.toString());
+		searchParams.append('ibiF3', questionnaireResult.beliefInventoryF3.toString());
 		return searchParams;
 	};
 

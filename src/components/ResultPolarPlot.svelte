@@ -3,6 +3,10 @@
 
 	export let data;
 
+	export let suggestedMax = 100;
+
+	export let suggestedMin = 0;
+
 	import {
 		Chart as ChartJS,
 		Title,
@@ -20,6 +24,6 @@
 	options={{
 		responsive: true,
 		aspectRatio: 1,
-		scales: { r: { suggestedMin: 0, suggestedMax: 100 } }
+		scales: { r: { suggestedMin, suggestedMax } }
 	}}
 />

@@ -59,6 +59,10 @@
             "title" : "Typ myšlení",
             "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy myšlení. Čím výše je bod, tím více odpovědí se shoduje s daným typem myšlení."
         },
+        "beliefinventory" : {
+            "title" : "Věroučné přesvědčení",
+            "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy věroučného přesvědčení. Čím výše je bod, tím více odpovědí se shoduje s daným typem věroučného přesvědčení."
+        },
         "a" : {
             "title" : "A",
             "description" : "Popis typu A"

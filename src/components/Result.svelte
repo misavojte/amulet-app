@@ -4,6 +4,7 @@
 	import ResultThinkingStyle from './ResultThinkingStyle.svelte';
 	import { _ } from 'svelte-i18n';
 	import { base } from '$app/paths';
+	import ResultBeliefInventory from './ResultBeliefInventory.svelte';
 </script>
 
 <svelte:head>
@@ -16,5 +17,6 @@
 
 <h1 class="text-3xl font-bold mt-8">{$_('result.title')}</h1>
 <ResultThinkingStyle />
+<ResultBeliefInventory />
 <ResultScore />
 <ResultShare />
