@@ -177,24 +177,6 @@ export const questions: IQuestionConfig = [
 		required: true
 	},
 	{
-		id: 'Q25IBI',
-		type: 'select',
-		options: ['1', '2', '3', '4', '5'],
-		required: true
-	},
-	{
-		id: 'Q26IBI',
-		type: 'select',
-		options: ['1', '2', '3', '4', '5'],
-		required: true
-	},
-	{
-		id: 'Q27IBI',
-		type: 'select',
-		options: ['1', '2', '3', '4', '5'],
-		required: true
-	},
-	{
 		id: 'Q1TS',
 		type: 'select',
 		options: ['1', '2', '3', '4', '5'],
@@ -385,3 +367,26 @@ export const questions: IQuestionConfig = [
 		required: false
 	}
 ] as const;
+
+/**
+ * Removed
+ * 
+	{
+		id: '',
+		type: 'select',
+		options: ['1', '2', '3', '4', '5'],
+		required: true
+	},
+	{
+		id: 'Q26IBI',
+		type: 'select',
+		options: ['1', '2', '3', '4', '5'],
+		required: true
+	},
+	{
+		id: 'Q27IBI',
+		type: 'select',
+		options: ['1', '2', '3', '4', '5'],
+		required: true
+	},
+ */

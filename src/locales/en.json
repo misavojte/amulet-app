@@ -304,36 +304,6 @@
                 "5" : "Strongly agree"
             }
         },
-        "Q25IBI": {
-            "question" : "There is no such thing as a coincidence. ",
-            "options" : {
-                "1" : "Strongly disagree",
-                "2" : "Disagree",
-                "3" : "Neither agree nor disagree",
-                "4" : "Agree",
-                "5" : "Strongly agree"
-            }
-        },
-        "Q26IBI": {
-            "question" : "There is no such thing as luck. ",
-            "options" : {
-                "1" : "Strongly disagree",
-                "2" : "Disagree",
-                "3" : "Neither agree nor disagree",
-                "4" : "Agree",
-                "5" : "Strongly agree"
-            }
-        },
-        "Q27IBI": {
-            "question" : "Some things happen for no logical reason at all.",
-            "options" : {
-                "1" : "Strongly disagree",
-                "2" : "Disagree",
-                "3" : "Neither agree nor disagree",
-                "4" : "Agree",
-                "5" : "Strongly agree"
-            }
-        },
         "Q1TS": {
             "question" : "It is important to be loyal to your beliefs even when evidence is brought to bear against them.",
             "options" : {

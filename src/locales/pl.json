@@ -304,36 +304,6 @@
                 "5" : "Zdecydowanie się zgadzam"
             }
         },
-        "Q25IBI": {
-            "question" : "Nie istnieje coś takiego jak przypadek.",
-            "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
-                "2" : "Nie zgadzam się",
-                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
-                "4" : "Zgadzam się",
-                "5" : "Zdecydowanie się zgadzam"
-            }
-        },
-        "Q26IBI": {
-            "question" : "Nie istnieje coś takiego jak szczęście.",
-            "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
-                "2" : "Nie zgadzam się",
-                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
-                "4" : "Zgadzam się",
-                "5" : "Zdecydowanie się zgadzam"
-            }
-        },
-        "Q27IBI": {
-            "question" : "Niektóre zdarzenia nie mają logicznego wyjaśnienia.",
-            "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
-                "2" : "Nie zgadzam się",
-                "3" : "Ani się nie zgadzam, ani się nie zgadzam",
-                "4" : "Zgadzam się",
-                "5" : "Zdecydowanie się zgadzam"
-            }
-        },
         "Q1TS": {
             "question" : "To ważne aby pozostać przy swoich wierzeniach, nawet jeżeli przedstawione są nam dowody temu przeczące.",
             "options" : {

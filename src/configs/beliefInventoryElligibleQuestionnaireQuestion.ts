@@ -96,7 +96,13 @@ export const beliefInventoryElligibleQuestionnaireQuestions: BeliefInventoryElli
     {
         questionId: 'Q24IBI',
         isReversed: false,
-    },
+    }
+] as const;
+
+/**
+ * Removed IBI questions:
+ * 
+ *
     {
         questionId: 'Q25IBI',
         isReversed: true,
@@ -109,4 +115,4 @@ export const beliefInventoryElligibleQuestionnaireQuestions: BeliefInventoryElli
         questionId: 'Q27IBI',
         isReversed: false,
     }
-] as const;
+*/
