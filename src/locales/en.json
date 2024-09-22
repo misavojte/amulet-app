@@ -4,6 +4,13 @@
 		"description": "Amulet Game",
 		"load": "Načítání hry"
 	},
+    "box": {
+        "whichBox" : "Which box contains the treasure? Choose carefully!",
+        "won" : "Treasure! You earn {score} points! Right choice.",
+        "lost" : "Empty box. Try again...",
+        "whichBoxFirstRound" : "Welcome to the practice round. Your task is to find the box with the treasure.",
+        "wonFirstRound" : "Treasure found! In the real round, you would have earned {score} points."
+    },
 	"rules": {
 		"1": "Cílem hry je získat co nejvíce bodů.",
 		"2": "V každém kole můžete získát {score} bodů tím, že uhodnete, v které ze dvou krabic je poklad.",
@@ -17,14 +24,15 @@
 		"start": "Začít hru"
 	},
 	"counter": {
-		"rounds": "Zbývá kol",
-		"score": "Skóre"
+		"rounds": "Rounds remaining",
+		"score": "Current score"
 	},
 	"amulet": {
-		"isActive": "Amulet je aktivní",
-		"isNotActive": "Amulet není zakoupen",
-		"canBuy": "Kliknutím zakoupíš amulet za {price} bodů",
-		"cannotBuy": "Nemáš dostatek bodů pro zakoupení amuletu"
+		"isActive": "Amulet is active",
+		"isNotActive": "Amulet is not active",
+		"canBuy": "Click to purchase the amulet for {price} points",
+		"cannotBuy": "You do not have enough points to obtain the amulet",
+        "refuse": "Refuse the amulet"
 	},
 	"end": {
 		"title": "Konec hry",
@@ -36,6 +44,9 @@
 			"score": "Skóre"
 		}
 	},
+    "footer": {
+        "text": "The application is part of the dissertation research of Mgr. Markéta Muczková at Palacký University Olomouc. For any inquiries, please contact:"
+    },
     "questionnaire": {
         "next" : "Next question",
         "back" : "Previous question",

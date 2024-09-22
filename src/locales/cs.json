@@ -17,15 +17,15 @@
         "start" : "Začít hru"
     },
     "counter" : {
-        "rounds" : "Zbývá kol",
-        "score" : "Skóre"
+        "rounds" : "Zbývající kola",
+        "score" : "Aktuální skóre"
     },
     "amulet": {
         "isActive" : "Amulet je aktivní",
-        "isNotActive" : "Amulet není zakoupen",
-        "canBuy" : "Kliknutím zakoupíš amulet za {price} bodů",
-        "cannotBuy" : "Nemáš dostatek bodů pro zakoupení amuletu",
-        "refuse" : "Nechci koupit amulet" 
+        "isNotActive" : "Amulet není aktivní",
+        "canBuy" : "Kliknutím pořídíte amulet za {price} bodů",
+        "cannotBuy" : "Nemáte dostatek bodů pro získání amuletu",
+        "refuse" : "Nechci amulet" 
     },
     "end": {
         "title" : "Konec hry",
@@ -38,14 +38,14 @@
         }
     },
     "box": {
-        "whichBox" : "Která krabice má poklad?",
-        "won" : "Vyhrál jsi {score} bodů!",
-        "lost" : "Nenašel jsi poklad",
-        "whichBoxFirstRound" : "Vítejte v zácvičném kole. Přijdete na to, která krabice má poklad?",
-        "wonFirstRound" : "Našel jsi poklad! V ostrém kole bys získal/a {score} bodů."
+        "whichBox" : "Ve které krabici je poklad? Vyberte pečlivě!",
+        "won" : "Poklad! Získáváte {score} bodů! Správná volba.",
+        "lost" : "Prázdná krabice. Zkuste to znovu...",
+        "whichBoxFirstRound" : "Vítejte ve cvičném kole. Vaším úkolem je najít krabici s pokladem.",
+        "wonFirstRound" : "Poklad nalezen! V ostrém kole byste získali {score} bodů."
     },
     "footer": {
-        "text" : "Aplikace je součástí disertačního výzkumu Mgr. Markéty Muczkové na Univerzitě Palackého v Olomouci. Pokud máte jakékoliv dotazy, neváhejte nás kontaktovat na:"
+        "text" : "Aplikace je součástí disertačního výzkumu Mgr. Markéty Muczkové na Univerzitě Palackého v Olomouci. V případě dotazů je možné se obrátit na e-mailovou adresu:"
     },
     "questionnaire": {
         "next" : "Pokračovat na další otázku",
