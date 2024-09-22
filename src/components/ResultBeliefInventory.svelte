@@ -6,6 +6,7 @@
 	import UiError from './UIError.svelte';
 	import ResultPolarPlot from './ResultPolarPlot.svelte';
 	import { colorPalette } from '../configs/palette';
+	import ResultConcepts from './ResultConcepts.svelte';
 
 	const getData = async () => {
 		const urlSearchParams: URLSearchParams = new URLSearchParams($page.url.search);
@@ -59,12 +60,39 @@
 			labels: [scoreLabels.ibiF1, scoreLabels.ibiF2, scoreLabels.ibiF3]
 		};
 	};
+
+	const getConceptScores = () => {
+		const urlSearchParams: URLSearchParams = new URLSearchParams($page.url.search);
+		const searchParamEntries = {
+			...Object.fromEntries(urlSearchParams.entries())
+		};
+
+		return [
+			{
+				title: $_('result.ibiF1.title'),
+				description: $_('result.ibiF1.description'),
+				value: parseFloatAndNormalize(searchParamEntries.ibiF1)
+			},
+			{
+				title: $_('result.ibiF2.title'),
+				description: $_('result.ibiF2.description'),
+				value: parseFloatAndNormalize(searchParamEntries.ibiF2)
+			},
+			{
+				title: $_('result.ibiF3.title'),
+				description: $_('result.ibiF3.description'),
+				value: parseFloatAndNormalize(searchParamEntries.ibiF3)
+			}
+		].sort((a, b) => b.value - a.value);
+	};
+
+	$: scores = getConceptScores();
 </script>
 
 <div class="container mx-auto p-4 flex flex-col items-center w-full my-10">
 	<h2 class="text-2xl font-bold">{$_('result.beliefinventory.title')}</h2>
 	<p class="text-lg mt-4 mb-4 text-center">{$_('result.beliefinventory.description')}</p>
-	<div class="aspect-square w-full flex items-center justify-center">
+	<div class="aspect-square w-full flex items-center justify-center mb-4">
 		{#if browser}
 			{#await getData()}
 				<UiLoader />
@@ -77,4 +105,5 @@
 			<UiLoader />
 		{/if}
 	</div>
+	<ResultConcepts {scores} min={0} max={100} />
 </div>
