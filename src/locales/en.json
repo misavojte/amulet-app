@@ -21,7 +21,7 @@
 	"start": {
 		"continue": "Pokračovat",
 		"nameInput": "Zadejte své jméno:",
-		"start": "Začít hru"
+		"start": "Start"
 	},
 	"counter": {
 		"rounds": "Rounds remaining",

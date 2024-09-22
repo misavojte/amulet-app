@@ -21,7 +21,7 @@
 	"start": {
 		"continue": "Kontynuuj",
 		"nameInput": "Wpisz swoje imię:",
-		"start": "Rozpocznij grę"
+		"start": "Rozpocznij"
 	},
 	"counter": {
 		"rounds": "Pozostałe rundy",
