@@ -12,7 +12,7 @@
 	const toCopyBase = base;
 </script>
 
-<div class="container mx-auto p-4 flex flex-col items-center w-full">
+<div class="container mx-auto p-4 flex flex-col items-center w-full my-10 mb-20">
 	<h2 class="text-2xl font-bold">{$_('result.share.title')}</h2>
 	<p class="text-lg mt-4 mb-4 text-center">
 		{$_('result.share.description')}

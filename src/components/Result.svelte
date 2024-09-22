@@ -5,6 +5,7 @@
 	import { _ } from 'svelte-i18n';
 	import { base } from '$app/paths';
 	import ResultBeliefInventory from './ResultBeliefInventory.svelte';
+	import ResultCombined from './ResultCombined.svelte';
 </script>
 
 <svelte:head>
@@ -19,4 +20,5 @@
 <ResultThinkingStyle />
 <ResultBeliefInventory />
 <ResultScore />
+<ResultCombined />
 <ResultShare />

@@ -5,6 +5,7 @@
 	import UiLoader from './UILoader.svelte';
 	import ResultThinkingStylePlot from './ResultPolarPlot.svelte';
 	import UiError from './UIError.svelte';
+	import { colorPalette } from '../configs/palette';
 
 	const getData = async () => {
 		const urlSearchParams: URLSearchParams = new URLSearchParams($page.url.search);
@@ -54,12 +55,7 @@
 						parseFloatAndNormalize(urlSearchParamEntries.c),
 						parseFloatAndNormalize(urlSearchParamEntries.d)
 					],
-					backgroundColor: [
-						'rgba(247, 70, 74, 0.5)',
-						'rgba(70, 191, 189, 0.5)',
-						'rgba(253, 180, 92, 0.5)',
-						'rgba(148, 159, 177, 0.5)'
-					]
+					backgroundColor: [colorPalette.a, colorPalette.b, colorPalette.c, colorPalette.d]
 				}
 			],
 			labels: [scoreLabels.a, scoreLabels.b, scoreLabels.c, scoreLabels.d]
@@ -67,7 +63,7 @@
 	};
 </script>
 
-<div class="container mx-auto p-4 flex flex-col items-center w-full">
+<div class="container mx-auto p-4 flex flex-col items-center w-full my-10">
 	<h2 class="text-2xl font-bold">{$_('result.thinkingstyle.title')}</h2>
 	<p class="text-lg mt-4 mb-4 text-center">{$_('result.thinkingstyle.description')}</p>
 	<div class="aspect-square w-full flex items-center justify-center">
