@@ -63,20 +63,24 @@
             "title" : "Věroučné přesvědčení",
             "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy věroučného přesvědčení. Čím výše je bod, tím více odpovědí se shoduje s daným typem věroučného přesvědčení."
         },
+        "combined" : {
+            "title" : "Kombinované výsledky",
+            "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy myšlení a věroučného přesvědčení. Čím výše je bod, tím více odpovědí se shoduje s daným typem myšlení nebo věroučného přesvědčení."
+        },
         "a" : {
-            "title" : "A",
+            "title" : "Actively Open-Minded Thinking",
             "description" : "Popis typu A"
         },
         "b" : {
-            "title" : "B",
+            "title" : "Closed-Minded Thinking",
             "description" : "Popis typu B"
         },
         "c" : {
-            "title" : "C",
+            "title" : "Preference for Intuitive Thinking",
             "description" : "Popis typu C"
         },
         "d" : {
-            "title" : "D",
+            "title" : "Preference for Rational Thinking",
             "description" : "Popis typu D"
         },
         "s" : {
@@ -85,6 +89,18 @@
             "you": "Vaše skóre",
             "average": "Průměrné skóre",
             "best": "Skóre nejlepšího hráče"
+        },
+        "ibiF1" : {
+            "title" : "IBI - F1",
+            "description" : "Popis typu IBI-F1"
+        },
+        "ibiF2" : {
+            "title" : "IBI - F2",
+            "description" : "Popis typu IBI-F2"
+        },
+        "ibiF3" : {
+            "title" : "IBI - F3",
+            "description" : "Popis typu IBI-F3"
         },
         "share" : {
             "title" : "Sdílet výsledky",
