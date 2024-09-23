@@ -52,6 +52,49 @@
         "back" : "Zpět na předchozí otázku",
         "submitValue" : "Potvrdit odpověď"
     },
+    "informedConsent": {
+        "title": "Informovaný souhlas s účastí na výzkumu",
+        "participation_consent": {
+            "consent_statement": "Souhlasím s účastí na výzkumu pod názvem \"Decission making processes\", který je součástí výzkumné disertační práce.",
+            "research_goal": "Cílem výzkumu je objasnění rozhodovacích procesů participantů za použití vizuálních interaktivních stimulů.",
+            "experiment_principle": "Princip experimentu spočívá v tom, že se participantům budou objevovat dvě krabičky. Cílem participantů je uhodnout, ve které z krabic se ukrývá poklad. Výběr krabičky se provádí pomocí kliknutí myši. Před výběrem krabičky lze pořídit amulet, který může zvýšit šanci na výhru. Účastníci mají za úkol nasbírat co nejvyšší počet bodů za {rounds} kol.",
+            "post_experiment_info": "Poté následuje dotazník, po jehož vyplnění se participanti dozví, jaký mají převažující typ myšlení.",
+            "duration": "Celková doba trvání: 15 minut"
+        },
+        "participant_rights_and_protection": {
+            "information_protection_title": "Informovanost účastníků a ochrana jejich práv:",
+            "data_storage": "Veškerá data budou uchovávána na chráněném úložišti. Každý účastník je veden pod anonymizačním kódem. Anonymizovaná data z výzkumu budou použita pro napsání odborného článku a disertační práce.",
+            "withdrawal_right": "Účastníci mají právo z výzkumu odstoupit a požádat o vymazání svých dat, nejpozději však do 30 dnů od naměření dat.",
+            "responsible_person": "Zodpovědná osoba: Mgr. Markéta Muczková",
+            "contact": "Kontakt: marketa.muczkova01@upol.cz"
+        },
+        "potential_risks_and_minimization": {
+            "risk_statement": "Potenciální rizika a minimalizace:",
+            "potential_risks": "Potenciální rizika zahrnují zcizení dat nebo jejich únik, což bude minimalizováno uchováváním dat v rámci chráněné univerzitní sítě a zákazu sdělování informací."
+        },
+        "personal_data_processing_consent": {
+            "processing_consent_title": "Souhlas se zpracováním osobních údajů",
+            "consent_declaration": "Uděluji tímto souhlas výzkumnici Mgr. Markétě Muczkové z kognitivní laboratoře CO-LAB se sídlem v Olomouci, tř. Svobody 26, IČ : 61989592 (dále jen „správce“), aby ve smyslu nařízení č. 679/2016 o ochraně osobních údajů fyzických osob (dále jen „GDPR“) zpracovávala tyto osobní údaje:",
+            "personal_data_type_1": "Data z dotazníku (+ pohlaví, věk)",
+            "personal_data_type_2": "Data z interaktivního výzkumu",
+            "personal_data_type_3": "E-mail (v případě uvedení)",
+            "data_processing_purpose": "Tyto osobní údaje je nutné zpracovat pro účel výzkumu. Údaje budou správcem zpracovány po dobu nezbytně nutnou k naplnění účelu nebo do odvolání souhlasu.",
+            "withdrawal_statement": "S výše uvedeným zpracováním uděluji výslovný souhlas. Souhlas lze vzít kdykoliv zpět, a to zasláním e-mailu na kontaktní email makreta.muczkova01@upol.cz."
+        },
+        "gdpr_rights": {
+            "rights_statement": "Dle GDPR máte právo:",
+            "right_1": "Vzít souhlas zpět",
+            "right_2": "Požadovat informaci, jaké vaše osobní údaje zpracováváme",
+            "right_3": "Požádat vysvětlení ohledně zpracování osobních údajů",
+            "right_4": "Vyžádat si přístup k těmto údajům",
+            "right_5": "Požadovat opravu, výmaz osobních údajů, omezení zpracování a vznést námitku proti zpracování"
+        },
+        "final_declaration": {
+            "declaration": "Prohlašuji, že jsem byl/a dostatečně informován/a o výzkumu a jeho cílech, chápu možná rizika a práva, která mi náleží. Souhlasím s účastí na tomto výzkumu pod výše uvedenými podmínkami a souhlasím se zpracováním osobních údajů."
+        },
+        "agreeAndStart": "Souhlasím a pokračuji",
+        "continue": "Pokračovat"
+    },
     "result": {
         "title" : "Výsledky experimentu",
         "description" : "Děkujeme za váš čas. Níže vidíte výsledky vašich odpovědí.",
@@ -152,7 +195,7 @@
             }
         },
         "Q5IBI": {
-            "question" : "Většina věcí; které se nám dějí; jsou výsledkem osudu.",
+            "question" : "Většina věcí, které se nám dějí, jsou výsledkem osudu.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -242,7 +285,7 @@
             }
         },
         "Q14IBI": {
-            "question" : "Věřím; že mě chrání strážní andělé nebo jiné duchovní síly.",
+            "question" : "Věřím, že mě chrání strážní andělé nebo jiné duchovní síly.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -252,7 +295,7 @@
             }
         },
         "Q15IBI": {
-            "question" : "Je jen otázkou času; než věda vše vysvětlí.",
+            "question" : "Je jen otázkou času, než věda vše vysvětlí.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -262,7 +305,7 @@
             }
         },
         "Q16IBI": {
-            "question" : "Existuje neviditelná síla; která nás všechny vede.",
+            "question" : "Existuje neviditelná síla, která nás všechny vede.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -272,7 +315,7 @@
             }
         },
         "Q17IBI": {
-            "question" : "Věda je klíčem k pochopení toho; jak se věci dějí.",
+            "question" : "Věda je klíčem k pochopení toho, jak se věci dějí.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -302,7 +345,7 @@
             }
         },
         "Q20IBI": {
-            "question" : "Pokud o něčem hodně přemýšlím; stane se to.",
+            "question" : "Pokud o něčem hodně přemýšlím, stane se to.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -312,7 +355,7 @@
             }
         },
         "Q21IBI": {
-            "question" : "Pokud o něčem špatném hodně přemýšlím; stane se to.",
+            "question" : "Pokud o něčem špatném hodně přemýšlím, stane se to.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -332,7 +375,7 @@
             }
         },
         "Q23IBI": {
-            "question" : "Někdy mám pocit; že se něco stane; předtím; než se to stane.",
+            "question" : "Někdy mám pocit, že se něco stane, předtím, než se to stane.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -342,7 +385,7 @@
             }
         },
         "Q24IBI": {
-            "question" : "Někdy jsem změnil/a své plány; protože jsem měl/a špatný pocit.",
+            "question" : "Někdy jsem změnil/a své plány, protože jsem měl/a špatný pocit.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -352,7 +395,7 @@
             }
         },
         "Q1TS": {
-            "question" : "Je důležité být věrný svým přesvědčením; i když se proti nim objeví důkazy.",
+            "question" : "Je důležité být věrný svým přesvědčením, i když se proti nim objeví důkazy.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -362,7 +405,7 @@
             }
         },
         "Q2TS": {
-            "question" : "Zda se něco zdá být pravdivé; je důležitější než důkaz.",
+            "question" : "Zda se něco zdá být pravdivé, je důležitější než důkaz.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -372,7 +415,7 @@
             }
         },
         "Q3TS": {
-            "question" : "To; že důkazy jsou v rozporu s mými současnými přesvědčeními; neznamená; že moje přesvědčení jsou špatná.",
+            "question" : "To, že důkazy jsou v rozporu s mými současnými přesvědčeními, neznamená, že moje přesvědčení jsou špatná.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -382,7 +425,7 @@
             }
         },
         "Q4TS": {
-            "question" : "Může existovat důkaz proti tomu; čemu věříte; ale to neznamená; že musíte změnit svá přesvědčení.",
+            "question" : "Může existovat důkaz proti tomu, čemu věříte, ale to neznamená, že musíte změnit svá přesvědčení.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -392,7 +435,7 @@
             }
         },
         "Q5TS": {
-            "question" : "I když existuje konkrétní důkaz proti tomu; čemu věříte; je v pořádku si zachovat drahocenná přesvědčení.",
+            "question" : "I když existuje konkrétní důkaz proti tomu, čemu věříte, je v pořádku si zachovat drahocenná přesvědčení.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -402,7 +445,7 @@
             }
         },
         "Q6TS": {
-            "question" : "To; o čem věříte; že je to pravda; je důležitější než důkazy; které tomu odporují; bez ohledu na téma.",
+            "question" : "To, o čem věříte, že je to pravda, je důležitější než důkazy, které tomu odporují, bez ohledu na téma.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -412,7 +455,7 @@
             }
         },
         "Q7TS": {
-            "question" : "Myslím si; že téměř ke všemu existuje mnoho nesprávných cest; ale jen jedna správná.",
+            "question" : "Myslím si, že téměř ke všemu existuje mnoho nesprávných cest, ale jen jedna správná.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -452,7 +495,7 @@
             }
         },
         "Q11TS": {
-            "question" : "Buď je něco pravdivé nebo nepravdivé; nic mezi tím není.",
+            "question" : "Buď je něco pravdivé nebo nepravdivé, nic mezi tím není.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -462,7 +505,7 @@
             }
         },
         "Q12TS": {
-            "question" : "Mezi tím; co je pravda a co ne; není žádný střed.",
+            "question" : "Mezi tím, co je pravda a co ne, není žádný střed.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -482,7 +525,7 @@
             }
         },
         "Q14TS": {
-            "question" : "Věřím; že je dobré důvěřovat svým předtuchám/tušením.",
+            "question" : "Věřím, že je dobré důvěřovat svým předtuchám/tušením.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -492,7 +535,7 @@
             }
         },
         "Q15TS": {
-            "question" : "Když se rozhoduji; mám tendenci se spoléhat na svou intuici.",
+            "question" : "Když se rozhoduji, mám tendenci se spoléhat na svou intuici.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -552,7 +595,7 @@
             }
         },
         "Q21TS": {
-            "question" : "Snažím se vyhýbat situacím; ve kterých musím přemýšlet o věcech do hloubky.",
+            "question" : "Snažím se vyhýbat situacím, ve kterých musím přemýšlet o věcech do hloubky.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",

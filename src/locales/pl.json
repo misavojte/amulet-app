@@ -31,7 +31,7 @@
 		"isActive": "Amulet jest aktywny",
 		"isNotActive": "Amulet nie jest aktywny",
 		"canBuy": "Kliknij, aby kupić amulet za {price} punktów",
-		"cannotBuy": "Nie masz wystarczającej liczby punktów; aby zdobyć amulet",
+		"cannotBuy": "Nie masz wystarczającej liczby punktów, aby zdobyć amulet",
         "refuse": "Nie chcę zdobyć amuletu"
 	},
 	"end": {
@@ -51,6 +51,49 @@
         "next" : "Dalej",
         "back" : "Wstecz",
         "submitValue" : "Zatwierdź"
+    },
+    "informedConsent": {
+        "title": "Świadoma zgoda na udział w badaniu",
+        "participation_consent": {
+            "consent_statement": "Wyrażam zgodę na udział w badaniu pod nazwą \"Procesy podejmowania decyzji\", które jest częścią pracy doktorskiej.",
+            "research_goal": "Celem badania jest wyjaśnienie procesów podejmowania decyzji przez uczestników za pomocą wizualnych interaktywnych bodźców.",
+            "experiment_principle": "Zasada eksperymentu polega na tym, że uczestnikom będą pokazywane dwie skrzynki. Celem uczestników jest odgadnięcie, w której skrzynce znajduje się skarb. Wybór skrzynki odbywa się za pomocą kliknięcia myszą. Przed wyborem skrzynki można nabyć amulet, który może zwiększyć szansę na wygraną. Uczestnicy mają za zadanie zdobyć jak największą liczbę punktów w \"x\" rundach.",
+            "post_experiment_info": "Następnie uczestnicy wypełnią kwestionariusz, po którego wypełnieniu dowiedzą się, jaki mają dominujący typ myślenia.",
+            "duration": "Całkowity czas trwania: 15 minut"
+        },
+        "participant_rights_and_protection": {
+            "information_protection_title": "Informowanie uczestników i ochrona ich praw:",
+            "data_storage": "Wszystkie dane będą przechowywane w zabezpieczonym magazynie. Każdy uczestnik jest prowadzony pod anonimowym kodem. Zanonimizowane dane z eksperymentu będą wykorzystane do napisania artykułu naukowego i pracy doktorskiej.",
+            "withdrawal_right": "Uczestnicy mają prawo do wycofania się z badania i żądania usunięcia swoich danych, jednak nie później niż 30 dni od daty zebrania danych.",
+            "responsible_person": "Osoba odpowiedzialna: mgr Markéta Muczková",
+            "contact": "Kontakt: marketa.muczkova01@upol.cz"
+        },
+        "potential_risks_and_minimization": {
+            "risk_statement": "Potencjalne ryzyka i ich minimalizacja:",
+            "potential_risks": "Potencjalne ryzyka obejmują kradzież danych lub ich wyciek, co będzie minimalizowane poprzez przechowywanie danych w zabezpieczonej sieci uniwersyteckiej i zakaz przekazywania informacji."
+        },
+        "personal_data_processing_consent": {
+            "processing_consent_title": "Zgoda na przetwarzanie danych osobowych",
+            "consent_declaration": "Niniejszym wyrażam zgodę badaczce mgr Markécie Muczkovej z laboratorium kognitywnego CO-LAB z siedzibą w Ołomuńcu, tr. Svobody 26, IČ: 61989592 (dalej „administrator”), aby zgodnie z rozporządzeniem nr 679/2016 o ochronie danych osobowych osób fizycznych (dalej „GDPR”) przetwarzała następujące dane osobowe:",
+            "personal_data_type_1": "Dane z kwestionariusza (w tym płeć, wiek)",
+            "personal_data_type_2": "Dane z interaktywnego badania",
+            "personal_data_type_3": "Adres e-mail (w przypadku podania)",
+            "data_processing_purpose": "Te dane osobowe są niezbędne do celów badania. Dane będą przetwarzane przez administratora przez czas niezbędny do realizacji celu lub do odwołania zgody.",
+            "withdrawal_statement": "Niniejszym wyrażam wyraźną zgodę na powyższe przetwarzanie. Zgodę można wycofać w dowolnym momencie, wysyłając e-mail na adres kontaktowy marketa.muczkova01@upol.cz."
+        },
+        "gdpr_rights": {
+            "rights_statement": "Zgodnie z RODO masz prawo:",
+            "right_1": "Wycofać zgodę",
+            "right_2": "Żądać informacji, jakie Twoje dane osobowe przetwarzamy",
+            "right_3": "Żądać wyjaśnień dotyczących przetwarzania danych osobowych",
+            "right_4": "Żądać dostępu do tych danych",
+            "right_5": "Żądać poprawienia, usunięcia danych osobowych, ograniczenia przetwarzania i wniesienia sprzeciwu wobec przetwarzania"
+        },
+        "final_declaration": {
+            "declaration": "Oświadczam, że zostałem/am wystarczająco poinformowany/a o badaniu i jego celach, rozumiem możliwe ryzyka i przysługujące mi prawa. Wyrażam zgodę na udział w tym badaniu na powyższych warunkach i zgadzam się na przetwarzanie danych osobowych."
+        },
+        "agreeAndStart": "Zgadzam się i kontynuuję",
+        "continue": "Kontynuować"
     },
     "result": {
         "title" : "Výsledky experimentu",

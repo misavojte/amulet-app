@@ -52,6 +52,49 @@
         "back" : "Previous question",
         "submitValue" : "Confirm the answer"
     },
+    "informedConsent": {
+        "title": "Informed Consent for Participation in Research",
+        "participation_consent": {
+            "consent_statement": "I agree to participate in the research titled \"Decision Making Processes,\" which is part of a research dissertation.",
+            "research_goal": "The aim of the research is to clarify the decision-making processes of participants using visual interactive stimuli.",
+            "experiment_principle": "The principle of the experiment is that participants will be presented with two boxes. The objective for the participants is to guess which box contains the treasure. The selection of the box is made by clicking with the mouse. Before selecting a box, an amulet can be obtained, which may increase the chance of winning. Participants are tasked with collecting the highest number of points over {rounds} rounds.",
+            "post_experiment_info": "Following this, a questionnaire will be administered, after which participants will learn their predominant thinking style.",
+            "duration": "Total duration: 15 minutes"
+        },
+        "participant_rights_and_protection": {
+            "information_protection_title": "Participants’ Information and Protection of Their Rights:",
+            "data_storage": "All data will be stored in a secure repository. Each participant is identified by an anonymization code. Anonymized data from the research will be used to write a scholarly article and dissertation.",
+            "withdrawal_right": "Participants have the right to withdraw from the research and request the deletion of their data, but no later than 30 days from the data collection.",
+            "responsible_person": "Responsible Person: Mgr. Markéta Muczková",
+            "contact": "Contact: marketa.muczkova01@upol.cz"
+        },
+        "potential_risks_and_minimization": {
+            "risk_statement": "Potential Risks and Minimization:",
+            "potential_risks": "Potential risks include data theft or leakage, which will be minimized by storing data within the secure university network and prohibiting the disclosure of information."
+        },
+        "personal_data_processing_consent": {
+            "processing_consent_title": "Consent for Processing Personal Data",
+            "consent_declaration": "I hereby give consent to researcher Mgr. Markéta Muczková from the CO-LAB Cognitive Laboratory based in Olomouc, tř. Svobody 26, IČ: 61989592 (hereinafter \"controller\"), to process the following personal data in accordance with Regulation No. 679/2016 on the protection of personal data of natural persons (hereinafter \"GDPR\"):",
+            "personal_data_type_1": "Questionnaire data (including gender, age)",
+            "personal_data_type_2": "Data from the interactive research",
+            "personal_data_type_3": "Email (if provided)",
+            "data_processing_purpose": "These personal data are necessary for the purpose of the research. The data will be processed by the controller for the time necessary to fulfill the purpose or until consent is withdrawn.",
+            "withdrawal_statement": "I give explicit consent to the above-mentioned processing. Consent can be withdrawn at any time by sending an email to the contact email marketa.muczkova01@upol.cz."
+        },
+        "gdpr_rights": {
+            "rights_statement": "According to GDPR, you have the right to:",
+            "right_1": "Withdraw consent",
+            "right_2": "Request information on what personal data we process",
+            "right_3": "Request an explanation regarding the processing of personal data",
+            "right_4": "Request access to this data",
+            "right_5": "Request correction, deletion of personal data, restriction of processing, and raise an objection to processing"
+        },
+        "final_declaration": {
+            "declaration": "I declare that I have been sufficiently informed about the research and its objectives, understand the possible risks and the rights I have. I agree to participate in this research under the above-mentioned conditions and consent to the processing of personal data."
+        },
+        "agreeAndStart": "I Agree and Proceed",
+        "continue": "Continue"
+    },
     "result": {
         "title" : "Výsledky experimentu",
         "description" : "Děkujeme za váš čas. Níže vidíte výsledky vašich odpovědí.",
