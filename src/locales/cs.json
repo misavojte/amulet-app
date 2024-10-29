@@ -114,8 +114,8 @@
             "description" : "Popisuje spolehnutí se na instinkt, pocity a okamžité dojmy při rozhodování. Vyšší skóre naznačuje pohodlí s rychlým úsudkem bez rozsáhlého uvažování. Preference pro usilovné rozvažování: Odráží sklon k pečlivému, reflektivnímu a analytickému myšlení při rozhodování. Vyšší skóre naznačuje potěšení z důkladného hodnocení situací před přijetím závěru, s preferencí pro důkladnější přístup."
         },
         "d" : {
-            "title" : "Preference for Rational Thinking",
-            "description" : "Popis typu D"
+            "title" : "Preference pro usilovné rozvažování",
+            "description" : "Odráží sklon k pečlivému, reflektivnímu a analytickému myšlení při rozhodování. Vyšší skóre naznačuje potěšení z důkladného hodnocení situací před přijetím závěru, s preferencí pro důkladnější přístup."
         },
         "s" : {
             "title" : "Získané skóre",
