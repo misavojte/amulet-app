@@ -5,15 +5,13 @@
         "load" : "Načítání hry"
     },
     "rules": {
-        "1" : "Cílem hry je získat co nejvíce bodů.",
-        "2" : "V každém kole můžete získat {score} bodů tím, že uhodnete, v které ze dvou krabic je poklad.",
-        "3" : "Hra má {rounds} kol, poté skončí.",
-        "4" : "Pro každé kolo lze zakoupit amulet, který může zvýšit vaše šance na výhru.",
-        "5" : "Amulet lze zakoupit za {price} bodů."
+        "1" : "Vaším cílem je získat co nejvíce bodů.",
+        "2" : "V každém kole můžete získat {score} bodů tím, že uhodnete, kde se nachází poklad.",
+        "3" : "Celkem bude probíhat {rounds} kol.",
+        "4" : "Před každým kolem máte možnost získat amulet, který může zvýšit vaše šance na úspěch.",
+        "5" : "Amulet lze pořídit za {price} bodů."
     },
-    "start" : {
-        "continue" : "Pokračovat",
-        "nameInput" : "Zadejte své jméno:",
+    "start": {
         "start" : "Začít"
     },
     "counter" : {

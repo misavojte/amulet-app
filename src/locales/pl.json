@@ -12,16 +12,14 @@
         "wonFirstRound" : "Skarb znaleziony! W prawdziwej rundzie zdobył(a) byś {score} punktów."
     },
 	"rules": {
-		"1": "Celem gry jest zdobycie jak największej liczby punktów.",
-		"2": "W każdej rundzie możesz zdobyć {score} punktów, zgadując, które z dwóch pudelek zawiera skarb.",
-		"3": "Gra składa się z {rounds} rund, po czym się kończy.",
-		"4": "W każdej rundzie można kupić amulet, który może zwiększyć Twoje szanse na wygraną.",
-		"5": "Amulet można kupić za {price} punktów."
+		"1" : "Twoim celem jest zdobycie jak największej liczby punktów.",
+        "2" : "W każdej rundzie możesz zdobyć {score} punktów, zgadując, gdzie znajduje się skarb.",
+        "3" : "Łącznie odbędzie się {rounds} rund.",
+        "4" : "Przed każdą rundą masz możliwość zdobycia amuletu, który może zwiększyć twoje szanse na sukces.",
+        "5" : "Amulet można kupić za {price} punktów."
 	},
 	"start": {
-		"continue": "Kontynuuj",
-		"nameInput": "Wpisz swoje imię:",
-		"start": "Rozpocznij"
+		"start": "Zacznij"
 	},
 	"counter": {
 		"rounds": "Pozostałe rundy",
@@ -32,7 +30,7 @@
 		"isNotActive": "Amulet nie jest aktywny",
 		"canBuy": "Kliknij, aby kupić amulet za {price} punktów",
 		"cannotBuy": "Nie masz wystarczającej liczby punktów, aby zdobyć amulet",
-        "refuse": "Nie chcę zdobyć amuletu"
+        "refuse": "Nie chcę amuletu"
 	},
 	"end": {
 		"title": "Koniec gry",
@@ -157,7 +155,7 @@
         "Q1IBI": {
             "question" : "Wykonuję specjalne czynności po to, by zapobiec nieszczęściu.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -167,7 +165,7 @@
         "Q2IBI": {
             "question" : "Unikam pechowych liczb.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -177,7 +175,7 @@
         "Q3IBI": {
             "question" : "Magia sprawia, że zdarzają się cuda.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -187,7 +185,7 @@
         "Q4IBI": {
             "question" : "Magiczne moce wpłynęły na moje życie.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" :"Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -197,7 +195,7 @@
         "Q5IBI": {
             "question" : "Większość rzeczy, jakie się nam przytrafiają, są wynikiem przeznaczenia.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -207,7 +205,7 @@
         "Q6IBI": {
             "question" : "Czasami wykonuję specjalne rytuały ochronne.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -217,7 +215,7 @@
         "Q7IBI": {
             "question" : "Niemożliwym jest rzucenie zaklęcia magicznego.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -227,7 +225,7 @@
         "Q8IBI": {
             "question" : "Amulety przynoszące szczęście nie działają.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -237,7 +235,7 @@
         "Q9IBI": {
             "question" : "Wierzę w magię.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -247,7 +245,7 @@
         "Q10IBI": {
             "question" : "Nigdy nie powinno się kusić losu.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -257,7 +255,7 @@
         "Q11IBI": {
             "question" : "Nie wierzę w duchową/ nadprzyrodzoną obecność.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -267,7 +265,7 @@
         "Q12IBI": {
             "question" : "Wierzę w siły wyższe lub Boga.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -277,7 +275,7 @@
         "Q13IBI": {
             "question" : "Dusza przestaje istnieć po śmierci.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -287,7 +285,7 @@
         "Q14IBI": {
             "question" : "Wierzę, że anioł stróż bądź inne siły duchowe mnie chronią.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -297,7 +295,7 @@
         "Q15IBI": {
             "question" : "To tylko kwestia czasu kiedy nauka będzie w stanie wszystko wyjaśnić.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -307,7 +305,7 @@
         "Q16IBI": {
             "question" : "Istnieje niewidzialna siła prowadząca nas wszystkich.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -317,7 +315,7 @@
         "Q17IBI": {
             "question" : "Nauka jest kluczem do zrozumienia jak dzieją się rzeczy.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -327,7 +325,7 @@
         "Q18IBI": {
             "question" : "Modlę się, aby odpędzić nieszczęście.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -337,7 +335,7 @@
         "Q19IBI": {
             "question" : "Życie to nic innego jak seria przypadkowych zdarzeń.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -347,7 +345,7 @@
         "Q20IBI": {
             "question" : "Jeśli myślę o czymś za często to się to wydarzy.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -357,7 +355,7 @@
         "Q21IBI": {
             "question" : "Jeżeli dużo myślę o czymś złym to się zdarzy.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -367,7 +365,7 @@
         "Q22IBI": {
             "question" : "Moje myśli same w sobie kształtują moją rzeczywistość.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -377,7 +375,7 @@
         "Q23IBI": {
             "question" : "Czasami mam przeczucie, że coś się wydarzy zanim ma to miejsce.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -387,7 +385,7 @@
         "Q24IBI": {
             "question" : "Czasami zmieniam plany bo mam złe przeczucie.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -397,7 +395,7 @@
         "Q1TS": {
             "question" : "To ważne aby pozostać przy swoich wierzeniach, nawet jeżeli przedstawione są nam dowody temu przeczące.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -407,7 +405,7 @@
         "Q2TS": {
             "question" : "Poczucie, że coś jest prawdziwe jest ważniejsze niż dowody.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -417,7 +415,7 @@
         "Q3TS": {
             "question" : "Tylko dlatego, że dowody przeczą moim obecnym przekonaniom nie oznacza to, że moje przekonania są błędne.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -427,7 +425,7 @@
         "Q4TS": {
             "question" : "Mogą istnieć dowody przeciwko temu w co wierzę, ale nie znaczy to, że muszę zmienić przez to moje przekonania.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -437,7 +435,7 @@
         "Q5TS": {
             "question" : "Nawet jeżeli istnieje konkretny dowód przeczący temu, co uważasz za prawdziwe,  utrzymanie swojego poglądu jest w porządku.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -447,7 +445,7 @@
         "Q6TS": {
             "question" : "Niezależnie od tematu, to co uznajesz za prawdziwe jest ważniejsze od dowodów będących przeciw.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -457,7 +455,7 @@
         "Q7TS": {
             "question" : "Myślę, że istnieje dużo złych dróg, ale tylko jedna właściwa droga do prawie wszystkiego.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -467,7 +465,7 @@
         "Q8TS": {
             "question" : "Zgodnie z moim doświadczeniem prawda jest często czarno-biała.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -477,7 +475,7 @@
         "Q9TS": {
             "question" : "Prawda nigdy nie jest względna.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -487,7 +485,7 @@
         "Q10TS": {
             "question" : "Prawda się nie zmienia.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -497,7 +495,7 @@
         "Q11TS": {
             "question" : "Albo coś jest prawdziwe, albo fałszywe, nie ma nic pomiędzy.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -507,7 +505,7 @@
         "Q12TS": {
             "question" : "Nie ma niczego pośrodku pomiędzy tym co prawdziwe a tym co fałszywe.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -517,7 +515,7 @@
         "Q13TS": {
             "question" : "Lubię polegać na mojej intuicji.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -527,7 +525,7 @@
         "Q14TS": {
             "question" : "Wierzę w poleganie na moich przeczuciach.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -537,7 +535,7 @@
         "Q15TS": {
             "question" : "Kiedy podejmuję decyzję mam tendencję do polegania na swojej intuicji.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -547,7 +545,7 @@
         "Q16TS": {
             "question" : "Słuchanie mojego wewnętrznego głosu zazwyczaj ułatwia mi w rozwiązywaniu. problemu życiowych.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -557,7 +555,7 @@
         "Q17TS": {
             "question" : "Intuicja jest najlepszym przewodnikiem w podejmowaniu decyzji.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -567,7 +565,7 @@
         "Q18TS": {
             "question" : "Często podążam za intuicją przy podejmowaniu szybkich decyzji.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -577,7 +575,7 @@
         "Q19TS": {
             "question" : "Nie jestem za dobry w rozwiązywaniu skomplikowanych problemów.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -587,7 +585,7 @@
         "Q20TS": {
             "question" : "Rozmyślanie nie jest moim ulubionym sposobem spędzania czasu.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -597,7 +595,7 @@
         "Q21TS": {
             "question" : "Staram się unikać sytuacji, które wymagają głębszego myślenia o czymś.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -607,7 +605,7 @@
         "Q22TS": {
             "question" : "Nie jestem osobą myślącą analitycznie.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -617,7 +615,7 @@
         "Q23TS": {
             "question" : "Uważne, ostrożne rozważanie rzeczy nie jest moją mocną stroną.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -627,7 +625,7 @@
         "Q24TS": {
             "question" : "Długie, intensywne myślenie o czymś przynosi mi niewiele satysfakcji.",
             "options" : {
-                "1" : " Zdecydowanie się nie zgadzam",
+                "1" : "Zdecydowanie się nie zgadzam",
                 "2" : "Nie zgadzam się",
                 "3" : "Ani się nie zgadzam, ani się nie zgadzam",
                 "4" : "Zgadzam się",
@@ -649,31 +647,31 @@
         "QamuletEffect": {
             "question" : "W jakim stopniu uważasz, że amulet miał wpływ na twój sukces?",
             "options" : {
-                "1" : "Žádný",
-                "2" : "Mírný",
-                "3" : "Nevím",
-                "4" : "Výrazný",
-                "5" : "Velmi výrazný"
+                "1" : "Żaden",
+                "2" : "Łagodny",
+                "3" : "Nie wiem",
+                "4" : "Wyraźny",
+                "5" : "Ekstremalny"
             }
         },
         "QstrategyEffect": {
             "question" : "W jakim stopniu uważasz, że twoja strategia gry wpłynęła na wynik?",
             "options" : {
-                "1" : "Nijak",
-                "2" : "Mírně",
-                "3" : "Nevím",
-                "4" : "Výrazně",
-                "5" : "Velmi výrazně"
+                "1" : "Żaden",
+                "2" : "Łagodny",
+                "3" : "Nie wiem",
+                "4" : "Wyraźny",
+                "5" : "Ekstremalny"
             }
         },
         "QchanceEffect": {
             "question" : "Jaką część sukcesu przypisujesz przypadkowi?",
             "options" : {
-                "1" : "Žádný",
-                "2" : "Mírný",
-                "3" : "Nevím",
-                "4" : "Výrazný",
-                "5" : "Velmi výrazný"
+                "1" : "Żaden",
+                "2" : "Łagodny",
+                "3" : "Nie wiem",
+                "4" : "Wyraźny",
+                "5" : "Ekstremalny"
             }
         },
         "QlikeExperience": {
@@ -689,11 +687,11 @@
         "QfrustrationLevel": {
             "question" : "Jak bardzo frustrujące było to doświadczenie dla ciebie?",
             "options" : {
-                "1" : "Wcale",
-                "2" : "Mírně",
-                "3" : "Tak napůl",
-                "4" : "Výrazně",
-                "5" : "Velmi výrazně"
+                "1" : "Żaden",
+                "2" : "Łagodny",
+                "3" : "Nie wiem",
+                "4" : "Wyraźny",
+                "5" : "Ekstremalny"
             }
         },
         "email": {
