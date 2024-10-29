@@ -9,7 +9,7 @@
 	const textCopyExperiment = $_('result.share.copyExperiment');
 	const textCopied = $_('result.share.copied');
 
-	const toCopyBase = base;
+	const toCopyBase = $page.url.origin + base;
 </script>
 
 <div class="container mx-auto p-4 flex flex-col items-center w-full my-10 mb-20">
