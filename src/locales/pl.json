@@ -35,12 +35,7 @@
 	"end": {
 		"title": "Koniec gry",
 		"repeat": "Zagraj ponownie",
-		"leaderboard": {
-			"loading": "Ładowanie rankingu",
-			"rank": "Miejsce",
-			"name": "Imię",
-			"score": "Wynik"
-		}
+        "noRepeat": "Wypełnij krótki kwestionariusz, a natychmiast zobaczysz wykres, który ujawni coś nowego o Tobie. Może Cię to zaskoczyć."
 	},
     "footer": {
         "text": "Aplikacja jest częścią badań doktorskich Mgr. Markéty Muczkovej na Uniwersytecie Palackiego w Ołomuńcu. W przypadku pytań prosimy o kontakt pod adresem e-mailowym:"

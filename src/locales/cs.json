@@ -28,12 +28,7 @@
     "end": {
         "title" : "Konec hry",
         "repeat" : "Hrát znovu",
-        "leaderboard" : {
-            "loading" : "Načítání žebříčku",
-            "rank" : "Pořadí",
-            "name" : "Jméno",
-            "score" : "Skóre"
-        }
+        "noRepeat" : "Vyplňte krátký dotazník a ihned uvidíte graf, který vám odhalí něco nového o vás samotných. Možná budete překvapeni."
     },
     "box": {
         "whichBox" : "Ve které krabici je poklad? Vyberte pečlivě!",

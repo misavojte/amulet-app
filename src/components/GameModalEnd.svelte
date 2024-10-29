@@ -31,6 +31,6 @@
 		<p class="text-center text-sm text-neutral-700">
 			{$_('end.noRepeat')}
 		</p>
-		<UiButton on:click={signalEnd} text={$_('end.end')} />
+		<UiButton on:click={signalEnd} text={$_('start.start')} />
 	{/if}
 </RoundedWrapper>

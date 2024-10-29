@@ -35,12 +35,7 @@
 	"end": {
 		"title": "Konec hry",
 		"repeat": "Hrát znovu",
-		"leaderboard": {
-			"loading": "Načítání žebříčku",
-			"rank": "Pořadí",
-			"name": "Jméno",
-			"score": "Skóre"
-		}
+        "noRepeat": "Complete a short questionnaire, and you'll instantly see a chart revealing something new about yourself. You might be surprised."
 	},
     "footer": {
         "text": "The application is part of the dissertation research of Mgr. Markéta Muczková at Palacký University Olomouc. For any inquiries, please contact:"
