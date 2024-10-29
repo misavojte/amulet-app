@@ -1,8 +1,8 @@
 {
 	"app": {
-		"title": "Hra Amulet",
-		"description": "Amulet Game",
-		"load": "Načítání hry"
+		"title": "The Amulet Experiment",
+		"description": "Welcome to the Amulet Experiment! Your task is to find the treasure hidden in one of the boxes. You can purchase an amulet to increase your chances of success. Good luck!",
+		"load": "Loading..."
 	},
     "box": {
         "whichBox" : "Which box contains the treasure? Choose carefully!",
@@ -89,61 +89,59 @@
         "continue": "Continue"
     },
     "result": {
-        "title" : "Výsledky experimentu",
-        "description" : "Děkujeme za váš čas. Níže vidíte výsledky vašich odpovědí.",
+        "title" : "Results of the Amulet Experiment",
+        "description" : "Thank you for participating in the experiment. Below you can see the results of the experiment and your score.",
         "thinkingstyle" : {
-            "title" : "Typ myšlení",
-            "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy myšlení. Čím výše je bod, tím více odpovědí se shoduje s daným typem myšlení."
+            "title" : "Thinking styles"
         },
         "beliefinventory" : {
-            "title" : "Věroučné přesvědčení",
-            "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy věroučného přesvědčení. Čím výše je bod, tím více odpovědí se shoduje s daným typem věroučného přesvědčení."
+            "title" : "Belief patterns"
         },
         "combined" : {
-            "title" : "Kombinované výsledky",
-            "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy myšlení a věroučného přesvědčení. Čím výše je bod, tím více odpovědí se shoduje s daným typem myšlení nebo věroučného přesvědčení."
+            "title" : "Combined Results",
+            "description" : "The graph reflects various thinking styles and beliefs that together shape decision-making processes. Open-mindedness brings flexibility, while close-mindedness ensures stability. An intuitive approach accelerates decision-making, whereas effortful thinking slows it down but makes it more thorough. Beliefs in supernatural forces and spiritual influences affect outcome expectations, while belief in the influence of thoughts on reality can strengthen confidence in one's decisions. The graph shows the extent to which these factors influence decision-making."
         },
         "a" : {
-            "title" : "Actively Open-Minded Thinking",
-            "description" : "Popis typu A"
+            "title" : "Open-Minded Thinking",
+            "description" : "Reflects the tendency to consider multiple perspectives and the willingness to change opinions when presented with new information. High scores indicate a preference for questioning assumptions and seeking out evidence before making decisions."
         },
         "b" : {
-            "title" : "Closed-Minded Thinking",
-            "description" : "Popis typu B"
+            "title" : "Close-Minded Thinking",
+            "description" : "Indicates a tendency to adhere to established beliefs and resist considering alternative viewpoints. High scores reflect a preference for consistency and stability in thinking, with less inclination to challenge existing beliefs."
         },
         "c" : {
-            "title" : "Preference for Intuitive Thinking",
-            "description" : "Popis typu C"
+            "title" : "Intuitive Thinking",
+            "description" : "Describes reliance on instinct, gut feelings, and immediate impressions when making decisions. Higher scores suggest comfort with quick judgments without extensive deliberation."
         },
         "d" : {
-            "title" : "Preference for Rational Thinking",
-            "description" : "Popis typu D"
+            "title" : "Effortful Thinking",
+            "description" : "Reflects an inclination toward careful, reflective, and analytical thinking when faced with decisions. Higher scores indicate enjoyment of thoroughly evaluating situations before reaching a conclusion, favoring a more deliberate approach."
         },
         "s" : {
-            "title" : "Získané herní skóre",
-            "description" : "Vaše skóre získané během hry je {score} bodů.",
-            "you": "Vaše skóre",
-            "average": "Průměrné skóre",
-            "best": "Skóre nejlepšího hráče"
+            "title" : "Score Earned",
+            "description" : "Your score is {score}. The higher the score, the better your performance in the experiment.",
+            "you": "Your score",
+            "average": "Average score",
+            "best": "Best score"
         },
         "ibiF1" : {
-            "title" : "IBI - F1",
-            "description" : "Popis typu IBI-F1"
+            "title" : "Magical Beliefs",
+            "description" : "Reflects belief in supernatural forces or phenomena, such as luck, fate, or mystical powers. Higher scores suggest a belief that outcomes may be influenced by forces beyond the natural world."
         },
         "ibiF2" : {
-            "title" : "IBI - F2",
-            "description" : "Popis typu IBI-F2"
+            "title" : "Spiritual Connection",
+            "description" : "Indicates belief in non-material or transcendent experiences. Higher scores suggest a focus on spiritual dimensions, such as connection to a higher power or the belief in personal spiritual growth."
         },
         "ibiF3" : {
-            "title" : "IBI - F3",
-            "description" : "Popis typu IBI-F3"
+            "title" : "Mind-Impact Belief",
+            "description" : "Reflects the belief that thoughts and emotions can influence reality, or that thinking about an action is equivalent to performing it. Higher scores suggest a perception that internal mental states or thoughts have a direct impact on real-world events and outcomes."
         },
         "share" : {
-            "title" : "Sdílet výsledky",
-            "description" : "Pokud chcete, můžete sdílet své výsledky na sociálních sítích. Very much nám tím pomůžete s výzkumem.",
-            "copyResult" : "Kopírovat odkaz výsledků",
-            "copyExperiment" : "Kopírovat odkaz na experiment",
-            "copied" : "Zkopírováno!"
+            "title" : "Share Your Results",
+            "description" : "Curious to see how your beliefs and thinking styles compare with those of your friends and family? Share your results and invite them to take the experiment—discover who thinks alike and who surprises you!",
+            "copyResult" : "Copy the results link",
+            "copyExperiment" : "Copy link to experiment",
+            "copied" : "Copied!"
         }
     },
     "questions": {

@@ -1,8 +1,8 @@
 {
 	"app": {
-		"title": "Amulet",
-		"description": "Gra Amulet",
-		"load": "Ładowanie gry"
+		"title": "Eksperiment Amulet",
+		"description": "Witaj w eksperymencie Amulet. W tej grze będziesz musiał(a) podjąć decyzję, w której z dwóch skrzyń znajduje się skarb. Zdobywaj punkty i odkryj, jaki styl myślenia dominuje w Twoim życiu.",
+		"load": "Ładowanie..."
 	},
     "box": {
         "whichBox" : "W którym pudełku jest skarb? Wybierz ostrożnie!",
@@ -89,61 +89,59 @@
         "continue": "Kontynuować"
     },
     "result": {
-        "title" : "Výsledky experimentu",
-        "description" : "Děkujeme za váš čas. Níže vidíte výsledky vašich odpovědí.",
+        "title" : "Wyniki eksperymentu Amulet",
+        "description" : "Dziękujemy za udział w badaniu. Poniżej znajdziesz wyniki eksperymentu.",
         "thinkingstyle" : {
-            "title" : "Typ myšlení",
-            "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy myšlení. Čím výše je bod, tím více odpovědí se shoduje s daným typem myšlení."
+            "title" : "Style myślenia"
         },
         "beliefinventory" : {
-            "title" : "Věroučné přesvědčení",
-            "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy věroučného přesvědčení. Čím výše je bod, tím více odpovědí se shoduje s daným typem věroučného přesvědčení."
+            "title" : "Wzorce przekonań"
         },
         "combined" : {
-            "title" : "Kombinované výsledky",
-            "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy myšlení a věroučného přesvědčení. Čím výše je bod, tím více odpovědí se shoduje s daným typem myšlení nebo věroučného přesvědčení."
+            "title" : "Wyniki łączone",
+            "description" : "Wykres przedstawia różne style myślenia i przekonania, które razem kształtują procesy decyzyjne. Otwartość przynosi elastyczność, podczas gdy zamkniętość zapewnia stabilność. Intuicyjne podejście przyspiesza podejmowanie decyzji, podczas gdy wysiłkowe myślenie je spowalnia, ale czyni bardziej dokładnym. Wiara w siły nadprzyrodzone i wpływy duchowe kształtuje oczekiwania dotyczące wyników, podczas gdy przekonanie o wpływie myśli na rzeczywistość może wzmacniać pewność w podejmowane decyzje. Wykres pokazuje, w jakim stopniu te czynniki wpływają na procesy decyzyjne."
         },
         "a" : {
-            "title" : "Actively Open-Minded Thinking",
-            "description" : "Popis typu A"
+            "title" : "Aktywnie otwarte myślenie",
+            "description" : "Odradza skłonność do rozważania różnych perspektyw i gotowość do zmiany opinii w świetle nowych informacji. Wysokie wyniki wskazują na preferencję do kwestionowania założeń i szukania dowodów przed podjęciem decyzji."
         },
         "b" : {
-            "title" : "Closed-Minded Thinking",
-            "description" : "Popis typu B"
+            "title" : "Zamknięte myślenie",
+            "description" : "Oznacza skłonność do trzymania się ustalonych przekonań i oporu przed rozważaniem alternatywnych punktów widzenia. Wysokie wyniki odzwierciedlają preferencję dla spójności i stabilności myślenia, z mniejszą skłonnością do kwestionowania istniejących przekonań."
         },
         "c" : {
-            "title" : "Preference for Intuitive Thinking",
-            "description" : "Popis typu C"
+            "title" : "Preferencja intuicyjnego myślenia",
+            "description" : "Opisuje poleganie na instynkcie, uczuciach i natychmiastowych wrażeniach przy podejmowaniu decyzji. Wyższe wyniki sugerują komfort z szybkim osądem bez dogłębnych przemyśleń."
         },
         "d" : {
-            "title" : "Preference for Rational Thinking",
-            "description" : "Popis typu D"
+            "title" : "Preferencja wysiłkowego myślenia",
+            "description" : "Odradza skłonność do dokładnego, refleksyjnego i analitycznego myślenia w obliczu decyzji. Wyższe wyniki wskazują na zadowolenie z gruntownego oceniania sytuacji przed podjęciem decyzji, z preferencją dla bardziej przemyślanego podejścia."
         },
         "s" : {
-            "title" : "Získané herní skóre",
-            "description" : "Vaše skóre získané během hry je {score} bodů.",
-            "you": "Vaše skóre",
-            "average": "Průměrné skóre",
-            "best": "Skóre nejlepšího hráče"
+            "title" : "Zdobyty wynik",
+            "description" : "Twój wynik to {score} punktów.",
+            "you": "Twój wynik",
+            "average": "Średni wynik",
+            "best": "Najlepszy wynik"
         },
         "ibiF1" : {
-            "title" : "IBI - F1",
-            "description" : "Popis typu IBI-F1"
+            "title" : "Przekonania magiczne",
+            "description" : "Odradza wiarę w nadprzyrodzone siły lub zjawiska, takie jak szczęście, przeznaczenie lub mistyczne moce. Wyższe wyniki sugerują przekonanie, że rezultaty mogą być pod wpływem sił wykraczających poza świat naturalny."
         },
         "ibiF2" : {
-            "title" : "IBI - F2",
-            "description" : "Popis typu IBI-F2"
+            "title" : "Duchowe połączenie",
+            "description" : "Wskazuje na wiarę w niematerialne lub transcendentne doświadczenia. Wyższe wyniki sugerują skupienie na duchowych wymiarach, takich jak połączenie z wyższą mocą lub przekonanie o osobistym duchowym rozwoju."
         },
         "ibiF3" : {
-            "title" : "IBI - F3",
-            "description" : "Popis typu IBI-F3"
+            "title" : "Przekonanie o wpływie umysłu",
+            "description" : "Odradza przekonanie, że myśli i emocje mogą wpływać na rzeczywistość, lub że myślenie o jakimś czynie jest równoznaczne z jego wykonaniem. Wyższe wyniki sugerują postrzeganie, że stany wewnętrzne lub myśli mają bezpośredni wpływ na rzeczywiste zdarzenia i rezultaty."
         },
         "share" : {
-            "title" : "Sdílet výsledky",
-            "description" : "Pokud chcete, můžete sdílet své výsledky na sociálních sítích. Velmi nám tím pomůžete s výzkumem.",
-            "copyResult" : "Kopírovat odkaz výsledků",
-            "copyExperiment" : "Kopírovat odkaz na experiment",
-            "copied" : "Zkopírováno!"
+            "title" : "Udostępnij wyniki",
+            "description" : "Ciekawi Cię, jak Twoje przekonania i styl myślenia różnią się od tych u znajomych i rodziny? Udostępnij swoje wyniki i zaproś ich do wzięcia udziału w eksperymencie – odkryj, kto myśli podobnie, a kto Cię zaskoczy!",
+            "copyResult" : "Skopiuj link do wyników",
+            "copyExperiment" : "Skopiuj link do eksperymentu",
+            "copied" : "Skopiowane!"
         }
     },
     "questions": {

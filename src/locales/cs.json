@@ -1,8 +1,8 @@
 {
     "app" : {
-        "title" : "Amulet",
-        "description" : "Hra Amulet",
-        "load" : "Načítání hry"
+        "title" : "Experiment Amulet",
+        "description" : "Vítejte v experimentu Amulet. V následujících krocích budete mít možnost získat amulet, který vám může pomoci najít poklad. Po každém kole se dozvíte, jak jste dopadli. Na konci experimentu se dozvíte, jaký je váš převažující styl myšlení. Připravte se na zábavu a zjistěte něco nového o sobě!",
+        "load" : "Načítání..."
     },
     "rules": {
         "1" : "Vaším cílem je získat co nejvíce bodů.",
@@ -89,58 +89,56 @@
         "continue": "Pokračovat"
     },
     "result": {
-        "title" : "Výsledky experimentu",
+        "title" : "Výsledky experimentu Amulet",
         "description" : "Děkujeme za váš čas. Níže vidíte výsledky vašich odpovědí.",
         "thinkingstyle" : {
-            "title" : "Typ myšlení",
-            "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy myšlení. Čím výše je bod, tím více odpovědí se shoduje s daným typem myšlení."
+            "title" : "Styl myšlení"
         },
         "beliefinventory" : {
-            "title" : "Věroučné přesvědčení",
-            "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy věroučného přesvědčení. Čím výše je bod, tím více odpovědí se shoduje s daným typem věroučného přesvědčení."
+            "title" : "Vzorce přesvědčení"
         },
         "combined" : {
             "title" : "Kombinované výsledky",
             "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy myšlení a věroučného přesvědčení. Čím výše je bod, tím více odpovědí se shoduje s daným typem myšlení nebo věroučného přesvědčení."
         },
         "a" : {
-            "title" : "Actively Open-Minded Thinking",
-            "description" : "Popis typu A"
+            "title" : "Otevřený typ myšlení",
+            "description" : "Graf zachycuje různé myšlenkové styly a víry, které společně formují rozhodovací procesy. Otevřenost přináší flexibilitu, zatímco uzavřenost zajišťuje stabilitu. Intuitivní přístup urychluje rozhodování, zatímco úsilné myšlení jej zpomaluje, ale činí důkladnějším. Víra v nadpřirozené síly a duchovní vlivy ovlivňuje očekávání výsledků, zatímco víra ve vliv myšlenek na realitu může posilovat jistotu ve vlastní rozhodnutí. Graf ukazuje, do jaké míry tyto faktory ovlivňují rozhodování."
         },
         "b" : {
-            "title" : "Closed-Minded Thinking",
-            "description" : "Popis typu B"
+            "title" : "Uzavřený typ myšlení",
+            "description" : "Označuje tendenci přidržovat se zavedených přesvědčení a odolávat zvažování alternativních pohledů. Vysoké skóre odráží preferenci pro konzistenci a stabilitu myšlení, s menší ochotou zpochybňovat stávající přesvědčení."
         },
         "c" : {
-            "title" : "Preference for Intuitive Thinking",
-            "description" : "Popis typu C"
+            "title" : "Intuitivní typ myšlení",
+            "description" : "Popisuje spolehnutí se na instinkt, pocity a okamžité dojmy při rozhodování. Vyšší skóre naznačuje pohodlí s rychlým úsudkem bez rozsáhlého uvažování. Preference pro usilovné rozvažování: Odráží sklon k pečlivému, reflektivnímu a analytickému myšlení při rozhodování. Vyšší skóre naznačuje potěšení z důkladného hodnocení situací před přijetím závěru, s preferencí pro důkladnější přístup."
         },
         "d" : {
             "title" : "Preference for Rational Thinking",
             "description" : "Popis typu D"
         },
         "s" : {
-            "title" : "Získané herní skóre",
-            "description" : "Vaše skóre získané během hry je {score} bodů.",
+            "title" : "Získané skóre",
+            "description" : "Vaše skóre je {score} bodů.",
             "you": "Vaše skóre",
             "average": "Průměrné skóre",
-            "best": "Skóre nejlepšího hráče"
+            "best": "Nejlepší skóre"
         },
         "ibiF1" : {
-            "title" : "IBI - F1",
-            "description" : "Popis typu IBI-F1"
+            "title" : "Magická přesvědčení",
+            "description" : "Odráží víru v nadpřirozené síly nebo jevy, jako jsou štěstí, osud nebo mystické síly. Vyšší skóre naznačuje víru, že výsledky mohou být ovlivněny silami mimo přírodní svět."
         },
         "ibiF2" : {
-            "title" : "IBI - F2",
-            "description" : "Popis typu IBI-F2"
+            "title" : "Duchovní spojení",
+            "description" : "Označuje víru v nemateriální nebo transcendentní zkušenosti. Vyšší skóre naznačuje zaměření na duchovní dimenze, jako je spojení s vyšší mocí nebo víra v osobní duchovní růst."
         },
         "ibiF3" : {
-            "title" : "IBI - F3",
-            "description" : "Popis typu IBI-F3"
+            "title" : "Přesvědčení o vlivu mysli",
+            "description" : "Odráží víru, že myšlenky a emoce mohou ovlivnit realitu, nebo že myšlenka na nějaký čin je ekvivalentní jeho vykonání. Vyšší skóre naznačuje vnímání, že vnitřní mentální stavy nebo myšlenky mají přímý vliv na skutečné události a výsledky."
         },
         "share" : {
             "title" : "Sdílet výsledky",
-            "description" : "Pokud chcete, můžete sdílet své výsledky na sociálních sítích. Velmi nám tím pomůžete s výzkumem.",
+            "description" : "Zajímá vás, jak se vaše přesvědčení a styl myšlení liší od vašich přátel a rodiny? Sdílejte své výsledky a pozvěte je k účasti v experimentu – zjistěte, kdo s vámi souzní a kdo vás překvapí!",
             "copyResult" : "Kopírovat odkaz výsledků",
             "copyExperiment" : "Kopírovat odkaz na experiment",
             "copied" : "Zkopírováno!"
