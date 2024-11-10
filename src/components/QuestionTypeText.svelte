@@ -1,12 +1,13 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
 	import { createEventDispatcher } from 'svelte';
-	import QuestionnaireQuestion from './QuestionnaireFillQuestion.svelte';
+	import Question from './Question.svelte';
 
 	export let question: {
 		id: string;
 		type: 'text' | 'email' | 'number';
 		required: boolean;
+		headingText: string;
+		confirmText: string;
 	};
 
 	export let value: string = '';
@@ -18,10 +19,7 @@
 	};
 </script>
 
-<QuestionnaireQuestion
-	questionText={$_('questions.' + question.id + '.question')}
-	required={question.required}
->
+<Question questionText={question.headingText} isRequired={question.required}>
 	<form class="flex flex-col gap-4" on:submit|preventDefault={handleOptionChange}>
 		{#if question.type === 'text'}
 			<input
@@ -53,8 +51,8 @@
 		{/if}
 		<input
 			type="submit"
-			value={$_('questionnaire.submitValue')}
-			class="bg-blue-500 text-white rounded-lg p-4 mt-4 cursor-pointer"
+			value={question.confirmText}
+			class="bg-blue-500 text-white rounded-lg w-fit mx-auto p-4 mt-4 cursor-pointer"
 		/>
 	</form>
-</QuestionnaireQuestion>
+</Question>

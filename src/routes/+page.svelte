@@ -16,12 +16,18 @@
 	import { getAuthAnonymousUser } from '../firebase';
 	import { TimestampGameService } from '$lib/services/TimestampGameService';
 	import { type GameState } from '$lib';
-	import Questionnaire from '../components/Questionnaire.svelte';
 	import { questions } from '../configs/questions';
 	import { TimestampQuestionnaireService } from '$lib/services/TimestampQuestionnaireService';
 	import { goto } from '$app/navigation';
 	import { BeliefInventoryService } from '$lib/services/BeliefInventoryService';
 	import { ThinkingStyleService } from '$lib/services/ThinkingStyleService';
+	import QuestionManager from '../components/QuestionManager.svelte';
+	import type {
+		IQuestionBattery,
+		IQuestionConfigLikert,
+		IQuestionConfigSelect,
+		IQuestionConfigText
+	} from '$lib/interfaces/IQuestion';
 
 	/**
 	 * Language setup
@@ -96,7 +102,45 @@
 	// Do not randomize the last 8 questions
 	const questionsAtTheEnd = questions.slice(-8);
 	const questionsToRandomize = questions.slice(0, -8).sort(() => Math.random() - 0.5); // possible randomization bias, but good enough for this purpose
-	const questionConfig = [...questionsToRandomize, ...questionsAtTheEnd];
+	const questionBase = [...questionsToRandomize, ...questionsAtTheEnd];
+	const questionConfig: IQuestionBattery = questionBase.map((question) => {
+		switch (question.type) {
+			case 'likert':
+				return {
+					...question,
+					headingText: $_(`questions.${question.id}.question`),
+					label: {
+						min: $_(`questions.${question.id}.options.1`),
+						avg: $_(`questions.${question.id}.options.3`),
+						max: $_(`questions.${question.id}.options.5`)
+					}
+				} as IQuestionConfigLikert;
+			case 'select':
+				if (!question.options) {
+					throw new Error('Question options are not set');
+				}
+				return {
+					...question,
+					headingText: $_(`questions.${question.id}.question`),
+					options: question.options.map((option, index) => {
+						return {
+							id: option,
+							label: $_(`questionnaire.${question.id}.options.${index + 1}`)
+						};
+					})
+				} as IQuestionConfigSelect;
+			case 'text':
+			case 'email':
+			case 'number':
+				return {
+					...question,
+					confirmText: $_(`questionnaire.submitValue`),
+					headingText: $_(`questions.${question.id}.question`)
+				} as IQuestionConfigText;
+			default:
+				throw new Error('Invalid question type');
+		}
+	});
 
 	// const questionConfig = mockQuestions;
 	const beliefInventoryService = new BeliefInventoryService();
@@ -143,9 +187,10 @@
 			{:else if stage === 'Info'}
 				<Intro on:startExperiment={() => (stage = 'Experiment')} />
 			{:else if stage === 'Questionnaire'}
-				<Questionnaire
-					{questionConfig}
-					{questionnaireInterface}
+				<QuestionManager
+					questions={questionConfig}
+					questionsService={questionnaireInterface}
+					showSkip={true}
 					on:questionnaireSaved={handleQuestionnaireSaved}
 				/>
 			{/if}

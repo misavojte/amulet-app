@@ -1,4 +1,4 @@
-import type { ITimestampQuestionnaireService, StartQuestionnaireEntryObject } from "$lib/interfaces/ITimestampQuestionnaireService";
+import type { StartQuestionnaireEntryObject } from "$lib/interfaces/ITimestampQuestionnaireService";
 import type { TimestampQuestionnaireEntryObject } from "$lib";
 import { get } from "svelte/store";
 import { writeQuestionnaireScore, writeTimestampQuestionnaire } from "../../firebase";
@@ -6,8 +6,9 @@ import { type QuestionnaireScore } from '$lib/interfaces/ITimestampQuestionnaire
 import type { UserStateStore } from "../../stores/UserState";
 import type { IBeliefInventoryService } from "$lib/interfaces/IBeliefInventoryService";
 import type { IThinkingStyleService } from "$lib/interfaces/IThinkingStyleService";
+import type { ITimestampQuestionService } from "$lib/interfaces/IQuestion";
 
-export class TimestampQuestionnaireService implements ITimestampQuestionnaireService {
+export class TimestampQuestionnaireService implements ITimestampQuestionService {
 
     userState: UserStateStore;
     beliefInventoryService: IBeliefInventoryService;
@@ -23,7 +24,7 @@ export class TimestampQuestionnaireService implements ITimestampQuestionnaireSer
         this.thinkingStyleService = thinkingStyleService;
     }
 
-    async startQuestionnaire(): Promise<void> {
+    async startQuestions(): Promise<void> {
         
         const userState = get(this.userState);
         if (userState.userId === null || userState.sessionId === null) {
@@ -39,7 +40,7 @@ export class TimestampQuestionnaireService implements ITimestampQuestionnaireSer
         return writeTimestampQuestionnaire(timestampEntry);
     }
 
-    async saveTimestampQuestionnaire(question: string, answer: string): Promise<void> {
+    async saveTimestampQuestion(question: string, answer: string): Promise<void> {
         const userState = get(this.userState);
         if (userState.userId === null || userState.sessionId === null) {
             throw new Error("User or sessionId is null");
@@ -58,7 +59,7 @@ export class TimestampQuestionnaireService implements ITimestampQuestionnaireSer
         return writeTimestampQuestionnaire(timestampEntry);
     }
 
-    async saveQuestionnaire(data: 
+    async saveQuestions(data: 
         {
             id: string;
             value: string;

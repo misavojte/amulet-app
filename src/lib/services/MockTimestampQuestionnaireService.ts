@@ -1,20 +1,21 @@
-import type { ITimestampQuestionnaireService, QuestionnaireScore } from "$lib/interfaces/ITimestampQuestionnaireService";
+import type { ITimestampQuestionService } from "$lib/interfaces/IQuestion";
+import type { QuestionnaireScore } from "$lib/interfaces/ITimestampQuestionnaireService";
 
-export class MockTimestampQuestionnaireService implements ITimestampQuestionnaireService {
+export class MockTimestampQuestionnaireService implements ITimestampQuestionService {
 
-    async startQuestionnaire(): Promise<void> {
+    async startQuestions(): Promise<void> {
         setTimeout(() => {
             console.log('Questionnaire started successfully!');
         }, 1000);
     }
 
-    async saveTimestampQuestionnaire(question: string, answer: string): Promise<void> {
+    async saveTimestampQuestion(question: string, answer: string): Promise<void> {
         setTimeout(() => {
             console.log('TimestampQuestionnaire saved successfully!', question, answer);
         }, 1000);
     }
 
-    async saveQuestionnaire(data: {
+    async saveQuestions(data: {
             id: string;
             value: string;
             required: boolean;
@@ -27,7 +28,9 @@ export class MockTimestampQuestionnaireService implements ITimestampQuestionnair
                     userId: 'mockUserId',
                     sessionId: 'mockSessionId',
                     timestamp: Date.now(),
-                    beliefInventory: 0,
+                    beliefInventoryF1: 0,
+                    beliefInventoryF2: 0,
+                    beliefInventoryF3: 0,
                     activelyOpenMindedThinking: 0,
                     preferenceForIntuitiveThinking: 0,
                     preferenceForRationalThinking: 0,

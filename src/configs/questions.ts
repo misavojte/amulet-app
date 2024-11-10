@@ -1,6 +1,4 @@
-import { type IQuestionConfig } from "$lib/interfaces/IConfig";
-
-export const mockQuestions: IQuestionConfig = [
+export const mockQuestions = [
 	{
 		id: 'email',
 		type: 'email',
@@ -13,7 +11,7 @@ export const mockQuestions: IQuestionConfig = [
 	},
 	{
 		id: 'Q1IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
@@ -29,9 +27,9 @@ export const mockQuestions: IQuestionConfig = [
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
-] as const;
+];
 
-export const questions: IQuestionConfig = [
+export const questions = [
 	{
 		id: 'Q1IBI',
 		type: 'select',
@@ -366,7 +364,7 @@ export const questions: IQuestionConfig = [
 		type: 'email',
 		required: false
 	}
-] as const;
+];
 
 /**
  * Removed
