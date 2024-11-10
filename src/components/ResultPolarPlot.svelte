@@ -24,6 +24,25 @@
 	options={{
 		responsive: true,
 		aspectRatio: 1,
-		scales: { r: { suggestedMin, suggestedMax } }
+		scales: {
+			r: {
+				suggestedMin,
+				suggestedMax,
+				ticks: {
+					font: {
+						size: 14 // Change this to your desired font size for y-axis
+					}
+				}
+			}
+		},
+		plugins: {
+			legend: {
+				labels: {
+					font: {
+						size: 16
+					}
+				}
+			}
+		}
 	}}
 />

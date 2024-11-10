@@ -16,7 +16,7 @@
 	<meta property="og:image:height" content="527" />
 </svelte:head>
 
-<h1 class="text-3xl font-bold mt-8">{$_('result.title')}</h1>
+<h1 class="text-3xl lg:text-4xl font-bold mt-8">{$_('result.title')}</h1>
 <ResultThinkingStyle />
 <ResultBeliefInventory />
 <ResultScore />

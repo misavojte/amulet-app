@@ -19,7 +19,10 @@
 	addMessages('en', en);
 	addMessages('pl', pl);
 	addMessages('cs', cs);
-
+	init({
+		fallbackLocale: 'en',
+		initialLocale: 'en'
+	});
 	const handleLocaleChange = () => {
 		isReady = true;
 	};

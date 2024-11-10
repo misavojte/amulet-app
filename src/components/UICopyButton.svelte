@@ -21,7 +21,7 @@
 
 <button
 	on:click={handleClick}
-	class=" relative col-span-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 items-center inline-flex justify-center px-7"
+	class=" relative col-span-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full xl:text-lg text-sm py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 items-center inline-flex justify-center px-7"
 >
 	<span class:opacity-0={copiedActivated}>{textCopy}</span>
 	<span class="inline-flex items-center absolute" class:hidden={!copiedActivated}>

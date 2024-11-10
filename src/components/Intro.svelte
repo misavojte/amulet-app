@@ -37,7 +37,7 @@
 	});
 </script>
 
-<div class="my-12">
+<div class="my-12 lg:text-lg">
 	<!-- Title -->
 	<h1 class="text-3xl font-bold mb-6 text-center">
 		{$_('informedConsent.title')}

@@ -31,10 +31,12 @@
 			aria-label={`Score for ${score.title}`}
 		>
 			<div class="score mb-2">
-				<p class="text-xl font-bold">{score.value.toFixed(2)}</p>
-				<p>{score.title}</p>
+				<p class="text-xl xl:text-2xl font-bold text-neutral-700">{score.value.toFixed(2)}</p>
+				<p class="leading-tight xl:text-lg xl:leading-tight text-neutral-700 font-semibold">
+					{score.title}
+				</p>
 			</div>
-			<p class="small text-left text-sm leading-tight">
+			<p class="small text-left leading-tight xl:text-lg xl:leading-tight text-neutral-700">
 				{score.description}
 			</p>
 		</li>

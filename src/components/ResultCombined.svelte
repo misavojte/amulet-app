@@ -132,7 +132,7 @@
 </script>
 
 <div class="container mx-auto p-4 flex flex-col items-center w-full my-10">
-	<h2 class="text-2xl font-bold">{$_('result.combined.title')}</h2>
+	<h2 class="text-2xl xl:text-3xl font-bold">{$_('result.combined.title')}</h2>
 	<p class="text-lg mt-4 mb-4 text-center">{$_('result.combined.description')}</p>
 	<div class="aspect-square w-full flex items-center justify-center mb-4">
 		{#if browser}
