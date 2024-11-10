@@ -20,13 +20,16 @@
 </script>
 
 <Question questionText={question.headingText} isRequired={question.required}>
-	<form class="flex flex-col gap-4" on:submit|preventDefault={handleOptionChange}>
+	<form
+		class="flex flex-col gap-4 w-full items-center"
+		on:submit|preventDefault={handleOptionChange}
+	>
 		{#if question.type === 'text'}
 			<input
 				type="text"
 				id={question.id}
 				name={question.id}
-				class="border-2 border-gray-300 rounded-lg p-4 w-96"
+				class="border-2 border-gray-300 rounded-lg p-4 w-96 max-w-full"
 				required={question.required}
 				bind:value
 			/>
@@ -35,7 +38,7 @@
 				type="email"
 				id={question.id}
 				name={question.id}
-				class="border-2 border-gray-300 rounded-lg p-4 w-96"
+				class="border-2 border-gray-300 rounded-lg p-4 w-96 max-w-full"
 				required={question.required}
 				bind:value
 			/>
@@ -44,7 +47,7 @@
 				type="number"
 				id={question.id}
 				name={question.id}
-				class="border-2 border-gray-300 rounded-lg p-4 w-96"
+				class="border-2 border-gray-300 rounded-lg p-4 w-96 max-w-full"
 				required={question.required}
 				bind:value
 			/>

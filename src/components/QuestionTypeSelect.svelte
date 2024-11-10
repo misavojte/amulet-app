@@ -30,10 +30,10 @@
 				/>
 				<label
 					for={'option-' + option.id}
-					class="font-semibold select-none peer block w-96 border-2 border-gray-300 rounded-lg p-4 mb-4 cursor-pointer {value ===
+					class="font-semibold select-none peer block w-96 border-2 border-gray-300 rounded-lg p-4 mb-1 cursor-pointer {value ===
 					option.id.toString()
 						? 'bg-blue-500 text-white'
-						: 'bg-white text-gray-600 hover:bg-gray-100'}"
+						: 'bg-white text-gray-600 hover:bg-gray-100'} 2xl:text-lg"
 				>
 					{option.label}
 				</label>

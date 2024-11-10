@@ -19,6 +19,8 @@
 		IQuestionConfigSelect,
 		IQuestionConfigText
 	} from '$lib/interfaces/IQuestion';
+	import { onMount } from 'svelte';
+	import AppQuestionnaire from '../../../components/AppQuestionnaire.svelte';
 
 	addMessages('en', en);
 	addMessages('pl', pl);
@@ -36,57 +38,18 @@
 	};
 
 	const service = new MockTimestampQuestionnaireService();
-
-	const questionConfig: IQuestionBattery = mockQuestions.map((question) => {
-		switch (question.type) {
-			case 'likert':
-				return {
-					...question,
-					headingText: $_(`questions.${question.id}.question`),
-					label: {
-						min: $_(`questions.${question.id}.options.1`),
-						avg: $_(`questions.${question.id}.options.3`),
-						max: $_(`questions.${question.id}.options.5`)
-					}
-				} as IQuestionConfigLikert;
-			case 'select':
-				if (!question.options) {
-					throw new Error('Question options are not set');
-				}
-				return {
-					...question,
-					headingText: $_(`questions.${question.id}.question`),
-					options: question.options.map((option, index) => {
-						return {
-							id: option,
-							label: $_(`questions.${question.id}.options.${index + 1}`)
-						};
-					})
-				} as IQuestionConfigSelect;
-			case 'text':
-			case 'email':
-			case 'number':
-				return {
-					...question,
-					confirmText: $_(`questionnaire.submitValue`),
-					headingText: $_(`questions.${question.id}.question`)
-				} as IQuestionConfigText;
-			default:
-				throw new Error('Invalid question type');
-		}
-	});
 </script>
 
 {#if stage !== 'Experiment'}
 	<div class="max-w-screen-md flex flex-col justify-between items-center mx-auto h-screen">
-		<main class="h-full flex flex-col justify-center items-center w-full">
+		<main class="h-full flex flex-col justify-center items-center w-full overflow-auto">
 			{#if stage === 'LanguagePick'}
 				<LanguagePick on:localeChange={handleLocaleChange} />
 			{:else}
-				<QuestionManager
+				<AppQuestionnaire
 					questionsService={service}
-					questions={questionConfig}
-					on:questionnaireSaved={(e) => alert(JSON.stringify(e.detail))}
+					questions={mockQuestions}
+					on:questionnaireDone={(e) => alert(JSON.stringify(e.detail))}
 					on:questionnaireError={(e) => alert('Error ' + e.detail.message)}
 				/>
 			{/if}

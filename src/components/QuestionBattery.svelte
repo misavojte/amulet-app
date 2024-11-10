@@ -86,7 +86,7 @@
 	});
 </script>
 
-<div class="w-full h-full flex flex-col gap-8 battery-layout">
+<div class="w-full h-full flex flex-col gap-8 battery-layout px-2">
 	<div class="flex flex-col justify-center items-center row-span-2 w-full h-8">
 		{#if showProgress}
 			<div class="w-full flex justify-center items-center" transition:fade>
@@ -94,14 +94,12 @@
 			</div>
 		{/if}
 	</div>
-	<div
-		class="justify-center items-center relative grid grid-rows-1 grid-cols-1 overflow-hidden grow"
-	>
+	<div class="justify-center items-center relative grid grid-rows-1 grid-cols-1 grow">
 		{#each questionSingleArray as question (question.id)}
 			<div
 				in:fly={{ delay: 500, x: inAnimationXValue() }}
 				out:fly={{ delay: 150, x: outAnimationXValue() }}
-				class=" w-full top-0 left-0 h-full row-start-1 row-end-2 col-start-1 col-end-2"
+				class="w-full top-0 left-0 h-full row-start-1 row-end-2 col-start-1 col-end-2 overflow-auto"
 			>
 				{#if question.type === 'text' || question.type === 'email' || question.type === 'number'}
 					<QuestionTypeText

@@ -6,7 +6,7 @@
 <!-- Question.svelte -->
 <!-- The wrapping is not a form tag because it is better to have them in separate types for better control -->
 <div class="flex flex-col text-neutral-700 justify-center items-center gap-8 h-full grow">
-	<div class="text-2xl font-bold text-center">
+	<div class="text-xl xl:text-2xl 2xl:text-3xl font-bold text-center">
 		{questionText}
 		{#if isRequired}
 			<span class="text-red-500">*</span>

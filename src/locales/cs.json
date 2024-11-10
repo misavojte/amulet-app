@@ -59,7 +59,7 @@
             "data_storage": "Veškerá data budou uchovávána na chráněném úložišti. Každý účastník je veden pod anonymizačním kódem. Anonymizovaná data z výzkumu budou použita pro napsání odborného článku a disertační práce.",
             "withdrawal_right": "Účastníci mají právo z výzkumu odstoupit a požádat o vymazání svých dat, nejpozději však do 30 dnů od naměření dat.",
             "responsible_person": "Zodpovědná osoba: Mgr. Markéta Muczková",
-            "contact": "Kontakt: marketa.muczkova01@upol.cz"
+            "contact": "Kontakt: marketa@muczkova.com"
         },
         "potential_risks_and_minimization": {
             "risk_statement": "Potenciální rizika a minimalizace:",
@@ -72,7 +72,7 @@
             "personal_data_type_2": "Data z interaktivního výzkumu",
             "personal_data_type_3": "E-mail (v případě uvedení)",
             "data_processing_purpose": "Tyto osobní údaje je nutné zpracovat pro účel výzkumu. Údaje budou správcem zpracovány po dobu nezbytně nutnou k naplnění účelu nebo do odvolání souhlasu.",
-            "withdrawal_statement": "S výše uvedeným zpracováním uděluji výslovný souhlas. Souhlas lze vzít kdykoliv zpět, a to zasláním e-mailu na kontaktní email makreta.muczkova01@upol.cz."
+            "withdrawal_statement": "S výše uvedeným zpracováním uděluji výslovný souhlas. Souhlas lze vzít kdykoliv zpět, a to zasláním e-mailu na kontaktní email marketa@muczkova.com"
         },
         "gdpr_rights": {
             "rights_statement": "Dle GDPR máte právo:",
@@ -616,7 +616,7 @@
             }
         },
         "Q24TS": {
-            "question" : "Dlouhé a intenzivní přemýšlení o něčem mi nepřináší velkou satisfakci.",
+            "question" : "Dlouhé a intenzivní přemýšlení o něčem mi nepřináší velkou uspokojení.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",

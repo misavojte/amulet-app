@@ -4,15 +4,15 @@
 </script>
 
 <footer>
-	<p class="text-sm text-neutral-700">
+	<p class="text-sm text-neutral-600 leading-4">
 		{$_('footer.text')}
 		<a
 			class="decoration-dotted text-neutral-500 hover:text-neutral-700
 		
 		"
-			href="mailto:marketa.muczkova01@upol.cz"
+			href="mailto:marketa@muczkova.com"
 		>
-			marketa.muczkova01@upol.cz
+			marketa@muczkova.com
 		</a>
 	</p>
 	<img width="1523" height="472" src="{base}/upol.png" alt="Logo Univerzity Palackého" />
@@ -31,7 +31,7 @@
 		justify-content: center;
 		align-items: center;
 		text-align: left;
-		margin: 2rem auto;
+		margin: 1rem auto;
 		padding: 1rem 0;
 		border-top: 1px solid #ccc;
 		font-size: 0.8rem;

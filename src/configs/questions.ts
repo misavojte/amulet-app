@@ -17,13 +17,13 @@ export const mockQuestions = [
 	},
 	{
 		id: 'Q2IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q1TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
@@ -32,303 +32,295 @@ export const mockQuestions = [
 export const questions = [
 	{
 		id: 'Q1IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q2IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q3IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q4IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q5IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q6IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q7IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q8IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q9IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q10IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q11IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q12IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q13IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q14IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q15IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q16IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q17IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q18IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q19IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q20IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q21IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q22IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q23IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q24IBI',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q1TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q2TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q3TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q4TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q5TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q6TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q7TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q8TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q9TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q10TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q11TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q12TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q13TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q14TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q15TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q16TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q17TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q18TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q19TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q20TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q21TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q22TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q23TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
 	{
 		id: 'Q24TS',
-		type: 'select',
+		type: 'likert',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
 	},
-	{
-		id: 'age',
-		type: 'number',
-		required: true
-	},
-	{
-		id: 'gender',
-		type: 'select',
-		options: ['F', 'M', 'O', 'N'],
-		required: true
-	},
+];
+
+export const gameQuestions = [
 	{
 		id: 'QamuletEffect',
 		type: 'select',
@@ -358,6 +350,20 @@ export const questions = [
 		type: 'select',
 		options: ['1', '2', '3', '4', '5'],
 		required: true
+	}
+];
+
+export const demoQuestions = [
+		{
+		id: 'age',
+		type: 'number',
+		required: true
+	},
+	{
+		id: 'gender',
+		type: 'select',
+		options: ['F', 'M', 'O', 'N'],
+		required: true
 	},
 	{
 		id: 'email',
@@ -365,6 +371,7 @@ export const questions = [
 		required: false
 	}
 ];
+
 
 /**
  * Removed
