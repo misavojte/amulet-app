@@ -51,7 +51,7 @@
             "consent_statement": "Souhlasím s účastí na výzkumu pod názvem \"Decission making processes\", který je součástí výzkumné disertační práce.",
             "research_goal": "Cílem výzkumu je objasnění rozhodovacích procesů participantů za použití vizuálních interaktivních stimulů.",
             "experiment_principle": "Princip experimentu spočívá v tom, že se participantům budou objevovat dvě krabičky. Cílem participantů je uhodnout, ve které z krabic se ukrývá poklad. Výběr krabičky se provádí pomocí kliknutí myši. Před výběrem krabičky lze pořídit amulet, který může zvýšit šanci na výhru. Účastníci mají za úkol nasbírat co nejvyšší počet bodů za {rounds} kol.",
-            "post_experiment_info": "Poté následuje dotazník, po jehož vyplnění se participanti dozví, jaký mají převažující typ myšlení.",
+            "post_experiment_info": "Po dotazníku zjistíte svůj převažující styl myšlení a další podrobnosti. Na závěr získáte přístup k interaktivním grafům, které vám přehledně přiblíží vaše výsledky a nabídnou srovnání s ostatními.",
             "duration": "Celková doba trvání: 15 minut"
         },
         "participant_rights_and_protection": {
@@ -103,7 +103,7 @@
         },
         "a" : {
             "title" : "Otevřený typ myšlení",
-            "description" : "Graf zachycuje různé myšlenkové styly a víry, které společně formují rozhodovací procesy. Otevřenost přináší flexibilitu, zatímco uzavřenost zajišťuje stabilitu. Intuitivní přístup urychluje rozhodování, zatímco úsilné myšlení jej zpomaluje, ale činí důkladnějším. Víra v nadpřirozené síly a duchovní vlivy ovlivňuje očekávání výsledků, zatímco víra ve vliv myšlenek na realitu může posilovat jistotu ve vlastní rozhodnutí. Graf ukazuje, do jaké míry tyto faktory ovlivňují rozhodování."
+            "description" : "Graf zachycuje různé myšlenkové styly a víry, které společně formují rozhodovací procesy. Otevřenost přináší flexibilitu, zatímco uzavřenost zajišťuje stabilitu."
         },
         "b" : {
             "title" : "Uzavřený typ myšlení",
@@ -111,7 +111,7 @@
         },
         "c" : {
             "title" : "Intuitivní typ myšlení",
-            "description" : "Popisuje spolehnutí se na instinkt, pocity a okamžité dojmy při rozhodování. Vyšší skóre naznačuje pohodlí s rychlým úsudkem bez rozsáhlého uvažování. Preference pro usilovné rozvažování: Odráží sklon k pečlivému, reflektivnímu a analytickému myšlení při rozhodování. Vyšší skóre naznačuje potěšení z důkladného hodnocení situací před přijetím závěru, s preferencí pro důkladnější přístup."
+            "description" : "Popisuje spolehnutí se na instinkt, pocity a okamžité dojmy při rozhodování. Vyšší skóre naznačuje pohodlí s rychlým úsudkem bez rozsáhlého uvažování."
         },
         "d" : {
             "title" : "Preference pro usilovné rozvažování",

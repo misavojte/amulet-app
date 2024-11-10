@@ -9,7 +9,7 @@
 	let isReady = true;
 	let revealMore = false;
 
-	export let rounds = 10;
+	export let rounds = 15;
 
 	const dispatch = createEventDispatcher();
 

@@ -21,13 +21,6 @@
 	import { goto } from '$app/navigation';
 	import { BeliefInventoryService } from '$lib/services/BeliefInventoryService';
 	import { ThinkingStyleService } from '$lib/services/ThinkingStyleService';
-	import QuestionManager from '../components/QuestionManager.svelte';
-	import type {
-		IQuestionBattery,
-		IQuestionConfigLikert,
-		IQuestionConfigSelect,
-		IQuestionConfigText
-	} from '$lib/interfaces/IQuestion';
 	import { fisherYatesShuffle } from '$lib/utils/shuffle';
 	import AppQuestionnaire from '../components/AppQuestionnaire.svelte';
 
@@ -145,7 +138,10 @@
 			{#if stage === 'LanguagePick'}
 				<LanguagePick on:localeChange={handleLocaleChange} />
 			{:else if stage === 'Info'}
-				<Intro on:startExperiment={() => (stage = 'Experiment')} />
+				<Intro
+					on:startExperiment={() => (stage = 'Experiment')}
+					rounds={gameConfig.numberOfRounds}
+				/>
 			{:else if stage === 'Questionnaire'}
 				<AppQuestionnaire
 					questions={questionBase}

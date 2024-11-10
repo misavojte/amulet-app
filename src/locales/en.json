@@ -51,7 +51,7 @@
             "consent_statement": "I agree to participate in the research titled \"Decision Making Processes,\" which is part of a research dissertation.",
             "research_goal": "The aim of the research is to clarify the decision-making processes of participants using visual interactive stimuli.",
             "experiment_principle": "The principle of the experiment is that participants will be presented with two boxes. The objective for the participants is to guess which box contains the treasure. The selection of the box is made by clicking with the mouse. Before selecting a box, an amulet can be obtained, which may increase the chance of winning. Participants are tasked with collecting the highest number of points over {rounds} rounds.",
-            "post_experiment_info": "Following this, a questionnaire will be administered, after which participants will learn their predominant thinking style.",
+            "post_experiment_info": "After completing the questionnaire, you will discover your predominant thinking style and additional details. Finally, you’ll gain access to interactive graphs that will clearly present your results and allow for comparison with others.",
             "duration": "Total duration: 15 minutes"
         },
         "participant_rights_and_protection": {

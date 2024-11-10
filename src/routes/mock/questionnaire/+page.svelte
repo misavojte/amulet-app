@@ -13,14 +13,8 @@
 	import cs from '../../../locales/cs.json';
 
 	import { MockTimestampQuestionnaireService } from '$lib/services/MockTimestampQuestionnaireService';
-	import type {
-		IQuestionBattery,
-		IQuestionConfigLikert,
-		IQuestionConfigSelect,
-		IQuestionConfigText
-	} from '$lib/interfaces/IQuestion';
-	import { onMount } from 'svelte';
 	import AppQuestionnaire from '../../../components/AppQuestionnaire.svelte';
+	import { goto } from '$app/navigation';
 
 	addMessages('en', en);
 	addMessages('pl', pl);
@@ -49,7 +43,10 @@
 				<AppQuestionnaire
 					questionsService={service}
 					questions={mockQuestions}
-					on:questionnaireDone={(e) => alert(JSON.stringify(e.detail))}
+					on:questionnaireDone={(e) =>
+						goto(
+							'/result?a=22&b=8&c=12&d=18&s=130&ibiF1=11.756&ibiF2=16.33&ibiF3=6.610999999999999'
+						)}
 					on:questionnaireError={(e) => alert('Error ' + e.detail.message)}
 				/>
 			{/if}
