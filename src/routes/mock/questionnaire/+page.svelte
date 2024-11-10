@@ -1,6 +1,5 @@
 <script lang="ts">
-	import Questionnaire from '../../../components/Questionnaire.svelte';
-
+	import QuestionManager from '../../../components/QuestionManager.svelte';
 	import { _ } from 'svelte-i18n';
 	import LanguagePick from '../../../components/LanguagePick.svelte';
 	import Footer from '../../../components/Footer.svelte';
@@ -14,6 +13,8 @@
 	import cs from '../../../locales/cs.json';
 
 	import { MockTimestampQuestionnaireService } from '$lib/services/MockTimestampQuestionnaireService';
+	import AppQuestionnaire from '../../../components/AppQuestionnaire.svelte';
+	import { goto } from '$app/navigation';
 
 	addMessages('en', en);
 	addMessages('pl', pl);
@@ -35,14 +36,17 @@
 
 {#if stage !== 'Experiment'}
 	<div class="max-w-screen-md flex flex-col justify-between items-center mx-auto h-screen">
-		<main class="h-full flex flex-col justify-center items-center w-full">
+		<main class="h-full flex flex-col justify-center items-center w-full overflow-auto">
 			{#if stage === 'LanguagePick'}
 				<LanguagePick on:localeChange={handleLocaleChange} />
 			{:else}
-				<Questionnaire
-					questionnaireInterface={service}
-					questionConfig={mockQuestions}
-					on:questionnaireSaved={(e) => alert(JSON.stringify(e.detail))}
+				<AppQuestionnaire
+					questionsService={service}
+					questions={mockQuestions}
+					on:questionnaireDone={(e) =>
+						goto(
+							'/result?a=22&b=8&c=12&d=18&s=130&ibiF1=11.756&ibiF2=16.33&ibiF3=6.610999999999999'
+						)}
 					on:questionnaireError={(e) => alert('Error ' + e.detail.message)}
 				/>
 			{/if}

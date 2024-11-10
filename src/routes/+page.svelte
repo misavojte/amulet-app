@@ -16,12 +16,13 @@
 	import { getAuthAnonymousUser } from '../firebase';
 	import { TimestampGameService } from '$lib/services/TimestampGameService';
 	import { type GameState } from '$lib';
-	import Questionnaire from '../components/Questionnaire.svelte';
-	import { questions } from '../configs/questions';
+	import { demoQuestions, gameQuestions, questions } from '../configs/questions';
 	import { TimestampQuestionnaireService } from '$lib/services/TimestampQuestionnaireService';
 	import { goto } from '$app/navigation';
 	import { BeliefInventoryService } from '$lib/services/BeliefInventoryService';
 	import { ThinkingStyleService } from '$lib/services/ThinkingStyleService';
+	import { fisherYatesShuffle } from '$lib/utils/shuffle';
+	import AppQuestionnaire from '../components/AppQuestionnaire.svelte';
 
 	/**
 	 * Language setup
@@ -67,7 +68,7 @@
 	// decide scenario between 'Random', 'AlwaysWin', 'AlwaysLose'
 	// in chances 4 : 1 : 1 by randomly selecting
 	const scenarioArray = ['Random', 'AlwaysWin', 'AlwaysLose', 'Random', 'Random', 'Random'];
-	const randomScenario = scenarioArray[Math.floor(Math.random() * scenarioArray.length)];
+	const randomScenario = fisherYatesShuffle(scenarioArray)[0];
 
 	const gameConfig = {
 		allowRepeat: false,
@@ -92,11 +93,7 @@
 	 * Questionnaire component is responsible for handling the questionnaire logic and rendering
 	 * We need to pass the questionnaire configuration and timestamp service
 	 */
-
-	// Do not randomize the last 8 questions
-	const questionsAtTheEnd = questions.slice(-8);
-	const questionsToRandomize = questions.slice(0, -8).sort(() => Math.random() - 0.5); // possible randomization bias, but good enough for this purpose
-	const questionConfig = [...questionsToRandomize, ...questionsAtTheEnd];
+	const questionBase = [...gameQuestions, ...fisherYatesShuffle(questions), ...demoQuestions];
 
 	// const questionConfig = mockQuestions;
 	const beliefInventoryService = new BeliefInventoryService();
@@ -141,12 +138,15 @@
 			{#if stage === 'LanguagePick'}
 				<LanguagePick on:localeChange={handleLocaleChange} />
 			{:else if stage === 'Info'}
-				<Intro on:startExperiment={() => (stage = 'Experiment')} />
+				<Intro
+					on:startExperiment={() => (stage = 'Experiment')}
+					rounds={gameConfig.numberOfRounds}
+				/>
 			{:else if stage === 'Questionnaire'}
-				<Questionnaire
-					{questionConfig}
-					{questionnaireInterface}
-					on:questionnaireSaved={handleQuestionnaireSaved}
+				<AppQuestionnaire
+					questions={questionBase}
+					questionsService={questionnaireInterface}
+					on:questionnaireDone={handleQuestionnaireSaved}
 				/>
 			{/if}
 		</main>

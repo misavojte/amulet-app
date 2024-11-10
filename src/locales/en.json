@@ -51,7 +51,7 @@
             "consent_statement": "I agree to participate in the research titled \"Decision Making Processes,\" which is part of a research dissertation.",
             "research_goal": "The aim of the research is to clarify the decision-making processes of participants using visual interactive stimuli.",
             "experiment_principle": "The principle of the experiment is that participants will be presented with two boxes. The objective for the participants is to guess which box contains the treasure. The selection of the box is made by clicking with the mouse. Before selecting a box, an amulet can be obtained, which may increase the chance of winning. Participants are tasked with collecting the highest number of points over {rounds} rounds.",
-            "post_experiment_info": "Following this, a questionnaire will be administered, after which participants will learn their predominant thinking style.",
+            "post_experiment_info": "After completing the questionnaire, you will discover your predominant thinking style and additional details. Finally, you’ll gain access to interactive graphs that will clearly present your results and allow for comparison with others.",
             "duration": "Total duration: 15 minutes"
         },
         "participant_rights_and_protection": {
@@ -59,7 +59,7 @@
             "data_storage": "All data will be stored in a secure repository. Each participant is identified by an anonymization code. Anonymized data from the research will be used to write a scholarly article and dissertation.",
             "withdrawal_right": "Participants have the right to withdraw from the research and request the deletion of their data, but no later than 30 days from the data collection.",
             "responsible_person": "Responsible Person: Mgr. Markéta Muczková",
-            "contact": "Contact: marketa.muczkova01@upol.cz"
+            "contact": "Contact: marketa@muczkova.com"
         },
         "potential_risks_and_minimization": {
             "risk_statement": "Potential Risks and Minimization:",
@@ -72,7 +72,7 @@
             "personal_data_type_2": "Data from the interactive research",
             "personal_data_type_3": "Email (if provided)",
             "data_processing_purpose": "These personal data are necessary for the purpose of the research. The data will be processed by the controller for the time necessary to fulfill the purpose or until consent is withdrawn.",
-            "withdrawal_statement": "I give explicit consent to the above-mentioned processing. Consent can be withdrawn at any time by sending an email to the contact email marketa.muczkova01@upol.cz."
+            "withdrawal_statement": "I give explicit consent to the above-mentioned processing. Consent can be withdrawn at any time by sending an email to the contact email marketa@muczkova.com."
         },
         "gdpr_rights": {
             "rights_statement": "According to GDPR, you have the right to:",

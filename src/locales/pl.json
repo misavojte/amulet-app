@@ -51,7 +51,7 @@
             "consent_statement": "Wyrażam zgodę na udział w badaniu pod nazwą \"Procesy podejmowania decyzji\", które jest częścią pracy doktorskiej.",
             "research_goal": "Celem badania jest wyjaśnienie procesów podejmowania decyzji przez uczestników za pomocą wizualnych interaktywnych bodźców.",
             "experiment_principle": "Zasada eksperymentu polega na tym, że uczestnikom będą pokazywane dwie skrzynki. Celem uczestników jest odgadnięcie, w której skrzynce znajduje się skarb. Wybór skrzynki odbywa się za pomocą kliknięcia myszą. Przed wyborem skrzynki można nabyć amulet, który może zwiększyć szansę na wygraną. Uczestnicy mają za zadanie zdobyć jak największą liczbę punktów w \"x\" rundach.",
-            "post_experiment_info": "Następnie uczestnicy wypełnią kwestionariusz, po którego wypełnieniu dowiedzą się, jaki mają dominujący typ myślenia.",
+            "post_experiment_info": "Następnie uczestnicy wypełnią kwestionariusz, po którego wypełnieniu dowiedzą się, jaki mają dominujący styl myślenia. Na zakończenie uzyskają dostęp do interaktywnych wykresów, które przejrzyście przedstawią ich wyniki i pozwolą na porównanie z innymi.",
             "duration": "Całkowity czas trwania: 15 minut"
         },
         "participant_rights_and_protection": {
@@ -59,7 +59,7 @@
             "data_storage": "Wszystkie dane będą przechowywane w zabezpieczonym magazynie. Każdy uczestnik jest prowadzony pod anonimowym kodem. Zanonimizowane dane z eksperymentu będą wykorzystane do napisania artykułu naukowego i pracy doktorskiej.",
             "withdrawal_right": "Uczestnicy mają prawo do wycofania się z badania i żądania usunięcia swoich danych, jednak nie później niż 30 dni od daty zebrania danych.",
             "responsible_person": "Osoba odpowiedzialna: mgr Markéta Muczková",
-            "contact": "Kontakt: marketa.muczkova01@upol.cz"
+            "contact": "Kontakt: marketa@muczkova.com"
         },
         "potential_risks_and_minimization": {
             "risk_statement": "Potencjalne ryzyka i ich minimalizacja:",
@@ -72,7 +72,7 @@
             "personal_data_type_2": "Dane z interaktywnego badania",
             "personal_data_type_3": "Adres e-mail (w przypadku podania)",
             "data_processing_purpose": "Te dane osobowe są niezbędne do celów badania. Dane będą przetwarzane przez administratora przez czas niezbędny do realizacji celu lub do odwołania zgody.",
-            "withdrawal_statement": "Niniejszym wyrażam wyraźną zgodę na powyższe przetwarzanie. Zgodę można wycofać w dowolnym momencie, wysyłając e-mail na adres kontaktowy marketa.muczkova01@upol.cz."
+            "withdrawal_statement": "Niniejszym wyrażam wyraźną zgodę na powyższe przetwarzanie. Zgodę można wycofać w dowolnym momencie, wysyłając e-mail na adres kontaktowy marketa@muczkova.com."
         },
         "gdpr_rights": {
             "rights_statement": "Zgodnie z RODO masz prawo:",

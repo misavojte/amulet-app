@@ -20,25 +20,33 @@
 	addMessages('pl', pl);
 	addMessages('cs', cs);
 
-	init({
-		fallbackLocale: 'en',
-		initialLocale: 'en'
-	});
-
 	const handleLocaleChange = () => {
 		isReady = true;
 	};
 
 	onMount(() => {
+		console.warn('Initial locale', initialLocale);
 		if (initialLocale) {
 			if (initialLocale === 'cs') {
 				handleLocaleChange();
+				init({
+					fallbackLocale: 'en',
+					initialLocale: 'cs'
+				});
 			}
 			if (initialLocale === 'pl') {
 				handleLocaleChange();
+				init({
+					fallbackLocale: 'en',
+					initialLocale: 'pl'
+				});
 			}
 			if (initialLocale === 'en') {
 				handleLocaleChange();
+				init({
+					fallbackLocale: 'en',
+					initialLocale: 'en'
+				});
 			}
 		}
 	});
