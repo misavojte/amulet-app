@@ -31,10 +31,10 @@
 				return {
 					...question,
 					headingText: $_(`questions.${question.id}.question`),
-					options: question.options.map((option, index) => {
+					options: question.options.map((option) => {
 						return {
 							id: option,
-							label: $_(`questions.${question.id}.options.${index + 1}`)
+							label: $_(`questions.${question.id}.options.${option}`)
 						};
 					})
 				} as IQuestionConfigSelect;

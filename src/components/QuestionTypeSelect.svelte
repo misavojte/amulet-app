@@ -11,6 +11,8 @@
 	const handleOptionChange = () => {
 		dispatch('input');
 	};
+
+	console.log(question);
 </script>
 
 <Question questionText={question.headingText} isRequired={question.required}>

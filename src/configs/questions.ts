@@ -5,6 +5,12 @@ export const mockQuestions = [
 		required: false
 	},
 	{
+		id: 'gender',
+		type: 'select',
+		options: ['F', 'M', 'O', 'N'],
+		required: true
+	},
+	{
 		id: 'age',
 		type: 'number',
 		required: true
