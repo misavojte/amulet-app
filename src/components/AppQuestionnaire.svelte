@@ -50,6 +50,8 @@
 				throw new Error('Invalid question type');
 		}
 	});
+
+	console.log(questionsService);
 </script>
 
 <QuestionManager

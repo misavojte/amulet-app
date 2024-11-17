@@ -2,7 +2,7 @@ import type { StartQuestionnaireEntryObject } from "$lib/interfaces/ITimestampQu
 import type { TimestampQuestionnaireEntryObject } from "$lib";
 import { get } from "svelte/store";
 import { writeQuestionnaireScore, writeTimestampQuestionnaire } from "../../firebase";
-import { type QuestionnaireScore } from '$lib/interfaces/ITimestampQuestionnaireService';
+import type { QuestionnaireScore } from '$lib/interfaces/ITimestampQuestionnaireService';
 import type { UserStateStore } from "../../stores/UserState";
 import type { IBeliefInventoryService } from "$lib/interfaces/IBeliefInventoryService";
 import type { IThinkingStyleService } from "$lib/interfaces/IThinkingStyleService";
