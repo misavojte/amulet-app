@@ -1,18 +1,19 @@
-import type { StartQuestionnaireEntryObject } from "$lib/interfaces/ITimestampQuestionnaireService";
+import type { StartQuestionnaireEntryObject } from "$lib/interfaces/IQuestionAmulet";
 import type { TimestampQuestionnaireEntryObject } from "$lib";
 import { get } from "svelte/store";
 import { writeQuestionnaireScore, writeTimestampQuestionnaire } from "../../firebase";
-import type { QuestionnaireScore } from '$lib/interfaces/ITimestampQuestionnaireService';
+import type { QuestionnaireScore } from "$lib/interfaces/IQuestionAmulet";
 import type { UserStateStore } from "../../stores/UserState";
 import type { IBeliefInventoryService } from "$lib/interfaces/IBeliefInventoryService";
 import type { IThinkingStyleService } from "$lib/interfaces/IThinkingStyleService";
-import type { ITimestampQuestionService } from "$lib/interfaces/IQuestion";
+import type { ITimestampQuestionAmuletService } from "$lib/interfaces/IQuestionAmulet";
 
-export class TimestampQuestionnaireService implements ITimestampQuestionService {
+export class TimestampQuestionnaireService implements ITimestampQuestionAmuletService {
 
     userState: UserStateStore;
     beliefInventoryService: IBeliefInventoryService;
     thinkingStyleService: IThinkingStyleService;
+    lastScore: QuestionnaireScore | null = null;
 
     constructor (
         userState: UserStateStore,
@@ -59,13 +60,7 @@ export class TimestampQuestionnaireService implements ITimestampQuestionService 
         return writeTimestampQuestionnaire(timestampEntry);
     }
 
-    async saveQuestions(data: 
-        {
-            id: string;
-            value: string;
-            required: boolean;
-        }[]
-    ): Promise<QuestionnaireScore> {
+    getScore(data: { id: string; value: string; }[]): QuestionnaireScore {
         const userState = get(this.userState);
         if (userState.userId === null || userState.sessionId === null) {
             throw new Error("User or sessionId is null");
@@ -92,6 +87,17 @@ export class TimestampQuestionnaireService implements ITimestampQuestionService 
             sessionId: userState.sessionId,
             timestamp: Date.now()
         }
+        this.lastScore = questionnaireScore;
+        return questionnaireScore;
+    }
+
+    async saveQuestions(data: 
+        {
+            id: string;
+            value: string;
+        }[]
+    ): Promise<void> {
+        const questionnaireScore = this.getScore(data);
         return writeQuestionnaireScore(questionnaireScore);
     }
 }

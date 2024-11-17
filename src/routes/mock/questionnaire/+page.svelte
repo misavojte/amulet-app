@@ -43,10 +43,13 @@
 				<AppQuestionnaire
 					questionsService={service}
 					questions={mockQuestions}
-					on:questionnaireDone={(e) =>
+					on:questionnairePreliminaryEnd={(e) => alert(JSON.stringify(service.lastScore))}
+					on:questionnaireDone={(e) => {
+						alert(JSON.stringify(service.lastScore));
 						goto(
 							'/result?a=22&b=8&c=12&d=18&s=130&ibiF1=11.756&ibiF2=16.33&ibiF3=6.610999999999999'
-						)}
+						);
+					}}
 					on:questionnaireError={(e) => alert('Error ' + e.detail.message)}
 				/>
 			{/if}

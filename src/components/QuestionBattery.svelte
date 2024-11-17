@@ -2,7 +2,7 @@
 	import { writable } from 'svelte/store';
 	import { fade, fly } from 'svelte/transition';
 	import { createEventDispatcher, onMount } from 'svelte';
-	import type { IQuestionBattery } from '$lib/interfaces/IQuestion';
+	import type { IQuestionBattery, IQuestionResponse } from '$lib/interfaces/IQuestion';
 	import LayoutProgress from './LayoutProgress.svelte';
 	import QuestionTypeText from './QuestionTypeText.svelte';
 	import QuestionTypeInstruction from './QuestionTypeInstruction.svelte';
@@ -15,7 +15,12 @@
 	export let showSkip: boolean = true;
 
 	const progressStore = writable(0);
-	const dispatch = createEventDispatcher();
+	const dispatch = createEventDispatcher<{
+		questionnaireDone: IQuestionResponse[];
+		questionnaireStart: IQuestionResponse[];
+		questionnaireAnswer: IQuestionResponse;
+		questionnairePreliminaryEnd: IQuestionResponse[];
+	}>();
 
 	$: questionSingleArray = questions[$progressStore] ? [questions[$progressStore]] : [];
 

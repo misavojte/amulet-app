@@ -59,5 +59,6 @@
 	questions={questionConfig}
 	showSkip={true}
 	on:questionnaireDone
+	on:questionnairePreliminaryEnd
 	on:questionnaireError
 />

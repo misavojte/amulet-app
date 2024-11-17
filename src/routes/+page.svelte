@@ -10,7 +10,7 @@
 	import en from '../locales/en.json';
 	import pl from '../locales/pl.json';
 	import cs from '../locales/cs.json';
-	import type { QuestionnaireScore } from '$lib/interfaces/ITimestampQuestionnaireService';
+	import type { QuestionnaireScore } from '$lib/interfaces/IQuestionAmulet';
 	import { createUserState } from '../stores/UserState';
 	import { setContext } from 'svelte';
 	import { getAuthAnonymousUser } from '../firebase';
@@ -126,8 +126,12 @@
 		return `result?${searchParams.toString()}`;
 	};
 
-	const handleQuestionnaireSaved = (e: CustomEvent<QuestionnaireScore>) => {
-		const resultUrl = createResultUrl(e.detail);
+	const handleQuestionnaireSaved = () => {
+		const score = questionnaireInterface.lastScore;
+		if (!score) {
+			throw new Error('Score is not set');
+		}
+		const resultUrl = createResultUrl(score);
 		goto(resultUrl);
 	};
 </script>
@@ -147,6 +151,7 @@
 					questions={questionBase}
 					questionsService={questionnaireInterface}
 					on:questionnaireDone={handleQuestionnaireSaved}
+					on:questionnairePreliminaryEnd={handleQuestionnaireSaved}
 				/>
 			{/if}
 		</main>
@@ -159,17 +164,6 @@
 {/if}
 
 <style>
-	.layout {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		max-width: 680px;
-		align-items: center;
-		justify-content: center;
-		margin: auto;
-		gap: 1rem;
-		text-align: left;
-	}
 	main {
 		flex: 1;
 		flex-grow: 1;

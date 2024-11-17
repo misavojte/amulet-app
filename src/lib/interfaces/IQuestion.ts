@@ -1,7 +1,12 @@
 export interface ITimestampQuestionService {
 	startQuestions(): Promise<void>;
 	saveTimestampQuestion(question: string, answer: string): Promise<void>;
-	saveQuestions(entry: unknown): Promise<unknown>;
+	saveQuestions(
+		data: {
+			id: string;
+			value: string
+		}[]
+	): Promise<void>;
 }
 
 export interface TimestampQuestionEntryObject {
@@ -61,3 +66,9 @@ export interface IQuestionConfigInstruction extends IQuestionConfigBase {
 export type IQuestion = IQuestionConfigSelect | IQuestionConfigLikert | IQuestionConfigText | IQuestionConfigInstruction;
 
 export type IQuestionBattery = readonly IQuestion[];
+
+export type IQuestionResponse = {
+	id: string;
+	value: string;
+	required: boolean;
+};

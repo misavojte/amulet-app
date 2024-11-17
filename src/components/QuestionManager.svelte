@@ -1,27 +1,36 @@
 <script lang="ts">
-	import { type IQuestionBattery, type ITimestampQuestionService } from '$lib/interfaces/IQuestion';
+	import {
+		type IQuestionBattery,
+		type IQuestionResponse,
+		type ITimestampQuestionService
+	} from '$lib/interfaces/IQuestion';
 	import QuestionBattery from './QuestionBattery.svelte';
 	import { createEventDispatcher } from 'svelte';
 
-	const dispatch = createEventDispatcher();
+	const dispatch = createEventDispatcher<{
+		questionnaireDone: IQuestionResponse[];
+		questionnairePreliminaryEnd: IQuestionResponse[];
+		questionnaireAnswer: IQuestionResponse;
+	}>();
 
 	export let questionsService: ITimestampQuestionService;
 	export let questions: IQuestionBattery;
 	export let showProgress: boolean = true;
 	export let showSkip: boolean = false;
 
-	const saveData = (data: any) => {
+	const saveData = (data: IQuestionResponse[]) => {
 		promise = questionsService.saveQuestions(data);
+		return promise;
 	};
 
-	const handleQuestionnaireDone = (data: any) => {
-		saveData(data);
-		dispatch('questionnaireDone');
+	const handleQuestionnaireDone = async (data: CustomEvent<IQuestionResponse[]>) => {
+		await saveData(data.detail);
+		dispatch('questionnaireDone', data.detail);
 	};
 
-	const handleQuestionnairePreliminaryEnd = (data: any) => {
-		saveData(data);
-		dispatch('questionnairePreliminaryEnd');
+	const handleQuestionnairePreliminaryEnd = async (data: CustomEvent<IQuestionResponse[]>) => {
+		await saveData(data.detail);
+		dispatch('questionnairePreliminaryEnd', data.detail);
 	};
 
 	let promise: Promise<unknown> | null = null;
