@@ -576,7 +576,7 @@
             }
         },
         "Q20TS": {
-            "question" : "Přemýšlení nesplňuje mou představu příjemné aktivity",
+            "question" : "Přemýšlení nesplňuje mou představu příjemné aktivity.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -616,7 +616,7 @@
             }
         },
         "Q24TS": {
-            "question" : "Dlouhé a intenzivní přemýšlení o něčem mi nepřináší velkou uspokojení.",
+            "question" : "Dlouhé a intenzivní přemýšlení o něčem mi nepřináší velké uspokojení.",
             "options" : {
                 "1" : "Rozhodně nesouhlasím",
                 "2" : "Nesouhlasím",
@@ -629,7 +629,7 @@
             "question" : "Jaký je Váš věk?"
         },
         "gender": {
-            "question" : "Jaký je váš gender?",
+            "question" : "Jaký je Váš gender?",
             "options" : {
                 "F" : "Žena",
                 "M" : "Muž",

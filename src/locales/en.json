@@ -33,8 +33,8 @@
         "refuse": "I don't want the amulet"
 	},
 	"end": {
-		"title": "Konec hry",
-		"repeat": "Hrát znovu",
+		"title": "End of game",
+		"repeat": "Play again",
         "noRepeat": "Complete a short questionnaire, and you'll instantly see a chart revealing something new about yourself. You might be surprised."
 	},
     "footer": {
@@ -436,13 +436,13 @@
             }
         },
         "Q6TS": {
-            "question" : "To, o čem věříte, že je to pravda, je důležitější než důkazy, které tomu odporují, bez ohledu na téma.",
-            "options" : {
-                "1" : "Strongly disagree",
-                "2" : "Disagree",
-                "3" : "Neither agree nor disagree",
-                "4" : "Agree",
-                "5" : "Strongly agree"
+            "question": "What you believe to be true is more important than evidence to the contrary, regardless of the subject.",
+            "options": {
+                "1": "Strongly disagree",
+                "2": "Disagree",
+                "3": "Neither agree nor disagree",
+                "4": "Agree",
+                "5": "Strongly agree"
             }
         },
         "Q7TS": {
