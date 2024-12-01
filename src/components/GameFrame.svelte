@@ -14,7 +14,6 @@
 	export let gameState: GameStateStore;
 
 	let shouldSaveNewRoundTimestampGame = true;
-	let hasWonPreviousRound = false;
 
 	const createTimestampGameEntry = (type: TimestampGameType) => {
 		void timestampService.saveTimestampGame(type);
@@ -37,14 +36,6 @@
 				return () => true;
 			case 'AlwaysLose':
 				return () => false;
-			case 'ZigZag': {
-				const round = $gameState.config.numberOfRounds - $gameState.numberOfRounds;
-				let hasWon = Math.random() < 0.5;
-				if (round !== 0) {
-					hasWon = !hasWonPreviousRound;
-				}
-				return () => hasWon;
-			}
 			default:
 				return () => Math.random() < 0.5;
 		}
@@ -61,12 +52,10 @@
 		console.log('Playing round', e.detail.id);
 		if (!$gameState) throw new Error('Game state is not set');
 		const hasWon = play($gameState.scenario, $gameState.hasAmulet);
-		hasWonPreviousRound = hasWon;
 		const typeOfBox: 'leftBox' | 'rightBox' = e.detail.id === 1 ? 'leftBox' : 'rightBox';
 		const type: 'leftBoxWin' | 'leftBoxLoss' | 'rightBoxWin' | 'rightBoxLoss' = hasWon
 			? `${typeOfBox}Win`
 			: `${typeOfBox}Loss`;
-		//createTimestampGameEntry(type);
 		timestampService.saveTimestampGame(type);
 		gameState.progressFromBoxDecision(hasWon);
 		shouldSaveNewRoundTimestampGame = true;

@@ -85,6 +85,11 @@ export const progressFromBoxDecision = (state: Writable<GameState>, win: boolean
 	const delayOfNextStage = win ? 3000 : 2000;
 	const newScore = win && !get(state).isFirstRound ? get(state).score + get(state).config.scoreOnWin : get(state).score; 
 
+	/**
+	 * Update the game state to the 'AfterBoxDecision' stage
+	 * This stage is used to show the result of the box decision before moving to the next stage
+	 * The amulet is reset to false, as its effect is only for one round
+	 */
 	updateState(state, {
 		gameStage: 'AfterBoxDecision', // 'AfterBoxDecision' is a temporary stage to show the result of the box decision before moving to the next stage
 		hasCurrentlyWon: win,
