@@ -99,11 +99,11 @@
         },
         "combined" : {
             "title" : "Kombinované výsledky",
-            "description" : "Na grafu vidíte, jak moc se shodují vaše odpovědi s různými typy myšlení a věroučného přesvědčení. Čím výše je bod, tím více odpovědí se shoduje s daným typem myšlení nebo věroučného přesvědčení."
+            "description" : "Graf zachycuje různé myšlenkové styly a víry, které společně formují rozhodovací procesy. Otevřenost přináší flexibilitu, zatímco uzavřenost zajišťuje stabilitu"
         },
         "a" : {
             "title" : "Otevřený typ myšlení",
-            "description" : "Graf zachycuje různé myšlenkové styly a víry, které společně formují rozhodovací procesy. Otevřenost přináší flexibilitu, zatímco uzavřenost zajišťuje stabilitu."
+            "description" : "Odráží tendenci zvažovat více perspektiv a ochotu měnit názory, pokud jsou k dispozici nové informace. Vysoké skóre naznačuje preferenci zpochybňování předpokladů a hledání důkazů před přijetím rozhodnutí."
         },
         "b" : {
             "title" : "Uzavřený typ myšlení",
