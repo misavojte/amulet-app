@@ -9,7 +9,8 @@
         "2" : "V každém kole můžete získat {score} bodů tím, že uhodnete, kde se nachází poklad.",
         "3" : "Celkem bude probíhat {rounds} kol.",
         "4" : "Před každým kolem máte možnost získat amulet, který může zvýšit vaše šance na úspěch.",
-        "5" : "Amulet lze pořídit za {price} bodů."
+        "5" : "Amulet lze pořídit za {price} bodů.",
+        "5Free" : "Amulet je pro vás na každé kolo zcela zdarma."
     },
     "start": {
         "start" : "Začít"
@@ -22,7 +23,9 @@
         "isActive" : "Amulet je aktivní",
         "isNotActive" : "Amulet není aktivní",
         "canBuy" : "Kliknutím pořídíte amulet za {price} bodů",
+        "canBuyFree" : "Kliknutím na amulet jej získáte zdarma",
         "cannotBuy" : "Nemáte dostatek bodů pro získání amuletu",
+        "cannotBuyFree" : "Není potřeba žádných bodů, amulet je zdarma",
         "refuse" : "Nechci amulet" 
     },
     "end": {

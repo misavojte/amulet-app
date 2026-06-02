@@ -37,10 +37,14 @@
 			{$_('rules.4')}
 		</li>
 		<li class="border-b-neutral-300 p-2 border-solid border-b">
-			{$_({
-				id: 'rules.5',
-				values: { price: $gameState.config.priceOfAmulet }
-			})}
+			{#if $gameState.config.priceOfAmulet === 0}
+				{$_('rules.5Free')}
+			{:else}
+				{$_({
+					id: 'rules.5',
+					values: { price: $gameState.config.priceOfAmulet }
+				})}
+			{/if}
 		</li>
 	</ol>
 	<UIButton on:click={startGame} text={$_('start.start')} />

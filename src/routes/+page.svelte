@@ -73,9 +73,9 @@
 	const gameConfig = {
 		allowRepeat: false,
 		numberOfRounds: 15,
-		startScore: 100,
+		startScore: 0,
 		scenario: randomScenario,
-		priceOfAmulet: 10,
+		priceOfAmulet: 0,
 		scoreOnWin: 30
 	};
 

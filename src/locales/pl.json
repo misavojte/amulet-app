@@ -16,7 +16,8 @@
         "2" : "W każdej rundzie możesz zdobyć {score} punktów, zgadując, gdzie znajduje się skarb.",
         "3" : "Łącznie odbędzie się {rounds} rund.",
         "4" : "Przed każdą rundą masz możliwość zdobycia amuletu, który może zwiększyć twoje szanse na sukces.",
-        "5" : "Amulet można kupić za {price} punktów."
+        "5" : "Amulet można kupić za {price} punktów.",
+        "5Free" : "Amulet jest całkowicie darmowy."
 	},
 	"start": {
 		"start": "Zacznij"
@@ -29,7 +30,9 @@
 		"isActive": "Amulet jest aktywny",
 		"isNotActive": "Amulet nie jest aktywny",
 		"canBuy": "Kliknij, aby kupić amulet za {price} punktów",
+		"canBuyFree": "Kliknij na amulet, aby zdobyć go za darmo",
 		"cannotBuy": "Nie masz wystarczającej liczby punktów, aby zdobyć amulet",
+		"cannotBuyFree": "Nie potrzebujesz punktów, amulet jest za darmo",
         "refuse": "Nie chcę amuletu"
 	},
 	"end": {

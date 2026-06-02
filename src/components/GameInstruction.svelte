@@ -6,6 +6,7 @@
 	const gameState: GameStateStore = getContext('gameState');
 
 	const amuletPrice = $gameState.config.priceOfAmulet;
+	const amuletIsFree = amuletPrice === 0;
 
 	let canBuyAmulet = false;
 
@@ -18,7 +19,11 @@
 			<div>
 				{$_('amulet.isNotActive')}
 			</div>
-			{#if !canBuyAmulet}
+			{#if amuletIsFree}
+				<div>
+					{$_('amulet.canBuyFree')}
+				</div>
+			{:else if !canBuyAmulet}
 				<div>
 					{$_('amulet.cannotBuy')}
 				</div>

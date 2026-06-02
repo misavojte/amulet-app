@@ -34,6 +34,12 @@
 		outline-offset: 4px;
 		transition: all 0.6s;
 		transition: opacity 0.6s ease 0.2s;
+		/* Button is coplanar (Z=0) with its preserve-3d ancestors, so the 3D depth
+		   test z-fights as the pointer moves — cursor and :hover flicker on macOS.
+		   Lift it toward the camera so it wins the depth test cleanly. */
+		transform: translateZ(1px);
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
 		&&:disabled {
 			opacity: 0;
 			cursor: default;
