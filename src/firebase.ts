@@ -1,8 +1,8 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, push, set, get } from "firebase/database";
 import { getAuth, signInAnonymously } from "firebase/auth";
-import type { DbData, TimestampGameEntryObject, TimestampQuestionnaireEntryObject } from '$lib';
-import type { QuestionnaireScore, StartQuestionnaireEntryObject } from '$lib/interfaces/ITimestampQuestionnaireService';
+import type { DbData, TimestampGameEntryObject } from '$lib';
+import type { QuestionnaireScore, StartQuestionnaireEntryObject, TimestampQuestionnaireEntryObject } from '$lib/interfaces/IQuestionAmulet';
 import type { GameScoreEntry, InitialTimestampGameEntry } from "$lib/interfaces/ITimestampGameService";
 
 // Your web app's Firebase configuration
@@ -143,6 +143,29 @@ export const writeQuestionnaireScore = async (score: QuestionnaireScore) => {
   const newQuestionnaireScoreRef = push(questionnaireScoreRef);
   await set(newQuestionnaireScoreRef, score);
   return score;
+}
+
+export const writeStandaloneQuestionnaireScore = async (score: QuestionnaireScore) => {
+  const questionnaireScoreRef = ref(db, 'standalone-questionnaire-scores/');
+  const newQuestionnaireScoreRef = push(questionnaireScoreRef);
+  await set(newQuestionnaireScoreRef, score);
+  return score;
+}
+
+export const writeStandaloneTimestampQuestionnaire = (data: TimestampQuestionnaireEntryObject | StartQuestionnaireEntryObject): Promise<void> => {
+  const timestampRef = ref(db, 'standalone-timestamps-questionnaire/');
+  const newTimestampRef = push(timestampRef);
+  return new Promise((resolve, reject) => {
+    set(newTimestampRef, data)
+      .then(() => {
+        console.log('Standalone TimestampQuestionnaire saved successfully!');
+        resolve();
+      })
+      .catch((error) => {
+        console.error('Error saving standalone timestamp: ', error);
+        reject(error);
+      });
+  });
 }
 
 export const writeInitialTimestampGame = async (data: InitialTimestampGameEntry) => {

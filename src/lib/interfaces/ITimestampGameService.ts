@@ -1,4 +1,4 @@
-import { GameConfig } from "$lib";
+import type { GameConfig } from "$lib";
 import type { GameStateStore } from "../../stores/GameState";
 import type { UserStateStore } from "../../stores/UserState";
 
