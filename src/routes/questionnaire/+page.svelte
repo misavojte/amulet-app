@@ -14,6 +14,7 @@
 	import { StandaloneQuestionnaireService } from '$lib/services/StandaloneQuestionnaireService';
 	import AppQuestionnaire from '../../components/AppQuestionnaire.svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 
 	addMessages('en', en);
 	addMessages('pl', pl);
@@ -34,7 +35,7 @@
 
 	const buildResultUrl = () => {
 		const score = service.lastScore;
-		if (!score) return '/result';
+		if (!score) return `${base}/questionnaire/result`;
 		const params = new URLSearchParams({
 			a: String(score.activelyOpenMindedThinking ?? 0),
 			b: String(score.closeMindedThinking ?? 0),
@@ -44,7 +45,7 @@
 			ibiF2: String(score.beliefInventoryF2 ?? 0),
 			ibiF3: String(score.beliefInventoryF3 ?? 0)
 		});
-		return `/questionnaire/result?${params.toString()}`;
+		return `${base}/questionnaire/result?${params.toString()}`;
 	};
 </script>
 
